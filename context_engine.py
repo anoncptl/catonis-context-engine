@@ -58,6 +58,26 @@ SLOTS = {
 }
 
 
+# ---------- secret scrubbing ----------
+SECRET_ENV = ("ANTHROPIC_API_KEY", "FRED_API_KEY", "BLS_API_KEY", "CONTACT_EMAIL")
+SECRET_PATTERNS = [re.compile(r"sk-ant-[A-Za-z0-9_\-]{8,}"), re.compile(r"(api_key|registrationkey|x-api-key)=[^&\s\"']+", re.I)]
+
+
+def scrub(text):
+    """Remove every key (and the contact email) from text before it is saved or published."""
+    for name in SECRET_ENV:
+        v = os.environ.get(name, "").strip()
+        if len(v) >= 6:
+            text = text.replace(v, "[%s removed]" % name.lower())
+    for pat in SECRET_PATTERNS:
+        text = pat.sub("[key removed]", text)
+    return text
+
+
+def save_json(path, obj):
+    Path(path).write_text(scrub(json.dumps(obj, indent=1, default=str)))
+
+
 # ---------- Cboe Insights ----------
 def http_get(url, retries=2):
     for i in range(retries + 1):
@@ -355,7 +375,7 @@ def run(now, slot, slot_date, force):
     s = sources.gather(now)
     s["status"] = {"cboe": cboe_status, **s["status"]}
     for k, st in s["status"].items():
-        print("    %-8s %s  %s" % ("ok" if st["ok"] else "FAILED", st["name"], st["detail"]))
+        print(scrub("    %-8s %s  %s" % ("ok" if st["ok"] else "FAILED", st["name"], st["detail"])))
 
     print("3/6 Price history and forecast grading…")
     ndx_hist, vix_hist, hist_err = {}, {}, None
@@ -383,7 +403,7 @@ def run(now, slot, slot_date, force):
     key_present = bool(os.environ.get("ANTHROPIC_API_KEY"))
     today_v = now.astimezone(VIENNA).strftime("%Y-%m-%d")
     snap = SNAP_DIR / ("%s-%s.json" % (today_v, slot))
-    snap.write_text(json.dumps(s, indent=1, default=str))
+    save_json(snap, s)
 
     fact_list = facts.build_facts(s)
     checks = facts.disagreements(s)
@@ -401,8 +421,8 @@ def run(now, slot, slot_date, force):
             raise
         except Exception as e:
             brief = None
-            print("    ! brief failed: %s" % e, file=sys.stderr)
-            s["status"]["ai"] = {"name": "Claude brief", "ok": False, "detail": str(e)[:160]}
+            print(scrub("    ! brief failed: %s" % e), file=sys.stderr)
+            s["status"]["ai"] = {"name": "Claude brief", "ok": False, "detail": scrub(str(e))[:160]}
 
     ledger.save()
     runs["done"][slot] = slot_date
@@ -410,12 +430,12 @@ def run(now, slot, slot_date, force):
                                            "sources_ok": sum(1 for v in s["status"].values() if v["ok"]),
                                            "sources_total": len(s["status"])}])[-200:]
     RUNS_FILE.write_text(json.dumps(runs, indent=1))
-    (DATA / "latest_status.json").write_text(json.dumps({"utc": now.isoformat(), "slot": slot, "status": s["status"],
+    save_json(DATA / "latest_status.json", {"utc": now.isoformat(), "slot": slot, "status": s["status"],
                                                           "facts": fact_list, "checks": checks, "rates": rates,
                                                           "calendar": s.get("calendar"), "consensus": s.get("consensus"),
                                                           "edgar": s.get("edgar"), "fed": s.get("fed"), "odds": s.get("odds"),
                                                           "headlines": s.get("headlines"), "gdelt": s.get("gdelt"),
-                                                          "warnings": s.get("warnings")}, indent=1, default=str))
+                                                          "warnings": s.get("warnings")})
     prune_snapshots(now)
     print("5/6 Building the website…")
     sitegen.build(DATA, SITE_DIR)
@@ -467,7 +487,7 @@ def make_brief(now, slot, today_v, new_posts, s, ledger, fact_list, rates, vix_n
                        "open_questions": mu.get("open_questions", memory["open_questions"])})
         memory["themes"].update(mu.get("themes") or {})
         MEMORY_FILE.write_text(json.dumps(memory, indent=1))
-        (BRIEFS_DIR / ("%s.json" % bid)).write_text(json.dumps(brief, indent=1))
+        save_json(BRIEFS_DIR / ("%s.json" % bid), brief)
         print("    brief %s: %d unsourced number flag(s), tokens in/out %s/%s" % (
             bid, len(flags), usage.get("input_tokens"), usage.get("output_tokens")))
         return brief

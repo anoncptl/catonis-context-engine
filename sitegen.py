@@ -252,6 +252,25 @@ def build(data_dir, site_dir):
     ledger = json.loads((data_dir / "forecasts.json").read_text()) if (data_dir / "forecasts.json").exists() else []
     status_html, n_ok, n_all = render_status(st) if st else ("", 0, 0)
     latest = briefs[-1] if briefs else None
+    import os, re as _re
+    def _scrub(h):
+        for n in ("ANTHROPIC_API_KEY", "FRED_API_KEY", "BLS_API_KEY", "CONTACT_EMAIL"):
+            v = os.environ.get(n, "").strip()
+            if len(v) >= 6:
+                h = h.replace(html.escape(v), "[removed]").replace(v, "[removed]")
+        return _re.sub(r"sk-ant-[A-Za-z0-9_\-]{8,}", "[key removed]", h)
+    _orig_write = Path.write_text
+    def _w(self, data, *a, **k):
+        return _orig_write(self, _scrub(data), *a, **k)
+    Path.write_text = _w
+    try:
+        _build_pages(site_dir, briefs, st, ledger, status_html, n_ok, n_all, latest)
+    finally:
+        Path.write_text = _orig_write
+    return len(briefs)
+
+
+def _build_pages(site_dir, briefs, st, ledger, status_html, n_ok, n_all, latest):
     if latest:
         top = render_brief(latest)
         title = "%s · %s" % (datetime.fromisoformat(latest["made_utc"]).astimezone(VIENNA).strftime("%A %d %B %Y"), latest.get("slot_label", ""))
