@@ -1,0 +1,286 @@
+{
+ "headline": "Rates repricing and NVDA CEO exit hit Nasdaq-100 (-1.22%) as hike bets build",
+ "what_happened": {
+  "summary": "The Nasdaq-100 closed Fri 13 Nov at 27943.74 (-1.22%) and the S&P 500 at 7561.67 (-0.40%), so tech again fell more than the broad index. The Treasury curve sold off: the 10-year closed at 5.15% (+5.0 bp) and the 2-year at 4.88% (+2.0 bp). Polymarket (prediction-market prices, not CME FedWatch) puts a 25 bps December hike at 86.5% and a 50+ bps hike at 9.2%. An NVIDIA 8-K (primary source) says CEO Jen-Hsun Huang resigned effective immediately, with CFO Colette Kress as interim CEO. Volatility rose on the day: VIX 19.3, VXN 29.38, VVIX 101.53.",
+  "market_action": "Nasdaq-100 -1.22% vs S&P 500 -0.40% on 13 Nov. Over the past 10 sessions the Nasdaq-100 swung widely: -6.36% on 5 Nov, +3.40% on 9 Nov and +2.28% on 11 Nov. VIX closed 19.3 (+3.21%), VXN 29.38 (+2.91%), VVIX 101.53 (+4.98%), SKEW 147.14 (-2.01%). COR1M rose to 11.8 (+18.12%), but its 10-day range is 9.79 to 20.76. High-yield OAS was 3.2 pct pts on 12 Nov (-10.0 bp), so credit is not confirming stress. FRED oil data stops at 11 Nov (Brent 92.14, WTI 89.62), well below the 30 Oct Brent of 120.15.",
+  "macro": "BLS October prints (primary): CPI m/m 0.35% (prior 0.65%), core CPI 0.3% (prior 0.33%), PPI final demand m/m 0.35% (prior 1.41%) and y/y 6.52%, PPI ex food, energy and trade y/y 4.86%. Unemployment was 4.1% (prior 4.2) and payrolls rose 165.0k. September core PCE was 3.12% y/y. Yields have risen sharply over the past week: the 2-year went from 4.46% on 5 Nov to 4.88%, and the 10-year real yield was 2.86% on 12 Nov (+8.0 bp). 10-year breakeven was 2.24% (+0.0 bp), so the rise is in real yields, not inflation compensation. Engine read: markets are pricing a hiking cycle that is still running, which pressures long-duration equities.",
+  "geopolitics": "not covered by the sources beyond unverified headlines (for example an oil headline about ongoing negotiations). Nothing there can be treated as fact.",
+  "company_news": "NVDA 8-K filed 12 Nov: Huang resigned as President, CEO and director, Kress is interim CEO, and the board is searching for a successor. Headlines (unverified) say analysts downgraded NVDA, that NVDA and the Nasdaq went oversold, and that options price a 9% earnings swing for NVDA's report this week. META filed an 8-K on 12 Nov for a euro notes offering in six tranches, with coupons from 4.300% (2031) to 6.400% (2065). Engine read: heavy long-dated issuance by a mega-cap adds to the supply and term-premium narrative; the filing does not state a purpose."
+ },
+ "dominant_driver": "Fed and rates",
+ "driver_reason": "The 2-year, 10-year and 30-year yields all rose on 13 Nov (+2.0, +5.0, +4.0 bp), the 10-year real yield is up sharply since 9 Nov, and Polymarket prices a 25 bps December hike at 86.5% with a further 9.2% on a 50+ bps hike. The NVDA CEO exit is a large single-stock overlay on the Nasdaq-100, but rates are the common backdrop across the last two weeks.",
+ "leader": "QQQ",
+ "leader_reason": "The Nasdaq-100 minus S&P 500 was -0.82 pct pts last session, with VXN minus VIX at 10.08 pts, so Nasdaq-100 volatility is priced well above the S&P's. The 5-session gap is +1.03 pct pts, so QQQ led the rebound and then the pullback; it is the higher-beta index in both directions. COR1M at 11.8 is low, which suggests stock-specific moves rather than a broad market move.",
+ "overlap_with_previous": {
+  "continuing": [
+   "No previous brief exists, so nothing to compare."
+  ],
+  "new": [
+   "Rates-driven pressure on tech",
+   "NVDA CEO resignation and the NVDA earnings event this week (headlines)",
+   "Fed hike pricing at 86.5% for a 25 bps December hike",
+   "META euro bond issuance"
+  ],
+  "fading": [
+   "Oil as a driver: Brent has fallen from 120.15 on 30 Oct to 92.14 on 11 Nov (stale data)"
+  ],
+  "echo_check": "First run, so no earlier brief to echo. Most Cboe posts in the feed are old archive commentaries (the text refers to 2024) re-dated 2026-11-15, so I did not use their market claims. Only their titles in the related-posts list refer to the weeks of 2 Nov and 9 Nov. Headlines repeating 'hike' and 'Nvidia' are repetition, not new evidence, apart from the 8-K."
+ },
+ "scheduled_events": [
+  {
+   "when_vienna": "Mon 16 Nov 18:00",
+   "event": "Fed Chairman Warsh speaks (no consensus numbers)",
+   "why_it_matters": "With a December hike priced at 86.5%, any change in tone on pace or size could move yields and tech.",
+   "source": "consensus (unofficial)"
+  },
+  {
+   "when_vienna": "Tue 17 Nov 14:30",
+   "event": "Advance Monthly Retail Sales. Unofficial consensus: retail sales m/m 0.2% (prior 0.8%), core 0.4% (prior 0.9%)",
+   "why_it_matters": "A strong print would reinforce the hike path and the rise in real yields; a weak one would test the idea that the economy can absorb more tightening.",
+   "source": "FRED release calendar (time); consensus (unofficial) for figures"
+  }
+ ],
+ "outlook": {
+  "next_day": {
+   "lower_pct": -0.9,
+   "upper_pct": 0.9,
+   "confidence": "low",
+   "confidence_reason": "VXN is 29.38 and recent daily moves were large, so the band is wider than the same-regime history (p25 -0.66, p75 0.76). The Warsh speech and weekend NVDA headlines are unknowns.",
+   "scenarios": [
+    {
+     "name": "bear",
+     "prob": 30,
+     "text": "Continued rate pressure and NVDA-driven selling extend Friday's decline; the Nasdaq-100 falls more than 0.9%.",
+     "invalidation": "Yields stop rising and the Nasdaq-100 outperforms the S&P 500."
+    },
+    {
+     "name": "base",
+     "prob": 40,
+     "text": "A choppy session within roughly +/-0.9% while the market waits for Warsh and Tuesday's retail sales.",
+     "invalidation": "A decisive move beyond either cut point, or VXN jumping well above its Friday close of 29.38."
+    },
+    {
+     "name": "bull",
+     "prob": 30,
+     "text": "A rebound after the Friday decline, helped by a softer-sounding Fed or a calmer rates market; the Nasdaq-100 gains more than 0.9%.",
+     "invalidation": "10-year yield pushes beyond 5.15% with VVIX still rising."
+    }
+   ],
+   "history_probs": {
+    "bear": 19.9,
+    "base": 58.9,
+    "bull": 21.2,
+    "n": 2090
+   },
+   "probs_normalized": {
+    "bear": 30.0,
+    "base": 40.0,
+    "bull": 30.0
+   }
+  },
+  "next_week": {
+   "lower_pct": -2.5,
+   "upper_pct": 2.5,
+   "confidence": "low",
+   "confidence_reason": "The week holds retail sales, the FOMC minutes (Wed 18 Nov 20:00 Vienna per unofficial consensus calendar) and, per headlines, NVDA earnings. The first NVDA report without its founder CEO is not in the base rates. History (p25 -1.33, p75 1.89) is widened because VXN is elevated.",
+   "scenarios": [
+    {
+     "name": "bear",
+     "prob": 28,
+     "text": "Hawkish minutes or data push yields higher and the NVDA event disappoints; the Nasdaq-100 falls more than 2.5%.",
+     "invalidation": "10-year yield falls back toward 4.98% (its 10 Nov level) and the HY spread stays near 3.2."
+    },
+    {
+     "name": "base",
+     "prob": 44,
+     "text": "Two-way trade as rate and NVDA risks offset; the weekly change stays between -2.5% and +2.5%.",
+     "invalidation": "A close beyond a cut point on two consecutive days."
+    },
+    {
+     "name": "bull",
+     "prob": 28,
+     "text": "A relief rally on a well-received NVDA report and stable yields; the Nasdaq-100 gains more than 2.5%.",
+     "invalidation": "2-year yield above 4.88% and Polymarket pricing for a 50+ bps hike rising from 9.2%."
+    }
+   ],
+   "history_probs": {
+    "bear": 14.9,
+    "base": 67.4,
+    "bull": 17.7,
+    "n": 2086
+   },
+   "probs_normalized": {
+    "bear": 28.0,
+    "base": 44.0,
+    "bull": 28.0
+   }
+  },
+  "next_month": {
+   "lower_pct": -4,
+   "upper_pct": 5,
+   "confidence": "low",
+   "confidence_reason": "The same-regime history is p25 -2.64, p50 1.48 and p75 4.54. I widened the lower cut for elevated VXN and a live hiking cycle (10-year at 5.15%), and kept the historical upside drift. The 9 Dec and 10 Dec Polymarket events cover the December FOMC.",
+   "scenarios": [
+    {
+     "name": "bear",
+     "prob": 27,
+     "text": "Rising yields, hike repricing and uncertainty about NVDA leadership drive a drawdown of more than 4%.",
+     "invalidation": "Yields retreat and the Fed path is priced lower than the current 25 bps December hike."
+    },
+    {
+     "name": "base",
+     "prob": 43,
+     "text": "Volatile range-bound trading with the Nasdaq-100 between -4% and +5% over 21 sessions.",
+     "invalidation": "A new regime in VIX or the 10-year yield that breaks the current range."
+    },
+    {
+     "name": "bull",
+     "prob": 30,
+     "text": "The hiking path is priced in, oil stays well below its late-October level, and tech recovers; the Nasdaq-100 gains more than 5%.",
+     "invalidation": "Core inflation re-accelerating and a 50+ bps hike gaining probability from 9.2%."
+    }
+   ],
+   "history_probs": {
+    "bear": 18.9,
+    "base": 60.5,
+    "bull": 20.6,
+    "n": 2074
+   },
+   "probs_normalized": {
+    "bear": 27.0,
+    "base": 43.0,
+    "bull": 30.0
+   }
+  }
+ },
+ "record_comment": "no graded forecasts yet",
+ "watch_list": [
+  "Warsh speech Mon 18:00 Vienna: tone on the pace of hikes",
+  "10-year yield vs 5.15% and 2-year vs 4.88%",
+  "NVDA-related news flow: interim CEO, analyst reactions and earnings date (headlines, unverified)",
+  "VXN minus VIX (10.08 pts) and COR1M (11.8)"
+ ],
+ "memory_update": {
+  "running_thesis": "Rates and a hiking Fed (Polymarket: 25 bps December hike 86.5%) are the main macro backdrop. The 10-year is at 5.15% and the real yield is rising. Nasdaq-100 is the higher-beta index (VXN minus VIX 10.08) and fell 1.22% on 13 Nov versus 0.40% for the S&P. NVDA CEO Huang resigned (8-K), a large single-stock overlay before NVDA earnings. Credit (HY OAS 3.2) shows no stress. Oil fell sharply from late October (stale data).",
+  "open_questions": [
+   "Does the NVDA CEO change alter the earnings reaction?",
+   "Will retail sales and FOMC minutes harden the December hike path?",
+   "Is the 5 Nov Nasdaq-100 drop of 6.36% fully digested?"
+  ],
+  "themes": {
+   "Fed hikes and rising yields": "new, strong",
+   "NVDA leadership change": "new",
+   "Oil retreat": "fading, data stale to 11 Nov",
+   "Tech volatility (VXN near 29)": "elevated"
+  }
+ },
+ "id": "2026-11-15-manual",
+ "slot": "manual",
+ "slot_label": "Manual run",
+ "made_utc": "2026-11-15T14:50:50.096252+00:00",
+ "ref_date": "2026-11-13",
+ "model": "claude-sonnet-5-5",
+ "usage": {
+  "input_tokens": 32833,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "output_tokens": 6445,
+  "output_tokens_details": {
+   "thinking_tokens": 2227
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "number_flags": [],
+ "posts_used": [
+  {
+   "title": "Defensive Positioning Beneath A Calm Vol Ma",
+   "url": "https://www.cboe.com/insights/posts/defensive-positioning-beneath-a-calm-vol-ma",
+   "date": "2026-11-15",
+   "text_source": "full_article",
+   "older": false
+  },
+  {
+   "title": "Week O",
+   "url": "https://www.cboe.com/insights/posts/week-o",
+   "date": "2026-11-15",
+   "text_source": "full_article",
+   "older": false
+  },
+  {
+   "title": "SPX\u00ae Realized Skew Most Inverted in Over 20 Years",
+   "url": "https://www.cboe.com/insights/posts/spx-realized-skew-most-inverted-in-over-20-years",
+   "date": "2026-11-15",
+   "text_source": "full_article",
+   "older": false
+  },
+  {
+   "title": "Rates Volatility Nears 1-Year Low Ahead of FOMC",
+   "url": "https://www.cboe.com/insights/posts/rates-volatility-nears-1-year-low-ahead-of-fomc",
+   "date": "2026-11-15",
+   "text_source": "full_article",
+   "older": false
+  },
+  {
+   "title": "Gold Volatility Surges Higher on Upside Call Demand",
+   "url": "https://www.cboe.com/insights/posts/gold-volatility-surges-higher-on-upside-call-demand",
+   "date": "2026-11-15",
+   "text_source": "full_article",
+   "older": false
+  },
+  {
+   "title": "VIX\u00ae Option Volumes Jumps to Highest Since Feb18",
+   "url": "https://www.cboe.com/insights/posts/vix-option-volumes-jumps-to-highest-since-feb-18",
+   "date": "2026-11-15",
+   "text_source": "full_article",
+   "older": false
+  },
+  {
+   "title": "Earnings Buoy Risk Sentiment as Volatility Falls",
+   "url": "https://www.cboe.com/insights/posts/earnings-buoy-risk-sentiment-as-volatility-falls",
+   "date": "2026-11-15",
+   "text_source": "full_article",
+   "older": false
+  },
+  {
+   "title": "SPX\u00ae Index Vol Metrics Normalize Quickly Post Monday Jump",
+   "url": "https://www.cboe.com/insights/posts/spx-index-vol-metrics-normalize-quickly-post-monday-jump",
+   "date": "2026-11-15",
+   "text_source": "full_article",
+   "older": false
+  },
+  {
+   "title": "Volatility Normalizes Yet Caution Remains",
+   "url": "https://www.cboe.com/insights/posts/volatility-normalizes-yet-caution-remains",
+   "date": "2026-11-15",
+   "text_source": "full_article",
+   "older": false
+  },
+  {
+   "title": "Equity Convexity Bid As Traders Position for Powell Pivot",
+   "url": "https://www.cboe.com/insights/posts/equity-convexity-bid-as-traders-position-for-powell-pivot-live",
+   "date": "2026-11-15",
+   "text_source": "full_article",
+   "older": false
+  },
+  {
+   "title": "US Elections Day Risk Rises as Trump Gains in the Polls",
+   "url": "https://www.cboe.com/insights/posts/us-elections-day-risk-rises-as-trump-gains-in-the-polls-live",
+   "date": "2026-11-15",
+   "text_source": "full_article",
+   "older": false
+  },
+  {
+   "title": "Election Risk Premium Continues to Widen into Elections Week",
+   "url": "https://www.cboe.com/insights/posts/election-risk-premium-continues-to-widen-into-elections-week-live",
+   "date": "2026-11-15",
+   "text_source": "full_article",
+   "older": false
+  }
+ ]
+}

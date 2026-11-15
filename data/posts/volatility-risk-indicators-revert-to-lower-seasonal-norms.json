@@ -1,0 +1,13 @@
+{
+ "slug": "volatility-risk-indicators-revert-to-lower-seasonal-norms",
+ "url": "https://www.cboe.com/insights/posts/volatility-risk-indicators-revert-to-lower-seasonal-norms",
+ "title": "Volatility Risk Indicators Revert to Lower Seasonal Norms",
+ "summary": "",
+ "author": "",
+ "published": "2026-11-15T14:50:51.740546+00:00",
+ "category": "macro_volatility_digest",
+ "from_category_page": true,
+ "text": "Volatility Risk Indicators Revert to Lower Seasonal Norms\nIn a complete reversal of the prior week\u2019s market action, implied volatilities declined across asset classes last week on the back of robust tech earnings, the anticipation of potential Fed rate cuts, and optimism of a breakthrough in Trump-Putin talks to end the 3yr conflict. Equity market volatility led the decline, with all major measures of equity market risk (vol, vol-of-vol, & correlation) reverting towards the lowest levels of the summer. (see chart below)\nWe published last Friday our comprehensive VIX index decomposition model, breaking down changes in the VIX index into 6 principal components (see full report here , register for the upcoming Aug 14th webinar here\nApplying our framework to last week\u2019s VIX index move, we find that just under half of the move was priced in, with an additional 3 pts coming from a parallel shift lower in the SPX\u00ae index vol surface (i.e. fixed strike vols declining) and an unwind of downside hedges.\nEquity-bond correlation collapsed last week as concerns over economic growth overtake inflationary fears, with the 1M rolling correlation between SPX-IG Bonds dropping from +66% to -30% (1-year low).\nChart: 1-Year Percentile Ranks for Major Volatility Risk Indicators\nRelated Posts\nWeek of 11/9/2026: No Contagion (Yet): Equity Vol Spikes, Macro Vol Fades\nWeek of 11/2/2026: Tech Rout, Muted Vol: Bullish Positioning Unwinds\nWeek of 10/26/2026: Tech Risk Premium Rising Ahead of Key Earnings",
+ "text_source": "full_article",
+ "fetched_utc": "2026-11-15T14:56:39.014203+00:00"
+}

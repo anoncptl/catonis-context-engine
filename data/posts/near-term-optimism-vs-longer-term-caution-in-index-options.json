@@ -1,0 +1,13 @@
+{
+ "slug": "near-term-optimism-vs-longer-term-caution-in-index-options",
+ "url": "https://www.cboe.com/insights/posts/near-term-optimism-vs-longer-term-caution-in-index-options",
+ "title": "Near Term Optimism vs. Longer Term Caution in Index Options",
+ "summary": "",
+ "author": "",
+ "published": "2026-11-15T14:50:51.740564+00:00",
+ "category": "macro_volatility_digest",
+ "from_category_page": true,
+ "text": "Near Term Optimism vs. Longer Term Caution in Index Options\nImplied volatilities fell across asset classes last week on the back of better US payrolls data, allaying concerns of a growth slowdown. Expectations of Fed easing have reduced significantly, with the OIS market now pricing just 1.7 cuts for the year (down from 4 in April). While bond yields increased, they did so on the back of better data rather than concerns over US fiscal sustainability \u2013 as a result, interest rate volatility fell across the board, with both the MOVE and VIXTLT indices lower wk/wk.\nWhile equity volatility has normalized across regions, there is a sharp difference in the volatility risk premium in US vs. Europe and the rest of the world. For example, while the 1M implied-realized vol spread is negative for SPX/RTY/QQQ, the vol risk premium is positive and significant for SX5E/DAX and MXEA/MXEF. The divergence is largely a function of higher realized vol in the US in recent weeks (SPX 1M realized vol of 16.7% vs MXEF at 10.7%), while the options market is pricing for that to abate significantly (both SPX and MXEF 1M implied vol trading ~13.5%).\nSkew flattened for short-dated options last week as investors used calls to chase the rally. This was particularly pronounced in small caps. Demand for upside calls in RTY (and IWM), as measured by RTY 1M call skew (25D/50D ratio), surged from the 8th percentile low to the 85th percentile high over the past year. Longer-term, however, caution still prevails, with longer-dated skew trading at elevated levels across indices. SPX 6M skew, for example, is in the 93rd percentile high while RTY 6M skew is in the 86th percentile high.\nChart: Upside Chasing Evident in RTY and IWM Options\nRelated Posts\nWeek of 11/9/2026: No Contagion (Yet): Equity Vol Spikes, Macro Vol Fades\nWeek of 11/2/2026: Tech Rout, Muted Vol: Bullish Positioning Unwinds\nWeek of 10/26/2026: Tech Risk Premium Rising Ahead of Key Earnings",
+ "text_source": "full_article",
+ "fetched_utc": "2026-11-15T14:56:55.934477+00:00"
+}

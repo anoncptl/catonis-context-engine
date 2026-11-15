@@ -1,0 +1,15 @@
+{
+ "done": {
+  "manual": "2026-11-15"
+ },
+ "last_fingerprint": "00013e02c2efd7b3",
+ "log": [
+  {
+   "utc": "2026-11-15T14:50:50.096252+00:00",
+   "slot": "manual",
+   "ai_call": true,
+   "sources_ok": 13,
+   "sources_total": 14
+  }
+ ]
+}

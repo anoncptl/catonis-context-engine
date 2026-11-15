@@ -1,0 +1,71 @@
+[
+ {
+  "id": "2026-11-13|next_day",
+  "brief": "2026-11-15-manual",
+  "made_utc": "2026-11-15T14:50:50.096252+00:00",
+  "horizon": "next_day",
+  "sessions": 1,
+  "metric": "Nasdaq-100 % change",
+  "ref_date": "2026-11-13",
+  "lower_pct": -0.9,
+  "upper_pct": 0.9,
+  "probs": {
+   "bear": 30.0,
+   "base": 40.0,
+   "bull": 30.0
+  },
+  "history_probs": {
+   "bear": 19.9,
+   "base": 58.9,
+   "bull": 21.2,
+   "n": 2090
+  },
+  "status": "open"
+ },
+ {
+  "id": "2026-11-13|next_week",
+  "brief": "2026-11-15-manual",
+  "made_utc": "2026-11-15T14:50:50.096252+00:00",
+  "horizon": "next_week",
+  "sessions": 5,
+  "metric": "Nasdaq-100 % change",
+  "ref_date": "2026-11-13",
+  "lower_pct": -2.5,
+  "upper_pct": 2.5,
+  "probs": {
+   "bear": 28.0,
+   "base": 44.0,
+   "bull": 28.0
+  },
+  "history_probs": {
+   "bear": 14.9,
+   "base": 67.4,
+   "bull": 17.7,
+   "n": 2086
+  },
+  "status": "open"
+ },
+ {
+  "id": "2026-11-13|next_month",
+  "brief": "2026-11-15-manual",
+  "made_utc": "2026-11-15T14:50:50.096252+00:00",
+  "horizon": "next_month",
+  "sessions": 21,
+  "metric": "Nasdaq-100 % change",
+  "ref_date": "2026-11-13",
+  "lower_pct": -4.0,
+  "upper_pct": 5.0,
+  "probs": {
+   "bear": 27.0,
+   "base": 43.0,
+   "bull": 30.0
+  },
+  "history_probs": {
+   "bear": 18.9,
+   "base": 60.5,
+   "bull": 20.6,
+   "n": 2074
+  },
+  "status": "open"
+ }
+]

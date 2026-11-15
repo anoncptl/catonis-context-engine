@@ -1,0 +1,13 @@
+{
+ "slug": "expected-stock-dispersion-falls-to-near-1-year-low",
+ "url": "https://www.cboe.com/insights/posts/expected-stock-dispersion-falls-to-near-1-year-low",
+ "title": "Expected Stock Dispersion Falls to Near 1-Year Low",
+ "summary": "",
+ "author": "",
+ "published": "2026-11-15T14:50:51.740509+00:00",
+ "category": "macro_volatility_digest",
+ "from_category_page": true,
+ "text": "Expected Stock Dispersion Falls to Near 1-Year Low\nThe biggest mover in the cross-asset vol space last week was gold, with GLD 1M implied vol now trading in the 76 th percentile high. As usual, the bid to vol came on the back of a rally in the underlying metal, with demand for calls increasing post Fed easing. GLD vol is expensive not only in absolute terms but also relative to realized vol, with the 1M implied-realized spread widening to the 98 th percentile high. Gold is the only asset with implied vol still trading above average \u2013 almost every other asset class vol has fallen to near 1-year lows.\nSPX index skew steepened across tenors last week as demand for hedging increased, with 1M put skew jumping to the 92 nd percentile high. Term structure also steepened notably, with the SPX 1Y-1M vol spread widening to a 1-year high of 5.7%. Implied dispersion, on the other hand, fell significantly, with the DSPX SM index nearing a 1-year low of 27% (see chart below) as stock fundamentals take a backseat to the macro outlook.\nFollowing their Monday launch last week, MGTN (Cboe Mag-10 Index) options saw strong interest on Friday with the sell-off in Tech/AI. Nearly 3600 contracts traded ($158M notional), mostly by institutional investors stepping in to monetize the pickup in volatility (42%/58% buy vs. sell split). The volume was concentrated in the Jan/Feb expiries with puts outpacing calls by over 2x.\nRelated Posts\nWeek of 11/9/2026: No Contagion (Yet): Equity Vol Spikes, Macro Vol Fades\nWeek of 11/2/2026: Tech Rout, Muted Vol: Bullish Positioning Unwinds\nWeek of 10/26/2026: Tech Risk Premium Rising Ahead of Key Earnings",
+ "text_source": "full_article",
+ "fetched_utc": "2026-11-15T14:56:12.390035+00:00"
+}

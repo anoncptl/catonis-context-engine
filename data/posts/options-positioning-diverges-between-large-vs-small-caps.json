@@ -1,0 +1,13 @@
+{
+ "slug": "options-positioning-diverges-between-large-vs-small-caps",
+ "url": "https://www.cboe.com/insights/posts/options-positioning-diverges-between-large-vs-small-caps",
+ "title": "Options Positioning Diverges Between Large- vs. Small-Caps",
+ "summary": "",
+ "author": "",
+ "published": "2026-11-15T14:50:51.740541+00:00",
+ "category": "macro_volatility_digest",
+ "from_category_page": true,
+ "text": "Options Positioning Diverges Between Large- vs. Small-Caps\nImplied volatilities were mixed last week as investors weighed labor market weakness against rising odds of additional Fed easing. SPX \u00ae options volumes jumped, with over 5M contracts trading on Friday, making it the 2nd highest volume day on record (behind only April 4th). Despite the elevated volume, the VIX \u00ae index fell, with investors choosing to focus on the positives of Fed easing rather than the weakening jobs picture. A similar sentiment can be seen in the credit markets with VIXIG down 1 vol pt wk/wk.\nWhile SPX ATM vols were relatively muted last week, skew continued to steepen as hedging demand increased. Skew (25-delta ratio) is now in the 90+ percentile highs across the front 6-months tenors. The steepness in SPX (and QQQ) skew contrasts with the flatness in RTY skew (i.e. more bullish positioning). While SPX 1M skew is in the 93rd percentile high currently, RTY 1M skew is in the 36th percentile low (see chart below). Notably, RTY has outperformed SPX index five weeks in a row now.\nEquity-rate correlation collapsed last week as stocks rallied while bond yields fell, with the 1M rolling correlation between the two flipping from a high of +50% in August to -50% now. This is unusual as typically equity-rate correlation increases during periods of economic uncertainty. However, as we\u2019ve seen in recent years, this correlation has been fairly unstable, in a challenge to traditional 60/40 portfolios.\nChart: Option Market Positioning Diverges Between Large- vs. Small-Caps\nRelated Posts\nWeek of 11/9/2026: No Contagion (Yet): Equity Vol Spikes, Macro Vol Fades\nWeek of 11/2/2026: Tech Rout, Muted Vol: Bullish Positioning Unwinds\nWeek of 10/26/2026: Tech Risk Premium Rising Ahead of Key Earnings",
+ "text_source": "full_article",
+ "fetched_utc": "2026-11-15T14:56:34.391186+00:00"
+}

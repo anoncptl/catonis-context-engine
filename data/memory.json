@@ -1,0 +1,14 @@
+{
+ "running_thesis": "Rates and a hiking Fed (Polymarket: 25 bps December hike 86.5%) are the main macro backdrop. The 10-year is at 5.15% and the real yield is rising. Nasdaq-100 is the higher-beta index (VXN minus VIX 10.08) and fell 1.22% on 13 Nov versus 0.40% for the S&P. NVDA CEO Huang resigned (8-K), a large single-stock overlay before NVDA earnings. Credit (HY OAS 3.2) shows no stress. Oil fell sharply from late October (stale data).",
+ "open_questions": [
+  "Does the NVDA CEO change alter the earnings reaction?",
+  "Will retail sales and FOMC minutes harden the December hike path?",
+  "Is the 5 Nov Nasdaq-100 drop of 6.36% fully digested?"
+ ],
+ "themes": {
+  "Fed hikes and rising yields": "new, strong",
+  "NVDA leadership change": "new",
+  "Oil retreat": "fading, data stale to 11 Nov",
+  "Tech volatility (VXN near 29)": "elevated"
+ }
+}

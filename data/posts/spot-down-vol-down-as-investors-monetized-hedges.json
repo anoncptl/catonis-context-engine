@@ -1,0 +1,13 @@
+{
+ "slug": "spot-down-vol-down-as-investors-monetized-hedges",
+ "url": "https://www.cboe.com/insights/posts/spot-down-vol-down-as-investors-monetized-hedges",
+ "title": "\u201cSpot Down, Vol Down\u201d as Investors Monetized Hedges",
+ "summary": "",
+ "author": "",
+ "published": "2026-11-15T14:50:51.740486+00:00",
+ "category": "macro_volatility_digest",
+ "from_category_page": true,
+ "text": "\u201cSpot Down, Vol Down\u201d as Investors Monetized Hedges\nWhile oil prices have whipsawed on fast changing headlines, positioning in the oil options market has remained consistently bullish, with demand for calls far outpacing demand for puts. This is true even for longer-dated options, indicating fear of a sustained disruption to oil supply. Oil volatility continued to climb higher, with the OVX Index gaining another 15 pts last week to 120% - highest on record outside of the 2020 covid pandemic (when oil prices went negative).\nIn contrast, equity volatility declined last week even as the SPX \u00ae Index fell, in an unusual \u201cspot down, vol down\u201d move. The expected VIX \u00ae Index move, given spot down -1.6%, was +2.0 pts. Instead, it fell -2.3 pts wk/wk to 27%. Our decomposition analysis showed that it was driven by combination of lower fixed strike vols and significantly lower demand for hedges, with the latter contributing -5.0 pts to the VIX Index as investors monetized hedges. This shift in positioning can also be seen in the flattening in SPX skew, particularly put skew, with 1M put skew (25D/50D ratio) falling from a 1-year high to the 35th percentile low. See chart below.\nAlso notable is the move in credit vol, which has spiked higher on the back of both increasing geopolitical risk as well as private credit concerns. For most of the past year, credit volatility has ranked as the cheapest cross-asset vol, signaling confidence in the broader US economy. Not anymore \u2013 the VIXIG Index has almost tripled from its January low.\nChart: SPX Put Skew Collapsed Last Week as Investors Monetized Hedges\nRelated Posts\nWeek of 11/9/2026: No Contagion (Yet): Equity Vol Spikes, Macro Vol Fades\nWeek of 11/2/2026: Tech Rout, Muted Vol: Bullish Positioning Unwinds\nWeek of 10/26/2026: Tech Risk Premium Rising Ahead of Key Earnings",
+ "text_source": "full_article",
+ "fetched_utc": "2026-11-15T14:55:53.734716+00:00"
+}
