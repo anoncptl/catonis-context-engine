@@ -699,13 +699,14 @@ def headlines(now=None):
 def fed_press(now=None):
     now = now or datetime.now(timezone.utc)
     cutoff = now - timedelta(days=FED_DAYS)
-    entries = []
-    for u in FED_URLS:
+    entries, errors = [], []
+    for u in FED_URLS:  # each feed counts on its own; fail only if every feed fails
         try:
             entries += list(_entries(_get(u)))
-        except Exception:
-            if u == FED_URLS[0]:
-                raise
+        except Exception as e:
+            errors.append("%s: %s" % (u.rsplit("/", 1)[-1], e))
+    if errors and not entries:
+        raise RuntimeError("; ".join(errors))
     out, seen = [], set()
     for en in entries:
         if en["link"] in seen or not en["title"] or en["dt"] is None or en["dt"] < cutoff:
