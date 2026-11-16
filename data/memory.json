@@ -1,14 +1,16 @@
 {
- "running_thesis": "Rates and a hiking Fed (Polymarket: 25 bps December hike 86.5%) are the main macro backdrop. The 10-year is at 5.15% and the real yield is rising. Nasdaq-100 is the higher-beta index (VXN minus VIX 10.08) and fell 1.22% on 13 Nov versus 0.40% for the S&P. NVDA CEO Huang resigned (8-K), a large single-stock overlay before NVDA earnings. Credit (HY OAS 3.2) shows no stress. Oil fell sharply from late October (stale data).",
+ "running_thesis": "Fed hikes and rising yields are the main backdrop: Polymarket puts a 25 bps December hike at 87.5% and 50+ bps at 9.1%, with the 10-year at 5.15% and the real yield rising. The Nasdaq-100 is the higher-beta index (VXN minus VIX 10.08) and fell 1.22% on 13 Nov vs 0.40% for the S&P 500. NVDA's CEO resigned (8-K), an overlay before earnings. Credit shows no stress (HY OAS 3.2). Next tests: Warsh speech Mon, retail sales Tue, FOMC minutes Wed.",
  "open_questions": [
   "Does the NVDA CEO change alter the earnings reaction?",
-  "Will retail sales and FOMC minutes harden the December hike path?",
-  "Is the 5 Nov Nasdaq-100 drop of 6.36% fully digested?"
+  "Will Warsh, retail sales and FOMC minutes harden the December hike path, including the 50+ bps odds?",
+  "Is the 5 Nov Nasdaq-100 drop of 6.36% fully digested?",
+  "Does the COR1M jump signal rising index-level correlation?"
  ],
  "themes": {
-  "Fed hikes and rising yields": "new, strong",
-  "NVDA leadership change": "new",
-  "Oil retreat": "fading, data stale to 11 Nov",
-  "Tech volatility (VXN near 29)": "elevated"
+  "Fed hikes and rising yields": "continuing, strong (Polymarket 87.5%)",
+  "NVDA leadership change": "continuing, headline-driven echo",
+  "Oil retreat": "fading, official data stale to 11 Nov, headlines conflict",
+  "Tech volatility (VXN near 29)": "elevated",
+  "Implied correlation (COR1M 11.8)": "new, jumped on 13 Nov from a low level"
  }
 }

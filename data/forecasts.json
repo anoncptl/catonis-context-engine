@@ -1,69 +1,69 @@
 [
  {
   "id": "2026-11-13|next_day",
-  "brief": "2026-11-15-manual",
-  "made_utc": "2026-11-15T14:50:50.096252+00:00",
+  "brief": "2026-11-16-manual",
+  "made_utc": "2026-11-16T09:44:26.167433+00:00",
   "horizon": "next_day",
   "sessions": 1,
   "metric": "Nasdaq-100 % change",
   "ref_date": "2026-11-13",
-  "lower_pct": -0.9,
-  "upper_pct": 0.9,
+  "lower_pct": -1.0,
+  "upper_pct": 1.0,
   "probs": {
-   "bear": 30.0,
-   "base": 40.0,
+   "bear": 32.0,
+   "base": 38.0,
    "bull": 30.0
   },
   "history_probs": {
-   "bear": 19.9,
-   "base": 58.9,
-   "bull": 21.2,
+   "bear": 18.4,
+   "base": 62.6,
+   "bull": 19.0,
    "n": 2090
   },
   "status": "open"
  },
  {
   "id": "2026-11-13|next_week",
-  "brief": "2026-11-15-manual",
-  "made_utc": "2026-11-15T14:50:50.096252+00:00",
+  "brief": "2026-11-16-manual",
+  "made_utc": "2026-11-16T09:44:26.167433+00:00",
   "horizon": "next_week",
   "sessions": 5,
   "metric": "Nasdaq-100 % change",
   "ref_date": "2026-11-13",
-  "lower_pct": -2.5,
-  "upper_pct": 2.5,
+  "lower_pct": -3.0,
+  "upper_pct": 3.0,
   "probs": {
-   "bear": 28.0,
-   "base": 44.0,
+   "bear": 30.0,
+   "base": 42.0,
    "bull": 28.0
   },
   "history_probs": {
-   "bear": 14.9,
-   "base": 67.4,
-   "bull": 17.7,
+   "bear": 11.6,
+   "base": 76.1,
+   "bull": 12.3,
    "n": 2086
   },
   "status": "open"
  },
  {
   "id": "2026-11-13|next_month",
-  "brief": "2026-11-15-manual",
-  "made_utc": "2026-11-15T14:50:50.096252+00:00",
+  "brief": "2026-11-16-manual",
+  "made_utc": "2026-11-16T09:44:26.167433+00:00",
   "horizon": "next_month",
   "sessions": 21,
   "metric": "Nasdaq-100 % change",
   "ref_date": "2026-11-13",
-  "lower_pct": -4.0,
-  "upper_pct": 5.0,
+  "lower_pct": -4.5,
+  "upper_pct": 5.5,
   "probs": {
-   "bear": 27.0,
-   "base": 43.0,
+   "bear": 29.0,
+   "base": 41.0,
    "bull": 30.0
   },
   "history_probs": {
-   "bear": 18.9,
-   "base": 60.5,
-   "bull": 20.6,
+   "bear": 17.2,
+   "base": 66.4,
+   "bull": 16.4,
    "n": 2074
   },
   "status": "open"
