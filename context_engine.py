@@ -30,7 +30,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).parent))
-import facts, scoring, sitegen, sources  # noqa: E402
+import discord, facts, scoring, sitegen, sources  # noqa: E402
 
 MODEL = os.environ.get("CONTEXT_ENGINE_MODEL", "claude-sonnet-5-5")
 VIENNA, NEW_YORK = ZoneInfo("Europe/Vienna"), ZoneInfo("America/New_York")
@@ -60,8 +60,8 @@ SLOTS = {
 
 
 # ---------- secret scrubbing ----------
-SECRET_ENV = ("ANTHROPIC_API_KEY", "FRED_API_KEY", "BLS_API_KEY", "CONTACT_EMAIL")
-SECRET_PATTERNS = [re.compile(r"sk-ant-[A-Za-z0-9_\-]{8,}"), re.compile(r"(api_key|registrationkey|x-api-key)=[^&\s\"']+", re.I)]
+SECRET_ENV = ("ANTHROPIC_API_KEY", "FRED_API_KEY", "BLS_API_KEY", "CONTACT_EMAIL", "DISCORD_WEBHOOK_URL")
+SECRET_PATTERNS = [re.compile(r"https://(?:\w+\.)?discord(?:app)?\.com/api/webhooks/\S+"), re.compile(r"sk-ant-[A-Za-z0-9_\-]{8,}"), re.compile(r"(api_key|registrationkey|x-api-key)=[^&\s\"']+", re.I)]
 
 
 def scrub(text):
@@ -418,6 +418,14 @@ def run(now, slot, slot_date, force):
             brief = make_brief(now, slot, today_v, new_posts, s, ledger, fact_list, rates, vix_now, ndx_hist, vix_hist)
             runs["last_fingerprint"] = fp
             s["status"]["ai"] = {"name": "Claude brief", "ok": True, "detail": "brief %s written" % brief["id"]}
+            if os.environ.get("DISCORD_WEBHOOK_URL", "").strip():
+                try:
+                    ok_n = sum(1 for v in s["status"].values() if v["ok"])
+                    res = discord.post(brief, ok_n, len(s["status"]), scrub)
+                    s["status"]["discord"] = {"name": "Discord post", "ok": True, "detail": res}
+                except Exception as e:
+                    s["status"]["discord"] = {"name": "Discord post", "ok": False, "detail": scrub(str(e))[:160]}
+                print("    Discord: %s" % s["status"]["discord"]["detail"])
         except SystemExit:
             raise
         except Exception as e:
