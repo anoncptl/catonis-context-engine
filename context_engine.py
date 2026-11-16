@@ -49,12 +49,13 @@ PRIORITY = {"todaysmarkettake": 0, "macro_volatility_digest": 0, "indices": 1,
             "DerivativesResearch": 2, "trading_investing": 2}
 MAX_CHARS_PER_POST, MAX_PROMPT_POSTS, BRIEFS_IN_CONTEXT, KEEP_SNAPSHOT_DAYS = 4500, 12, 5, 30
 
-# Run slots. GitHub's clock is UTC without daylight saving, so the workflow fires at two UTC times per
-# slot and this table decides which firing is the real one. Each slot runs at most once per day.
+# Run slots. GitHub fires the workflow every 30 minutes on weekdays because it sometimes drops scheduled
+# runs. This table decides whether a firing falls inside a slot; each slot runs at most once per day, so the
+# first firing that lands in a slot does the work and later ones exit in seconds.
 SLOTS = {
-    "morning": {"tz": VIENNA, "start": (6, 30), "end": (8, 29), "label": "Morning (overnight news)"},
+    "morning": {"tz": VIENNA, "start": (6, 30), "end": (9, 29), "label": "Morning (overnight news)"},
     "preopen": {"tz": NEW_YORK, "start": (8, 35), "end": (9, 25), "label": "Pre-open (after 08:30 ET data)"},
-    "evening": {"tz": NEW_YORK, "start": (17, 0), "end": (18, 59), "label": "Evening (after the US close)"},
+    "evening": {"tz": NEW_YORK, "start": (17, 30), "end": (19, 59), "label": "Evening (after the US close)"},
 }
 
 
@@ -530,6 +531,14 @@ def check():
     print("\n%d of %d working. Failed sources are skipped automatically and shown on the site." % (sum(r[1] for r in rows), len(rows)))
 
 
+def report(ran):
+    """Tell the GitHub workflow whether to save and publish (skipped when nothing ran)."""
+    out = os.environ.get("GITHUB_OUTPUT")
+    if out:
+        with open(out, "a") as f:
+            f.write("ran=%s\n" % ("true" if ran else "false"))
+
+
 def main():
     now = datetime.now(timezone.utc)
     if "--check" in sys.argv:
@@ -541,14 +550,16 @@ def main():
     if "--scheduled" in sys.argv:
         slot, slot_date = current_slot(now)
         if not slot:
-            print("Outside every run slot (this firing is the daylight-saving twin). Nothing to do.")
-            return
+            print("Outside every run slot. Nothing to do.")
+            return report(False)
         runs = load_json(RUNS_FILE, {"done": {}})
         if runs.get("done", {}).get(slot) == slot_date:
             print("The %s run already happened today. Nothing to do." % slot)
-            return
-        return run(now, slot, slot_date, force=False)
-    return run(now, "manual", now.astimezone(VIENNA).date().isoformat(), force=True)
+            return report(False)
+        run(now, slot, slot_date, force=False)
+        return report(True)
+    run(now, "manual", now.astimezone(VIENNA).date().isoformat(), force=True)
+    report(True)
 
 
 if __name__ == "__main__":

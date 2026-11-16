@@ -2,14 +2,10 @@ name: Context Engine
 
 on:
   schedule:
-    # GitHub runs on UTC and ignores daylight saving, so every slot fires twice.
-    # The engine checks the real Vienna or New York time and only runs once per slot.
-    - cron: "30 5 * * 1-5"    # morning slot (07:00 Vienna in winter)
-    - cron: "30 6 * * 1-5"    # morning slot (summer twin)
-    - cron: "40 12 * * 1-5"   # pre-open slot (08:40 New York in summer)
-    - cron: "40 13 * * 1-5"   # pre-open slot (08:40 New York in winter)
-    - cron: "30 21 * * 1-5"   # evening slot (17:30 New York in summer)
-    - cron: "30 22 * * 1-5"   # evening slot (17:30 New York in winter)
+    # GitHub sometimes drops scheduled runs, so this fires every 30 minutes on weekdays.
+    # The engine only does work inside its three slots (about 06:30, 14:40 and 23:30 Vienna)
+    # and only once per slot per day. Every other firing exits in seconds and publishes nothing.
+    - cron: "10,40 5-23 * * 1-5"
   workflow_dispatch: {}       # adds the "Run workflow" button
 
 permissions:
@@ -24,7 +20,7 @@ concurrency:
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
     environment:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
@@ -36,6 +32,7 @@ jobs:
           python-version: "3.12"
 
       - name: Run the engine
+        id: engine
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
@@ -47,9 +44,9 @@ jobs:
           else
             python context_engine.py --scheduled
           fi
-          [ -f site/index.html ] || python context_engine.py --site
 
       - name: Save memory and briefs to the repository
+        if: steps.engine.outputs.ran == 'true'
         run: |
           git config user.name "context-engine-bot"
           git config user.email "context-engine-bot@users.noreply.github.com"
@@ -62,9 +59,12 @@ jobs:
             git push
           fi
 
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+      - if: steps.engine.outputs.ran == 'true'
+        uses: actions/configure-pages@v5
+      - if: steps.engine.outputs.ran == 'true'
+        uses: actions/upload-pages-artifact@v3
         with:
           path: site
       - id: deploy
+        if: steps.engine.outputs.ran == 'true'
         uses: actions/deploy-pages@v4

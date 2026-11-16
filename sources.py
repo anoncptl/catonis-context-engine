@@ -19,7 +19,7 @@ Sources (all free):
   fed         Federal Reserve press releases and speeches (official).
   cboe_idx    Cboe index history files: VIX, VXN, VVIX, SKEW, VIX9D, COR1M where published.
 """
-import csv, io, json, math, os, re, time, urllib.request
+import csv, io, json, math, os, re, time, urllib.error, urllib.request
 import xml.etree.ElementTree as ET
 from email.utils import parsedate_to_datetime
 from datetime import date, datetime, timedelta, timezone
@@ -278,7 +278,13 @@ def _ics_dt(field):
         return datetime.strptime(v, "%Y%m%dT%H%M%SZ").replace(tzinfo=timezone.utc)
     if "T" in v:
         dt = datetime.strptime(v[:15], "%Y%m%dT%H%M%S")
-        return dt.replace(tzinfo=ZoneInfo(tz.group(1)) if tz else NEW_YORK)
+        zone = NEW_YORK
+        if tz:
+            try:
+                zone = ZoneInfo(tz.group(1))
+            except Exception:  # legacy names such as "US-Eastern" used by BLS
+                zone = NEW_YORK
+        return dt.replace(tzinfo=zone)
     return datetime.strptime(v[:8], "%Y%m%d").replace(hour=8, minute=30, tzinfo=NEW_YORK)
 
 
@@ -572,7 +578,15 @@ def last_us_close(now=None):
 
 def gdelt(now):
     hours = max(6, min(72, math.ceil((now - last_us_close(now)).total_seconds() / 3600)))
-    data = json.loads(_get(GDELT_URL % (quote_plus(GDELT_QUERY), hours)) or "{}")
+    url = GDELT_URL % (quote_plus(GDELT_QUERY), hours)
+    try:
+        text = _get(url)
+    except urllib.error.HTTPError as e:
+        if e.code != 429:
+            raise
+        time.sleep(8)  # GDELT allows one request every 5 seconds per address
+        text = _get(url)
+    data = json.loads(text or "{}")
     out, seen = [], set()
     for a in data.get("articles", []):
         k = _norm(a.get("title", ""))[:80]
