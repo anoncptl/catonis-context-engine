@@ -21,7 +21,7 @@
    "COR1M +18.12% to 11.8 on 13 Nov",
    "Meta euro-denominated bond offering 8-K",
    "Monday headlines (unverified) on the Anthropic IPO as an AI-trade test",
-   "Warsh speech today at 18:00 Vienna"
+   "Warsh speech today at 18:00 CET"
   ],
   "fading": [
    "Oil retreat: official data is stale to 11 Nov and headlines now say oil is rebounding"
@@ -164,12 +164,12 @@
  "record_comment": "No graded forecasts yet (0 resolved, 3 open), so calibration cannot be assessed.",
  "watch_list": [
   "Warsh tone vs Polymarket December hike odds (25 bps 87.5%, 50+ bps 9.2%)",
-  "10-year and real-yield direction around retail sales (Tue 14:30 Vienna)",
+  "10-year and real-yield direction around retail sales (Tue 14:30 CET)",
   "NVDA CEO change and earnings reaction; Anthropic IPO headlines (unverified)",
   "COR1M and VXN minus VIX: correlation rising vs tech-specific volatility"
  ],
  "memory_update": {
-  "running_thesis": "Fed hikes and rising yields are the main backdrop: Polymarket has a 25 bps December hike at 87.5% and 50+ bps at 9.2%, with the 10-year at 5.15% and real yields rising. The Nasdaq-100 is the higher-beta index (VXN minus VIX 10.08) and fell 1.22% on 13 Nov vs 0.40% for the S&P 500. NVDA's CEO resigned (8-K), an overlay before earnings. Credit shows no stress (HY OAS 3.2). Next tests: Warsh speech Mon 18:00 Vienna, retail sales Tue, FOMC minutes Wed. Cboe posts supplied are old content.",
+  "running_thesis": "Fed hikes and rising yields are the main backdrop: Polymarket has a 25 bps December hike at 87.5% and 50+ bps at 9.2%, with the 10-year at 5.15% and real yields rising. The Nasdaq-100 is the higher-beta index (VXN minus VIX 10.08) and fell 1.22% on 13 Nov vs 0.40% for the S&P 500. NVDA's CEO resigned (8-K), an overlay before earnings. Credit shows no stress (HY OAS 3.2). Next tests: Warsh speech Mon 18:00 CET, retail sales Tue, FOMC minutes Wed. Cboe posts supplied are old content.",
   "open_questions": [
    "Does the NVDA CEO change alter the earnings reaction?",
    "Will Warsh, retail sales and FOMC minutes harden the December hike path, including the 50+ bps odds?",

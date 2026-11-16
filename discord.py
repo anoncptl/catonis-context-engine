@@ -48,7 +48,7 @@ def card(brief, sources_ok=None, sources_total=None):
         fields.append({"name": "%s · confidence %s" % (H_LABEL[h], o.get("confidence", "?")), "value": _cut("\n".join(lines), 1000), "inline": False})
     ev = brief.get("scheduled_events") or []
     if ev:
-        fields.append({"name": "Scheduled (Vienna time)", "value": _cut("\n".join("`%s` %s" % (e.get("when_vienna", ""), e.get("event", "")) for e in ev[:6]), 1000), "inline": False})
+        fields.append({"name": "Scheduled (CET)", "value": _cut("\n".join("`%s` %s" % (e.get("when_vienna", ""), e.get("event", "")) for e in ev[:6]), 1000), "inline": False})
     wl = brief.get("watch_list") or []
     if wl:
         fields.append({"name": "Watch", "value": _cut("\n".join("• " + x for x in wl[:4]), 1000), "inline": False})

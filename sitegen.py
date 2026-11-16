@@ -59,7 +59,7 @@ def e(x):
 
 def fmt_time(iso):
     try:
-        return datetime.fromisoformat(iso).astimezone(VIENNA).strftime("%a %d %b %Y, %H:%M Vienna")
+        return datetime.fromisoformat(iso).astimezone(VIENNA).strftime("%a %d %b %Y, %H:%M %Z")
     except Exception:
         return e(iso)
 
@@ -118,7 +118,7 @@ def render_brief(b, prefix=""):
                    'If the engine keeps beating that tick on the record page, its probabilities add something. If not, they do not.</p></section>' % "".join(hz))
     ev = b.get("scheduled_events") or []
     if ev:
-        out.append('<section class="panel"><h2>Scheduled events (engine)</h2><div class="scroll"><table><tr><th>When (Vienna)</th><th>Event</th><th>Why it matters</th><th>Source</th></tr>%s</table></div></section>' % "".join(
+        out.append('<section class="panel"><h2>Scheduled events (engine)</h2><div class="scroll"><table><tr><th>When (CET)</th><th>Event</th><th>Why it matters</th><th>Source</th></tr>%s</table></div></section>' % "".join(
             '<tr><td class="n">%s</td><td>%s</td><td>%s</td><td class="muted small">%s</td></tr>' % (e(x.get("when_vienna")), e(x.get("event")), e(x.get("why_it_matters")), e(x.get("source"))) for x in ev))
     ov = b.get("overlap_with_previous") or {}
     out.append('<section class="grid g3">%s</section>' % "".join(
@@ -161,12 +161,12 @@ def render_status(st):
                 e(c["what"]), e(c["date"]), e(c["a"]), e(c["b"]), "ok" if c["agree"] else "warn", "agree" if c["agree"] else "DISAGREE", e(c["note"])) for c in ch))
     cal = st.get("calendar") or []
     if cal:
-        out.append('<section class="panel"><h2>Official calendar · next 14 days</h2><div class="scroll"><table><tr><th>Vienna</th><th>New York</th><th>Event</th><th>Source</th></tr>%s</table></div></section>' % "".join(
+        out.append('<section class="panel"><h2>Official calendar · next 14 days</h2><div class="scroll"><table><tr><th>CET</th><th>New York</th><th>Event</th><th>Source</th></tr>%s</table></div></section>' % "".join(
             '<tr><td class="n">%s</td><td class="n muted">%s</td><td>%s</td><td class="small muted">%s%s</td></tr>' % (
                 e(c["when_vienna"]), e(c["when_new_york"]), e(c["event"]), e(c["source"]), " · " + e(c["time_note"]) if c.get("time_note") else "") for c in cal))
     cons = st.get("consensus") or []
     if cons:
-        out.append('<details><summary>Consensus forecasts · unofficial</summary><div class="scroll"><table><tr><th>Vienna</th><th>Event</th><th>Forecast</th><th>Previous</th></tr>%s</table></div></details>' % "".join(
+        out.append('<details><summary>Consensus forecasts · unofficial</summary><div class="scroll"><table><tr><th>CET</th><th>Event</th><th>Forecast</th><th>Previous</th></tr>%s</table></div></details>' % "".join(
             '<tr><td class="n">%s</td><td>%s</td><td class="n">%s</td><td class="n muted">%s</td></tr>' % (
                 e(c["when_vienna"]), e(c["event"]), e(c.get("forecast") or "–"), e(c.get("previous") or "–")) for c in cons))
     ed = st.get("edgar") or []

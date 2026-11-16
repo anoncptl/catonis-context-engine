@@ -82,7 +82,7 @@
    "lower_pct": -2.5,
    "upper_pct": 2.5,
    "confidence": "low",
-   "confidence_reason": "The week holds retail sales, the FOMC minutes (Wed 18 Nov 20:00 Vienna per unofficial consensus calendar) and, per headlines, NVDA earnings. The first NVDA report without its founder CEO is not in the base rates. History (p25 -1.33, p75 1.89) is widened because VXN is elevated.",
+   "confidence_reason": "The week holds retail sales, the FOMC minutes (Wed 18 Nov 20:00 CET per unofficial consensus calendar) and, per headlines, NVDA earnings. The first NVDA report without its founder CEO is not in the base rates. History (p25 -1.33, p75 1.89) is widened because VXN is elevated.",
    "scenarios": [
     {
      "name": "bear",
@@ -155,7 +155,7 @@
  },
  "record_comment": "no graded forecasts yet",
  "watch_list": [
-  "Warsh speech Mon 18:00 Vienna: tone on the pace of hikes",
+  "Warsh speech Mon 18:00 CET: tone on the pace of hikes",
   "10-year yield vs 5.15% and 2-year vs 4.88%",
   "NVDA-related news flow: interim CEO, analyst reactions and earnings date (headlines, unverified)",
   "VXN minus VIX (10.08 pts) and COR1M (11.8)"

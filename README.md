@@ -12,14 +12,14 @@ Three times every weekday it:
 
 1. Reads Cboe Insights (daily market take, weekly volatility digest, all insights).
 2. Pulls official data: US Treasury yields, FRED (real yields, credit spread, oil, VIX, VXN, PCE), BLS (CPI, PPI, jobs), the official BLS, FRED and FOMC calendars, SEC 8-K filings from the 10 largest Nasdaq-100 companies, Fed releases, Cboe volatility indexes (VIX, VXN, VVIX, SKEW, VIX9D, COR1M if published), Fed odds from Kalshi and Polymarket, and headlines from GDELT and Google News.
-3. Asks Claude for a brief: what happened, dominant driver, QQQ or SPX leading, scheduled events in Vienna time, and three testable scenarios.
+3. Asks Claude for a brief: what happened, dominant driver, QQQ or SPX leading, scheduled events in CET, and three testable scenarios.
 4. Checks every number in the brief against its sources. Anything it cannot match is sent back to Claude once to fix, and anything still unmatched is flagged on the page.
 5. Grades older scenarios automatically with Brier scores and compares them with history.
 6. Publishes the page and saves its memory.
 
 Run times (Monday to Friday, GitHub may start them 5 to 30 minutes late):
 
-| Run | Vienna time | Why |
+| Run | CET | Why |
 |---|---|---|
 | Morning | about 06:30 to 07:30 | overnight news, weekly digest on Mondays |
 | Pre-open | about 14:40 | after the 08:30 New York data releases, before the 15:30 open. Only calls Claude if something new arrived. |
@@ -151,7 +151,7 @@ From now on it runs by itself. You only open the page.
 - **Numbers check**: says "clean", or lists figures it could not match to a source.
 - **Key numbers**: every number with its source and date.
 - **Cross-source checks**: the same yield or VIX value from two sources. "DISAGREE" means one of them is off.
-- **Official calendar**: next 14 days in Vienna and New York time.
+- **Official calendar**: next 14 days in CET and New York time.
 - **SEC 8-K filings**: leadership changes, results, agreements at the 10 biggest Nasdaq-100 companies.
 - **Record** (top menu): every graded scenario. The engine is only adding value if its Brier score is below "History". Give it at least 20 graded forecasts per horizon before judging.
 - **Archive**: every past brief.

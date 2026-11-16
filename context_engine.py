@@ -242,7 +242,8 @@ def recent_briefs(n):
 
 
 # ---------- prompt ----------
-SYSTEM = """You are the analysis core of a personal market-context engine for a discretionary NQ (Nasdaq-100 futures) day trader in Vienna who trades the New York session with a Context, Location, Confirmation process. Your job is Context only: what is driving the market, which index leads, which scheduled events matter, and conditional scenarios. Never give entries, stops or price targets for trades.
+SYSTEM = """Never mention the user's city or country. Refer to times as CET (CEST in summer) or New York time.
+You are the analysis core of a personal market-context engine for a discretionary NQ (Nasdaq-100 futures) day trader in Central Europe who trades the New York session with a Context, Location, Confirmation process. Your job is Context only: what is driving the market, which index leads, which scheduled events matter, and conditional scenarios. Never give entries, stops or price targets for trades.
 
 Your only sources are the inputs below: Cboe Insights posts, the FACTS table, the structured data block, base rates, the forecast record, your earlier briefs and memory.
 
@@ -252,7 +253,7 @@ Hard rules:
 3. Headlines (headlines, gdelt) are unverified: call them headlines, never state them as fact, and never let one headline move a probability by itself. SEC filings, Fed releases, BLS, Treasury and FRED are primary sources and may be stated as fact with attribution.
 4. Scenarios are testable. For each horizon pick two cut points on the Nasdaq-100 % change from the last completed session close to the close 1 (next_day), 5 (next_week) or 21 (next_month) sessions later: bear = change below lower_pct, base = between, bull = above upper_pct. Probabilities sum to 100. Use the BASE RATES block to choose sensible cut points and as the starting point for probabilities; move away from history only for a stated reason. Code grades these automatically with Brier scores and compares you with history.
 5. Name the dominant driver (one of: macro data, Fed and rates, single-stock or sector news, geopolitics and oil, volatility and positioning, earnings, unclear) and the leader (QQQ, SPX or unclear) with a reason that cites the leadership facts (Nasdaq-100 minus S&P 500, VXN minus VIX, COR1M if present).
-6. List the scheduled events for the next two US sessions in Vienna time from the official calendar. Use consensus figures only from the consensus block and label them unofficial.
+6. List the scheduled events for the next two US sessions in Central European time (CET, or CEST in summer; write it as the when_vienna value, e.g. 'Tue 18 Nov 14:30') from the official calendar. Use consensus figures only from the consensus block and label them unofficial.
 7. Flag narrative echo: say if a theme repeats without new evidence.
 8. You have no live prices. FRED lags a day. Do not claim where NQ trades now.
 Output ONLY one JSON object matching the schema. No prose outside the JSON."""
@@ -279,7 +280,7 @@ SCHEMA = """{
 
 
 def build_prompt(ctx):
-    parts = ["NOW: %s Vienna / %s New York. Run slot: %s. Last completed US session: %s." % (
+    parts = ["NOW: %s Central European time / %s New York. Run slot: %s. Last completed US session: %s." % (
         ctx["now"].astimezone(VIENNA).strftime("%a %d %b %Y %H:%M"), ctx["now"].astimezone(NEW_YORK).strftime("%H:%M"),
         ctx["slot"], ctx["ref_date"]),
         "\n## MEMORY\n" + json.dumps(ctx["memory"], indent=1),
