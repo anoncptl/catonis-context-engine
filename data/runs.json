@@ -2,7 +2,7 @@
  "done": {
   "manual": "2026-11-16"
  },
- "last_fingerprint": "1f778054e5cdadce",
+ "last_fingerprint": "80e08a26b75fd6c5",
  "log": [
   {
    "utc": "2026-11-15T14:50:50.096252+00:00",
@@ -17,6 +17,13 @@
    "ai_call": true,
    "sources_ok": 12,
    "sources_total": 14
+  },
+  {
+   "utc": "2026-11-16T09:55:48.886186+00:00",
+   "slot": "manual",
+   "ai_call": true,
+   "sources_ok": 14,
+   "sources_total": 15
   }
  ]
 }

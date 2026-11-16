@@ -1,5 +1,5 @@
 {
- "utc": "2026-11-16T09:44:26.167433+00:00",
+ "utc": "2026-11-16T09:55:48.886186+00:00",
  "slot": "manual",
  "status": {
   "cboe": {
@@ -54,8 +54,8 @@
   },
   "fed": {
    "name": "Federal Reserve releases",
-   "ok": false,
-   "detail": "HTTP Error 404: Not Found"
+   "ok": true,
+   "detail": "9 items in 7 days"
   },
   "cboe_idx": {
    "name": "Cboe index history",
@@ -71,6 +71,11 @@
    "name": "Claude brief",
    "ok": true,
    "detail": "brief 2026-11-16-manual written"
+  },
+  "discord": {
+   "name": "Discord post",
+   "ok": true,
+   "detail": "posted (HTTP 204)"
   }
  },
  "facts": [
@@ -418,7 +423,7 @@
    "id": "F35",
    "group": "Fed odds",
    "label": "Fed Decision in December?: 50+ bps increase",
-   "value": 9.1,
+   "value": 9.2,
    "unit": "% implied",
    "change": null,
    "as_of": "2026-12-10",
@@ -458,7 +463,7 @@
    "id": "F39",
    "group": "Fed odds",
    "label": "How many dissent at the December Fed meeting?: 1",
-   "value": 13.9,
+   "value": 14.1,
    "unit": "% implied",
    "change": null,
    "as_of": "2026-12-10",
@@ -468,7 +473,7 @@
    "id": "F40",
    "group": "Fed odds",
    "label": "How many dissent at the December Fed meeting?: 3",
-   "value": 8.2,
+   "value": 8.1,
    "unit": "% implied",
    "change": null,
    "as_of": "2026-12-10",
@@ -478,7 +483,7 @@
    "id": "F41",
    "group": "Fed odds",
    "label": "How many dissent at the December Fed meeting?: 2",
-   "value": 5.3,
+   "value": 4.5,
    "unit": "% implied",
    "change": null,
    "as_of": "2026-12-10",
@@ -813,7 +818,71 @@
    "excerpt": "Item 5.02. Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers; Compensatory Arrangements of Certain Officers. On November 11, 2026, the Board of Directors, or the Board, of NVIDIA Corporation accepted the resignation of Jen-Hsun Huang, as NVIDIA\u2019s President, Chief Executive Officer and member of the Board, effective immediately. Following Mr. Huang\u2019s resignation, the Board appointed NVIDIA\u2019s Executive Vice President and Chief Financial Officer Colette M. Kress, age 59, to serve as interim Chief Executive Officer, while the Board conducts a search for a new Chief Executive Officer. Ms. Kress has served as NVIDIA\u2019s Executive Vice President and Chief Financial Officer since 2013 and will continue in that role while she serves as the interim Chief Executive Officer. On November 11, 2026, the Board appointed Harvey C. Jones, age 73, as Chair of"
   }
  ],
- "fed": null,
+ "fed": [
+  {
+   "time_vienna": "Sat 14 Nov 01:00",
+   "title": "Jefferson, New Technology, Old Questions: Productivity Puzzles  and the Macroeconomy",
+   "category": "Speech",
+   "summary": "Speech At the University of California, San Diego Economic Roundtable, San Diego, California",
+   "link": "https://www.federalreserve.gov/newsevents/speech/jefferson20261113a.htm"
+  },
+  {
+   "time_vienna": "Fri 13 Nov 22:15",
+   "title": "Agencies extend comment period for proposed third-party risk management guidance",
+   "category": "Banking and Consumer Regulatory Policy",
+   "summary": "Agencies extend comment period for proposed third-party risk management guidance",
+   "link": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20261113a.htm"
+  },
+  {
+   "time_vienna": "Thu 12 Nov 19:30",
+   "title": "Federal Reserve Board announces pricing, effective January 1, 2027, for payment services the Federal Reserve Banks provide to banks and credit unions, and changes to streamline and adjust their check services",
+   "category": "Other Announcements",
+   "summary": "Federal Reserve Board announces pricing, effective January 1, 2027, for payment services the Federal Reserve Banks provide to banks and credit unions, and changes to streamline and adjust their check services",
+   "link": "https://www.federalreserve.gov/newsevents/pressreleases/other20261112a.htm"
+  },
+  {
+   "time_vienna": "Thu 12 Nov 18:45",
+   "title": "Federal Reserve announces revised tentative schedule of Federal Open Market Committee meetings in 2027",
+   "category": "Monetary Policy",
+   "summary": "Federal Reserve announces revised tentative schedule of Federal Open Market Committee meetings in 2027",
+   "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261112a.htm"
+  },
+  {
+   "time_vienna": "Thu 12 Nov 17:00",
+   "title": "Federal Reserve Board issues enforcement action with former employee of United Community Bank",
+   "category": "Enforcement Actions",
+   "summary": "Federal Reserve Board issues enforcement action with former employee of United Community Bank",
+   "link": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261112a.htm"
+  },
+  {
+   "time_vienna": "Thu 12 Nov 16:00",
+   "title": "Barr, American Inequality and the Future of AI",
+   "category": "Speech",
+   "summary": "Speech At Yale University, New Haven, Connecticut",
+   "link": "https://www.federalreserve.gov/newsevents/speech/barr20261112a.htm"
+  },
+  {
+   "time_vienna": "Tue 10 Nov 21:30",
+   "title": "Bowman, The U.S. Economy and Considerations for Monetary Policy",
+   "category": "Speech",
+   "summary": "Speech At the C. Peter McColough Series on International Economics Council on Foreign Relations, Washington, D.C.",
+   "link": "https://www.federalreserve.gov/newsevents/speech/bowman20261110a.htm"
+  },
+  {
+   "time_vienna": "Tue 10 Nov 10:00",
+   "title": "Waller, The Economic Outlook and Some Thoughts on Labor Market Dynamism",
+   "category": "Speech",
+   "summary": "Speech At the Bank of England Watchers Conference King\u2019s Business School and Money, Macro and Finance Society, London, United Kingdom",
+   "link": "https://www.federalreserve.gov/newsevents/speech/waller20261110a.htm"
+  },
+  {
+   "time_vienna": "Mon 09 Nov 22:00",
+   "title": "Federal Reserve Board announces approval of two applications by Mutual Federal Bancorp, MHC, and MFB Bancorp, Inc.",
+   "category": "Orders on Banking Applications",
+   "summary": "Federal Reserve Board announces approval of two applications by Mutual Federal Bancorp, MHC, and MFB Bancorp, Inc.",
+   "link": "https://www.federalreserve.gov/newsevents/pressreleases/orders20261109a.htm"
+  }
+ ],
  "odds": [
   {
    "venue": "Polymarket",
@@ -857,7 +926,7 @@
     },
     {
      "outcome": "50+ bps increase",
-     "prob_pct": 9.1
+     "prob_pct": 9.2
     },
     {
      "outcome": "No change",
@@ -884,15 +953,15 @@
     },
     {
      "outcome": "1",
-     "prob_pct": 13.9
+     "prob_pct": 14.1
     },
     {
      "outcome": "3",
-     "prob_pct": 8.2
+     "prob_pct": 8.1
     },
     {
      "outcome": "2",
-     "prob_pct": 5.3
+     "prob_pct": 4.5
     },
     {
      "outcome": "4+",
@@ -902,6 +971,20 @@
   }
  ],
  "headlines": [
+  {
+   "time_vienna": "Mon 16 Nov 10:43",
+   "query": "S&P 500 futures",
+   "headline": "US Futures Mixed as Traders Monitor Nvidia Earnings and Anthropic IPO",
+   "publisher": "kaohoon international",
+   "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9CZGRTR29FVGxuMDVSSnJLdk1vbnlaMXFzNmpjbEFjZFVhQ1hzS2NLT0xOYTVHSUFsQW5VLTJGMDZNUk55dHEyTjM2ZEdQdTREWWNiZmRxZE5nck51UldLOA?oc=5"
+  },
+  {
+   "time_vienna": "Mon 16 Nov 10:43",
+   "query": "Nasdaq",
+   "headline": "Stock Futures Slip Ahead of Pivotal Week for AI Trade With Nvidia, Anthropic in Focus",
+   "publisher": "WSJ",
+   "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOS3NsU18tTmdONnFEdnZIZzUyb3JXVFVpQjhhQ04tcG15MFpUclFpeTVUczh3X3RmRWZ4eWQ2Tk5SbUwtVlBvaGNSQ3N6MXRYa0tSVk43alVlMFZNTGZRdnNDWHlQcUwxMjNtR3lnVU5zbkJpQkpta0R5anRiQ01rVTZhNDdqbEtsMWFnWms2ZzFHVUJLSWlZdXhlZFlIWXk0dUVOS3M2elFGOFhuRFU3bk9MOVgtMnJ6azltUGktWXdhd2lRaUZMYkp5UQ?oc=5"
+  },
   {
    "time_vienna": "Mon 16 Nov 10:17",
    "query": "Treasury yields",
@@ -938,11 +1021,11 @@
    "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOVEd5NVJWZS1kNTBIZ0ZXYjFlS0wzVnl1Ml9mZUVqTklMUEk1OVlNQzVVVGEzN1I2U1FPT3QyRWdTV051anBtb050U0RkWk1xMGNjRDJZRE9uYTNnZFpBUmp3bjVZVFNHUnpzUmwtN0VEVXQwVW9nRDlBZi1WNGo1R3NVWmdhVzFsZHVNV3RLZ21DY3FOdUVNMFNDTGF2SkZrb1BKeWVpRDJZNU9nOUhzdjdXQ09nRlNzaGljV2JOekU?oc=5"
   },
   {
-   "time_vienna": "Mon 16 Nov 09:48",
+   "time_vienna": "Mon 16 Nov 09:41",
    "query": "oil prices",
-   "headline": "Oil Prices Rise as Fresh Attacks Renew Middle East Supply Concerns",
+   "headline": "Oil Prices Rebound as Middle East Supply Risks Persist",
    "publisher": "WSJ",
-   "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQUDJZaXFhY1pnSUd1OEp5V2NtbWc2Z2ZvUW41OU1pOGdBWVRPbllCZWhHMExvNWlsSjR3cmFsNFpjV0d1WkRGTEdUcEZNMUNfZ19lS1oxQTlDanlUMXZxZzV4NVhNd29tZWJ6bUI2a0E2SnhPSmJZRVViNUgtREpsZmVUOWN3TFFoU1BTRURIOUZCOGlkNkc0TU41TlNMeTB6b09XSk9MSE92YXBtOFh4WXd5ajFRR3Nna3YxdmxPdEg?oc=5"
+   "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOMG9QUTRTOFdKeFlQeU5fLTdmZnJjdllnZFFQb0tRcU4wOGUxaDdkUThaMERudUlRM3hyalVvMVVVZHJkZUM2OWVSWXR5ZThzSEVEOGo0WjdncmVET1NtcHZ3a1ZScFZTaGt4dlpWYnlMRGtpT3ZoM3p0cWhmN1FCNHk1LTI0dGxHMDZwQmpxcDgtSmNQNzNOZFJqbFFDVE44OVNYcERB?oc=5"
   },
   {
    "time_vienna": "Mon 16 Nov 09:35",
@@ -964,13 +1047,6 @@
    "headline": "November 16, 2026: 30-Year U.S. Treasury 15 min \u00b7 3:00\u20133:15 AM EST Prediction Market",
    "publisher": "Robinhood",
    "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQMmVhWHN4S0xUV21MbHItRHBrODRDTGIzcVd0eG9oSUJfeGNMWUQ1UWpnQXFHXzdsLUJXOC1mSjRmczdHVjlIdjd2dHlTUC1Nb05vT1NfclVzelFFS2p4S1V1Q296c3BnM1JYcjdXalpqMXN1Ymk5SktNV0lyeG5OX3ROTEQzODlLRnNnLUFTUlJsOFJicHNyTi11dTg1Y0xhVWppRU4xWVJod3BfZ1QzS2wwdmtVQTl1UzBYZlFJZno?oc=5"
-  },
-  {
-   "time_vienna": "Mon 16 Nov 09:01",
-   "query": "oil prices",
-   "headline": "Tracking U.S., state and county gas prices, in maps and charts. Updated daily.",
-   "publisher": "NBC News",
-   "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPMWgwSVltbkxJVmRPeHZtbUNLb0wwcEFVUnpnc0MzdEsxSTVTd3NnVGI3TGQ5Y2t2RHVad05VZmF2UmlIZFhFSS00Q05xTEpJSW9nbnJXMndOLVU1bmFLUkJCeGtnSE9uODE0NnFWUmU2YS1rM2FfbjgzNDRObmZpYk9DMWoyUTlUMkZBMU04THAxTFFLdEJockxn?oc=5"
   },
   {
    "time_vienna": "Mon 16 Nov 08:39",
@@ -1050,6 +1126,13 @@
    "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPRU5KUl9nb01NalpsMHFtbGxpbV9nSm9QclR5OFdfMWJtYWpoMkh2N191VVpXR0ZQZWNnODZlSmp4NUZyV1VJcHJLUUpkUE9xbDNObUVnWTNNUElmWUx6QXBXWjByaVZiV1YybWtBazRjWk5ha0E0UmxKa2ZsaktpazBuVDYwUTFYU0g0Ykg0T1AtMWxYZWRBOVMwZTFHcDlrQnlsZWU4Mm1JU015QnFISV9TOEZlZUU?oc=5"
   },
   {
+   "time_vienna": "Mon 16 Nov 07:25",
+   "query": "oil prices",
+   "headline": "Tracking U.S., state and county gas prices, in maps and charts. Updated daily.",
+   "publisher": "NBC News",
+   "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPMWgwSVltbkxJVmRPeHZtbUNLb0wwcEFVUnpnc0MzdEsxSTVTd3NnVGI3TGQ5Y2t2RHVad05VZmF2UmlIZFhFSS00Q05xTEpJSW9nbnJXMndOLVU1bmFLUkJCeGtnSE9uODE0NnFWUmU2YS1rM2FfbjgzNDRObmZpYk9DMWoyUTlUMkZBMU04THAxTFFLdEJockxn?oc=5"
+  },
+  {
    "time_vienna": "Mon 16 Nov 07:05",
    "query": "Nasdaq",
    "headline": "Nasdaq, NVDA Go Oversold for the First Time Since April 2025 Lows",
@@ -1062,25 +1145,10 @@
    "headline": "Dow Jones and Nasdaq Futures Reverse as Nvidia Earnings and Anthropic IPOSet the Tone",
    "publisher": "FXLeaders",
    "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPSHFQVm5CMktzcUlUejNyRVh4QTdVeXNCSF9PNURLZEh2UGlpZXNGT3dwQzkwOHdGZlpIeENUd2d2SzJsMTFiUnd0R1dLQXNWR3pUNDRQUk5lMHMzQk9GeWJqTmdBb3VkR1piNWxNcTYxYlF5VGdicHNJWkVuYnA1Q2cxVXMzUlA1RzQxWEwtLWhBWHZZdFFiMzJvcWFHMDZKdGxxVmpoeW1pSURDT0RQeERzWVNJbHRQNnJMU0o1NWd2SG9vSktn?oc=5"
-  },
-  {
-   "time_vienna": "Mon 16 Nov 06:32",
-   "query": "AI stocks Nvidia",
-   "headline": "Morning Bid: AI selloff resumes as Nvidia earnings loom",
-   "publisher": "Reuters",
-   "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQcFRFLTFjUUlGa0plMjBTUHVpcVFwMXkzbWR2MWs3TnBjSE9tLUJWb2Z1Szg3MV9ON010RmN1VXJMMTRaMG51Ynp3ZEJBRTdnRXB6MzF6b2RzXzhDQlZIMXFZZ3BOTWIyN1ZyRi1xQ2dCbVVMNWliS1lubWVkb2plalJGWQ?oc=5"
-  },
-  {
-   "time_vienna": "Mon 16 Nov 06:25",
-   "query": "oil prices",
-   "headline": "Oil Prices Fall as Fears of a Global Supply Glut Return",
-   "publisher": "Crude Oil Prices Today | OilPrice.com",
-   "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOdktCeVItSmVGR2FrYkJfQ0tzR1doTXM2SnNLUUJ5ZW1td3ZpdkFFWEJNWUY0elhRZVhnSVZ0NjFuMGtkRmdaakpsVkpoblNScklHYnE0VXVNenFudUdrUjRYczJobTVDVnNvWVZfVFo3dTJ2WlItZ2g1SzNUaEtpdFU3TDBIYUdCcnNIZnZXWjVmWHdZQUdmejhSY0JkUWo4SXNrdk55cVdCYThFdHNtRNIBtgFBVV95cUxNalNBWlRlS2lkQWZVa2V1M0tOdTRNbGlnS0ZFZk1kSmJHOEMtTElOOHVlTDN4dzFCX1d2UmRwVHlkSDRPZ0tzakhGM2laWHRZM2Zna2xMazRXRWpTc0xaTGhwWG5ld3g4Q3pOaV8xNDNONFBXTmQtUzlTZC1raVdoNXd2dGNSNk1XdkRFajhuRS16d3ZmNl80bkRBZE1STl93WU5NdWtXSXpjUUNoaWJJVHdrRm40dw?oc=5"
   }
  ],
  "gdelt": null,
  "warnings": [
-  "GDELT global news unavailable: HTTP Error 429: Too Many Requests",
-  "Federal Reserve releases unavailable: HTTP Error 404: Not Found"
+  "GDELT global news unavailable: HTTP Error 429: Too Many Requests"
  ]
 }

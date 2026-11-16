@@ -2,7 +2,7 @@
  {
   "id": "2026-11-13|next_day",
   "brief": "2026-11-16-manual",
-  "made_utc": "2026-11-16T09:44:26.167433+00:00",
+  "made_utc": "2026-11-16T09:55:48.886186+00:00",
   "horizon": "next_day",
   "sessions": 1,
   "metric": "Nasdaq-100 % change",
@@ -25,7 +25,7 @@
  {
   "id": "2026-11-13|next_week",
   "brief": "2026-11-16-manual",
-  "made_utc": "2026-11-16T09:44:26.167433+00:00",
+  "made_utc": "2026-11-16T09:55:48.886186+00:00",
   "horizon": "next_week",
   "sessions": 5,
   "metric": "Nasdaq-100 % change",
@@ -48,7 +48,7 @@
  {
   "id": "2026-11-13|next_month",
   "brief": "2026-11-16-manual",
-  "made_utc": "2026-11-16T09:44:26.167433+00:00",
+  "made_utc": "2026-11-16T09:55:48.886186+00:00",
   "horizon": "next_month",
   "sessions": 21,
   "metric": "Nasdaq-100 % change",

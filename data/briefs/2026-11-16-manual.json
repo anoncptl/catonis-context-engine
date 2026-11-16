@@ -1,56 +1,51 @@
 {
- "headline": "Hike pricing and a 5.15% 10-year weigh on tech; Warsh and NVDA overlay ahead",
+ "headline": "Hike path and NVDA risk lead; Warsh speaks today, retail sales Tuesday",
  "what_happened": {
-  "summary": "The Nasdaq-100 closed Fri 13 Nov at 27943.74 (-1.22%) and the S&P 500 at 7561.67 (-0.40%), so tech again fell more than the broad index. The Treasury curve sold off: the 10-year closed at 5.15% (+5.0 bp) and the 2-year at 4.88% (+2.0 bp). Polymarket (prediction-market prices, not CME FedWatch) puts a 25 bps December hike at 87.5% and a 50+ bps hike at 9.1%. Monday-morning headlines (unverified) point to a cautious Asian and futures tone ahead of NVIDIA earnings, with Fed Chairman Warsh speaking later today. No live prices are available, so this brief does not say where NQ trades now.",
-  "market_action": "Nasdaq-100 -1.22% vs S&P 500 -0.40% on 13 Nov (gap -0.82 pct pts), but over the last 5 sessions the Nasdaq-100 is ahead by 1.03 pct pts. Volatility rose: VIX 19.3 (+3.21%), VXN 29.38 (+2.91%), VVIX 101.53 (+4.98%), VIX9D 17.82 (+1.77%). SKEW fell to 147.14 (-2.01%). COR1M jumped to 11.8 (+18.12%) from 9.99, a rise from a low level. The Nasdaq-100 fell 6.36% on 5 Nov, then rebounded 1.35% and 3.4% on the next two sessions.",
-  "macro": "Treasury (primary): 2y 4.88%, 10y 5.15%, 30y 5.47%, 10y-2y spread 0.27 pct pts. FRED: the 10-year real yield was 2.86% (+8.0 bp) on 12 Nov and breakevens were 2.24% (+0.0 bp) on 13 Nov. Engine read: the rise in yields looks driven by real yields and policy expectations rather than inflation compensation. HY OAS was 3.2 pct pts (-10.0 bp) on 12 Nov, so credit shows no stress. BLS Oct: CPI +0.35% m/m (prior +0.65%), core CPI +0.3%, PPI final demand 6.52% y/y, unemployment 4.1% (prior 4.2), payrolls +165.0k. Core PCE for Sep was 3.12% y/y.",
-  "geopolitics": "Not covered by the sources beyond unverified headlines. Monday-morning oil headlines conflict (one on fresh Middle East attacks lifting prices, one on supply-glut fears pushing them down, one on Trump and an Iran deal). The latest official oil data is stale to 11 Nov: Brent 92.14 $/bbl (+2.20%), WTI 89.62 $/bbl.",
-  "company_news": "NVIDIA 8-K (SEC, primary): the Board accepted the resignation of CEO Jen-Hsun Huang, effective immediately, with CFO Colette Kress as interim CEO and Harvey C. Jones appointed Chair. Meta 8-K (primary): completed a EUR senior notes offering across six tranches, a funding item, not a market driver in itself. Headlines (unverified) describe an NVIDIA-led AI selloff in Asia, a looming NVIDIA earnings report and an Anthropic IPO debut."
+  "summary": "The Nasdaq-100 closed Fri 13 Nov at 27943.74 (-1.22%) and the S&P 500 at 7561.67 (-0.40%), so tech again fell more than the broad index. The Treasury curve sold off: the 10-year closed at 5.15% (+5.0 bp) and the 2-year at 4.88% (+2.0 bp). Polymarket (prediction-market prices, not CME FedWatch) puts a 25 bps December hike at 87.5% and a 50+ bps hike at 9.2%. Monday-morning headlines (unverified) describe softer futures ahead of NVIDIA earnings and an Anthropic IPO, and some headlines say yields are easing before Fed Chairman Warsh speaks. There are no live prices in the inputs, so this brief does not say where NQ trades now.",
+  "market_action": "Nasdaq-100 -1.22% vs S&P 500 -0.40% on 13 Nov, a gap of -0.82 pct pts. Over the last 5 sessions the Nasdaq-100 is still ahead by 1.03 pct pts, which includes the rebound after the 5 Nov drop of 6.36%. VIX closed at 19.3 (+3.21%), VXN at 29.38 (+2.91%) and VVIX at 101.53 (+4.98%). SKEW fell to 147.14 (-2.01%). COR1M rose to 11.8 (+18.12%), though it is far below its 20.76 on 6 Nov.",
+  "macro": "Rates are the live variable. The 30-year closed at 5.47% (+4.0 bp), and the 10-year real yield was 2.86% (+8.0 bp) on 12 Nov. Breakeven inflation was 2.24%, so the move in yields is mostly real yields, not inflation compensation (engine read). The latest official prints are October CPI +0.35% m/m (prior +0.65%), core CPI +0.3% m/m, PPI final demand +6.52% y/y, unemployment 4.1% (prior 4.2) and payrolls +165.0k (BLS). September core PCE was 3.12% y/y (FRED). High-yield OAS was 3.2 pct pts (-10.0 bp) on 12 Nov, so credit shows no stress.",
+  "geopolitics": "Not covered by official sources. Brent was 92.14 $/bbl (+2.20%) and WTI 89.62 $/bbl on 11 Nov, so the official oil data is stale. Monday headlines (unverified) say oil is rebounding on Middle East supply risk and on Trump questioning the need for an Iran deal. These do not change anything by themselves.",
+  "company_news": "NVIDIA 8-K (primary source, filed 12 Nov): the Board accepted the resignation of CEO Jen-Hsun Huang effective immediately, and CFO Colette Kress is interim CEO while a search runs. Meta 8-K (primary source, filed 12 Nov): completed a multi-tranche euro senior notes offering, with coupons from 4.300% (2031) to 6.400% (2065). Headlines (unverified) frame this week as a test of the AI trade, with NVIDIA earnings and an Anthropic IPO."
  },
  "dominant_driver": "Fed and rates",
- "driver_reason": "Treasury yields rose across the curve on 13 Nov (10y at 5.15%) and Polymarket prices a December hike at 87.5%, with the real yield rising. Tech weakness and elevated VXN fit a rates-driven de-rating, while the NVDA CEO change is an overlay rather than the main driver.",
+ "driver_reason": "The hike path is nearly fully priced by Polymarket (25 bps at 87.5%, 50+ bps at 9.2%), and the 2-year, 10-year and 30-year yields all rose on 13 Nov. Tech fell harder than the broad index on a day when yields rose, which fits a rate-sensitive move (engine read). NVDA is an overlay, not the main driver.",
  "leader": "QQQ",
- "leader_reason": "The Nasdaq-100 fell 0.82 pct pts more than the S&P 500 on 13 Nov, and VXN minus VIX is 10.08 pts, so the tech index carries the higher risk premium. COR1M rose to 11.8, which suggests index-level moves are becoming more correlated, though it remains low.",
+ "leader_reason": "Nasdaq-100 minus S&P 500 was -0.82 pct pts on 13 Nov, and VXN minus VIX is 10.08 pts, so tech is the higher-beta, higher-vol index. The 5-session gap of +1.03 pct pts and COR1M at 11.8, still low, mean the lead is on the downside and index-level correlation is not clearly high yet (engine read).",
  "overlap_with_previous": {
   "continuing": [
-   "Fed hikes and rising yields (Polymarket December hike 87.5% vs 86.5% in the prior brief)",
-   "Elevated tech volatility (VXN 29.38)",
-   "NVDA leadership change ahead of earnings"
+   "Fed hikes and rising yields (Polymarket 87.5% for a 25 bps December hike)",
+   "NVDA CEO change ahead of earnings",
+   "Elevated tech volatility (VXN 29.38)"
   ],
   "new": [
-   "Retail sales on Tue 17 Nov and FOMC minutes on Wed 18 Nov are now the next scheduled tests of the hike path",
-   "COR1M jumped 18.12% on 13 Nov",
-   "Fed Chairman Warsh speaks today at 18:00 Vienna"
+   "COR1M +18.12% to 11.8 on 13 Nov",
+   "Meta euro-denominated bond offering 8-K",
+   "Monday headlines (unverified) on the Anthropic IPO as an AI-trade test",
+   "Warsh speech today at 18:00 Vienna"
   ],
   "fading": [
-   "Oil retreat (official data stale to 11 Nov; Monday headlines conflict)"
+   "Oil retreat: official data is stale to 11 Nov and headlines now say oil is rebounding"
   ],
-  "echo_check": "Partial narrative echo. The rates and Fed-hike theme and the NVDA theme are largely repeated from the previous brief. The only new primary evidence is a slightly higher December hike probability, higher yields and the COR1M jump. Monday's headlines on NVDA, oversold conditions and a 100% hike chance are unverified and add no new primary evidence. The Cboe posts supplied are older commentary (the dated ones are from March 2024), so they are not used as current evidence."
+  "echo_check": "Narrative echo: the NVDA and 'AI trade test' theme and the hike theme repeat across many headlines with no new primary evidence since the 12 Nov 8-K and the unchanged Polymarket odds. A headline saying there is a '100% chance' of a December hike conflicts with Polymarket's 87.5% and is not used. The Cboe posts supplied are older commentary (March 2024 content under a 15 Nov 2026 date) and add no current evidence."
  },
  "scheduled_events": [
   {
    "when_vienna": "Mon 16 Nov 18:00",
-   "event": "Fed Chairman Warsh speaks",
-   "why_it_matters": "With a December hike priced at 87.5% on Polymarket, any signal on the pace (25 bps vs 50+ bps) or on the path after December can move yields and tech. No forecast is available; the Fed release feed was unavailable.",
+   "event": "Fed Chairman Warsh speaks (no forecast available)",
+   "why_it_matters": "A test of the December hike path, including the 50+ bps odds (9.2%). It falls inside the next_day window.",
    "source": "consensus (unofficial)"
+  },
+  {
+   "when_vienna": "Tue 17 Nov 14:30",
+   "event": "Retail Sales m/m: forecast 0.2%, previous 0.8%; Core Retail Sales m/m: forecast 0.4%, previous 0.9% (unofficial figures)",
+   "why_it_matters": "A strong print would support the hike path and rising real yields, which weighed on tech on 13 Nov (engine read).",
+   "source": "FRED release calendar (time); consensus (unofficial) for forecast and previous"
   },
   {
    "when_vienna": "Tue 17 Nov 14:30",
    "event": "U.S. Import and Export Price Indexes",
-   "why_it_matters": "A further inflation read after the hot PPI (6.52% y/y); matters for the hike path.",
+   "why_it_matters": "A secondary inflation read after the CPI and PPI prints; it lands in the same minute as retail sales.",
    "source": "BLS"
-  },
-  {
-   "when_vienna": "Tue 17 Nov 14:30",
-   "event": "Advance Monthly Sales for Retail and Food Services (unofficial consensus: retail sales m/m 0.2%, prior 0.8%; core 0.4%, prior 0.9%)",
-   "why_it_matters": "A strong print would support the hike path and real yields, which pressure tech. A weak print would test the hawkish pricing.",
-   "source": "FRED release calendar"
-  },
-  {
-   "when_vienna": "Wed 18 Nov 20:00",
-   "event": "FOMC Meeting Minutes (after the next two US sessions, listed because it is a key rates event)",
-   "why_it_matters": "Shows how broad the committee's hawkish lean is, relevant for the 25 bps vs 50+ bps hike odds and the dissent market.",
-   "source": "consensus (unofficial)"
   }
  ],
  "outlook": {
@@ -58,25 +53,25 @@
    "lower_pct": -1.0,
    "upper_pct": 1.0,
    "confidence": "low",
-   "confidence_reason": "VXN at 29.38 and recent daily swings (-6.36%, +3.4%, +2.28%) argue for wider cuts than the same-regime quartiles (-0.66 / 0.76). Warsh speaks after the Vienna afternoon, with an NVDA overlay.",
+   "confidence_reason": "The window is one session with a Warsh speech and the NVDA overlay, and VXN is high at 29.38. Recent daily moves were large, so the historical same-regime quartiles (-0.66 to 0.76) are probably too narrow.",
    "scenarios": [
     {
      "name": "bear",
      "prob": 32,
-     "text": "Nasdaq-100 closes Monday below -1.0% vs the 13 Nov close. Hawkish Warsh comments or further yield pressure extend the tech de-rating, with NVDA caution as an overlay.",
-     "invalidation": "Yields stabilise or fall and the Nasdaq-100 holds near the Friday close into the US afternoon."
+     "text": "Hawkish Warsh tone or a further rise in yields, plus NVDA and AI nerves, extends the 13 Nov tech underperformance.",
+     "invalidation": "Yields stall and the Nasdaq-100 outperforms the S&P 500 through the Warsh speech."
     },
     {
      "name": "base",
      "prob": 38,
-     "text": "Nasdaq-100 ends within -1.0% to +1.0%. Markets wait for Warsh, retail sales and NVDA, with a high VXN but no new catalyst.",
-     "invalidation": "A decisive yield move or Warsh surprise pushes the close outside the band."
+     "text": "A choppy, event-driven session with no new information on the hike path. Positioning stays cautious ahead of Tuesday's data and NVDA.",
+     "invalidation": "A clear surprise from Warsh, or a sharp move in 2-year yields."
     },
     {
      "name": "bull",
      "prob": 30,
-     "text": "Nasdaq-100 closes above +1.0%. A softer Warsh tone or lower yields relieves the rates pressure, in line with the earlier rebounds after sharp drops.",
-     "invalidation": "10-year yield rises further and tech underperforms the S&P 500 again."
+     "text": "A less hawkish tone, or any easing of yields, lets tech rebound from the 13 Nov drop. Headlines call the Nasdaq oversold, which is unverified.",
+     "invalidation": "Hike odds or yields rise during the speech."
     }
    ],
    "history_probs": {
@@ -95,25 +90,25 @@
    "lower_pct": -3.0,
    "upper_pct": 3.0,
    "confidence": "low",
-   "confidence_reason": "Measured from the 13 Nov close to the close five sessions later, so it includes today. Retail sales, FOMC minutes and NVDA earnings headlines make the week event-heavy while VXN is elevated. Cuts are wider than the same-regime quartiles (-1.33 / 1.89) and closer to the p10/p90 (-3.25 / 3.24).",
+   "confidence_reason": "The week holds retail sales, the FOMC minutes, claims and NVDA earnings (a headline date, not an official one), and the new-CEO uncertainty. The same-regime history (p25 -1.33, p75 1.89) is shifted wider for elevated VXN.",
    "scenarios": [
     {
      "name": "bear",
      "prob": 30,
-     "text": "Nasdaq-100 falls more than 3.0% over the week. Strong data and hawkish Fed communication harden the hike path, with NVDA leadership uncertainty adding to the pressure.",
-     "invalidation": "Soft retail sales and minutes, with the 10-year yield falling back below its 13 Nov level."
+     "text": "Strong data and hawkish minutes push the 50+ bps odds up, or the NVDA reaction fails, and tech extends its losses.",
+     "invalidation": "Soft data with falling real yields, and the 50+ bps odds fading."
     },
     {
      "name": "base",
      "prob": 42,
-     "text": "Nasdaq-100 changes between -3.0% and +3.0%. Volatility stays high but the hike is already largely priced, so data and NVDA offset each other.",
-     "invalidation": "A 50+ bps hike repricing or an NVDA shock breaks the range."
+     "text": "Two-way trade inside the range as the market digests the hike path, NVDA and the Anthropic IPO headlines.",
+     "invalidation": "A decisive break of the 10-year above its 13 Nov close, or a breakdown in credit."
     },
     {
      "name": "bull",
      "prob": 28,
-     "text": "Nasdaq-100 gains more than 3.0%. Yields ease, NVDA earnings reassure the AI complex, and the Nasdaq-100 recovers part of the drop since 5 Nov.",
-     "invalidation": "Yields keep climbing and VXN rises above its recent range."
+     "text": "A benign NVDA reaction and stable yields support a relief rally, as the last 5 sessions showed after the 5 Nov drop.",
+     "invalidation": "Real yields rise again and Polymarket hike odds move higher."
     }
    ],
    "history_probs": {
@@ -132,25 +127,25 @@
    "lower_pct": -4.5,
    "upper_pct": 5.5,
    "confidence": "low",
-   "confidence_reason": "Same-regime history has a positive median (1.48) but wide tails (p10 -7.0, p90 6.53). A hiking Fed and a rising real yield justify a slightly lower, more cautious upside probability than history.",
+   "confidence_reason": "The window spans the December Fed decision (the Polymarket market closes 2026-12-10), a high-volatility regime and an unresolved NVDA leadership question. I stay close to the historical same-regime distribution (p25 -2.64, p75 4.54) with wider cuts for current volatility.",
    "scenarios": [
     {
      "name": "bear",
      "prob": 29,
-     "text": "Nasdaq-100 loses more than 4.5% over 21 sessions. A December hike with a hawkish guide, real yields rising further, and de-rating of AI leaders.",
-     "invalidation": "Inflation data cool and the market prices a pause after December."
+     "text": "A confirmed hike cycle, with 50+ bps odds rising and real yields still climbing, compresses tech multiples.",
+     "invalidation": "Hike odds retreat and yields fall over several weeks."
     },
     {
      "name": "base",
      "prob": 41,
-     "text": "Nasdaq-100 changes between -4.5% and +5.5%. The hike is delivered as priced and the AI trade stabilises.",
-     "invalidation": "A regime break in rates or credit, e.g. HY OAS widening well beyond 3.2."
+     "text": "The hike is largely priced in. Earnings and rates keep the index in a wide range around the current level.",
+     "invalidation": "A regime break in credit (HY OAS widening sharply from 3.2) or in volatility."
     },
     {
      "name": "bull",
      "prob": 30,
-     "text": "Nasdaq-100 gains more than 5.5%. A relief rally follows the December decision and an earnings-supported AI rebound, consistent with the historically positive median.",
-     "invalidation": "Yields keep rising and the Nasdaq-100 stays below its early-November levels."
+     "text": "Hawkish pricing is exhausted, as the historical median monthly drift is positive. The AI trade stabilizes after the NVDA earnings.",
+     "invalidation": "Core inflation re-accelerates and the Fed signals a longer hiking path."
     }
    ],
    "history_probs": {
@@ -166,46 +161,47 @@
    }
   }
  },
- "record_comment": "No graded forecasts yet (0 resolved, 3 open), so calibration cannot be judged.",
+ "record_comment": "No graded forecasts yet (0 resolved, 3 open), so calibration cannot be assessed.",
  "watch_list": [
-  "Warsh speech Mon 18:00 Vienna: hike pace and path after December",
-  "10-year yield vs 5.15% and the real yield vs 2.86%",
-  "Retail sales Tue 14:30 vs unofficial consensus 0.2% (core 0.4%)",
-  "NVDA headlines and VXN vs 29.38"
+  "Warsh tone vs Polymarket December hike odds (25 bps 87.5%, 50+ bps 9.2%)",
+  "10-year and real-yield direction around retail sales (Tue 14:30 Vienna)",
+  "NVDA CEO change and earnings reaction; Anthropic IPO headlines (unverified)",
+  "COR1M and VXN minus VIX: correlation rising vs tech-specific volatility"
  ],
  "memory_update": {
-  "running_thesis": "Fed hikes and rising yields are the main backdrop: Polymarket puts a 25 bps December hike at 87.5% and 50+ bps at 9.1%, with the 10-year at 5.15% and the real yield rising. The Nasdaq-100 is the higher-beta index (VXN minus VIX 10.08) and fell 1.22% on 13 Nov vs 0.40% for the S&P 500. NVDA's CEO resigned (8-K), an overlay before earnings. Credit shows no stress (HY OAS 3.2). Next tests: Warsh speech Mon, retail sales Tue, FOMC minutes Wed.",
+  "running_thesis": "Fed hikes and rising yields are the main backdrop: Polymarket has a 25 bps December hike at 87.5% and 50+ bps at 9.2%, with the 10-year at 5.15% and real yields rising. The Nasdaq-100 is the higher-beta index (VXN minus VIX 10.08) and fell 1.22% on 13 Nov vs 0.40% for the S&P 500. NVDA's CEO resigned (8-K), an overlay before earnings. Credit shows no stress (HY OAS 3.2). Next tests: Warsh speech Mon 18:00 Vienna, retail sales Tue, FOMC minutes Wed. Cboe posts supplied are old content.",
   "open_questions": [
    "Does the NVDA CEO change alter the earnings reaction?",
    "Will Warsh, retail sales and FOMC minutes harden the December hike path, including the 50+ bps odds?",
    "Is the 5 Nov Nasdaq-100 drop of 6.36% fully digested?",
-   "Does the COR1M jump signal rising index-level correlation?"
+   "Does the COR1M jump to 11.8 signal rising index-level correlation?"
   ],
   "themes": {
    "Fed hikes and rising yields": "continuing, strong (Polymarket 87.5%)",
    "NVDA leadership change": "continuing, headline-driven echo",
    "Oil retreat": "fading, official data stale to 11 Nov, headlines conflict",
    "Tech volatility (VXN near 29)": "elevated",
-   "Implied correlation (COR1M 11.8)": "new, jumped on 13 Nov from a low level"
+   "Implied correlation (COR1M 11.8)": "jumped on 13 Nov from a low level, still far below 6 Nov",
+   "AI trade test (NVDA earnings, Anthropic IPO)": "new, headline-only so far"
   }
  },
  "id": "2026-11-16-manual",
  "slot": "manual",
  "slot_label": "Manual run",
- "made_utc": "2026-11-16T09:44:26.167433+00:00",
+ "made_utc": "2026-11-16T09:55:48.886186+00:00",
  "ref_date": "2026-11-13",
  "model": "claude-sonnet-5-5",
  "usage": {
-  "input_tokens": 27686,
+  "input_tokens": 29577,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
    "ephemeral_5m_input_tokens": 0,
    "ephemeral_1h_input_tokens": 0
   },
-  "output_tokens": 7120,
+  "output_tokens": 7048,
   "output_tokens_details": {
-   "thinking_tokens": 2245
+   "thinking_tokens": 2438
   },
   "service_tier": "standard",
   "inference_geo": "global",
