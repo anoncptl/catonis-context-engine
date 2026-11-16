@@ -49,13 +49,11 @@ PRIORITY = {"todaysmarkettake": 0, "macro_volatility_digest": 0, "indices": 1,
             "DerivativesResearch": 2, "trading_investing": 2}
 MAX_CHARS_PER_POST, MAX_PROMPT_POSTS, BRIEFS_IN_CONTEXT, KEEP_SNAPSHOT_DAYS = 4500, 12, 5, 30
 
-# Run slots. GitHub fires the workflow every 30 minutes on weekdays because it sometimes drops scheduled
-# runs. This table decides whether a firing falls inside a slot; each slot runs at most once per day, so the
-# first firing that lands in a slot does the work and later ones exit in seconds.
+# One automatic run per weekday at 08:30 New York (14:30 CET). A Claude scheduled task triggers it at that time;
+# GitHub's own schedule fires a few backup times in case the trigger is missed. The first firing inside the
+# window does the work and later ones exit in seconds. Manual runs always run.
 SLOTS = {
-    "morning": {"tz": VIENNA, "start": (6, 30), "end": (9, 29), "label": "Morning (overnight news)"},
-    "preopen": {"tz": NEW_YORK, "start": (8, 35), "end": (9, 25), "label": "Pre-open (after 08:30 ET data)"},
-    "evening": {"tz": NEW_YORK, "start": (17, 30), "end": (19, 59), "label": "Evening (after the US close)"},
+    "daily": {"tz": NEW_YORK, "start": (8, 30), "end": (10, 59), "label": "Daily (08:30 New York)"},
 }
 
 
@@ -401,7 +399,7 @@ def run(now, slot, slot_date, force):
     rates = scoring.base_rates(ndx_hist, vix_hist, vix_now) if (ndx_hist and vix_hist and vix_now) else None
 
     fp = fingerprint(new_posts, s)
-    should_call = force or slot in ("morning", "evening") or fp != runs.get("last_fingerprint")
+    should_call = force or slot == "daily" or fp != runs.get("last_fingerprint")
     key_present = bool(os.environ.get("ANTHROPIC_API_KEY"))
     today_v = now.astimezone(VIENNA).strftime("%Y-%m-%d")
     snap = SNAP_DIR / ("%s-%s.json" % (today_v, slot))
