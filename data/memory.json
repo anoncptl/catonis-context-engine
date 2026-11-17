@@ -1,20 +1,22 @@
 {
- "running_thesis": "The Nasdaq-100 fell 2.67% on 16 Nov (S&P 500 -1.92%) on Nvidia-led AI selling, while yields eased (10-year 5.12%). VIX 22.91, VXN 32.9, COR1M 16.42 (+39.15%). Polymarket has a 25 bps December hike at 91.5% and 50+ bps at 5.1%. Nvidia reports after the close Tue 17 Nov with an 8% to 8.5% implied move, the first call since the CEO resigned. Retail sales Tue 14:30 CET and FOMC minutes Wed 20:00 CET follow. Credit has not shown stress as of 13 Nov (HY OAS 3.23). Oil data are stale.",
+ "running_thesis": "The Nasdaq-100 fell 2.67% on 16 Nov (S&P 500 -1.92%) on Nvidia-led AI selling while yields eased (10-year 5.12%). VIX 22.91, VXN 32.9, COR1M 16.42. Polymarket has a 25 bps December hike at 92.5% and 50+ bps at 4.7%. Nvidia reports after the close Tue 17 Nov with an implied move of 8% to 8.5%, its first call since the CEO resigned. Retail sales (14:30 CET) and FOMC minutes (Wed 20:00 CET) are the other catalysts. Credit showed no stress as of 13 Nov (HY OAS 3.23). Oil data are stale.",
  "open_questions": [
   "Does Nvidia's guidance or succession commentary stop or extend the AI selloff?",
-  "Does the retail sales print or the minutes shift the December hike odds?",
-  "Does rising COR1M signal broader contagion beyond tech?",
-  "Is the 5 Nov Nasdaq-100 drop of 6.36% fully digested?"
+  "Does retail sales or the FOMC minutes shift the December hike odds?",
+  "Does rising COR1M signal contagion beyond tech?",
+  "Is the 5 Nov drop of 6.36% fully digested?"
  ],
  "themes": {
-  "Fed hikes and rising yields": "continuing, but yields eased on 16 Nov; 25 bps December hike at 91.5% on Polymarket",
+  "Fed hikes and rising yields": "continuing; yields eased on 16 Nov; 25 bps December hike at 92.5% on Polymarket",
   "NVDA leadership change": "continuing, headline-driven echo",
-  "Oil retreat": "fading, official data stale to 11 Nov",
+  "Oil retreat": "fading; official data stale to 11 Nov",
   "Tech volatility (VXN near 29)": "elevated",
   "Implied correlation (COR1M 11.8)": "jumped on 13 Nov from a low level, still far below 6 Nov",
   "AI trade test (NVDA earnings, Anthropic IPO)": "new, headline-only so far",
   "NVDA leadership change and earnings": "strengthening, price and options evidence on 16 Nov",
-  "AI trade test (Nvidia earnings, Anthropic IPO)": "active, earnings after the close Tue 17 Nov",
-  "Volatility and implied correlation": "VXN 32.9, COR1M 16.42 rising"
+  "AI trade test (Nvidia earnings, Anthropic IPO)": "active; Anthropic IPO is headline-only",
+  "Volatility and implied correlation": "VXN 32.9, COR1M 16.42 rising",
+  "Nvidia leadership change and earnings": "strengthening; price, options and retail-positioning evidence; earnings after the close Tue 17 Nov",
+  "Tech volatility and implied correlation": "elevated; VXN 32.9, COR1M 16.42 and rising"
  }
 }
