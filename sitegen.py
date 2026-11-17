@@ -136,7 +136,7 @@ def render_brief(b, prefix=""):
     if posts:
         out.append('<section class="panel"><h2>Cboe posts read</h2><div class="scroll"><table><tr><th>Date</th><th>Title</th><th>Text</th></tr>%s</table></div></section>' % "".join(
             '<tr><td class="n">%s</td><td><a href="%s">%s</a>%s</td><td class="small muted">%s</td></tr>' % (
-                e(p.get("date")), e(p.get("url")), e(p.get("title")), ' <span class="muted small">(seen before)</span>' if p.get("older") else "",
+                e(p.get("date") or "–"), e(p.get("url")), e(p.get("title")), ' <span class="muted small">(%s)</span>' % e(p.get("tag")) if p.get("tag") and p.get("tag") != "new" else (' <span class="muted small">(seen before)</span>' if p.get("older") else ""),
                 "full article" if p.get("text_source") == "full_article" else "summary only") for p in posts))
     return "".join(out)
 

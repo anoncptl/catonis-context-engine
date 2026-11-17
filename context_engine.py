@@ -140,12 +140,45 @@ class _Extractor(HTMLParser):
         if self.cur is not None and not self.skip: self.cur.append(data)
 
 
+BOILERPLATE = ("New to Options?", "Build your education foundation", "Sign up for our free learning portal")
+KEY_CATEGORIES = ("todaysmarkettake", "macro_volatility_digest")  # the newest post of each is read every run
+LATEST_PER_CATEGORY = 2
+
+
 def extract_article(html):
+    """Returns (text, title, published_iso_or_empty)."""
     p = _Extractor(); p.feed(html)
     out = [t for tag, t in (p.blocks_main or p.blocks_all)
            if not (t.startswith(("©", "Copyright")) or "Cboe may contact me" in t) and (tag.startswith("h") or len(t) >= 40)]
     title = re.sub(r"\s*[|\-–]\s*Cboe.*$", "", p.title.strip())
-    return "\n".join(out), title
+    return "\n".join(out), title, find_date(html, title)
+
+
+def find_date(html, title=""):
+    """Publication date from the article page: structured data, meta tags, <time>, a 'Week of M/D/YYYY' title, or a written date."""
+    for pat in (r'"datePublished"\s*:\s*"([^"]+)"', r'article:published_time"\s+content="([^"]+)"',
+                r'content="([^"]+)"\s+property="article:published_time"', r'<time[^>]*datetime="([^"]+)"'):
+        m = re.search(pat, html)
+        if m:
+            try:
+                return datetime.fromisoformat(m.group(1).replace("Z", "+00:00")).date().isoformat()
+            except ValueError:
+                pass
+    m = re.search(r"Week of (\d{1,2})/(\d{1,2})/(\d{4})", title or "")
+    if m:
+        return "%s-%02d-%02d" % (m.group(3), int(m.group(1)), int(m.group(2)))
+    m = re.search(r"\b(January|February|March|April|May|June|July|August|September|October|November|December) (\d{1,2}), (20\d\d)\b",
+                  re.sub(r"<[^>]+>", " ", html))
+    if m:
+        try:
+            return datetime.strptime(" ".join(m.groups()), "%B %d %Y").date().isoformat()
+        except ValueError:
+            pass
+    return ""
+
+
+def is_real_article(text):
+    return len(text or "") >= 800 and not any(b in (text or "")[:300] for b in BOILERPLATE)
 
 
 def load_posts():
@@ -153,73 +186,119 @@ def load_posts():
     return {f.stem: json.loads(f.read_text()) for f in POSTS_DIR.glob("*.json")}
 
 
-def category_items(known):
-    found, seen, ok = [], set(known), 0
+def page_slugs(html):
+    """Post links in page order (top = newest). Only real links; a cut-off link that is the start of a longer one is dropped."""
+    order = []
+    for slug in re.findall(r'href="(?:https?://www\.cboe\.com)?/insights/posts/([a-z0-9][a-z0-9\-]*[a-z0-9])/?["?#]', html):
+        if slug not in order:
+            order.append(slug)
+    return [x for x in order if not any(o != x and o.startswith(x) for o in order)]
+
+
+def category_pages():
+    """{category: [slugs, newest first]} for every page that loaded."""
+    ranks = {}
     for cat, url in CATEGORY_PAGES.items():
         try:
-            html = http_get(url)
-            ok += 1
+            ranks[cat] = page_slugs(http_get(url))
         except Exception as e:
             print("  ! Cboe page %s failed: %s" % (cat, e), file=sys.stderr)
-            continue
-        for slug in re.findall(r'/insights/posts/([a-z0-9][a-z0-9\-]+)', html):
-            if slug not in seen:
-                seen.add(slug)
-                found.append({"slug": slug, "url": "https://www.cboe.com/insights/posts/%s" % slug,
-                              "title": slug.replace("-", " ").title(), "summary": "", "author": "",
-                              "published": datetime.now(timezone.utc).isoformat(),
-                              "category": cat if cat != "all" else "other", "from_category_page": True})
-    return found, ok
+    return ranks
+
+
+def fetch_post(item, rss_dates):
+    """Download one post. Returns the saved item, or None if the page was not a real article (retried next run)."""
+    try:
+        text, title, date = extract_article(http_get(item["url"]))
+    except Exception as e:
+        print("  ! could not fetch %s: %s" % (item["url"], e), file=sys.stderr)
+        return None
+    if not is_real_article(text):
+        print("  ! %s is not a readable article (skipped, will retry)" % item["url"], file=sys.stderr)
+        return None
+    if title:
+        item["title"] = title
+    date = date or rss_dates.get(item["slug"], "")
+    item.update({"text": text, "text_source": "full_article", "published": date or item.get("published", ""),
+                 "date_source": "article page" if date and item["slug"] not in rss_dates else ("RSS" if date else "unknown"),
+                 "fetched_utc": datetime.now(timezone.utc).isoformat()})
+    item.pop("from_category_page", None)
+    (POSTS_DIR / ("%s.json" % item["slug"])).write_text(json.dumps(item, indent=1))
+    time.sleep(1.0)
+    return item
 
 
 def refresh_posts():
-    """New Cboe posts with full text. Returns (new_posts, status)."""
+    """Fetch new Cboe posts in full and re-check the newest Daily Take and Digest. Returns (new_posts, status)."""
     known = load_posts()
+    # one-off repair: drop saved pages that were boilerplate instead of an article, so they are fetched again
+    for slug, p in list(known.items()):
+        if not is_real_article(p.get("text")):
+            (POSTS_DIR / ("%s.json" % slug)).unlink(missing_ok=True)
+            del known[slug]
+        elif p.get("from_category_page"):  # old runs stamped these with the download date; that date was wrong
+            p.update(published=find_date("", p.get("title", "")), date_source="title" if find_date("", p.get("title", "")) else "unknown")
+            p.pop("from_category_page", None)
+            (POSTS_DIR / ("%s.json" % slug)).write_text(json.dumps(p, indent=1))
     rss, rss_err = [], ""
     try:
         rss = parse_rss(http_get(RSS_URL))
     except Exception as e:
         rss_err = str(e)[:80]
-    extra, pages_ok = category_items(set(known) | {i["slug"] for i in rss})
-    new, full = [], 0
-    for item in rss + extra:
-        if not item["slug"] or item["slug"] in known:
+    rss_dates = {i["slug"]: (i.get("published") or "")[:10] for i in rss if i.get("published")}
+    ranks = category_pages()
+    (DATA / "cboe_latest.json").write_text(json.dumps({k: v[:10] for k, v in ranks.items()}, indent=1))
+
+    queue = [dict(i, published=(i.get("published") or "")[:10]) for i in rss]
+    for cat, slugs in ranks.items():
+        for slug in slugs:
+            queue.append({"slug": slug, "url": "https://www.cboe.com/insights/posts/%s" % slug, "title": slug.replace("-", " ").title(),
+                          "summary": "", "author": "", "published": rss_dates.get(slug, ""),
+                          "category": cat if cat != "all" else "other"})
+    new, done = [], set()
+    for item in queue:
+        if item["slug"] in known or item["slug"] in done:
             continue
-        try:
-            text, title = extract_article(http_get(item["url"]))
-            if item.get("from_category_page") and title:
-                item["title"] = title
-        except Exception as e:
-            print("  ! could not fetch %s: %s" % (item["url"], e), file=sys.stderr)
-            text = ""
-        if len(text) >= 200:
-            item["text"], item["text_source"] = text, "full_article"
-            full += 1
-        else:
-            item["text"], item["text_source"] = item["summary"], "summary_only"
-        item["fetched_utc"] = datetime.now(timezone.utc).isoformat()
-        (POSTS_DIR / ("%s.json" % item["slug"])).write_text(json.dumps(item, indent=1))
-        new.append(item)
-        known[item["slug"]] = item
-        time.sleep(1.0)
-    ok = bool(rss) or pages_ok > 0
-    detail = "%s; %d/3 category pages; %d new posts (%d full text)" % (
-        "RSS %d items" % len(rss) if rss else "RSS failed " + rss_err, pages_ok, len(new), full)
-    return new, {"name": "Cboe Insights", "ok": ok, "detail": detail}
+        done.add(item["slug"])
+        got = fetch_post(item, rss_dates)
+        if got:
+            new.append(got)
+            known[got["slug"]] = got
+    # fix the category of posts first saved as "other" when a key page lists them
+    for cat in KEY_CATEGORIES:
+        for slug in ranks.get(cat, []):
+            p = known.get(slug)
+            if p and p.get("category") != cat:
+                p["category"] = cat
+                (POSTS_DIR / ("%s.json" % slug)).write_text(json.dumps(p, indent=1))
+    latest = {cat: [s for s in ranks.get(cat, [])[:LATEST_PER_CATEGORY] if s in known] for cat in KEY_CATEGORIES}
+    names = {"todaysmarkettake": "Daily Take", "macro_volatility_digest": "Digest"}
+    tops = "; ".join("newest %s: %s" % (names[c], known[l[0]]["title"][:60]) if l else "newest %s: NOT READ" % names[c] for c, l in latest.items())
+    ok = all(latest[c] for c in KEY_CATEGORIES)
+    detail = "%s; %d/3 pages; %d new posts; %s" % ("RSS %d items" % len(rss) if rss else "RSS failed " + rss_err, len(ranks), len(new), tops)
+    return new, {"name": "Cboe Insights", "ok": ok, "detail": detail, "latest": latest}
 
 
-def posts_for_prompt(new_posts):
-    """New posts first; if few are new, add the freshest cached ones so the model always has context."""
-    pool = {p["slug"]: p for p in new_posts}
-    if len(pool) < 4:
-        cached = sorted(load_posts().values(), key=lambda p: p.get("fetched_utc") or p.get("published", ""), reverse=True)
-        for p in cached:
+def posts_for_prompt(new_posts, latest=None):
+    """Always the newest Daily Take and Digest first, then other new posts, then recent cached ones."""
+    known = load_posts()
+    pool, order = {}, []
+
+    def add(p, tag):
+        if p and p["slug"] not in pool:
+            pool[p["slug"]] = dict(p, _tag=tag)
+            order.append(p["slug"])
+    for cat, tag in (("todaysmarkettake", "newest Daily Take"), ("macro_volatility_digest", "newest Macro Volatility Digest")):
+        for i, slug in enumerate((latest or {}).get(cat, [])):
+            add(known.get(slug), tag if i == 0 else tag.replace("newest", "previous"))
+    for p in sorted(new_posts, key=lambda p: (PRIORITY.get(p.get("category"), 3), p.get("published", "")), reverse=False):
+        add(p, "new")
+    if len(pool) < 6:
+        for p in sorted(known.values(), key=lambda p: p.get("published") or "", reverse=True):
             if len(pool) >= 6:
                 break
-            pool.setdefault(p["slug"], dict(p, _older=True))
-    ranked = sorted(pool.values(), key=lambda p: p.get("published", ""), reverse=True)
-    ranked = sorted(ranked, key=lambda p: (p.get("_older", False), PRIORITY.get(p.get("category"), 3)))
-    return ranked[:MAX_PROMPT_POSTS]
+            add(p, "older")
+    return [pool[s] for s in order][:MAX_PROMPT_POSTS]
 
 
 # ---------- memory ----------
@@ -288,10 +367,10 @@ def build_prompt(ctx):
         "\n## BASE RATES (Nasdaq-100 %% change over N sessions since %s; quantiles p10..p90)\n" % (ctx["rates"] or {}).get("since", "n/a")
         + (json.dumps(ctx["rates"], indent=1) if ctx["rates"] else "unavailable this run: choose cut points from the facts and say confidence is low"),
         "\n## STRUCTURED DATA\n" + sources.to_prompt(ctx["structured"]),
-        "\n## CBOE POSTS (newest and most relevant first; [older] = already seen in an earlier run)"]
+        "\n## CBOE POSTS (first: Cboe's newest Daily Take, written after the US close, and newest weekly Macro Volatility Digest; then other new posts; [older] = already used before). Base what_happened mainly on the newest Daily Take and Digest and name them."]
     for p in ctx["posts"]:
-        parts.append("\n### %s[%s] %s | %s | %s\n%s" % ("[older] " if p.get("_older") else "", p.get("category"), p.get("title"),
-                                                     (p.get("published") or "")[:10], p.get("text_source"), (p.get("text") or "")[:MAX_CHARS_PER_POST]))
+        parts.append("\n### [%s] [%s] %s | published %s | %s\n%s" % (p.get("_tag", ""), p.get("category"), p.get("title"),
+                                                     (p.get("published") or "date unknown")[:10], p.get("text_source"), (p.get("text") or "")[:MAX_CHARS_PER_POST]))
     parts.append("\n## OUTPUT SCHEMA\n" + SCHEMA)
     return "\n".join(parts)
 
@@ -455,7 +534,7 @@ def make_brief(now, slot, today_v, new_posts, s, ledger, fact_list, rates, vix_n
     if True:
         print("4/6 Asking Claude for the brief…")
         memory = load_json(MEMORY_FILE, {"running_thesis": "", "open_questions": [], "themes": {}})
-        posts = posts_for_prompt(new_posts)
+        posts = posts_for_prompt(new_posts, (s["status"].get("cboe") or {}).get("latest"))
         ctx = {"now": now, "slot": slot, "ref_date": scoring.last_completed_session(now.astimezone(NEW_YORK)),
                "memory": memory, "briefs": recent_briefs(BRIEFS_IN_CONTEXT), "ledger_text": ledger.prompt_block(),
                "facts": fact_list, "rates": rates, "structured": s, "posts": posts}
@@ -484,7 +563,7 @@ def make_brief(now, slot, today_v, new_posts, s, ledger, fact_list, rates, vix_n
                       "made_utc": now.isoformat(), "ref_date": ctx["ref_date"], "model": MODEL, "usage": usage,
                       "number_flags": flags, "posts_used": [{"title": p.get("title"), "url": p.get("url"),
                                                              "date": (p.get("published") or "")[:10], "text_source": p.get("text_source"),
-                                                             "older": bool(p.get("_older"))} for p in posts]})
+                                                             "older": p.get("_tag") == "older", "tag": p.get("_tag", "")} for p in posts]})
         added = ledger.record(bid, now.isoformat(), ctx["ref_date"], brief.get("outlook"), vix_now, ndx_hist, vix_hist)
         hp = {x["horizon"]: x.get("history_probs") for x in added}
         for h, o in (brief.get("outlook") or {}).items():
