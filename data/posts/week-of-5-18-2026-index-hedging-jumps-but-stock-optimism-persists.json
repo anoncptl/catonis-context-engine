@@ -4,10 +4,10 @@
  "title": "Week of 5/18/2026: Index Hedging Jumps, But Stock Optimism Persists",
  "summary": "",
  "author": "",
- "published": "2026-11-15T14:50:51.740465+00:00",
+ "published": "2026-05-18",
  "category": "macro_volatility_digest",
- "from_category_page": true,
  "text": "Week of 5/18/2026: Index Hedging Jumps, But Stock Optimism Persists\nSmall caps led the increase in equity volatility last week, with the RVX Index (Russell 2000 Volatility Index) gaining 2.6 pts to 25% vs. the VIX \u00ae Index up 1.2 pts wk/wk. The spread between the two widened to a YTD high of 6.5% as small caps tend to be more sensitive to tighter monetary policy and higher oil prices.\nDemand for protection increased significantly in the Russell 2000 Index, with 1M skew (25-delta ratio) steepening from the 50th to the 89th percentile high. While hedging demand also picked up in the SPX \u00ae Index, it was much more modest, with SPX 1M skew trading in the 27th percentile low. The bid for small caps optionality can also be seen in its term structure, with 1M vol trading at parity with longer-dated tenors vs. SPX term structure which is still in contango.\nWhile demand for index protection increased last week, higher rates have not dampened the extreme bullish positioning we\u2019ve seen in single stock options. Among the S&P top 100 stocks, a third is currently trading with inverted call skew (i.e. OTM calls trading with higher implied volatilities than ATM calls) which is historically very rare and indicative of extreme bullish sentiment. Over 20% of stocks are currently trading with inverted 3M skew. As seen in the chart below, that\u2019s approaching the 2021 \u201cmeme stock\u201d era high of 25%.\nChart: Bullish Positioning in Stocks Reach Extremes\nRelated Posts\nWeek of 11/9/2026: No Contagion (Yet): Equity Vol Spikes, Macro Vol Fades\nWeek of 11/2/2026: Tech Rout, Muted Vol: Bullish Positioning Unwinds\nWeek of 10/26/2026: Tech Risk Premium Rising Ahead of Key Earnings",
  "text_source": "full_article",
- "fetched_utc": "2026-11-15T14:55:39.882774+00:00"
+ "fetched_utc": "2026-11-15T14:55:39.882774+00:00",
+ "date_source": "title"
 }

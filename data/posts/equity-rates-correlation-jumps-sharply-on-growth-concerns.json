@@ -4,10 +4,10 @@
  "title": "Equity-Rates Correlation Jumps Sharply on Growth Concerns",
  "summary": "",
  "author": "",
- "published": "2026-11-15T14:50:51.740548+00:00",
+ "published": "",
  "category": "macro_volatility_digest",
- "from_category_page": true,
  "text": "Equity-Rates Correlation Jumps Sharply on Growth Concerns\nOil, equity, and credit volatilities all gained meaningfully last week on the back of the miss in payrolls, with the VIX \u00ae index up 5.5 pts wk/wk to 20.4%, jumping from the 10th to the 73rd percentile high over the past year. Interestingly, while Treasury yields swung sharply lower, driving realized volatility in bonds higher, implied volatility barely gained, with the MOVE index up slightly and the VIXTLT index actually ending the week marginally lower. The same dynamic (tame implied vol despite large pick up in realized vol) is evident in the FX market as well and the opposite of what we\u2019re seeing in equities (implied vol outpacing the jump in realized, with the implied-realized spread widening to a 1-year high).\nWe published last Friday our comprehensive VIX index decomposition model, breaking down changes in the VIX index into 6 principal components (see full report here , register for the upcoming Aug 14th webinar here ). Applying our framework to last week\u2019s VIX index move, we find that just under half of the move was priced in, with an additional 3 pts coming from a parallel shift higher in the SPX \u00ae index vol surface (i.e. fixed strike vols increasing) and higher demand for downside protection.\nEquity-rates correlation surged higher last week on the back of concerns over economic growth, with the 1M rolling correlation between SPX-10Y yield jumping from -26% to +40% (highest since April). See chart below.\nChart: SPX Index vs. 10Y Treasury Yield Correlation (1M Rolling)\nRelated Posts\nWeek of 11/9/2026: No Contagion (Yet): Equity Vol Spikes, Macro Vol Fades\nWeek of 11/2/2026: Tech Rout, Muted Vol: Bullish Positioning Unwinds\nWeek of 10/26/2026: Tech Risk Premium Rising Ahead of Key Earnings",
  "text_source": "full_article",
- "fetched_utc": "2026-11-15T14:56:43.019648+00:00"
+ "fetched_utc": "2026-11-15T14:56:43.019648+00:00",
+ "date_source": "unknown"
 }

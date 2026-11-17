@@ -4,10 +4,10 @@
  "title": "Defensive Positioning Beneath a Calm Vol Market",
  "summary": "",
  "author": "",
- "published": "2026-11-15T14:50:51.740504+00:00",
+ "published": "",
  "category": "macro_volatility_digest",
- "from_category_page": true,
  "text": "Defensive Positioning Beneath a Calm Vol Market\nImplied volatilities were mostly rangebound last week despite rising geopolitical risk. Equity, rates, credit, and FX volatilities all ended the week near 1-year lows. Oil was an exception, with 1M implied vol jumping up over 8 vol pts to 37% (70th percentile high) on the back of bullish call demand. Despite the threat of more supplies coming online from Venezuela, oil traders appear to be more focused on the near-term risks of a potential supply disruption stemming from the Iran unrest.\nWhile the VIX \u00ae index ended last week unch\u2019d at 14.5%, there were notable changes underneath the index surface. SPX \u00ae fixed-strike vols increased while investors sold calls to buy puts, leading to a meaningful steepening in put skew & convexity while the call wings came in (see chart below). These factors were enough to offset the \"expected\" 1.2 pt decline in the VIX index as a result of the market rally. The key takeaway from our VIX index decomposition is that defensive positioning is increasing despite a calm VIX index reading. To keep track of this analysis on a daily basis, see our VIX Decomposition web tool .\nWhile index vol was flat, single stock volatility continued to rise heading into earnings. VIXEQ SM index gained another 2 vol pts and the spread between single stock vs. index vol widened to ~22 pts (90th percentile high). Higher single stock vol hasn\u2019t translated into higher index vol, however, as correlation levels have fallen to the lows. SPX 1M implied correlation, as measured by the COR1M index, fell to a near record low of 6.8% on Friday.\nChart: SPX 1M Implied Vol Surface (Jan 9th vs. Jan 2nd)\nRelated Posts\nWeek of 11/9/2026: No Contagion (Yet): Equity Vol Spikes, Macro Vol Fades\nWeek of 11/2/2026: Tech Rout, Muted Vol: Bullish Positioning Unwinds\nWeek of 10/26/2026: Tech Risk Premium Rising Ahead of Key Earnings",
  "text_source": "full_article",
- "fetched_utc": "2026-11-15T14:56:09.271511+00:00"
+ "fetched_utc": "2026-11-15T14:56:09.271511+00:00",
+ "date_source": "unknown"
 }

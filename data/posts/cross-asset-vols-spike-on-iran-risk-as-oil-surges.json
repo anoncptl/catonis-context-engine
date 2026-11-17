@@ -4,10 +4,10 @@
  "title": "Cross-Asset Vols Spike on Iran Risk as Oil Surges",
  "summary": "",
  "author": "",
- "published": "2026-11-15T14:50:51.740492+00:00",
+ "published": "",
  "category": "macro_volatility_digest",
- "from_category_page": true,
  "text": "Cross-Asset Vols Spike on Iran Risk as Oil Surges\nImplied volatilities are up across asset classes following the US/Israeli strikes on Iran over the weekend. Oil 1M implied volatility jumped 7 pts as oil prices spiked, with skew remaining extremely inverted (i.e. upside bid). As we noted last week, what\u2019s unusual about this latest geopolitically-driven spike in oil prices is the positioning in long-dated oil options. While it\u2019s not uncommon to see skew invert at the front-end of the curve, we\u2019re seeing this extend to 6M options as well which hasn\u2019t happened since the 2022 Russia/Ukraine war. Aside from geopolitics, we also saw a notable bid to credit volatility last week on the back of rising private credit fears, with VIXIG index gaining 10 pts wk/wk. For most of the past year, credit volatility has traded as the cheapest cross-asset vol, but that has changed in recent weeks (see chart below). Rates and FX vols now screen as the cheapest.\nThe VIX \u00ae index is up almost 4 pts this morning, outperforming the sell-off in S&P futures (-1.1%). This is on the back of higher SPX \u00ae fixed-strike vols (contributing 1.8 VIX pts) and steeper skew/convexity (contributing another 0.7 pt to the VIX index). As we\u2019ve highlighted in recent weeks, SPX skew has steepened significantly this year on the back of increased hedging demand, with 1M skew now nearing the Aug-2024 yen carry unwind extremes.\nDespite being a new product (launched in Dec), Cboe \u00ae Magnificent-10 Index (ticker: MGTN) options have seen increasing interest from investors looking for a targeted way to trade the AI/tech theme. Almost 40k contracts traded on Friday (~$1.6B notional), with the vast majority of the volume concentrated in the 3/3 expiry (2DTE) 381-386 puts (5-7% OTM). Flow, however, was fairly balanced between buys vs. sells.\nRelated Posts\nWeek of 11/9/2026: No Contagion (Yet): Equity Vol Spikes, Macro Vol Fades\nWeek of 11/2/2026: Tech Rout, Muted Vol: Bullish Positioning Unwinds\nWeek of 10/26/2026: Tech Risk Premium Rising Ahead of Key Earnings",
  "text_source": "full_article",
- "fetched_utc": "2026-11-15T14:55:59.423096+00:00"
+ "fetched_utc": "2026-11-15T14:55:59.423096+00:00",
+ "date_source": "unknown"
 }

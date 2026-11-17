@@ -4,10 +4,10 @@
  "title": "Earnings Angst Drives VIXEQ-VIX Index Spread to Record High",
  "summary": "",
  "author": "",
- "published": "2026-11-15T14:50:51.740531+00:00",
+ "published": "",
  "category": "macro_volatility_digest",
- "from_category_page": true,
  "text": "Earnings Angst Drives VIXEQ-VIX Index Spread to Record High\nUS option volumes broke records on Friday after US-China trade tensions re-ignited, with over 108M contracts trading across products. SPX \u00ae options also set a new record, with 6.4M contracts trading (exceeding the previous high of 6.0M set on April 4th), with 0DTE options making up 60% share. VIX \u00ae options surged as well, with volumes running 3x its 20-day average.\nDespite the record activity, there was little panic in the market, as seen by VIX index levels that remain fairly pedestrian by historical standards. The increase in implied volatility also trailed the jump in realized vol \u2013 as a result, the volatility risk premium actually fell last week. There was also little demand for left-tail hedges, though demand for right-tail upside exposure increased, similar to what happened in April as investors positioned for a potential softening in trade rhetoric.\nWith earnings kicking off this week, what stands out is the continued bid to single stock vol, with the VIXEQ SM index up another 6.6 pts last week. The spread between single stock vol versus index vol, as measured by the VIXEQ-VIX index spread, widened to a new record high of 24.7% (see chart below). Not surprisingly, most of the increase in dispersion have come from the large-cap Tech names as investors look to earnings to justify their valuation.\nChart: Single Stock Vol at Record High vs. Index\nRelated Posts\nWeek of 11/9/2026: No Contagion (Yet): Equity Vol Spikes, Macro Vol Fades\nWeek of 11/2/2026: Tech Rout, Muted Vol: Bullish Positioning Unwinds\nWeek of 10/26/2026: Tech Risk Premium Rising Ahead of Key Earnings",
  "text_source": "full_article",
- "fetched_utc": "2026-11-15T14:56:26.415865+00:00"
+ "fetched_utc": "2026-11-15T14:56:26.415865+00:00",
+ "date_source": "unknown"
 }

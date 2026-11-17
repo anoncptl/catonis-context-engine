@@ -4,10 +4,10 @@
  "title": "Week of 6/8/2026: Downside Risks Rise as Tech Volatility Spikes",
  "summary": "",
  "author": "",
- "published": "2026-11-15T14:50:51.740459+00:00",
+ "published": "2026-06-08",
  "category": "macro_volatility_digest",
- "from_category_page": true,
  "text": "Week of 6/8/2026: Downside Risks Rise as Tech Volatility Spikes\nImplied volatilities jumped across asset classes last week as markets grappled with rising US-Iran tensions, higher bond yields, and a sharp pullback in Tech. Equity volatility led the increase, with the VIX \u00ae Index up over 6 pts wk/wk to 21.5%, rising from the 14 th percentile low to the 86 th percentile high. Within equities, Tech stocks led the spike in volatility, with the QQQ-SPX \u00ae 1M implied volatility spread widening to a 4-year high of 11% (see chart below). Both QQQ and SPX option volumes set new records on Friday, with SPX option volumes hitting a new high of 7.78M contracts (of which 64% was in 0DTE options).\nSingle stock volatility increased as well, though more marginally, with the VIXEQ SM Index up just 0.3 pt as investors gravitated toward index hedges for protection. In other words, implied correlation jumped higher, with the COR1M Index more than doubling to 15% - albeit still trading at historically low levels. This suggests the sell-off, at least so far, remains mostly a positioning-driven unwind at the sector level, rather than a much broader macro sell-off. In fact, 6 of the 11 S&P sectors were up last week.\nAfter weeks of chasing the right-tail, investor focus finally shifted last week to the left tail as hedging demand picked up notably. SPX 1M skew surged from a 1-year low to the 72 nd percentile high. Retail sentiment also turned more bearish, with put buying making up 27% of all retail opening activity in the mega-cap Tech stocks on Friday (vs. just 15% a week ago).\nChart: QQQ-SPX Implied Volatility Spread Surges to 4-Year High\nRelated Posts\nWeek of 11/9/2026: No Contagion (Yet): Equity Vol Spikes, Macro Vol Fades\nWeek of 11/2/2026: Tech Rout, Muted Vol: Bullish Positioning Unwinds\nWeek of 10/26/2026: Tech Risk Premium Rising Ahead of Key Earnings",
  "text_source": "full_article",
- "fetched_utc": "2026-11-15T14:55:37.376675+00:00"
+ "fetched_utc": "2026-11-15T14:55:37.376675+00:00",
+ "date_source": "title"
 }

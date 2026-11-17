@@ -4,10 +4,10 @@
  "title": "SPX\u00ae Skew Signals Longer-Term Caution Despite Rally",
  "summary": "",
  "author": "",
- "published": "2026-11-15T14:50:51.740569+00:00",
+ "published": "",
  "category": "macro_volatility_digest",
- "from_category_page": true,
  "text": "SPX\u00ae Skew Signals Longer-Term Caution Despite Rally\nImplied volatilities fell across asset classes last week following the US-China tariff reprieve, with equity and credit implied volatilities dropping the most. The VIX \u00ae index fell almost 5 pts while VIXIG (IG credit vol) declined over 7 pts \u2013 both are now trading below their long-term averages. In contrast, VIXTLT (20+Yr Treasury Volatility Index) increased wk/wk as both inflation breakevens and term premium continued to widen. Following Moody\u2019s downgrade, US 30Y yield is now over 5%.\nThe decline in index vol was notable as single stock volatility remained mostly unchanged. In other words, the decline in the VIX was almost entirely driven by a collapse in implied correlation levels, with COR1M index down over 13 pts to 16%. The options market is signaling once again a return to stock fundamentals with macro risks receding (i.e. high dispersion, low correlation) \u2013 how long that can last remains to be seen.\nSPX skew diverged across tenors last week, with short-dated skew flattening on the back of upside call buying while longer-dated skew steepened on renewed hedging demand. The contrast can be seen in SPX 1M vs. 6M call skew. While short-dated call skew jumped higher last week from the 28th to 80th percentile high, longer-dated call skew remained fairly tepid. This suggests most of the call buying has been tactical upside chasing rather than any positive shift in the longer-term outlook. In fact, longer-dated put skew has been steepening on this rebound.\nChart: Tactical Call Buying vs. Longer-Term Caution\nRelated Posts\nWeek of 11/9/2026: No Contagion (Yet): Equity Vol Spikes, Macro Vol Fades\nWeek of 11/2/2026: Tech Rout, Muted Vol: Bullish Positioning Unwinds\nWeek of 10/26/2026: Tech Risk Premium Rising Ahead of Key Earnings",
  "text_source": "full_article",
- "fetched_utc": "2026-11-15T14:56:58.633776+00:00"
+ "fetched_utc": "2026-11-15T14:56:58.633776+00:00",
+ "date_source": "unknown"
 }

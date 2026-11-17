@@ -4,10 +4,10 @@
  "title": "Implied Vols Collapse As Stocks Hit New Record High",
  "summary": "",
  "author": "",
- "published": "2026-11-15T14:50:51.740560+00:00",
+ "published": "",
  "category": "macro_volatility_digest",
- "from_category_page": true,
  "text": "Implied Vols Collapse As Stocks Hit New Record High\nImplied volatilities fell across asset classes last week as geopolitical risks dissipated and economic data came in better than expected. Oil was in the spotlight once again, after Iran and Israel agreed to a ceasefire. WTI 1M implied vol fell over 17 pts while skew normalized back to flat (vs. record inversion two weeks ago). Rates vol declined on better inflation data, with the VIXTLT index down 9 pts to its lowest level since \u201cLiberation Day\u201d. Even gold, which had consistently screened as the richest cross-asset vol for the past few months, saw its volatility normalize meaningfully. See chart below.\nEquity volatility fell as SPX \u00ae index jumped to a new record high, with the VIX \u00ae index down 4.3 pts to a 4-month low of 16.3%. Skew collapsed \u2013 though only in the front-month \u2013 as investors bought calls to chase the rally. Longer-dated skew, in contrast, remained steep. Despite the looming July 9th trade deadline, not much is priced into the SPX vol surface for the event, suggesting investors expect either a positive resolution or for the deadline to be extended.\nSPX implied correlations fell significantly last week as geopolitical risk faded, with 1M implied correlation declining by almost half from 28% to 15%. In contrast, implied dispersion (DSPX SM index) increased as earnings season neared. In other words, while index volatility fell last week, single stock volatility held fairly steady (VIXEQ down marginally by 0.4 pt vs. VIX down 4.3 pts wk/wk).\nChart: Implied Volatilities Declined Across Asset Classes Last Week\nRelated Posts\nWeek of 11/9/2026: No Contagion (Yet): Equity Vol Spikes, Macro Vol Fades\nWeek of 11/2/2026: Tech Rout, Muted Vol: Bullish Positioning Unwinds\nWeek of 10/26/2026: Tech Risk Premium Rising Ahead of Key Earnings",
  "text_source": "full_article",
- "fetched_utc": "2026-11-15T14:56:52.477957+00:00"
+ "fetched_utc": "2026-11-15T14:56:52.477957+00:00",
+ "date_source": "unknown"
 }

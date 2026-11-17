@@ -4,10 +4,10 @@
  "title": "Week of 8/3/2026: The Fed Holds, But Bond Volatility Breaks Higher",
  "summary": "",
  "author": "",
- "published": "2026-11-15T14:50:51.740437+00:00",
+ "published": "2026-08-03",
  "category": "macro_volatility_digest",
- "from_category_page": true,
  "text": "Week of 8/3/2026: The Fed Holds, But Bond Volatility Breaks Higher\nImplied volatilities were mixed across asset classes last week as investors weighed stronger-than-expected corporate earnings against rising yields and persistent geopolitical risks. Despite the Fed keeping rates on hold, bond yields jumped higher on the back of inflation fears, with the 30Y Treasury yield rising to near a 20-year high. Not surprisingly, interest rate volatility was the biggest mover, with VIXTLT Index rising from the 16th to the 68th percentile high. Demand for TLT puts surged (i.e. investors positioning for yields to rise further), driving TLT 1M skew to a post-GFC high.\nStrong earnings, meanwhile, led to a broad decline in equity volatility, with the VIX \u00ae Index down 2.6 pts and the VIXEQ SM Index down 3.4 pts wk/wk. Ahead of AMD earnings this week, what stands out is the elevated level of option selling in the name by retail investors \u2013 43% of all retail opening trades in AMD over the past month have been selling puts or calls \u2013 as a way to monetize the high volatility, with AMD 1M implied vol trading ~80%.\nSPX \u00ae box spreads have become popular in recent years as both a lending and borrowing tool for investors (for more, see here), with daily notional loan volume more than tripling in the past 3 years and rising to a record $1.7B this year. Typically, the implied yield from a SPX box spread trades at a small premium relative to SOFR (avg ~32bps), however in recent weeks, this premium has more than doubled to a multi-year high of 69bps as dealer balance sheets have gotten more constrained even as demand for borrowing has increased with more RIAs, family offices, and traders adopting box spreads as a cheap alternative to margin loans.\nChart: SPX Box Spread Yield vs. SOFR (3M)\nRelated Posts\nWeek of 11/9/2026: No Contagion (Yet): Equity Vol Spikes, Macro Vol Fades\nWeek of 11/2/2026: Tech Rout, Muted Vol: Bullish Positioning Unwinds\nWeek of 10/26/2026: Tech Risk Premium Rising Ahead of Key Earnings",
  "text_source": "full_article",
- "fetched_utc": "2026-11-15T14:55:24.165588+00:00"
+ "fetched_utc": "2026-11-15T14:55:24.165588+00:00",
+ "date_source": "title"
 }

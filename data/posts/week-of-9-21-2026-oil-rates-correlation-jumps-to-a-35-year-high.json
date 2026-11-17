@@ -4,10 +4,10 @@
  "title": "Week of 9/21/2026: Oil-Rates Correlation Jumps to a 35-Year High",
  "summary": "",
  "author": "",
- "published": "2026-11-15T14:50:51.740416+00:00",
+ "published": "2026-09-21",
  "category": "macro_volatility_digest",
- "from_category_page": true,
  "text": "Week of 9/21/2026: Oil-Rates Correlation Jumps to a 35-Year High\nWhile index volatility declined broadly last week, single stock volatility increased. This can be seen in the divergence between the VIX \u00ae Index and VIXEQ SM Index. While the VIX Index fell by 1.0 pt, the VIXEQ Index (a measure of average single stock vol) gained almost 2 pts to 36%. As a result, the spread between the two widened from 18.5% to 21.6%. Higher bond yields have historically been a catalyst for increased stock dispersion, as different stocks/sectors have different interest rate sensitivities.\nRisk sentiment turned more constructive in the options market, with skew flattening across all the major indices. SPX \u00ae 1M skew (25-delta ratio) declined from the 58th to 29th percentile low as investors sold out of hedges and rotated into calls. SPX 1M call skew increased to the 78th percentile high as a result.\nCross-asset correlations have become more extreme in recent months. The most notable is the correlation between oil and interest rates which has jumped to a 35-year high. As seen in the chart below, the 3M rolling correlation between the US 10Y yield and WTI oil prices hit a high of 65% last week. That\u2019s above the highs we saw during the depth of covid and the 2011 Arab Spring, and only slightly below the record high of 66% seen at the onset of the First Gulf War in 1990. If this pattern holds, then where yields go from here will be less dependent on the Fed and more on the situation in Iran.\nChart: US 10Y vs. Oil Correlation at a 35-Year High\nRelated Posts\nWeek of 11/9/2026: No Contagion (Yet): Equity Vol Spikes, Macro Vol Fades\nWeek of 11/2/2026: Tech Rout, Muted Vol: Bullish Positioning Unwinds\nWeek of 10/26/2026: Tech Risk Premium Rising Ahead of Key Earnings",
  "text_source": "full_article",
- "fetched_utc": "2026-11-15T14:55:05.005415+00:00"
+ "fetched_utc": "2026-11-15T14:55:05.005415+00:00",
+ "date_source": "title"
 }

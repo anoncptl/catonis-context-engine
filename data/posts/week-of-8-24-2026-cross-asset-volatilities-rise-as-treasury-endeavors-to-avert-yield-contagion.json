@@ -4,10 +4,10 @@
  "title": "Week of 8/24/2026: Cross-Asset Volatilities Rise as Treasury Endeavors to Avert Yield Contagion",
  "summary": "",
  "author": "",
- "published": "2026-11-15T14:50:51.740428+00:00",
+ "published": "2026-08-24",
  "category": "macro_volatility_digest",
- "from_category_page": true,
  "text": "Week of 8/24/2026: Cross-Asset Volatilities Rise as Treasury Endeavors to Avert Yield Contagion\nCross-asset implied volatilities rose across the board as Treasury market concerns trickled into equities and the other major asset classes. The 30-year yield hit 5.33% intraweek, its highest since 2007, before Treasury Secretary Bessent\u2019s late-week policy intervention to double the size of the Treasury\u2019s bond buyback program to $4B. Accordingly, interest rate volatility as measured by the MOVE Index has reversed its 2-week decline and is trading at 73 (54th percentile) while the VXTLT 20-Year Bond Volatility Index jumped from 13th to 32nd percentile levels w/w.\nThe VIX \u00ae Index underperformed skew last week, bouncing off its YTD low and rising 0.9 pts w/w to 15.1 on the -1.4% SPX pullback. The 0.4 underperformance in the VIX Index is due primarily to short iron-flies (short ATM straddle, long DOTM wings) which lowered ATM vols while elevating low-delta puts and calls.\nOptions sentiment for Nvidia leans slightly bearish with NVDA put skew steepening into its Weds earnings. Options mkt expected move = 6.5-7%.\nChart: NVDA Earnings (8/26) to Dictate Upcoming Stock Dispersion\nRelated Posts\nWeek of 11/9/2026: No Contagion (Yet): Equity Vol Spikes, Macro Vol Fades\nWeek of 11/2/2026: Tech Rout, Muted Vol: Bullish Positioning Unwinds\nWeek of 10/26/2026: Tech Risk Premium Rising Ahead of Key Earnings",
  "text_source": "full_article",
- "fetched_utc": "2026-11-15T14:55:11.985606+00:00"
+ "fetched_utc": "2026-11-15T14:55:11.985606+00:00",
+ "date_source": "title"
 }

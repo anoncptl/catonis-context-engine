@@ -4,10 +4,10 @@
  "title": "Week of 7/6/2026: Stock Dispersion Jumps as the Equity Rally Broadens",
  "summary": "",
  "author": "",
- "published": "2026-11-15T14:50:51.740448+00:00",
+ "published": "2026-07-06",
  "category": "macro_volatility_digest",
- "from_category_page": true,
  "text": "Week of 7/6/2026: Stock Dispersion Jumps as the Equity Rally Broadens\nImplied volatilities declined across asset classes last week in a shortened holiday week. Risk sentiment improved, even as US jobs number disappointed, as the risk of imminent Fed tightening declined, with the first fully priced-in rate hike now pushed out to Dec from Oct. With the normalization in oil volatility, gold remains the only major asset class where implied volatility is still trading at elevated levels (almost 2 std dev above average). Realized volatility in gold is up 10 pts over the past month as gold prices have continued to tumble, down another 11.7% in June (its worst monthly performance since Oct 2008).\nHedging demand remains muted in the large cap indices (SPX \u00ae Index and QQQ), though notably, we\u2019ve seen it pick up for small caps even though small caps have been the best performing index YTD (RTY Index +21% vs. SPX Index +9%). Investors are using options to help lock in those YTD gains, helping drive RTY 1M put skew to the 95th percentile high currently.\nThe outperformance of small-caps is a sign that the equity rally \u2013 which has long been dominated by the mega-cap Tech names \u2013 is starting to broaden out. In fact, over the past month, Tech has been the worst performing sector (-10%) while YTD laggards such as Healthcare and Financials have been the best performing (+12% and +8%, respectively). The calm at the index level (SPX Index -1.7% over the past month) belies these large rotations underneath the surface. This is why single stock volatility has been so elevated, even as the VIX \u00ae Index has fallen. The spread between the two, as measured by the VIXEQ SM -VIX Index spread, widened to an all-time high of 31% last week.\nChart: Record Single Stock vs. Index Volatility Spread\nRelated Posts\nWeek of 11/9/2026: No Contagion (Yet): Equity Vol Spikes, Macro Vol Fades\nWeek of 11/2/2026: Tech Rout, Muted Vol: Bullish Positioning Unwinds\nWeek of 10/26/2026: Tech Risk Premium Rising Ahead of Key Earnings",
  "text_source": "full_article",
- "fetched_utc": "2026-11-15T14:55:30.107971+00:00"
+ "fetched_utc": "2026-11-15T14:55:30.107971+00:00",
+ "date_source": "title"
 }

@@ -4,10 +4,10 @@
  "title": "Oil Options Suggest Price Spike Likely to Be Temporary",
  "summary": "",
  "author": "",
- "published": "2026-11-15T14:50:51.740562+00:00",
+ "published": "",
  "category": "macro_volatility_digest",
- "from_category_page": true,
  "text": "Oil Options Suggest Price Spike Likely to Be Temporary\nWTI oil 1M implied volatility surged over 20 pts last week to near a 3-year high of 51% on the back of the Iran-Israel conflict. The surge in implied vol far outpaced the increase in realized vol (+10 pts) as the implied-realized spread widened on the back of escalation fears. The 1M volatility risk premium for oil, at over 16 pts currently, ranks as the richest across asset classes (higher even than bitcoin).\nNot surprisingly, demand for call options in oil jumped higher last week. This was most pronounced for shorter-dated tenors, with WTI 1M skew (25-delta ratio) flattening and inverting to a record low (going back 20 years), exceeding the previous low we saw in March 2022 during the Russia invasion of Ukraine. Longer-dated skew, however, remains more subdued. While WTI 6M skew also flattened, puts are still trading at a premium to calls, indicating investors sill see more downside risk to oil over the next 6 months, as slowing growth and the trade war continue to weigh on oil demand.\nThe VIX \u00ae index gained 2.8 pts last Friday on the back of the Middle East tensions, driven in large part by higher SPX \u00ae skew and convexity (the SPX spot move alone accounted for less than half of the VIX increase). SPX 1M skew (25-delta ratio) steepened from the 23rd percentile low to the 97th percentile high.\nChart: Oil 1M Skew Falls to Record Low on Iran-Israel Conflict\nRelated Posts\nWeek of 11/9/2026: No Contagion (Yet): Equity Vol Spikes, Macro Vol Fades\nWeek of 11/2/2026: Tech Rout, Muted Vol: Bullish Positioning Unwinds\nWeek of 10/26/2026: Tech Risk Premium Rising Ahead of Key Earnings",
  "text_source": "full_article",
- "fetched_utc": "2026-11-15T14:56:54.437031+00:00"
+ "fetched_utc": "2026-11-15T14:56:54.437031+00:00",
+ "date_source": "unknown"
 }

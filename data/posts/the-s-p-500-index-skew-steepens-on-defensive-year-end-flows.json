@@ -4,10 +4,10 @@
  "title": "The S&P-500\u00ae Index Skew Steepens on Defensive Year-End Flows",
  "summary": "",
  "author": "",
- "published": "2026-11-15T14:50:51.740606+00:00",
+ "published": "",
  "category": "macro_volatility_digest",
- "from_category_page": true,
  "text": "The S&P-500\u00ae Index Skew Steepens on Defensive Year-End Flows\nInterest rate volatility led the across-the-board advance in cross-asset volatilities last week driven by the increase in the PPI for the 2nd consecutive month (PPI=0.4% vs 0.2% consensus). Despite indications of lingering inflation, Fed Fund futures are pricing in a steadily higher chance of a rate cut (93% now vs 87% last week and 62% 2 weeks ago). Crypto demand continues unabated with the 10 largest Bitcoin ETF holdings within the Cboe CBTX recording its 12th consecutive inflow totaling $18B. As the alt-asset forges ahead into uncharted territory, options sentiment remains bullish with CBTX call open interest outpacing puts by 2:1.\nDespite both the extraordinary low equity market realized volatility with 1M S&P 500 realizing 6.6% and a seasonally stable outlook for the remaining weeks of the year, vol-of-vol has steadily increased over the last week with the VVIX Index rising 10 pts from 45th percentile levels to 97 (70th percentile) stemming from a bid in VIX 15-strike, Dec 18 calls (coinciding with the Dec FOMC meeting). Skew has reversed course and has steepened into year-end, rising from 65th percentile levels to 85th percentile highs.\nIn concurrence with the steepening skew, recent flows have leaned defensive with 160K in new 6000-strike (25-delta) put contracts opened as the S&P eases off from all-time highs. That said, overall positioning within the S&P options complex for the remainder of the year remains net bullish with delta-equivalent December expiry call options open interest outnumbering puts by 3.5:1\nChart: Despite Recent Defensive Flow, High Net Dec Call Interest Suggests Bullish Year End Positioning (Delta-adjusted open interest.)\nRelated Posts\nWeek of 11/9/2026: No Contagion (Yet): Equity Vol Spikes, Macro Vol Fades\nWeek of 11/2/2026: Tech Rout, Muted Vol: Bullish Positioning Unwinds\nWeek of 10/26/2026: Tech Risk Premium Rising Ahead of Key Earnings",
  "text_source": "full_article",
- "fetched_utc": "2026-11-15T14:57:23.504338+00:00"
+ "fetched_utc": "2026-11-15T14:57:23.504338+00:00",
+ "date_source": "unknown"
 }

@@ -4,10 +4,10 @@
  "title": "Gold, Silver and Equities Evidence Positive Vol/Spot Correlation",
  "summary": "",
  "author": "",
- "published": "2026-11-15T14:50:51.740499+00:00",
+ "published": "",
  "category": "macro_volatility_digest",
- "from_category_page": true,
  "text": "Gold, Silver and Equities Evidence Positive Vol/Spot Correlation\nImplied volatilities were higher across the major asset classes last week on the back of President Trump's nomination of arguably the most hawkish of the top contenders for Fed chair, Kevin Warsh. Although last Friday's 10% and 29% collapse in gold and silver prices doubled the 1M realized volatility of the two metals, the comparable maturity implied volatilities for GLD and SLV were significantly more well behaved and essentially followed skew downwards from 38.6 to 35.8 (GLD) and from 103.7 to 86.1 (SLV). As a result, ATM options on the metals are currently cheaper both from a nominal AND from a percentage of spot standpoint than they were last Thursday. That being said, implied vols for GLD and SLV remain near historic 7th standard deviation highs.\nAlthough the S&P 500 \u00ae Index advanced 2 of 5 days last week for a w/w gain of 34bps, equity volatility, skew, and vol-of-vol have all risen with the VIX \u00ae index closing Friday's session +1.35 VIX pts w/w. Our Cboe VIX Decomposition tool shows that this positive DVol/DSpot dynamic can be almost entirely attributed to an upward shift of the volatility skew stemming from a market wide bid for optionality.\nStock correlation has trended higher w/w but with 2/3 of the S&P 500 yet to announce earnings and four Mag10 companies (AMD, PLTR, GOOG, AMZN) set to release this week, correlation (COR1M) still remains at a low 10.8%.\nThe information provided is for general education and information purposes only. No statement provided should be construed as a recommendation to buy or sell a security, future, financial instrument, investment fund, or other investment product (collectively, a \u201cfinancial product\u201d), or to provide investment advice.\nRelated Posts\nWeek of 11/9/2026: No Contagion (Yet): Equity Vol Spikes, Macro Vol Fades\nWeek of 11/2/2026: Tech Rout, Muted Vol: Bullish Positioning Unwinds\nWeek of 10/26/2026: Tech Risk Premium Rising Ahead of Key Earnings",
  "text_source": "full_article",
- "fetched_utc": "2026-11-15T14:56:04.510939+00:00"
+ "fetched_utc": "2026-11-15T14:56:04.510939+00:00",
+ "date_source": "unknown"
 }

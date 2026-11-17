@@ -4,10 +4,10 @@
  "title": "Week of 8/10/2026: SPX\u00ae Skew Collapses on Upside Chasing",
  "summary": "",
  "author": "",
- "published": "2026-11-15T14:50:51.740434+00:00",
+ "published": "2026-08-10",
  "category": "macro_volatility_digest",
- "from_category_page": true,
  "text": "Week of 8/10/2026: SPX\u00ae Skew Collapses on Upside Chasing\nImplied volatilities declined across asset classes last week after weaker US economic data boosted expectations of a Fed hold at the next meeting. Gold was the only major asset class to see volatility increase, with GLD 1M implied vol up over 2 pts as call demand picked up. GLD 1M skew (25-delta ratio) is now inverted for the first time since May (i.e. calls trading more expensive than puts) and is at its most extreme since late Jan (when gold was still at its all-time high).\nDespite the large equity rally last week, demand for optionality actually increased, with SPX fixed strike vols rising meaningfully, helping to explain why the decline in the VIX \u00ae Index was much smaller than expected. SPX skew collapsed to a 1-year low across tenors as investors sold out of hedges and rotated into upside calls to chase the rally. SPX 1M skew fell to its lowest level since mid-2024 (see chart below). Interestingly, deep OTM puts still saw a bid, with SPX 1M put convexity (10-delta vs. 25-delta put ratio) remaining in the 66 th percentile high over the past 5 years.\nAmong the major US indices, the Russell 2000 \u00ae Index saw the biggest decline in volatility last week, with RTY 1M implied vol down 1.8 pts to 16.9% (2 nd percentile low). The RTY-SPX 1M implied volatility spread narrowed to a new 1-year low of 4% as small caps continued its steady upward climb (now +22% YTD vs. SPX Index +13%).\nChart: SPX Skew Collapses as Call Demand Jumps\nRelated Posts\nWeek of 11/9/2026: No Contagion (Yet): Equity Vol Spikes, Macro Vol Fades\nWeek of 11/2/2026: Tech Rout, Muted Vol: Bullish Positioning Unwinds\nWeek of 10/26/2026: Tech Risk Premium Rising Ahead of Key Earnings",
  "text_source": "full_article",
- "fetched_utc": "2026-11-15T14:55:21.406557+00:00"
+ "fetched_utc": "2026-11-15T14:55:21.406557+00:00",
+ "date_source": "title"
 }

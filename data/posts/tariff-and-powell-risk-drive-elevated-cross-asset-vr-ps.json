@@ -4,10 +4,10 @@
  "title": "Tariff and Powell Risk Drive Elevated Cross-Asset VRPs",
  "summary": "",
  "author": "",
- "published": "2026-11-15T14:50:51.740553+00:00",
+ "published": "",
  "category": "macro_volatility_digest",
- "from_category_page": true,
  "text": "Tariff and Powell Risk Drive Elevated Cross-Asset VRPs\nWhile overall levels of implied volatility remain muted across asset classes, what stands out is the even lower levels of realized volatility. 1M realized volatility for equities, rates, credit, and FX (e.g. USDJPY, EURUSD) are all at or near 1-year lows. In fact, the volatility risk premium (difference between implied vs. realized volatility) is near a 1-year high for a number of asset classes. Equities screens as having the richest cross-asset VRP, with the SPX \u00ae 1M implied-realized vol spread widening to a high of 5.2 pts (92nd percentile high). In other words, while implied volatility is low in absolute terms, it\u2019s not cheap from a carry perspective.\nThe divergence between the RTY-SPX and QQQ-SPX vol spreads continued last week, with the RTY-SPX 1M vol spread widening to a YTD high of 8.5% while the QQQ-SPX vol spread narrowed to near a 1-year low of 3.0%. The compression of QQQ vol relative to SPX is especially notable as we approach Tech earnings.\nInterestingly as we near the August 1st tariff deadline, we\u2019re starting to see some risk premium being priced into the SPX vol surface for the event, as shown by the \u201ckink\u201d in the term structure (see below). Notably we did not see any event risk priced in ahead of the July 9th and Apr 2nd tariff announcements. Does this mean investors are starting to believe this is a \u201cfinal\u201d deadline for negotiations? Perhaps. Though in our view, the kink is more likely due to the NFP number to be released the same day. Currently, SPX options are implying ~1.3% move for Aug 1st.\nChart: Chart: \u201cKink\u201d in SPX Term Structure for Aug 1st Event Risk\nRelated Posts\nWeek of 11/9/2026: No Contagion (Yet): Equity Vol Spikes, Macro Vol Fades\nWeek of 11/2/2026: Tech Rout, Muted Vol: Bullish Positioning Unwinds\nWeek of 10/26/2026: Tech Risk Premium Rising Ahead of Key Earnings",
  "text_source": "full_article",
- "fetched_utc": "2026-11-15T14:56:48.011527+00:00"
+ "fetched_utc": "2026-11-15T14:56:48.011527+00:00",
+ "date_source": "unknown"
 }

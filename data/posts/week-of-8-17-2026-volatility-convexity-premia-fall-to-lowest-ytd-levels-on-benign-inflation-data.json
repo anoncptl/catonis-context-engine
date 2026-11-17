@@ -4,10 +4,10 @@
  "title": "Week of 8/17/2026: Volatility/Convexity Premia Fall to Lowest YTD Levels on Benign Inflation Data",
  "summary": "",
  "author": "",
- "published": "2026-11-15T14:50:51.740431+00:00",
+ "published": "2026-08-17",
  "category": "macro_volatility_digest",
- "from_category_page": true,
  "text": "Week of 8/17/2026: Volatility/Convexity Premia Fall to Lowest YTD Levels on Benign Inflation Data\nCross-asset implied volatilities declined across the board on the back of a run of \u201cgoldilocks\u201d inflation prints (soft CPI, flat PPI) that has reinforced hopes the Fed is done hiking. Despite the retracement of 30-year Treasury yields to 10-year highs, interest rate volatility as measured by the MOVE Index continues to edge lower and is now trading at 36th percentile lows vs 89th percentile highs 2-weeks ago. (Although the MOVE Index is calculated as a blend of 2, 5, 10 and 30-year swaption volatility, it is most sensitive to front-end and belly uncertainty tied to near-term Fed decisions. The disconnect between the two measures suggests that short-end rate expectations and marginal policy uncertainties have stabilized while the long end has remained elevated for structural reasons (e.g., term premium, supply). The odds of a Sept hold = 67%.\nThe VIX \u00ae Index underperformed skew last week, falling -0.65 pts to 14.25 (a YTD low) due primarily to a lowering of fixed-strike vols across the curve. Although the benign inflation backdrop has anchored skew to its lowest levels since mid-2024, deep OTM puts continue to be bid with SPX 1M put convexity (10-delta vs 25-delta put ratio) trading at 92nd percentile highs over the last year. We believe the demand for DOTM puts is an opportunistic play with traders taking advantage of vol-of-vol at 2-year lows (VVIX=87) to pre-emptively accrue long downside convexity hedges rather than positioning for a specific downside catalyst.\nChart: Traders Taking Advantage of \u201cCheap\u201d Convexity Premia to Hedge Downside Tail-Risk\nRelated Posts\nWeek of 11/9/2026: No Contagion (Yet): Equity Vol Spikes, Macro Vol Fades\nWeek of 11/2/2026: Tech Rout, Muted Vol: Bullish Positioning Unwinds\nWeek of 10/26/2026: Tech Risk Premium Rising Ahead of Key Earnings",
  "text_source": "full_article",
- "fetched_utc": "2026-11-15T14:55:13.173555+00:00"
+ "fetched_utc": "2026-11-15T14:55:13.173555+00:00",
+ "date_source": "title"
 }
