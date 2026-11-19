@@ -1,13 +1,13 @@
 {
- "running_thesis": "The Nasdaq-100 closed 17 Nov at 27001.78 (-0.72%) after -2.67% on 16 Nov. Cboe says the S&P 500 fell 1.0% on 17 Nov. VIX 25.46, VXN 34.44, COR1M 20.13. Nvidia beat and guided Q4 revenue to $130 billion vs $125.3 billion (Cboe), lifting AI names after hours. Headlines say futures are up (unverified). December hike: Cboe cites 97.4% on FedWatch, Polymarket 92.5% with 50+ bps at 5.0%. Yields eased (10-year 5.1%). Next: FOMC minutes (Wed 20:00 CET) and the Anthropic IPO pricing and Thursday debut. HY OAS 3.34 as of 16 Nov. Oil data are stale.",
+ "running_thesis": "Nasdaq-100 closed 18 Nov at 27116.26 (+0.42%), S&P 500 7323.63 (-0.23%), after a -2.67% day on 16 Nov. Nvidia beat and guided $130B, but shares closed nearly 3% lower, with probes and succession questions open. Cboe calls the 9 Dec hike a near certainty; the October minutes were hawkish and Waller floated 50 bps (Polymarket 50+ bps 6.4%). VIX 24.56, VXN 33.12, COR1M 23.24 and rising, HY OAS 3.43. Anthropic prices at $83 (reported) and debuts Thursday. Oil data stale to 17 Nov.",
  "open_questions": [
-  "Does the Nvidia relief hold through the New York session, given the lower gross margin guide and open succession questions?",
-  "Do the FOMC minutes raise 50+ bps hike odds?",
-  "Does COR1M above 20 signal contagion beyond tech?",
-  "Does the Anthropic IPO support or drain AI risk appetite?"
+  "Does the Anthropic debut support or drain AI risk appetite?",
+  "Does Nvidia stabilise despite succession and probe overhangs?",
+  "Does rising COR1M and wider HY OAS signal contagion beyond tech?",
+  "Does 50+ bps hike pricing grow ahead of 9 Dec?"
  ],
  "themes": {
-  "Fed hikes and rising yields": "continuing; December hike near fully priced; yields eased on 16 and 17 Nov",
+  "Fed hikes and rising yields": "continuing; hawkish October minutes, 50 bps debated, yields eased 18 Nov",
   "NVDA leadership change": "continuing, headline-driven echo",
   "Oil retreat": "fading; official data stale to 11 Nov",
   "Tech volatility (VXN near 29)": "elevated",
@@ -17,10 +17,12 @@
   "AI trade test (Nvidia earnings, Anthropic IPO)": "active; Anthropic IPO is headline-only",
   "Volatility and implied correlation": "VXN 32.9, COR1M 16.42 rising",
   "Nvidia leadership change and earnings": "strengthening; price, options and retail-positioning evidence; earnings after the close Tue 17 Nov",
-  "Tech volatility and implied correlation": "elevated and rising; VXN 34.44, COR1M 20.13",
+  "Tech volatility and implied correlation": "elevated; VXN 33.12, COR1M 23.24 rising",
   "Nvidia earnings and leadership change": "new evidence: results and guidance beat; succession questions remain",
-  "AI trade test (Anthropic IPO)": "active; reported to price tonight, trading Thursday",
-  "Oil": "fading; official data stale to 11 Nov, Cboe cites tanker attacks",
-  "Credit": "HY OAS 3.34 (+11 bp), watch for stress"
+  "AI trade test (Anthropic IPO)": "active; debut Thursday",
+  "Oil": "fading; official data stale to 17 Nov, shipping-risk headlines unverified",
+  "Credit": "HY OAS 3.43, widening three days in a row",
+  "Nvidia leadership, earnings and scrutiny": "continuing; beat faded, probes reported by Cboe",
+  "Healthcare and Dow weakness": "new; UnitedHealth -10.2% on Medicare Advantage audit proposal"
  }
 }

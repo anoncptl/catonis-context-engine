@@ -1,0 +1,271 @@
+{
+ "headline": "Hawkish Fed minutes, Nvidia fades again, Anthropic debuts today; tech vol still high",
+ "what_happened": {
+  "summary": "Per the Cboe Daily Take 'Nasdaq Breaks Losing Streak as Dow and S&P Slide Again' (18 Nov), Nvidia opened higher after earnings but closed nearly 3% lower, while the Nasdaq Composite snapped a four-session losing streak. FRED shows the Nasdaq-100 closed at 27116.26 (+0.42%) and the S&P 500 at 7323.63 (-0.23%), its fifth straight loss per Cboe. Cboe calls a 9 Dec hike a near certainty after the October FOMC minutes, which it describes as hawkish. It also says Fed Governor Waller floated a 50-basis-point increase. Unverified headlines this morning describe Nasdaq futures rising ahead of Anthropic's debut, and others say yields are edging higher. The inputs contain no live prices, so this brief does not say where NQ trades.",
+  "market_action": "Nasdaq-100 +0.42% against S&P 500 -0.23%. Cboe reports the Dow down 1.11% (UnitedHealth -10.2% on a proposed Medicare Advantage audit expansion) and retailers up after Target and TJX results. VIX closed at 24.56 (-3.53%) and VXN at 33.12 (-3.83%), but COR1M rose to 23.24 (+15.45%), its third straight rise (9.99 on 12 Nov). VVIX was 118.37 and SKEW 142.84.",
+  "macro": "Treasury (primary source): the 10-year closed at 5.07% (-3.0 bp), the 2-year at 4.8% (0.0 bp) and the 30-year at 5.41% (-5.0 bp), so yields eased despite the hawkish tone. Polymarket (prediction-market prices, not CME FedWatch) puts a 25 bps December hike at 91.5% and a 50+ bps hike at 6.4%. FRED HY OAS was 3.43 pct pts (+9.0 bp) as of 17 Nov, the third widening in a row. Latest BLS prints: October core CPI 0.3% m/m, unemployment 4.1%.",
+  "geopolitics": "Not covered by the sources beyond Cboe's earlier mention of Middle East tanker attacks and unverified headlines about Middle East shipping risks. FRED oil is stale to 17 Nov (Brent 92.94 $/bbl, WTI 89.53 $/bbl).",
+  "company_news": "Nvidia: Cboe says its shares are down more than 30% in the last month. Its board is investigating former CEO Huang, and Cboe reports Justice and Commerce department scrutiny of Megaspeed over possible China export violations, with the SEC reportedly probing too. Cboe says options price a move of almost $23 either way. Anthropic reportedly priced its IPO at $83 per share, 825 million shares, six to seven times oversubscribed, with trading due Thursday (Cboe, citing reports). UnitedHealth fell 10.2% and Humana 13%."
+ },
+ "dominant_driver": "single-stock or sector news",
+ "driver_reason": "The index divergence (Nasdaq-100 +0.42%, S&P 500 -0.23%, Dow -1.11%) came from stock-specific moves: Nvidia fading, UnitedHealth and the retailers, with Anthropic's debut next. The Fed shift is real, but yields fell on the day, so rates did not drive the tape.",
+ "leader": "QQQ",
+ "leader_reason": "Nasdaq-100 minus S&P 500 was +0.65 pct pts last session, but -0.55 pct pts over five sessions, so the rebound is only one day old. VXN minus VIX is 8.56 pts and COR1M is 23.24 and rising, so tech still carries the risk premium while correlation is starting to broaden.",
+ "overlap_with_previous": {
+  "continuing": [
+   "Fed hike near fully priced, with 50 bps now debated",
+   "Nvidia leadership and scrutiny story",
+   "Elevated tech vol (VXN 33.12) and rising implied correlation",
+   "Anthropic IPO as the AI risk-appetite test"
+  ],
+  "new": [
+   "Hawkish October FOMC minutes (Cboe) and Waller's 50 bps remarks",
+   "Nvidia failing to hold post-earnings gains",
+   "UnitedHealth and Medicare Advantage shock hitting the Dow",
+   "COR1M at 23.24, the highest in the series shown",
+   "HY OAS widening to 3.43"
+  ],
+  "fading": [
+   "Oil as a driver (data stale)",
+   "Nvidia earnings as a binary event, now done"
+  ],
+  "echo_check": "The Nvidia leadership and Anthropic themes are partly an echo: this morning's headlines repeat 'AI optimism' without new primary evidence. The genuinely new evidence is the hawkish minutes, the rising COR1M and the wider HY OAS."
+ },
+ "scheduled_events": [
+  {
+   "when_vienna": "Thu 19 Nov 14:30",
+   "event": "Unemployment Insurance Weekly Claims Report (consensus 198K, previous 200K, unofficial)",
+   "why_it_matters": "A labor read with the Fed leaning hawkish. The release is at 14:30 CET and the figure is not in the inputs yet.",
+   "source": "FRED release calendar"
+  },
+  {
+   "when_vienna": "Thu 19 Nov 14:30",
+   "event": "Philly Fed Manufacturing Index (consensus 20.6, previous 20.9, unofficial)",
+   "why_it_matters": "Another read on growth versus inflation pressure ahead of the December hike.",
+   "source": "consensus (unofficial)"
+  },
+  {
+   "when_vienna": "Thu 19 Nov (time not in inputs)",
+   "event": "Anthropic first day of trading after IPO pricing",
+   "why_it_matters": "Tests AI risk appetite and whether capital is pulled from or added to the AI complex. The exact time is not in the inputs.",
+   "source": "Cboe post"
+  },
+  {
+   "when_vienna": "Fri 20 Nov 16:00",
+   "event": "Revised UoM Consumer Sentiment (consensus 51.7, previous 51.0) and Inflation Expectations (previous 4.3%, no consensus), unofficial",
+   "why_it_matters": "Inflation expectations feed the hike-size debate.",
+   "source": "consensus (unofficial)"
+  }
+ ],
+ "outlook": {
+  "next_day": {
+   "lower_pct": -1.2,
+   "upper_pct": 1.2,
+   "confidence": "low",
+   "confidence_reason": "VIX is 24.56 and VXN 33.12, so daily ranges are wide. The Anthropic debut and the claims print land in the same session, and headline-implied futures strength is unverified.",
+   "scenarios": [
+    {
+     "name": "bear",
+     "prob": 27,
+     "text": "Nvidia fades again, the Anthropic debut disappoints or drains AI risk appetite, or hawkish Fed talk lifts yields. COR1M keeps rising and selling broadens.",
+     "invalidation": "A calm debut with Nvidia stable and COR1M falling back."
+    },
+    {
+     "name": "base",
+     "prob": 41,
+     "text": "Choppy session within 1.2% either way. Relief and a strong debut offset the hike risk and the Nvidia overhang.",
+     "invalidation": "A close beyond either cut point."
+    },
+    {
+     "name": "bull",
+     "prob": 32,
+     "text": "A strong Anthropic debut and a bid in AI names extend the one-day Nasdaq-100 rebound while yields stay soft.",
+     "invalidation": "Yields rising (as some headlines suggest) while Nvidia and semis fail to follow through."
+    }
+   ],
+   "history_probs": {
+    "bear": 23.0,
+    "base": 53.3,
+    "bull": 23.7,
+    "n": 1284
+   },
+   "probs_normalized": {
+    "bear": 27.0,
+    "base": 41.0,
+    "bull": 32.0
+   }
+  },
+  "next_week": {
+   "lower_pct": -3.0,
+   "upper_pct": 3.0,
+   "confidence": "low",
+   "confidence_reason": "The same-regime base rate is wide (p25 -2.41, p75 2.55) and VXN is elevated. Several catalysts (Nvidia scrutiny, hike-size debate, credit) are unresolved.",
+   "scenarios": [
+    {
+     "name": "bear",
+     "prob": 29,
+     "text": "Rate-hike size fears, widening credit spreads and higher correlation turn the AI rotation into broader selling.",
+     "invalidation": "COR1M falls back, HY OAS tightens and Nvidia stabilises."
+    },
+    {
+     "name": "base",
+     "prob": 42,
+     "text": "Range-bound with high volatility: AI names trade as a rotation, and a December hike is already priced.",
+     "invalidation": "A close beyond \u00b13% over five sessions."
+    },
+    {
+     "name": "bull",
+     "prob": 29,
+     "text": "AI optimism after Nvidia guidance and the Anthropic IPO outweighs the hike, and the vol premium compresses.",
+     "invalidation": "Hawkish Fed repricing toward 50+ bps, or HY OAS widening further."
+    }
+   ],
+   "history_probs": {
+    "bear": 20.4,
+    "base": 58.8,
+    "bull": 20.7,
+    "n": 1283
+   },
+   "probs_normalized": {
+    "bear": 29.0,
+    "base": 42.0,
+    "bull": 29.0
+   }
+  },
+  "next_month": {
+   "lower_pct": -5.5,
+   "upper_pct": 6.0,
+   "confidence": "low",
+   "confidence_reason": "The regime base rate is wide (p10 -12.11, p90 8.57) and the 9 Dec FOMC falls inside the window. The next sessions mostly help only to read the event risk.",
+   "scenarios": [
+    {
+     "name": "bear",
+     "prob": 28,
+     "text": "A hawkish December hike with 2027 guidance, Nvidia scrutiny and credit stress extend the tech drawdown.",
+     "invalidation": "Hike delivered at 25 bps with softer forward guidance and credit calm."
+    },
+    {
+     "name": "base",
+     "prob": 42,
+     "text": "Choppy digestion as the hike is delivered as priced and the AI trade finds a new leadership mix.",
+     "invalidation": "A decisive move beyond the cut points."
+    },
+    {
+     "name": "bull",
+     "prob": 30,
+     "text": "Hike delivered as priced, vol compresses and AI demand evidence supports a recovery.",
+     "invalidation": "Persistent rise in yields and HY OAS."
+    }
+   ],
+   "history_probs": {
+    "bear": 26.0,
+    "base": 51.8,
+    "bull": 22.2,
+    "n": 1281
+   },
+   "probs_normalized": {
+    "bear": 28.0,
+    "base": 42.0,
+    "bull": 30.0
+   }
+  }
+ },
+ "record_comment": "Three next-day forecasts are graded: Brier 0.582 versus 0.667 for equal odds and 0.631 for history, with the top pick right 2/3. The miss was the 13 Nov bear tail, so I keep tails near history while VXN is above 33.",
+ "watch_list": [
+  "Anthropic debut reaction and whether Nvidia and semis follow",
+  "Claims and Philly Fed prints, then yields into the cash open",
+  "COR1M above 23.24 or HY OAS widening (contagion check)",
+  "Fed speakers or Polymarket odds on a 50+ bps hike"
+ ],
+ "memory_update": {
+  "running_thesis": "Nasdaq-100 closed 18 Nov at 27116.26 (+0.42%), S&P 500 7323.63 (-0.23%), after a -2.67% day on 16 Nov. Nvidia beat and guided $130B, but shares closed nearly 3% lower, with probes and succession questions open. Cboe calls the 9 Dec hike a near certainty; the October minutes were hawkish and Waller floated 50 bps (Polymarket 50+ bps 6.4%). VIX 24.56, VXN 33.12, COR1M 23.24 and rising, HY OAS 3.43. Anthropic prices at $83 (reported) and debuts Thursday. Oil data stale to 17 Nov.",
+  "open_questions": [
+   "Does the Anthropic debut support or drain AI risk appetite?",
+   "Does Nvidia stabilise despite succession and probe overhangs?",
+   "Does rising COR1M and wider HY OAS signal contagion beyond tech?",
+   "Does 50+ bps hike pricing grow ahead of 9 Dec?"
+  ],
+  "themes": {
+   "Fed hikes and rising yields": "continuing; hawkish October minutes, 50 bps debated, yields eased 18 Nov",
+   "Nvidia leadership, earnings and scrutiny": "continuing; beat faded, probes reported by Cboe",
+   "AI trade test (Anthropic IPO)": "active; debut Thursday",
+   "Tech volatility and implied correlation": "elevated; VXN 33.12, COR1M 23.24 rising",
+   "Credit": "HY OAS 3.43, widening three days in a row",
+   "Oil": "fading; official data stale to 17 Nov, shipping-risk headlines unverified",
+   "Healthcare and Dow weakness": "new; UnitedHealth -10.2% on Medicare Advantage audit proposal"
+  }
+ },
+ "id": "2026-11-19-daily",
+ "slot": "daily",
+ "slot_label": "Daily (08:30 New York)",
+ "made_utc": "2026-11-19T13:31:58.498334+00:00",
+ "ref_date": "2026-11-18",
+ "model": "claude-sonnet-5-5",
+ "usage": {
+  "input_tokens": 32707,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "output_tokens": 6637,
+  "output_tokens_details": {
+   "thinking_tokens": 2097
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "number_flags": [],
+ "posts_used": [
+  {
+   "title": "Nasdaq Breaks Losing Streak as Dow and S&P Slide Again",
+   "url": "https://www.cboe.com/insights/posts/nasdaq-breaks-losing-streak-as-dow-and-s-p-slide-again/",
+   "date": "2026-11-18",
+   "text_source": "full_article",
+   "older": false,
+   "tag": "newest Daily Take"
+  },
+  {
+   "title": "Nvidia\u2019s Earnings and Guidance Soothe Investor Worries",
+   "url": "https://www.cboe.com/insights/posts/nvidias-earnings-and-guidance-soothe-investor-worries/",
+   "date": "2026-11-17",
+   "text_source": "full_article",
+   "older": false,
+   "tag": "previous Daily Take"
+  },
+  {
+   "title": "Week of 11/16/2026: Retail Turns Bearish on NVDA Ahead of Earnings",
+   "url": "https://www.cboe.com/insights/posts/week-of-11-16-2026-retail-turns-bearish-on-nvda-ahead-of-earnings/",
+   "date": "2026-11-16",
+   "text_source": "full_article",
+   "older": false,
+   "tag": "newest Macro Volatility Digest"
+  },
+  {
+   "title": "Week of 11/9/2026: No Contagion (Yet): Equity Vol Spikes, Macro Vol Fades",
+   "url": "https://www.cboe.com/insights/posts/week-of-11-9-2026-no-contagion-yet-equity-vol-spikes-macro-vol-fades/",
+   "date": "2026-11-09",
+   "text_source": "full_article",
+   "older": false,
+   "tag": "previous Macro Volatility Digest"
+  },
+  {
+   "title": "Option Volume During Global Trading Hours Continues to Build",
+   "url": "https://www.cboe.com/insights/posts/option-volume-during-global-trading-hours-continues-to-build",
+   "date": "2026-11-16",
+   "text_source": "full_article",
+   "older": true,
+   "tag": "older"
+  },
+  {
+   "title": "Nvidia Tugs Market Lower Again",
+   "url": "https://www.cboe.com/insights/posts/nvidia-tugs-market-lower-again",
+   "date": "2026-11-16",
+   "text_source": "full_article",
+   "older": true,
+   "tag": "older"
+  }
+ ]
+}
