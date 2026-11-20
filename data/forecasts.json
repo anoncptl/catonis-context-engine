@@ -251,7 +251,15 @@
    "bull": 23.7,
    "n": 1284
   },
-  "status": "open"
+  "status": "resolved",
+  "ref_close": 27116.26,
+  "end_date": "2026-11-19",
+  "end_close": 26517.05,
+  "change_pct": -2.21,
+  "outcome": "bear",
+  "brier": 0.8034,
+  "brier_equal": 0.6667,
+  "brier_history": 0.9332
  },
  {
   "id": "2026-11-18|next_week",

@@ -1,15 +1,15 @@
 {
- "utc": "2026-11-19T13:31:58.498334+00:00",
+ "utc": "2026-11-20T13:32:03.756153+00:00",
  "slot": "daily",
  "status": {
   "cboe": {
    "name": "Cboe Insights",
    "ok": true,
-   "detail": "RSS 25 items; 3/3 pages; 1 new posts; newest Daily Take: Nasdaq Breaks Losing Streak as Dow and S&P Slide Again; newest Digest: Week of 11/16/2026: Retail Turns Bearish on NVDA Ahead of Ea",
+   "detail": "RSS 25 items; 3/3 pages; 2 new posts; newest Daily Take: Anthropic Hits the Market, but Wall Street Hits the Brakes; newest Digest: Week of 11/16/2026: Retail Turns Bearish on NVDA Ahead of Ea",
    "latest": {
     "todaysmarkettake": [
-     "nasdaq-breaks-losing-streak-as-dow-and-s-p-slide-again",
-     "nvidias-earnings-and-guidance-soothe-investor-worries"
+     "anthropic-hits-the-market-but-wall-street-hits-the-brakes",
+     "nasdaq-breaks-losing-streak-as-dow-and-s-p-slide-again"
     ],
     "macro_volatility_digest": [
      "week-of-11-16-2026-retail-turns-bearish-on-nvda-ahead-of-earnings",
@@ -25,7 +25,7 @@
   "treasury": {
    "name": "US Treasury yield curve",
    "ok": true,
-   "detail": "latest 2026-11-18"
+   "detail": "latest 2026-11-19"
   },
   "bls": {
    "name": "BLS inflation and jobs",
@@ -54,13 +54,13 @@
   },
   "gdelt": {
    "name": "GDELT global news",
-   "ok": false,
-   "detail": "HTTP Error 429: Too Many Requests"
+   "ok": true,
+   "detail": "15 articles"
   },
   "headlines": {
    "name": "Google News headlines",
    "ok": true,
-   "detail": "8/8 searches, 25 headlines since the Wed 18 Nov close"
+   "detail": "7/8 searches, 25 headlines since the Thu 19 Nov close"
   },
   "fed": {
    "name": "Federal Reserve releases",
@@ -75,17 +75,12 @@
   "history": {
    "name": "Price history for grading and base rates",
    "ok": true,
-   "detail": "6762 Nasdaq-100 closes since 2000-01-03"
+   "detail": "6763 Nasdaq-100 closes since 2000-01-03"
   },
   "ai": {
    "name": "Claude brief",
-   "ok": true,
-   "detail": "brief 2026-11-19-daily written"
-  },
-  "discord": {
-   "name": "Discord post",
-   "ok": true,
-   "detail": "posted (HTTP 204)"
+   "ok": false,
+   "detail": "Claude API call failed: Expecting ',' delimiter: line 132 column 3 (char 8741)"
   }
  },
  "facts": [
@@ -93,40 +88,40 @@
    "id": "F1",
    "group": "Rates",
    "label": "2-year Treasury yield",
-   "value": 4.8,
+   "value": 4.76,
    "unit": "%",
-   "change": "+0.0 bp",
-   "as_of": "2026-11-18",
+   "change": "-4.0 bp",
+   "as_of": "2026-11-19",
    "source": "US Treasury"
   },
   {
    "id": "F2",
    "group": "Rates",
    "label": "10-year Treasury yield",
-   "value": 5.07,
+   "value": 5.04,
    "unit": "%",
    "change": "-3.0 bp",
-   "as_of": "2026-11-18",
+   "as_of": "2026-11-19",
    "source": "US Treasury"
   },
   {
    "id": "F3",
    "group": "Rates",
    "label": "30-year Treasury yield",
-   "value": 5.41,
+   "value": 5.4,
    "unit": "%",
-   "change": "-5.0 bp",
-   "as_of": "2026-11-18",
+   "change": "-1.0 bp",
+   "as_of": "2026-11-19",
    "source": "US Treasury"
   },
   {
    "id": "F4",
    "group": "Markets",
    "label": "Nasdaq-100 index close",
-   "value": 27116.26,
+   "value": 26517.05,
    "unit": "index",
-   "change": "+0.42%",
-   "as_of": "2026-11-18",
+   "change": "-2.21%",
+   "as_of": "2026-11-19",
    "source": "FRED NASDAQ100"
   },
   {
@@ -143,40 +138,40 @@
    "id": "F6",
    "group": "Rates",
    "label": "10-year real yield (TIPS)",
-   "value": 2.89,
+   "value": 2.88,
    "unit": "%",
-   "change": "-3.0 bp",
-   "as_of": "2026-11-17",
+   "change": "-1.0 bp",
+   "as_of": "2026-11-18",
    "source": "FRED DFII10"
   },
   {
    "id": "F7",
    "group": "Rates",
    "label": "10-year breakeven inflation",
-   "value": 2.19,
+   "value": 2.16,
    "unit": "%",
-   "change": "-2.0 bp",
-   "as_of": "2026-11-18",
+   "change": "-3.0 bp",
+   "as_of": "2026-11-19",
    "source": "FRED T10YIE"
   },
   {
    "id": "F8",
    "group": "Rates",
    "label": "10y minus 2y spread",
-   "value": 0.27,
+   "value": 0.28,
    "unit": "pct pts",
-   "change": "-3.0 bp",
-   "as_of": "2026-11-18",
+   "change": "+1.0 bp",
+   "as_of": "2026-11-19",
    "source": "FRED T10Y2Y"
   },
   {
    "id": "F9",
    "group": "Credit",
    "label": "High-yield credit spread (OAS)",
-   "value": 3.43,
+   "value": 3.47,
    "unit": "pct pts",
-   "change": "+9.0 bp",
-   "as_of": "2026-11-17",
+   "change": "+4.0 bp",
+   "as_of": "2026-11-18",
    "source": "FRED BAMLH0A0HYM2"
   },
   {
@@ -203,60 +198,60 @@
    "id": "F12",
    "group": "Volatility",
    "label": "VIX",
-   "value": 24.56,
+   "value": 28.44,
    "unit": "index",
-   "change": "-3.53%",
-   "as_of": "2026-11-18",
+   "change": "+15.80%",
+   "as_of": "2026-11-19",
    "source": "Cboe VIX"
   },
   {
    "id": "F13",
    "group": "Volatility",
    "label": "VXN (Nasdaq-100 vol)",
-   "value": 33.12,
+   "value": 36.48,
    "unit": "index",
-   "change": "-3.83%",
-   "as_of": "2026-11-18",
+   "change": "+10.14%",
+   "as_of": "2026-11-19",
    "source": "Cboe VXN"
   },
   {
    "id": "F14",
    "group": "Volatility",
    "label": "VVIX (vol of VIX)",
-   "value": 118.37,
+   "value": 127.1,
    "unit": "index",
-   "change": "-2.40%",
-   "as_of": "2026-11-18",
+   "change": "+7.38%",
+   "as_of": "2026-11-19",
    "source": "Cboe VVIX"
   },
   {
    "id": "F15",
    "group": "Volatility",
    "label": "SKEW",
-   "value": 142.84,
+   "value": 140.86,
    "unit": "index",
-   "change": "-1.56%",
-   "as_of": "2026-11-18",
+   "change": "-1.39%",
+   "as_of": "2026-11-19",
    "source": "Cboe SKEW"
   },
   {
    "id": "F16",
    "group": "Volatility",
    "label": "VIX9D (9-day vol)",
-   "value": 23.95,
+   "value": 29.26,
    "unit": "index",
-   "change": "-10.30%",
-   "as_of": "2026-11-18",
+   "change": "+22.17%",
+   "as_of": "2026-11-19",
    "source": "Cboe VIX9D"
   },
   {
    "id": "F17",
    "group": "Volatility",
    "label": "COR1M (1-month implied correlation)",
-   "value": 23.24,
+   "value": 30.22,
    "unit": "index",
-   "change": "+15.45%",
-   "as_of": "2026-11-18",
+   "change": "+30.03%",
+   "as_of": "2026-11-19",
    "source": "Cboe COR1M"
   },
   {
@@ -383,7 +378,7 @@
    "id": "F30",
    "group": "Fed odds",
    "label": "Fed decisions (Sep\u2013Dec): Hike\u2013Pause\u2013Hike",
-   "value": 97.0,
+   "value": 96.3,
    "unit": "% implied",
    "change": null,
    "as_of": "2026-12-09",
@@ -393,7 +388,7 @@
    "id": "F31",
    "group": "Fed odds",
    "label": "Fed decisions (Sep\u2013Dec): Hike\u2013Pause\u2013Pause",
-   "value": 2.2,
+   "value": 3.4,
    "unit": "% implied",
    "change": null,
    "as_of": "2026-12-09",
@@ -403,7 +398,7 @@
    "id": "F32",
    "group": "Fed odds",
    "label": "Fed decisions (Sep\u2013Dec): Other",
-   "value": 0.5,
+   "value": 0.6,
    "unit": "% implied",
    "change": null,
    "as_of": "2026-12-09",
@@ -423,7 +418,7 @@
    "id": "F34",
    "group": "Fed odds",
    "label": "Fed Decision in December?: 25 bps increase",
-   "value": 91.5,
+   "value": 92.5,
    "unit": "% implied",
    "change": null,
    "as_of": "2026-12-10",
@@ -432,8 +427,8 @@
   {
    "id": "F35",
    "group": "Fed odds",
-   "label": "Fed Decision in December?: 50+ bps increase",
-   "value": 6.4,
+   "label": "Fed Decision in December?: No change",
+   "value": 4.1,
    "unit": "% implied",
    "change": null,
    "as_of": "2026-12-10",
@@ -442,8 +437,8 @@
   {
    "id": "F36",
    "group": "Fed odds",
-   "label": "Fed Decision in December?: No change",
-   "value": 2.2,
+   "label": "Fed Decision in December?: 50+ bps increase",
+   "value": 4.0,
    "unit": "% implied",
    "change": null,
    "as_of": "2026-12-10",
@@ -453,7 +448,7 @@
    "id": "F37",
    "group": "Fed odds",
    "label": "Fed Decision in December?: 25 bps decrease",
-   "value": 0.4,
+   "value": 0.2,
    "unit": "% implied",
    "change": null,
    "as_of": "2026-12-10",
@@ -463,7 +458,7 @@
    "id": "F38",
    "group": "Fed odds",
    "label": "How many dissent at the December Fed meeting?: 0",
-   "value": 63.0,
+   "value": 64.5,
    "unit": "% implied",
    "change": null,
    "as_of": "2026-12-10",
@@ -473,7 +468,7 @@
    "id": "F39",
    "group": "Fed odds",
    "label": "How many dissent at the December Fed meeting?: 1",
-   "value": 26.5,
+   "value": 26.3,
    "unit": "% implied",
    "change": null,
    "as_of": "2026-12-10",
@@ -483,7 +478,7 @@
    "id": "F40",
    "group": "Fed odds",
    "label": "How many dissent at the December Fed meeting?: 2",
-   "value": 4.0,
+   "value": 4.2,
    "unit": "% implied",
    "change": null,
    "as_of": "2026-12-10",
@@ -493,7 +488,7 @@
    "id": "F41",
    "group": "Fed odds",
    "label": "How many dissent at the December Fed meeting?: 3",
-   "value": 2.5,
+   "value": 2.4,
    "unit": "% implied",
    "change": null,
    "as_of": "2026-12-10",
@@ -523,22 +518,14 @@
    "id": "F44",
    "group": "Leadership",
    "label": "VXN minus VIX",
-   "value": 8.56,
+   "value": 8.04,
    "unit": "pts",
    "change": null,
-   "as_of": "2026-11-18",
+   "as_of": "2026-11-19",
    "source": "computed from Cboe/FRED"
   }
  ],
  "checks": [
-  {
-   "what": "10-year yield",
-   "date": "2026-11-13",
-   "a": "5.15% (Treasury)",
-   "b": "5.15% (FRED)",
-   "agree": true,
-   "note": "0.0 bp apart"
-  },
   {
    "what": "10-year yield",
    "date": "2026-11-16",
@@ -556,10 +543,10 @@
    "note": "0.0 bp apart"
   },
   {
-   "what": "2-year yield",
-   "date": "2026-11-13",
-   "a": "4.88% (Treasury)",
-   "b": "4.88% (FRED)",
+   "what": "10-year yield",
+   "date": "2026-11-18",
+   "a": "5.07% (Treasury)",
+   "b": "5.07% (FRED)",
    "agree": true,
    "note": "0.0 bp apart"
   },
@@ -580,12 +567,12 @@
    "note": "0.0 bp apart"
   },
   {
-   "what": "VIX close",
-   "date": "2026-11-13",
-   "a": "19.30 (Cboe)",
-   "b": "19.30 (FRED)",
+   "what": "2-year yield",
+   "date": "2026-11-18",
+   "a": "4.80% (Treasury)",
+   "b": "4.80% (FRED)",
    "agree": true,
-   "note": "0.00 apart"
+   "note": "0.0 bp apart"
   },
   {
    "what": "VIX close",
@@ -604,10 +591,10 @@
    "note": "0.00 apart"
   },
   {
-   "what": "VXN close",
-   "date": "2026-11-13",
-   "a": "29.38 (Cboe)",
-   "b": "29.38 (FRED)",
+   "what": "VIX close",
+   "date": "2026-11-18",
+   "a": "24.56 (Cboe)",
+   "b": "24.56 (FRED)",
    "agree": true,
    "note": "0.00 apart"
   },
@@ -626,25 +613,33 @@
    "b": "34.44 (FRED)",
    "agree": true,
    "note": "0.00 apart"
+  },
+  {
+   "what": "VXN close",
+   "date": "2026-11-18",
+   "a": "33.12 (Cboe)",
+   "b": "33.12 (FRED)",
+   "agree": true,
+   "note": "0.00 apart"
   }
  ],
  "rates": {
-  "vix_now": 24.56,
-  "regime": "VIX 20 to 25",
+  "vix_now": 28.44,
+  "regime": "VIX 25 to 35",
   "since": "2000-01-03",
   "horizons": {
    "next_day": {
     "sessions": 1,
     "same_regime": {
-     "count": 1284,
-     "p10": -2.63,
-     "p25": -1.06,
-     "p50": 0.14,
-     "p75": 1.12,
-     "p90": 2.17
+     "count": 963,
+     "p10": -3.06,
+     "p25": -1.4,
+     "p50": 0.18,
+     "p75": 1.48,
+     "p90": 3.03
     },
     "all": {
-     "count": 6759,
+     "count": 6760,
      "p10": -1.9,
      "p25": -0.7,
      "p50": 0.1,
@@ -655,15 +650,15 @@
    "next_week": {
     "sessions": 5,
     "same_regime": {
-     "count": 1283,
-     "p10": -5.69,
-     "p25": -2.41,
-     "p50": 0.44,
-     "p75": 2.55,
-     "p90": 4.6
+     "count": 962,
+     "p10": -5.35,
+     "p25": -2.34,
+     "p50": 0.55,
+     "p75": 3.56,
+     "p90": 6.37
     },
     "all": {
-     "count": 6755,
+     "count": 6756,
      "p10": -3.74,
      "p25": -1.46,
      "p50": 0.45,
@@ -674,15 +669,15 @@
    "next_month": {
     "sessions": 21,
     "same_regime": {
-     "count": 1281,
-     "p10": -12.11,
-     "p25": -5.9,
-     "p50": 1.12,
-     "p75": 5.63,
-     "p90": 8.57
+     "count": 960,
+     "p10": -8.68,
+     "p25": -2.16,
+     "p50": 3.14,
+     "p75": 7.62,
+     "p90": 11.92
     },
     "all": {
-     "count": 6739,
+     "count": 6740,
      "p10": -7.23,
      "p25": -2.4,
      "p50": 1.5,
@@ -693,13 +688,6 @@
   }
  },
  "calendar": [
-  {
-   "when_vienna": "Thu 19 Nov 14:30",
-   "when_new_york": "Thu 19 Nov 08:30",
-   "event": "Unemployment Insurance Weekly Claims Report",
-   "source": "FRED release calendar",
-   "time_note": "usual release time"
-  },
   {
    "when_vienna": "Wed 25 Nov 14:30",
    "when_new_york": "Wed 25 Nov 08:30",
@@ -741,6 +729,13 @@
    "event": "Unemployment Insurance Weekly Claims Report",
    "source": "FRED release calendar",
    "time_note": "usual release time"
+  },
+  {
+   "when_vienna": "Fri 04 Dec 14:30",
+   "when_new_york": "Fri 04 Dec 08:30",
+   "event": "Employment Situation",
+   "source": "BLS release schedule",
+   "time_note": ""
   }
  ],
  "consensus": [
@@ -810,6 +805,27 @@
  ],
  "fed": [
   {
+   "time_vienna": "Fri 20 Nov 14:25",
+   "title": "Waller, Opening Remarks",
+   "category": "Speech",
+   "summary": "Speech At the 2026 College Fed Challenge Finals, Board of Governors of the Federal Reserve System, Washington, D.C.",
+   "link": "https://www.federalreserve.gov/newsevents/speech/waller20261120a.htm"
+  },
+  {
+   "time_vienna": "Thu 19 Nov 17:00",
+   "title": "Federal Reserve Board issues enforcement action with former employee of First Security Bancorp",
+   "category": "Enforcement Actions",
+   "summary": "Federal Reserve Board issues enforcement action with former employee of First Security Bancorp",
+   "link": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261119a.htm"
+  },
+  {
+   "time_vienna": "Thu 19 Nov 15:25",
+   "title": "Jefferson, Monetary Policy amid Frequent and Complex Shocks",
+   "category": "Speech",
+   "summary": "Speech At the International Monetary Fund and Central Bank of Brazil Conference \u201cA Quarter Century of Inflation Targeting in Latin America: Progress, Challenges, and the Road Ahead,\u201d Bras&iacute;lia, Brazil",
+   "link": "https://www.federalreserve.gov/newsevents/speech/jefferson20261119a.htm"
+  },
+  {
    "time_vienna": "Wed 18 Nov 20:00",
    "title": "Minutes of the Federal Open Market Committee, October 27-28, 2026",
    "category": "Monetary Policy",
@@ -857,27 +873,6 @@
    "category": "Banking and Consumer Regulatory Policy",
    "summary": "Agencies extend comment period for proposed third-party risk management guidance",
    "link": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20261113a.htm"
-  },
-  {
-   "time_vienna": "Thu 12 Nov 19:30",
-   "title": "Federal Reserve Board announces pricing, effective January 1, 2027, for payment services the Federal Reserve Banks provide to banks and credit unions, and changes to streamline and adjust their check services",
-   "category": "Other Announcements",
-   "summary": "Federal Reserve Board announces pricing, effective January 1, 2027, for payment services the Federal Reserve Banks provide to banks and credit unions, and changes to streamline and adjust their check services",
-   "link": "https://www.federalreserve.gov/newsevents/pressreleases/other20261112a.htm"
-  },
-  {
-   "time_vienna": "Thu 12 Nov 18:45",
-   "title": "Federal Reserve announces revised tentative schedule of Federal Open Market Committee meetings in 2027",
-   "category": "Monetary Policy",
-   "summary": "Federal Reserve announces revised tentative schedule of Federal Open Market Committee meetings in 2027",
-   "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261112a.htm"
-  },
-  {
-   "time_vienna": "Thu 12 Nov 17:00",
-   "title": "Federal Reserve Board issues enforcement action with former employee of United Community Bank",
-   "category": "Enforcement Actions",
-   "summary": "Federal Reserve Board issues enforcement action with former employee of United Community Bank",
-   "link": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261112a.htm"
   }
  ],
  "odds": [
@@ -888,15 +883,15 @@
    "markets": [
     {
      "outcome": "Hike\u2013Pause\u2013Hike",
-     "prob_pct": 97.0
+     "prob_pct": 96.3
     },
     {
      "outcome": "Hike\u2013Pause\u2013Pause",
-     "prob_pct": 2.2
+     "prob_pct": 3.4
     },
     {
      "outcome": "Other",
-     "prob_pct": 0.5
+     "prob_pct": 0.6
     },
     {
      "outcome": "Hike\u2013Hike\u2013Hike",
@@ -919,19 +914,19 @@
    "markets": [
     {
      "outcome": "25 bps increase",
-     "prob_pct": 91.5
-    },
-    {
-     "outcome": "50+ bps increase",
-     "prob_pct": 6.4
+     "prob_pct": 92.5
     },
     {
      "outcome": "No change",
-     "prob_pct": 2.2
+     "prob_pct": 4.1
+    },
+    {
+     "outcome": "50+ bps increase",
+     "prob_pct": 4.0
     },
     {
      "outcome": "25 bps decrease",
-     "prob_pct": 0.4
+     "prob_pct": 0.2
     },
     {
      "outcome": "50+ bps decrease",
@@ -946,19 +941,19 @@
    "markets": [
     {
      "outcome": "0",
-     "prob_pct": 63.0
+     "prob_pct": 64.5
     },
     {
      "outcome": "1",
-     "prob_pct": 26.5
+     "prob_pct": 26.3
     },
     {
      "outcome": "2",
-     "prob_pct": 4.0
+     "prob_pct": 4.2
     },
     {
      "outcome": "3",
-     "prob_pct": 2.5
+     "prob_pct": 2.4
     },
     {
      "outcome": "4+",
@@ -969,183 +964,272 @@
  ],
  "headlines": [
   {
-   "time_vienna": "Thu 19 Nov 14:21",
-   "query": "Nasdaq futures",
-   "headline": "Morning Kickstart. Nasdaq futures rally ahead of Anthropic\u2019s debut as yields climb",
-   "publisher": "investingLive",
-   "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPaDFvWTRQenlOeHV0TUVrdHhJdWhwWWgwZjUyRmJRLThiMjNRaGRfTEpwdGltNUNFTktmcE56anowQTVBWE1tNmozZTYwZE1WaFQ5dkZVVnRiSERPVFFKRVVzWVZkeWhtQ0I0SHdQM2xIZnlMVnNJeWZuMmpmY0UxdlFiNHRJOVBLTEI5Vl9VS3hIWFN0bUN0eUs1WWhka0E5LTh0d0ppUEtDSW83ZzlhMHE3cWFTYzVNUG1NalBiWHpvR09xb3c?oc=5"
-  },
-  {
-   "time_vienna": "Thu 19 Nov 14:07",
-   "query": "Nasdaq",
-   "headline": "Dow Jones Futures Rise, Nasdaq Jumps: Anthropic To Debut After Record IPO; Palo Alto, Everpure Rally, Walmart Falls",
-   "publisher": "Investor's Business Daily",
-   "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNYXZxUkdPbmdEcEEyN2lEd3h1ajFtRTVSYmpzRVZPSXRhZ3g4T1JzX1p3b0VzOFFFNnJuRk13UG9XTUc3Zy02T3JNU21Xa3dwWjF3NTJiU2Vya0RUNFp4eU5fQ1o3ZEFyZXlPYzQ2UGJ5QXhfckJDMmFGX3Iwdzd4Ykd6QXNGamcxNW5feXBTZGJVVC1sUmh1VVR1SUtraFZpUFRMeXBsVnFpYTdlYnhCZmNKNUplLVRmcUVWNDM4eWhuRVQyV0luZktYcWgzYVNMRDZR?oc=5"
-  },
-  {
-   "time_vienna": "Thu 19 Nov 14:04",
-   "query": "AI stocks Nvidia",
-   "headline": "Broadcom, Nvidia, and Micron Could Be Setting Up for a Massive AI Rally Before Year End",
-   "publisher": "Yahoo Finance",
-   "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQSkVCQm1kTk9iUHY3NUZZYjZYSmZsQVFEb01OLW9oS3B5SWlDY3NXaGFqYTVfMS1OQTlWWWlLMUFjYmJ2WWdEUlM5VDJGZnhDaVBaZ3RvSTk3a3Bvd3V6MkRBMmItZEJlS013c3JnMU5CeFpmMzBjeExhU1pZMHpOc0Q5cjNxN2N5eHJLWnB6R1pxblNEdTMyM25MLWc4M0E3UndB?oc=5"
-  },
-  {
-   "time_vienna": "Thu 19 Nov 13:42",
-   "query": "AI stocks Nvidia",
-   "headline": "Why Nvidia Stock Isn\u2019t Getting the Full-Throttle Anthropic Boost",
-   "publisher": "Barron's",
-   "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOM0V3d1ZlZG04SEFmUFJDc1lRZDRWMkZMMkVULVc2SlZqMmI2VUlfUW9sWS1UOFAydWxxdDBVZDZVU2FRODNxMUtTdGdKSnh1Z0tnOF90VDNzMThFUkk2dFE0Y0ZwenFLSWl5TFNKUDhod1pOU0VHT2lEbE0tUUtKN3hQNjk?oc=5"
-  },
-  {
-   "time_vienna": "Thu 19 Nov 13:39",
-   "query": "Nasdaq futures",
-   "headline": "Nasdaq futures jump on renewed AI optimism ahead of Anthropic's market debut",
-   "publisher": "TradingView",
-   "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQemJmOTJaWWZLUWtiQktxQ0JMY0M5RGRYczJzd0xmczBnaVd2UFhmYTRLTGF5S1g0WFZuWVJSVkxDdHNwdXlEQ0ZpYzZlTTJycW5fU1k3ckl2TnhaVGYtOEpkalg3R3BiWUNEMTU5YkxZTXJwdGxFTlZDMWtlR0t4TFdKUXhwVlRaZVNEZUYxTEk2VjJFcGJHd3pfNHUyY2R0aDlOYk5JaUpKeHNheU16cmlwRGhvcnNsUEJzNFdBRXUwWDJsNkxueXFRRGMxMmNGVW5neUJXYWR2Nkh3bDNF?oc=5"
-  },
-  {
-   "time_vienna": "Thu 19 Nov 13:38",
-   "query": "Nasdaq",
-   "headline": "Nasdaq futures jump on renewed AI optimism ahead of Anthropic\u2019s market debut By Reuters",
-   "publisher": "Investing.com",
-   "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPak1YZVIxUzJDd2IzTE5nNVN0aFBwTFh6dm5pZVFkcGQtbFRwMTZfMjByOW9ELVh2cHFQT1RHYW91MWRDd3pEYVJRQUp0dXJPTEM3Z0xvVEQ4elR5ckphMTJIQW9EY2ozeFNaUHlKeGFKX29oSG9obGxqaW9yai1LYi0tWU1ybzl2SkJXTklpN25yWVctbGM5dE1IZElRSHJ5TjlPWFB4cXF3bkd2VUFJWC15VTZWbVJ2UzR5bFFRcVdlRjlpX3N4dVRPWHFfSDhRSXJzSQ?oc=5"
-  },
-  {
-   "time_vienna": "Thu 19 Nov 13:30",
-   "query": "S&P 500 futures",
-   "headline": "S&P 500 Futures Rise in Premarket Trading; Credicorp, Intercorp Finl Svcs Lead",
-   "publisher": "Barron's",
-   "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQOEs0UnNMcWhhVFAxOVVvTTBaT2lwbjZSUWgzdjlOaF9fQmlGZFAxSzg3anh2UXNFTUdQcG1Udnp4cml0T2hISUNzd3lIMWZrUkg2Rmp4QjJlNXFDbmthM0VQWlhnNXBvZWJlT1FEcnRBV2szNVZqZ2lSemdMczV6eFV1VVRCS0lLb0Y1aU5nRnZuRlBKbUVDQ3FzTFNMaWtCaktRZnAyM0NNVy1iWnRXUGVWVTZ0eGVabXc?oc=5"
-  },
-  {
-   "time_vienna": "Thu 19 Nov 13:29",
-   "query": "Nasdaq futures",
-   "headline": "Anthropic lifts Nasdaq futures and tech stocks ahead of its record-breaking IPO",
-   "publisher": "CNBC",
-   "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPM2J4VWlna2g3QW9JczFndk5ScUg0YldfR2xCV3U2S09qQUsybjhhSG15eFB5eTJYNVF1ak5aU0pnbDVUSklYUU04bUF3YjA1V0ZST1Y5OWZranIyV25adnlHd0IzMS0ycGNPTE40cFBGclJLbmRsczMtRDBrbW0ySThleXB4ZnpyMy1JNmozYnl0eUlabzVod1kxRFRlLUEyTW1JNVdpbEtmV09ndkxpYXE2cnNETmPSAbwBQVVfeXFMTWNWbXplM2s0SlQ5U2xYM0pYWi0ydnM4RGNyNW5YSXJfVFUwQ24wb0Nac3p5b2E0MFdPSnpyNktrZnhuNGFhS2sxaGx2YkJ5X0FmZmNNZjFQYmRVOXE3OW54MjZhdXVvNGtscGkwaG9zZThTOU5xclc1TUItU0Zfd0x6Smg0QktzQTNYbzdlSUNJTFJEMmZfb1lDQ1BQR25OVGtwSzNhU2ZGSG1FaGhjdzJmZzMzVDFjay05bnU?oc=5"
-  },
-  {
-   "time_vienna": "Thu 19 Nov 13:20",
-   "query": "Nasdaq",
-   "headline": "Bitcoin ETF outflows show waning crypto appetite ahead of Anthropic's Nasdaq debut",
-   "publisher": "CoinDesk",
-   "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQNWZIQnFSS3cweDFjY1BSaGxCNWQ2anhIMnQ1cjd2d3ZOQ25TNWhCNTlFUDBnTHpZUEtWdDlfYW1FcGlNMHpGbGRSTUtsZDVxai1QUnRNWHN2UHU1Sm9ncHFoa0daWkQtbVpIUFVCN0FWZUFHRVZZMGZ5cktvOFBFeHloLVJ5UF9qb1dJcnEza01DSnVpM3JnT2IwZkZ6RVRfMjE1Tmc1Ym5lbW52ZmluMl9YUUNVSU9JalVMRVh2d3BQU2dqQjJObw?oc=5"
-  },
-  {
-   "time_vienna": "Thu 19 Nov 13:02",
-   "query": "AI stocks Nvidia",
-   "headline": "Not Nvidia. Not Broadcom. If I Could Buy and Hold Only 1 AI Chip Stock Through 2030, It Would Be This One",
-   "publisher": "The Motley Fool",
-   "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOMnMzMkNkNWMwU01yLVU3UFlQanJVVDc4VGJGRUU3WVBybE1zTEpyRlhQRmZ6czhxU2VGdC1ZX2tBaE0ySU1vWmZHdWtUNkV6M3lzcS1GVWNWQkdpM3RBbzg3UkVhSDh2UDBhb1Z2QzBNMGNvdkNVSFpiMHdBa0w4c0tmNHkxejhreUtlTUhid0pXX2JWb3hWQ0l2SnJ5VkpWSmJTOWVaRXlYazlH?oc=5"
-  },
-  {
-   "time_vienna": "Thu 19 Nov 12:30",
-   "query": "oil prices",
-   "headline": "Global Cooling Demand Overtakes Heating for the First Time",
-   "publisher": "Crude Oil Prices Today | OilPrice.com",
-   "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQeERPMUtsc1BtMXJmS3hfU2R2TkNCZmM3MzZtTVcyOHJVeGpUVExDZFNIYnk0OFhRaV9hb0tDWkVNSml4WXM1VGtTS0Vad1FqZ1ZBRXl0N0xkYmg2ZDl0QzdNTV9GcU9rekw2LWFvWlREWDBtOVd2OFQxRnV0VVIxUEpRNHFleG9uMHJWZFlpelpnUi1VWnpDcTA0aXVmWDZfNmF4UkdvSUU5WXM4VFlHT0tiUFbSAboBQVVfeXFMTjdWTXhBWFlINzdackwza2o2anZoOEQ5RkhpLTg1MHNUS2ExY2JTRlF4QmpUbnFLcy1JWC1ja25nRmlGZ09sSU9QUWM4aHJlbUxGVU1iVUljMVIxM2dtZ3MzMTZsRjQycmxIVDh0RkFqNzhXeVF1bWtNLVlTYnNEeW1Idlc5SnFEMHBmMld0andUb1o0T2FZLUMwamEwWGxsWDRDbTZQUUZPSm1pa0VIeDdrelZJTEJuWk93?oc=5"
-  },
-  {
-   "time_vienna": "Thu 19 Nov 12:25",
-   "query": "Nasdaq",
-   "headline": "Anthropic IPO Live Updates: Nasdaq Futures Surge Ahead Of Record $81 Billion Trading Debut",
-   "publisher": "Forbes",
-   "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOYkdLY3lId0hwTjFYSF9Da1RtSGxBMTZDdlRNbE1JSzZhM3U4NHVwai1vcF90RE1HWjdyTlZ4VV9WaDJLSVNiSnRWTExpZTdOT2ZFZ0ZTZ0JnWVVlQ1NLbU9vQ1ExLWxwSVBFUFpjbldOcWVkbmRjTmZyYzJKODZ6Y1Bnb0w4aWkwS0cwQ0xHLTZpZDlkZVZZRlM0dkIxdzBMMXRBZFpXOGg2V2szVTNGZU9GSEpsekxldVBScQ?oc=5"
-  },
-  {
-   "time_vienna": "Thu 19 Nov 12:23",
-   "query": "Nasdaq",
-   "headline": "Nasdaq futures climb on optimism ahead of Anthropic's market debut",
-   "publisher": "Reuters",
-   "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxONFhTcEs0ZXJTOXhCWUVEQlBXR3BaeFdLVjdiNkNXdVFrNWtaVjFJRVc0cTcyRUJBRXBqV0JZUHUza3I0TndGYzZRX3N3eU4zR3plNl9wUkR5VU1FQ0phSjZEODlXYjJYQk5QaVRoTFotemhuTWFwSkhrYzFfNE1tM0JJNlBFY1BmNFNhS0FTeURyaGtHM2xJb3VoRE5LY0I1SVUxeko5dDJvRGlGam1ITllSRFU1OEV6T0tF?oc=5"
-  },
-  {
-   "time_vienna": "Thu 19 Nov 12:20",
-   "query": "oil prices",
-   "headline": "How High Are Gas Prices Where You Live?",
-   "publisher": "The New York Times",
-   "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxONFFyMEw4dDc1S2JPR0dWakJ3ZHVweTNnX29SUl9KbUEtTnI1ZjVyME96MFRxdkZEY3pNNl85SDkyVklUdm5nTTBKTUdodmdKaDhXNENnX2V2MUlDZ3Jpcks3RTVRTWV6cHo3SjZfU1hKU0szdzhFRXZ2a0R5LUlCaHBUR0RyNl9tRzcwUlk1WWlwYzZKMXFVanA0aENpNFd1a3cw?oc=5"
-  },
-  {
-   "time_vienna": "Thu 19 Nov 12:02",
-   "query": "Nasdaq futures",
-   "headline": "Stock Futures Climb Ahead Of Anthropic's Nasdaq Debut \u2014 NVDA, BABA, TTWO, SLS Stocks In Focus",
-   "publisher": "Yahoo Finance",
-   "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPSUU3Q21qQlRnUlRQN0tBa0lKSGZFbU1IYlJhXzN6WUZ3dklzaXpMNzhUZVZmUnozR3pCM016d0dKalhZZGowbG9EekY1T1U0MC1MY2FFRF9yelNldm5kQ3Y1d2o2WFdPR2x3bkNxWktSdThRd0ZzMkh3cU44TXJuaXFDVXIxV244MkphWXJib0RZZlVFUnNsNUxuNzh1UWlYM01z?oc=5"
-  },
-  {
-   "time_vienna": "Thu 19 Nov 11:21",
-   "query": "oil prices",
-   "headline": "Oil Prices Edge Higher as Traders Weigh Middle East Shipping Risks",
-   "publisher": "WSJ",
-   "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNeUlHaVFFSnlSWkY0ako5NjJsMTNsVjQ4eGhKc05oZGFWMDN4c3RQR0NyODVNUzNUenFRNS01Y1QyZi03Vm45eTNkbXF3bVBlTUhkWGVHeXIteUlPNFY2aEh3bnh4VXFaVzRMWk1fOV84SXQ4RlRMb2p4QWZ1b2NMb0JJQWZpdURHb2VLLVZVT20yQk5nWTBPUl9hUUxvcllXM0p1dFdxZjd2WWFlaEtVUGFoUzNHNG1IYWQyTkZfLUtOQQ?oc=5"
-  },
-  {
-   "time_vienna": "Thu 19 Nov 11:08",
-   "query": "S&P 500 futures",
-   "headline": "Stock Market Today: Dow, S&P 500 Futures Rise as Wall Street Awaits Anthropic's Listing\u2014 PANW, NTES, SLS",
-   "publisher": "Benzinga",
-   "link": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxPMHl1UG5odS1iUllYWUlvM0NvMGM4c0dsZUhJdTNuN2dUdUE0Q01KLURSOE1Sd1N2akNuZ19VX3lqdWZvZjRsM183SW13aTBoYlhGZWZmV1RjcEhiQ09CdEhTS0EteVpLVThzVnlKRHVDSzM5Sl8tazl5Nmd6bHVqZkIzSjFBdFliMGFIY0pYS0ZVNlV6aDlqZVJqck5jRHJPZDk4Nm5xQXZnNTJOajJhaXhVcTdGdUdibk8tUEZCcWZZTnNXb2gzZF9yQWtJMVdWckhsa2poLWlydEFvV2V0WmFSLVNhRldqbzdOZHpIX1gwQ0tLTnc?oc=5"
-  },
-  {
-   "time_vienna": "Thu 19 Nov 11:06",
-   "query": "oil prices",
-   "headline": "Surplus Signal Drag Oil Prices Lower, But Global Risks Remain",
-   "publisher": "Industrial Info Resources",
-   "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPbWFHRjRJdkZBMWcya1ZyRDhYbjhGN0tuc0pWeFFXTElLZFlNaWNkTlFReTdyY1I2d3ZwLWY1UkdneEFsbHUzWGdxMi1LNDI3OWNfdnRmd2dIOHAyZlgyQnRwQno4cEs5MkRTYU1XR2VkUEJFMmk4WGljSEtRZ0lnaXgteFQ1akRBQWFWLVk3WjJUYnI4TGJ3eHpzY3JsaEFyS2xVb1czWUZ5UnEwTnpHMnJB?oc=5"
-  },
-  {
-   "time_vienna": "Thu 19 Nov 10:52",
-   "query": "Treasury yields",
-   "headline": "Treasury yields inch higher as investors weigh the state of the U.S. economy",
-   "publisher": "CNBC",
-   "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQNkZZT1lIeU1WR19KR0NSTzF2YzA4dnQwalkwYTZKRUpJOW9DWldwNHdfZ1d1eXFmcHU0WHNlTXVocTNaQks3Tm9UalRQUFFGOXp3VkNNdDRHV1Y5czJQZ29fblFmcENfSnZUQWJsU3FjeWNfVTFVM1kxZzlUUWhuOTBB0gGHAUFVX3lxTE0ydXg2dUZCNEs4WnNRc2ZhUmFxR19LRkRzREFLOFc0aWxWSDJFTFJXaEQxdTJtQkg5Smo4azh3bXdRc1VveW9aYk5Rbzc0bGRxZng5dVhQWXhCV0syX09tVHRxclg1b2hiMnJjSzZjSm9LUWh1azA2bjZVbkNkY3cwRmpYT2ZiSQ?oc=5"
-  },
-  {
-   "time_vienna": "Thu 19 Nov 10:47",
-   "query": "Nasdaq futures",
-   "headline": "Stock Futures Rise as Optimism Improves Ahead of Anthropic Trading Debut",
-   "publisher": "WSJ",
-   "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQdFNYN21fTE9wTk80YmxDNU96RlIzdnluRmtKMklDMVAxX1dEa1hGQzBNd1g2QUpBVUdLYVFLeVltUHR2b0MzSzJNMS1LX1VCU29NWm10TWQ0cTVncXdPbU5HLTZrVk9fODh0WDZkanl0UllHRW4zaFhsYU13bGl6WklFYTRjSEVTVjJsVnItTHZQWU5ST3AxVjItR3pTZG8tUW5WTjJLOEMtRXVkZDRRRWFDT0F6X0k?oc=5"
-  },
-  {
-   "time_vienna": "Thu 19 Nov 10:40",
-   "query": "Treasury yields",
-   "headline": "Treasury, Eurozone Bond Yields Edge Higher",
-   "publisher": "WSJ",
-   "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOYUxqWVA1Y044cTZjWkE0VlVFR3hrRVh1S0ZsLW5VVDZfNlRsT0dmNElmUG1ocmh5Wi11eGhRZEFTbEJpbjVjM3F4b0t1TGtiYTZ5UFlMdFBZSXBQdlNUQ2gxMklZclRVOG9JSkVBNFRmMmVSckpzeFQyZ1RxN250RjZpWXJUTnBKQmhhRXBCV2FERE50STNlZU5n?oc=5"
-  },
-  {
-   "time_vienna": "Thu 19 Nov 10:07",
+   "time_vienna": "Fri 20 Nov 14:29",
    "query": "inflation CPI jobs report",
-   "headline": "GBP/USD, GBP/JPY, GBP/AUD: Sterling Eyes UK Inflation Catalyst",
-   "publisher": "FOREX.com",
-   "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOV1pFUjNxZ2pvWXBnZ2lxWDlnYWZDc01jczhQOXViTGc1dzV3MnJud09QZTRxQUJHcU1GVVVRYm5NLTlYMjZqOXRKajR3YUtiamRTcEJfYXhCNnY3YXNEYTVnT2JZWjlqQXJadEVWbXpvRUIyUjVYNzc3WW9BdnE3Q2V5UWt1TTM4X2l6QVhQQ1hFTWloaS1yTkRtNkFEa2RZRFBjQ0pR0gGyAUFVX3lxTFBMaU90ZFYzYnBnN0VwVlMyUEVhQ0pCX1JBcHg2T1VPb2J3Qy1tMjlTWWcwYUM0MFNCeFh4VnBsNVJlc0d3YlhUNnd5RU9TVGVVV2Q1N0xlcFk2M25lQkRubVctVlpBTXR6cWJKMmJXUW1WVzRnZ3FYa05Ud3VtWHZoc1B0LTRsdWlkUkVWV0ZGS29rSjhsWTVKZUZQWk5oQ0dPRENBaG9JcVNYSWtmREFHbkE?oc=5"
+   "headline": "Border States Supply Chain Update \u2014 November 2026",
+   "publisher": "the Electrical Distributor magazine",
+   "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9GOXEwMlhfWTZnSEJvN2k4Nk9FMVJzUWM3SkIwcEtPWWlqdTZEaXphR2ZLWnpUOGRLLWhRMFY0a0gzTmU3QWFIRGhMdTZNN0R0eWlWRFFweFV2eGxrVW5TYjRDSUd5Q2JXenF3dUltWTdKeVpyUVE?oc=5"
   },
   {
-   "time_vienna": "Thu 19 Nov 10:04",
-   "query": "Fed interest rates",
-   "headline": "Expectations of a Fed interest rate hike boosted the US dollar to a new 19-month high.",
-   "publisher": "Vietnam.vn",
-   "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQZjdKM0FQamhwMm5KaXdqNmNTdlJRRHBkUTVmNEc5eGtmVkMyck5MSzVEeU15S2xtLXRxYURrMEtpdnBLWURMalJVdnZTQVpmVEhSVHNUTVpEbFhzV2NQQlZMQm1NNGQ5LWs0S010NEVwcG1QdU9HNUp1LW02RS1BR19hV0JLUXg2SE4tQW1TMk5KbkhO?oc=5"
+   "time_vienna": "Fri 20 Nov 14:12",
+   "query": "S&P 500 futures",
+   "headline": "US Stock Market Today: S&P 500 Futures Slip As Higher Rate Fears Resurface",
+   "publisher": "Simply Wall St",
+   "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOVFN6dHlPb0NLLWpKZHBGZENMVkFNX0VYRzZZdkxJdWUwbXhZcVU0andpbmJpZnE4eG9LUzZQcUZLNGdOLS1kamFTQUplblJCUEN4X2RBZk9xRVl4TVFoSFRNOWszX3p1U0s5cTY3NE9LQ2o3bjlzalpDYThIaG9MT2dxQXJmbTZmWWZCU2F0Mm0yZWJuYVlXR3pxT2J3ZDBPdWNMRE1QSEYzZTVUcl82U3phQkQwdldyd2FjVGttN19vd1pwcnRfdjM1ODllMkZiNkxN?oc=5"
   },
   {
-   "time_vienna": "Thu 19 Nov 10:02",
+   "time_vienna": "Fri 20 Nov 13:57",
+   "query": "S&P 500 futures",
+   "headline": "The S&P 500 Just Had Its Biggest Reversal Since March 2020",
+   "publisher": "24/7 Wall St.",
+   "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPN2E0WXNLQXRYNllYcXZiYk5lZE5CSkFBWjNFQzh5bWhkcXhQcERZUWg5cFpsUnZMdXVfY0lBZEFsU0c2cktiaGNtQUF0enFIc0F2MXNYX0EwYVhCaHFyVUtkTHlkdW1vYUdKc3h3MHJpUElEc0JldmRlTlMyVXh5N2s2RWNRaTNKdHBzYkF3YWdoa2FqT1o3RlZSdzExZ0x2SUFJ?oc=5"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 13:35",
    "query": "Nasdaq futures",
-   "headline": "Nasdaq futures jump as Anthropic's record IPO pricing fuels hopes for strong debut",
-   "publisher": "Idaho Statesman",
-   "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQMTZlaExJel9Nbm5oYlpISGZ0aGRGUzRuVXB6RFRqY3NjNVhRc1JZVlk3OURNRUtfbTVmNGZ2dWpvOWFnMFJXakFkS0labjR6S2FkTldJeTZyeHVRZUNyRXhuTlA5dkkwemJTYW10M29VcVNoNU13TDN6aVN4V21FcHBLTV9yZw?oc=5"
+   "headline": "Nasdaq futures slide as Anthropic retreat deepens AI jitters",
+   "publisher": "TradingView",
+   "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPaXhXbm13aGdMOTlIRWhoc1lZN1FiRUh3M05wZ2lNZG90VlZRdUxyaXFGZUl4VlBUaWFpYzVwUVFOS25qZUNCal9tLTl1MWluZk9xLUxxTlpOcmVyYkN5OVhRLXBCdTVfM2d3NXhqSFVlcXZTOUJQV0x4VVg2RGswSTlDMDBjVVB6eUlMUHhZM0RhaThiT0FLcXZwczRJalZPY3hFYXREVnRiU1VoWDIxZllGUGVfTWZHb1p0UUsydC1uMG9Kc3U1aE93?oc=5"
   },
   {
-   "time_vienna": "Thu 19 Nov 09:33",
+   "time_vienna": "Fri 20 Nov 13:33",
    "query": "Treasury yields",
-   "headline": "The US dollar moves higher as Treasury yields extend their gains",
-   "publisher": "investingLive",
-   "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOaVZRdFczUjZoVzBlWjdJcngwRUNpM1VNcENKVTNTQlBnVVdiWGZrTzBHZFhvT0VyODNzUFN0dW51c1ZWQmM3SmUzUDc1b1MwWXhKQkRTRUpMNE1tTFYzYWExdW02TTJ0dnpUVnlHV2lrd0Y4bGppSlRzMGJxcGFzUmpoSWkyVl9fX2ZPM0Q2d0ZBd1Y5V2VHdGRObWFyZFh6QW5scDVPRWZTNVdMZWsw?oc=5"
+   "headline": "US 10-year Treasury yield slips below 5% as global equity rout deepens",
+   "publisher": "FXStreet",
+   "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOaXNDdWNvWnJlZDZnRTBFeE9nLWZYZHFsRmJPRzNmUDFNbkp3VW1LQWhWS3l3SlRJWk5RNTlpM2VqU2xZWDNpR2RSV2p1WDJPNy1IUmNjck5pOHNXbDZyTG9ySzNFb3FzaFlWaGo1NWZMRWgxakdRazNBU0p1eUJ6Xy04ZldtbDhwdFpUb2xjd3o1TllnMFEwaVhwWmhRNExXbnBBZTVVTW8xWmRZVXl2SkZ3?oc=5"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 13:32",
+   "query": "Nasdaq",
+   "headline": "AI Stocks Tumble Across the Globe as Slowdown Fears Mount",
+   "publisher": "WSJ",
+   "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOSnNEc3dZb2JfSWJYeFFoREFsNXdMS2RyNklRUU9rRUJmajZscVdUTWc5dENvODEwWUQwdHNFcGpPazhndE1MSFJaYnV1Vmota2R5N0YtRVhZS2ZtZmxTZUtnOVgzaXp3X0g5N1hxMExRbFRKWVF4VWJ3OWhqcFVBZlBzWFo0WlVyUTZfZDZSME5WZUsxcEFMbk9ubVlFbWc?oc=5"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 13:30",
+   "query": "Nasdaq futures",
+   "headline": "Stocks Hit Worst Run Since 2023 as AI Trade Cracks: Markets Wrap",
+   "publisher": "Bloomberg.com",
+   "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQUE9Bem9kWjBIcUtfa0xHOW0yQm1mV3A0VFVFZlh4X0hvWjlmckZSTDNGWlB1NGtzWFkyTTVSc0tNNW9tbUxGNURvNExmRTdTYnJyTTJtUGd1dkEyZklWR2xOSkphQ2s1d0NjZE9CRDc4SWtreWJxbDVoOFFnM2toQldLUHR5VUZFTDk4bDBXaWdodTh1?oc=5"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 13:30",
+   "query": "S&P 500 futures",
+   "headline": "S&P 500 Futures Decline in Premarket Trading; Lennar, Louisiana-Pacific Lag",
+   "publisher": "Barron's",
+   "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQN2dQeTlkNThYWHlyZDVMR21rLXNXMUpPNjVrVzJTSXZ2LUdBbFRkWXZZR01sU3dRNlNCaklqbTJNVkFuU2wyLXR0eXlOSDB5dzE1OU1pRllsUXhiTXZuUW9mN0hQNFNZOTVSZVl4QWEtM1VyaXVVc1BEdExMdGJqYlBuOFpLWWRYY3ZOM1ZKeGlITkFRSDJ1aF9ramZneHhZT0o5eUFXWTJUcDItdWY3WTJpS2lFZw?oc=5"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 13:27",
+   "query": "Nasdaq",
+   "headline": "Nasdaq 100 Forecast: NDX rises after Nvidia earnings calm AI worries",
+   "publisher": "StoneX",
+   "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPUzZpRHJyekZ3QjdOa0pGd0VJb1U5RlZ1U3lMZEVQaWdFSm96TzhnRXVwN3Jpb3dPajY5YUdESW5Vdmh5cEJWNHhWWUlQOGRmX2pCNXl2ZWpxekxVR2VoQkNpUjVyX0VNS1hKc04ya1FGR2lmTmpXdkNYNHpreEx2T093WnZ5dXZzT2JfaUkzSzdVNElzSmFlUFdEenJwcGZSRDdtam12WmQ3YkVjam9jaG5McWNvZw?oc=5"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 13:27",
+   "query": "Nasdaq",
+   "headline": "Nasdaq Composite: early rally flips to a 2.3% loss",
+   "publisher": "Opening Bell Daily",
+   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE80eW1CNlJjRzBXQ2dERmhwR3hWYXRVOEt3elI3Z0hmblpOaDdSWVQ3U3NyajRhUzdDTEdaSTBwSEQtaHYybDUzYTNUcUwxM1pVN29wdlRFSFBxOGxPUzJYNGFGZHhmUmY5WEVsUldyQ1A?oc=5"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 13:24",
+   "query": "Nasdaq",
+   "headline": "Anthropic shares fall over 6% in US premarket trading after Nasdaq debut",
+   "publisher": "Anadolu Ajans\u0131",
+   "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQVEFSWVduME9MWGJGc2F1QnhmYzA4OXg1TzM3SC15c1Y3UEFKRkR3X0RxUnQ4YURBYTdmemZUeFJidS1wdXhqWkhQVDM5LXMtUmtfTndFNVZoVXJkdWhNZkZMdG95RWQtZVdITm5FbWx2TnA2NDUtOXQ3RWQ0RXhHb3J0Y1ViaGxrQ2VTV2gtQ0J6VEd2OTUyc21oclM2RV8wdEVvU2ZhOGxTaGtKbnVEbFZ3?oc=5"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 13:21",
+   "query": "AI stocks Nvidia",
+   "headline": "Nvidia Turmoil Leaves Few Stock Market Winners in Sea of Losers",
+   "publisher": "Bloomberg.com",
+   "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQUXZlRzF4RUlhY2F3dTJTajZOaUtDN19fS2dGc2VXd3pSQnZuanp0MnkySi1WQ3R1dnJSOEFZUXFQSEVlYVd5aXhnY2lWQVZlMHRkR1k0MGRhNTE3WW9lbVpuRUFGckhXSGRpNERhR1g5LW05X1VaRGV5RTVzWFJXdVJxaVpUWlRjRnV6aDRia3ZuOVpRRDhHWW5zNm1qT0Nldm45cVlGdC1CZDdlb2xnbTk3dHI?oc=5"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 13:20",
+   "query": "Nasdaq futures",
+   "headline": "Nasdaq Futures Slide, Anthropic Shares Reverse IPO Gains \u2014 LITE, IREN, SNDK, NVDA In Focus",
+   "publisher": "Yahoo Finance",
+   "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxONVl3Mk1wX0tMYnc3QjVEbjRXREhGdHF6ejNzTmgzQkhaS1U0RWhoaVdCeUh6aWNEREpUU3FuVzR6Rl9Ga0JWaUlodzlSZW5odjZXUTk4VkFLT0pLdGtLZHZra1JLblNDek5FM2FTZGVqd3pmNXNnMWJhYzRfY21iM1BlS1dtek16enFxdk5sZHUxN3pLSlpEMFFENTkxdlVvZE14bw?oc=5"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 13:19",
+   "query": "AI stocks Nvidia",
+   "headline": "Jensen Huang's Sudden Resignation Has Created a Flash Sale For These 3 AI Stocks",
+   "publisher": "The Globe and Mail",
+   "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxNVUJNM1pyUDBfd2ktUHZsVFlIclJHejJ2NnZDRV9RS2RpZzRDSVFueTQ3TE9rZ29OOTY5UXNRNm4xYVFGZlFnMFNZYUFaQ3hxcWZNM245am5ZeGNjdmhNZ3FZV05vT0FuM2FQUW1lZmF3bE1ZTE1lQkVtaXE1SFBRcUVWYUhpS3VSZzBVZ0RRbEdBT1Y0TS1IU284VmpyQ3dOV29xa3RqcjJpUEh0Q3hWU2dHXzFoRUE2VWgybjVsdm5JOHhNekl4azlpcVhQRGNld0t1SHNHVk1udnk4bXFsSi13NkRaenJYNVlXS1lremY?oc=5"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 13:15",
+   "query": "Nasdaq",
+   "headline": "History Says This Is What Happens to the Nasdaq After the Midterms",
+   "publisher": "The Motley Fool",
+   "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNRkxWbWNNVVpiMUp0NFJxMk1HbTl0Q0RxSllHYkotQUV1eXpVSV9mVEkwRDlwWVlrcld6amhHTVN4MnlJZXVnb1FWYmxObmN0QlM1Q2NTbTR5T0FJQmNQVlRYaWdXN1lUa0dmU3VoUnhGRm5xUGpFeHF5UVlxOHpYTTZtUzFPbUNrdVJPcDI5T1pxNGt1MVU3Sw?oc=5"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 13:13",
+   "query": "Nasdaq futures",
+   "headline": "AMD Stock Drops Another 7% Before the Bell and Taiwan Semiconductor Slides 4.2% as Nasdaq Futures Fall 1.6% After Asia's Chip Selloff",
+   "publisher": "24/7 Wall St.",
+   "link": "https://news.google.com/rss/articles/CBMihgJBVV95cUxPWHNvMF9Dd0hVZ19jbHZ3T1NBcjFXYVBNMlYtWlNWRDZGQ0ZEcVd0UmduSU01UHY2V0s4V2tfMWZRVlNPUFJrbl9hM0FyMHFJaXpiQm9yb3NiLU9GbnAtdG84M3FZblYyMWFUNVBtSk45Vnc4UzR4YmRiRHRxVG1JNnhONFhKa2xDQVRIeDBBaTFJeURhRzRSZFZKdXF4N1lnbGZHTHhWek94UXgzVjVqMDdKNXlpbkdNZ1pBajQ1UTJpUWNTVVFrdHVRczRmdFJ1cWNkVm9iZ0owNnk4SjBqajRxa0FSY3djOTlYVVZ5NGxGNUpYYjhtNEtzZy03RUpzZF9PdTB3?oc=5"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 13:00",
+   "query": "Fed interest rates",
+   "headline": "Fed Rates: Traders Price 92% Chance of December Hike, With a January Hold Next",
+   "publisher": "Action Network",
+   "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOaWdMdk9wbXZOZ3NjYlJVVUNnTTlyTVdkSEVLaTdIRk5FcFhpbC0zY0tYZnp2X3l0bWY4OHpfRnBSbFBmYlNZNHBmeG80bkxleGVMSW1uVV9fdHFQeXI0NHhwQkNwSjFfaUxnY2ZHdUlqbVp4UHJ6TnVtek01eEtTT2dmU0lXbWtYU0l0OEpXNzV0Rm9ZUndjYnlocVA3ZEd2Z3d3VEt2aUQ1WVFKWkxYcTRvaw?oc=5"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 12:42",
+   "query": "AI stocks Nvidia",
+   "headline": "Wall Street shakes again as Nvidia and other jittery AI stocks swing lower",
+   "publisher": "VernonReporter",
+   "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNNGFZbkY5b2l0S0JhVmVzZnpDOFpsSUdndnZ2dXpuTHFNMDVpc2JOVDZxdGNhS0g2OGhWbm5Wd3BUa2lqV25SUjYweWYxUmVlNFJHMU9IN2poeTlfLTllOWRJN3FqQjhfNzVFcWhfUEZuQ1FmdURRbDlIblg5dnhGdmlIOHBORm8yVUZCRUpOaWhVYzdmeF82a0N3aVpkLWJtUzFTQg?oc=5"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 12:39",
+   "query": "inflation CPI jobs report",
+   "headline": "Take Five: Shopping, chips and central banks",
+   "publisher": "WNWN-FM",
+   "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOd0FMc2YyLV82WDU0UEx0dDZLY3FqZlRtQUtHdU1iUmlvdGpzWWlsc3NjMlVodWd1SVptS19CN29OeVdDVFZ4Qmk2WTVUWkE2SEtLNGJUVWhPR1VlbktlQ2ZoQWZJek5Yc0ZQY1F1cUg3c0RvWEpfZDRQRHdKZmhqeXZSMA?oc=5"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 12:35",
+   "query": "Treasury yields",
+   "headline": "Treasuries Eye Longest Rally in Five Months on Haven Demand",
+   "publisher": "Bloomberg.com",
+   "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOdVdKYnk3ZUtXTER3VDhFcTRqcHdrbWZhS3BYY2hEQ1JFRFZ0VEZoNEtxS1ZuM0h0Zmhod0E0VS1qWWhPaHBXRl83bVRNZEpvMzdXQlhXNzBlRndqdFdGWk84VlNPcHJQSzVKLW0xY3AzbHFGUFVkLWdBanhvdUJSWG42T1cwRW9tMzFMR0pnbF83emtmRkNPVTIzMWxzVG4tc3Vfb3NEWmd2ZWZaaExz?oc=5"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 12:35",
+   "query": "Nasdaq futures",
+   "headline": "Nasdaq Futures Plunge as AI Selloff Rolls On",
+   "publisher": "Barchart.com",
+   "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPQ1NoQTM1R0YyYnhKYTJMd0dmOEdmLXZ5cmFZcEN0Mmo4MVRGcG5mV3pBbkhvdldHQ2Z5dktJTUxva3VRQURqVHQxT205YllnMG9EbXpzQ1Y4RW1pdHZZYjNtbUJENHlDeTUyTHhVUXJ6TnRkQXB4SWZmelhPRlJ0b0dwX3htWE4ydElBNVl4c2JKdw?oc=5"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 12:25",
+   "query": "Nasdaq futures",
+   "headline": "Wall St futures slip as Anthropic debut fails to reassure AI investors",
+   "publisher": "Reuters",
+   "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOY0VmbDFSZy1pMm1jZlE3SG1PMDdjcHdmZnp3WWFQbTBSSHBndDktSEhpRFB4MkRYZUhTQXFhNm9YY0pwNlczMkxtOF9ZMVA2R1VHN2k1MmE3VkN6d292amFiX1JKUUxVcmN4NmxFTGYwbkhlakpkeTZ4eE5yRkxxTTlubE9PUU1jWmtrZVF6RjhiMWhhYmp2Q29Ucy1aMm13T0F0WTMwSGRBZWdQV3pyRjlZRm9pUEVnV0EzQQ?oc=5"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 12:20",
+   "query": "Fed interest rates",
+   "headline": "Anna Paulson: Fed still needs to raise interest rates further",
+   "publisher": "IDNFinancials",
+   "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPaEFmbDY4QjQzTDZOOUNMak9nQXR2OG5MY1FTQ2Z3Z0JOVEo3RUszbm13d2kwRkViek5IamlrSFNFUFdxU0FNR1p6TW5hd2JKbVM1bGJ3Y0ZOQ3ZSRndhT0ZmSkNlWHY1UmFXTHlNT0hQanYwd0ttQWtRbkxCYmI0Q3BZVlhXV1FrckRxMm1jWURMVEtPNlRjQW1KeEVqWUlTUEdz?oc=5"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 12:02",
+   "query": "Treasury yields",
+   "headline": "Bond Yields Are Up. Should You Stay in Cash or Lock \u2019Em In?",
+   "publisher": "Morningstar",
+   "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBkVXQ5OEpiWWtiMXdCbklLemxXMmppa1ZlY1gxSjlwUE8wX1ViWjBwS3djZTJHemRpS3BlZEZRMUhUNm1oVWZMY0htNmcxeFYyeXZQWkE4NzFBR2V2ZFlGR1ZaY0NmM0ZlU0pMdHVyVW9XdFVyX21MSnFn?oc=5"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 12:00",
+   "query": "AI stocks Nvidia",
+   "headline": "Nvidia Stock Is Down 40% From Its High. It Might Look Ugly but There Is Hope.",
+   "publisher": "Barron's",
+   "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5INVNuU2E4Z3Bsa0FYa0RqbHNYM3ZlS1lZV3BlODA2Q2F2ejlxMllHQnl2YzhmMm5IeW5RdU9tUzhGUUdlVTJtMUozbkJYZGZOMFpnMmRaWWxpRDY0OVF3a1JiTVBrZmNWMkJsTVotRERzWUZvQVNV?oc=5"
   }
  ],
- "gdelt": null,
- "warnings": [
-  "GDELT global news unavailable: HTTP Error 429: Too Many Requests"
- ]
+ "gdelt": [
+  {
+   "time_vienna": "Fri 20 Nov 07:45",
+   "headline": "Asian shares head for worst week since 2020 as AI rout deepens",
+   "publisher": "asiaone.com",
+   "link": "https://www.asiaone.com:443/money/asian-shares-head-worst-week-2020-ai-rout-deepens"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 07:45",
+   "headline": "Trillion - Dollar Debut # 1887",
+   "publisher": "geeknewscentral.com",
+   "link": "https://geeknewscentral.com/2026/11/19/trillion-dollar-debut-1887/"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 07:45",
+   "headline": "Japan Secures Access to Indian Missile Ranges in Major Indo - Pacific Defence Push",
+   "publisher": "slguardian.org",
+   "link": "https://slguardian.org/japan-secures-access-to-indian-missile-ranges-in-major-indo-pacific-defence-push/"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 07:45",
+   "headline": "Iran rejects Trump bioweapons claims , warns against repeat of disproved allegations that Iraq had WMD",
+   "publisher": "tribune.com.pk",
+   "link": "https://tribune.com.pk/story/2641331/iran-rejects-trumps-bioweapons-claims-warns-against-repeat-of-disproved-allegations"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 07:45",
+   "headline": "  Pak fan boy : BJP hits out at Rahul Gandhi for describing India as  side player  in global affairs",
+   "publisher": "hindustantimes.com",
+   "link": "https://www.hindustantimes.com/india-news/pak-fan-boy-bjp-hits-out-at-rahul-gandhi-for-describing-india-as-side-player-in-global-affairs-101795151909138.html"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 07:45",
+   "headline": "Fairford accused due in court on National Security Act charges",
+   "publisher": "elystandard.co.uk",
+   "link": "https://www.elystandard.co.uk/news/national/26746811.fairford-accused-due-court-national-security-act-charges/"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 07:45",
+   "headline": "Global oil market sees gains ; brent crude climbs to $92 . 58",
+   "publisher": "arynews.tv",
+   "link": "https://arynews.tv/news/liveblog/iran-war-2026-live-updates-trump-us-israel?update=20-Nov-2026-10-15-00"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 07:45",
+   "headline": "Thursday Final Word",
+   "publisher": "hotair.com",
+   "link": "https://hotair.com/ed-morrissey/2026/11/19/thursdays-final-word-n3821167"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 07:45",
+   "headline": "Xi lauds PM for  full turnaround  in China relationship",
+   "publisher": "juneesoutherncross.com.au",
+   "link": "https://www.juneesoutherncross.com.au/story/9395015/xi-lauds-pm-for-full-turnaround-in-china-relationship/"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 07:45",
+   "headline": "Trump , Xi , Putin Hold Rare 3 - Way Talks On Nuclear Risks But Deliver No Breakthroughs",
+   "publisher": "oneindia.com",
+   "link": "https://www.oneindia.com/international/trump-xi-putin-hold-rare-3-way-talks-on-nuclear-risks-but-deliver-no-breakthroughs-8264789.html"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 07:45",
+   "headline": "Senate Republicans Block Iran War Resolution Again",
+   "publisher": "ktok.iheart.com",
+   "link": "https://ktok.iheart.com/content/2026-11-20-senate-republicans-block-iran-war-resolution-again/"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 07:45",
+   "headline": "Uganda targets January 2027 financial closure for shs12 trillion SGR project",
+   "publisher": "independent.co.ug",
+   "link": "https://www.independent.co.ug/uganda-targets-january-2027-financial-closure-for-shs12-trillion-sgr-project/"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 07:45",
+   "headline": "IEA warns of lasting Hormuz shock , hails India clean push in 2026 outlook",
+   "publisher": "hindustantimes.com",
+   "link": "https://www.hindustantimes.com/india-news/iea-warns-of-lasting-hormuz-shock-hails-india-s-clean-push-in-2026-outlook-101795152562692.html"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 07:45",
+   "headline": "ARTHUR CYR : Movement and perhaps progress on Ukraine",
+   "publisher": "jacksonprogress-argus.com",
+   "link": "https://www.jacksonprogress-argus.com/opinion/arthur-cyr-movement-and-perhaps-progress-on-ukraine/article_bdf11a45-0b53-5f8f-9c26-6eb5ce4a7219.html"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 07:45",
+   "headline": "Nifty , Sensex open lower as sell - off in AI weighs on sentiment , Gold down to lowest level of 2026",
+   "publisher": "milwaukeesun.com",
+   "link": "http://www.milwaukeesun.com/news/279444425/nifty-sensex-open-lower-as-sell-off-in-ai-weighs-on-sentiment-gold-down-to-lowest-level-of-2026"
+  }
+ ],
+ "warnings": []
 }
