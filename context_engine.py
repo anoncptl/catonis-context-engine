@@ -384,21 +384,16 @@ def parse_json(text):
         return json.loads(text[text.find("{"): text.rfind("}") + 1])
 
 
-def call_claude(messages):
-    key = os.environ.get("ANTHROPIC_API_KEY")
-    if not key:
-        raise SystemExit("ANTHROPIC_API_KEY is not set. Add it as a secret (see README step 4).")
-    body = json.dumps({"model": MODEL, "max_tokens": 8000, "system": SYSTEM, "messages": messages}).encode()
+def _api(messages, key):
+    body = json.dumps({"model": MODEL, "max_tokens": 16000, "system": SYSTEM, "messages": messages}).encode()
     last = None
     for attempt in range(3):
         try:
             req = urllib.request.Request("https://api.anthropic.com/v1/messages", data=body, method="POST",
                                          headers={"x-api-key": key, "anthropic-version": "2023-06-01",
                                                   "content-type": "application/json"})
-            with urllib.request.urlopen(req, timeout=240) as r:
-                resp = json.loads(r.read())
-            text = "".join(c.get("text", "") for c in resp["content"])
-            return parse_json(text), text, resp.get("usage", {})
+            with urllib.request.urlopen(req, timeout=300) as r:
+                return json.loads(r.read())
         except urllib.error.HTTPError as e:
             last = "HTTP %s: %s" % (e.code, e.read().decode("utf-8", "replace")[:300])
             if e.code in (400, 401, 403, 404):
@@ -407,6 +402,33 @@ def call_claude(messages):
             last = str(e)
         time.sleep(5 * (attempt + 1))
     raise RuntimeError("Claude API call failed: %s" % last)
+
+
+def call_claude(messages):
+    """One answer as parsed JSON. If the answer is cut off or not valid JSON, ask once more for a corrected one."""
+    key = os.environ.get("ANTHROPIC_API_KEY")
+    if not key:
+        raise SystemExit("ANTHROPIC_API_KEY is not set. Add it as a secret (see README step 4).")
+    usage, convo = {}, list(messages)
+    for attempt in range(2):
+        resp = _api(convo, key)
+        for k, v in (resp.get("usage") or {}).items():
+            if isinstance(v, int):
+                usage[k] = usage.get(k, 0) + v
+        text = "".join(c.get("text", "") for c in resp["content"])
+        cut = resp.get("stop_reason") == "max_tokens"
+        try:
+            if cut:
+                raise ValueError("the answer was cut off at the length limit")
+            return parse_json(text), text, usage
+        except ValueError as e:  # json.JSONDecodeError is a ValueError
+            print("    ! answer was not usable JSON (%s); asking for a corrected one" % str(e)[:80], file=sys.stderr)
+            fix = ("Your previous answer could not be used: %s. Reply again with ONE complete, valid JSON object matching the schema. "
+                   "Keep every text field short (two sentences at most) so the whole answer fits. No prose outside the JSON."
+                   % ("it was cut off before the end" if cut else "invalid JSON (%s)" % str(e)[:120]))
+            convo = list(messages[:-1]) + [{"role": "user", "content": messages[-1]["content"] + "\n\n" + fix}] if cut else \
+                list(messages) + [{"role": "assistant", "content": text}, {"role": "user", "content": fix}]
+    raise RuntimeError("Claude returned unusable JSON twice")
 
 
 def thresholds_and_probs(brief):
