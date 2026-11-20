@@ -1,0 +1,267 @@
+{
+ "headline": "Anthropic debut triggers broad selloff; VIX near 30, COR1M jumps to 30.22",
+ "what_happened": {
+  "summary": "Per the Cboe Daily Take 'Anthropic Hits the Market, but Wall Street Hits the Brakes' (19 Nov), the market rallied briefly on the Anthropic IPO and then rolled over within minutes in what looked like a sell-the-news reaction. The Dow, S&P 500 and Nasdaq Composite all closed down more than 2% just above their session lows, and technology and semiconductors were the biggest culprits. FRED shows the Nasdaq-100 closed at 26517.05 (-2.21%). Cboe says all three indices are now down more than 3% in November, the first such November since 2008 at this point in the month. Volatility jumped: VIX 28.44 (+15.80%), VXN 36.48 and COR1M 30.22 (+30.03%).",
+  "market_action": "Cboe says the selling reached nearly every corner of the market. Consumer discretionary, communication services, healthcare and industrials each lost 2% or more. The FRED S&P 500 series only runs to 18 Nov (7323.63, -0.23%), so a code-computed S&P 19 Nov change is not available. Cboe puts the AMD drop at 7.7%. Anthropic closed 17% above $83 per Cboe. Headlines (unverified) describe tech futures extending the slide this morning and Anthropic giving back gains on day two. The inputs have no live prices, so this brief does not say where NQ trades.",
+  "macro": "Yields fell on the day, so this was not a rates shock: Treasury 10-year 5.04% (-3.0 bp), 2-year 4.76% (-4.0 bp), 30-year 5.4% (-1.0 bp), and 10-year breakeven 2.16%. HY OAS was 3.47 (+4.0 bp) as of 18 Nov, wider on each of the last four observations. Polymarket (prediction-market prices, not CME FedWatch) shows 92.5% for a 25 bps December hike and 3.8% for 50+ bps. Cboe cites CME FedWatch at 100% for a hike of at least 25 bps. The latest official data show October CPI +0.35% m/m (core +0.3%), unemployment 4.1% and payrolls +165.0k.",
+  "geopolitics": "Cboe lists ongoing US-Iran tensions as one source of unease. Headlines (unverified) mention Iranian tanker attacks near Hormuz alongside slipping oil prices. FRED oil data are stale to 17 Nov (Brent 92.94, WTI 89.53), so there is no confirmed oil move for 19 Nov.",
+  "company_news": "Per Cboe, Anthropic (ANT) raised a record $81.3 billion and opened at a 34% premium to its $83 offer price. AMD fell after a short-seller alleged ties to a China-based company that could violate export restrictions, and a newsletter questioned circular financing; Cboe says AMD denied both. Cboe also flags growing worry about AI costs and chipmaker China relationships. Nvidia succession and probe questions from earlier Cboe posts remain open. Headlines (unverified) describe AI stocks extending the slide."
+ },
+ "dominant_driver": "single-stock or sector news",
+ "driver_reason": "Cboe frames the session as an AI-complex sell-the-news reaction to the Anthropic IPO, with the AMD allegations adding to tech and semiconductor pressure. The volatility jump (VIX 28.44, COR1M 30.22) shows the selling widened, so volatility and positioning is an amplifier. Yields fell, which argues against rates as the main cause.",
+ "leader": "QQQ",
+ "leader_reason": "VXN minus VIX is 8.04 pts, so Nasdaq-100 vol is still priced above S&P vol, and Cboe names tech and semiconductors as the biggest culprits. The last FRED-based facts are stale (Nasdaq-100 minus S&P 500 +0.65 pct pts on 18 Nov, -0.55 over five sessions), but the 5-session figure shows tech lagging. COR1M at 30.22 (+30.03%) suggests the selling broadened, so leadership is less clear-cut than before.",
+ "overlap_with_previous": {
+  "continuing": [
+   "AI trade stress in Nvidia, semiconductors and now AMD",
+   "Hawkish Fed: 9 Dec hike effectively priced, 50 bps tail small",
+   "Elevated volatility and rising implied correlation",
+   "Credit softening: HY OAS wider four observations in a row"
+  ],
+  "new": [
+   "Anthropic IPO sell-the-news reversal on debut day, with a record raise",
+   "AMD short-seller and China export allegations (denied by AMD per Cboe)",
+   "Selling broadened across sectors; all three indices down more than 3% in November",
+   "VIX near 30 with COR1M at 30.22"
+  ],
+  "fading": [
+   "Nvidia earnings relief, overtaken by the broader AI selloff",
+   "Oil as a driver; data stale and headlines mixed",
+   "50+ bps hike pricing, which eased to 3.8% from 6.4%"
+  ],
+  "echo_check": "The Fed-hike theme is largely an echo: yields fell on the day and the Polymarket probability for a 25 bps December hike barely moved on the day. The AI-test theme has new evidence from the Anthropic reversal and the AMD allegations. Headline repetition on 'AI rout' and 'worst run since 2023' is unverified and adds no independent data."
+ },
+ "scheduled_events": [
+  {
+   "when_vienna": "Fri 20 Nov 14:25",
+   "event": "Fed Governor Waller, opening remarks (College Fed Challenge Finals)",
+   "why_it_matters": "Waller promoted a 50 bps hike per Cboe, and this slot has just passed. The summary lists only opening remarks at a student event, and the inputs do not say whether policy was discussed.",
+   "source": "FOMC calendar"
+  },
+  {
+   "when_vienna": "Fri 20 Nov 16:00",
+   "event": "Revised UoM Consumer Sentiment (consensus 51.7, previous 51.0, unofficial)",
+   "why_it_matters": "A soft read adds to growth worries; a firm read matters little unless inflation expectations move.",
+   "source": "consensus (unofficial)"
+  },
+  {
+   "when_vienna": "Fri 20 Nov 16:00",
+   "event": "Revised UoM Inflation Expectations (previous 4.3%, no consensus given, unofficial)",
+   "why_it_matters": "It feeds the hawkish-Fed narrative into the 9 Dec meeting; a higher read would reinforce hike risk.",
+   "source": "consensus (unofficial)"
+  },
+  {
+   "when_vienna": "Fri 20 Nov 18:00",
+   "event": "President Trump speaks (no details in the inputs, unofficial)",
+   "why_it_matters": "It is a headline risk; the inputs give no topic.",
+   "source": "consensus (unofficial)"
+  },
+  {
+   "when_vienna": "Mon 23 Nov",
+   "event": "No official releases listed in the calendar for this session",
+   "why_it_matters": "With no scheduled catalyst, direction depends on AI-stock news flow and volatility. The next official releases are Wed 25 Nov 14:30 (GDP, Personal Income and Outlays, claims), outside the two-session window.",
+   "source": "FRED release calendar"
+  }
+ ],
+ "outlook": {
+  "next_day": {
+   "lower_pct": -1.5,
+   "upper_pct": 1.5,
+   "confidence": "low",
+   "confidence_reason": "The VIX regime has wide daily moves, and the last two graded days exceeded their cut points. Headlines point to a weak open (unverified), but washout bounces are common after sharp drops.",
+   "scenarios": [
+    {
+     "name": "bear",
+     "prob": 31,
+     "text": "The AI selloff extends: semiconductors keep falling, VIX moves above 30, and the Nasdaq-100 loses more than 1.5% from the 19 Nov close.",
+     "invalidation": "Chip names stabilise early and VIX and COR1M turn lower."
+    },
+    {
+     "name": "base",
+     "prob": 40,
+     "text": "A volatile session that stays within -1.5% to +1.5% of the 19 Nov close, as a bounce and further AI-stock news offset each other.",
+     "invalidation": "A one-way move that passes either cut point, especially one led by semiconductors."
+    },
+    {
+     "name": "bull",
+     "prob": 29,
+     "text": "A dip-buying rebound after the November washout, with the Nasdaq-100 gaining more than 1.5% as the AI complex steadies.",
+     "invalidation": "The bounce fails and COR1M keeps rising, showing broad selling."
+    }
+   ],
+   "history_probs": {
+    "bear": 24.2,
+    "base": 51.0,
+    "bull": 24.8,
+    "n": 963
+   },
+   "probs_normalized": {
+    "bear": 31.0,
+    "base": 40.0,
+    "bull": 29.0
+   }
+  },
+  "next_week": {
+   "lower_pct": -3.5,
+   "upper_pct": 3.5,
+   "confidence": "low",
+   "confidence_reason": "Several unresolved overhangs (AI sentiment, probes, a hawkish Fed) sit against the historical tendency for rebounds after high-vol drops. Implied vol is high, so the cuts are wider than the all-regime history.",
+   "scenarios": [
+    {
+     "name": "bear",
+     "prob": 28,
+     "text": "The AI unwind turns into broader de-risking as credit spreads widen and correlation stays high; the Nasdaq-100 is down more than 3.5% after 5 sessions.",
+     "invalidation": "HY OAS tightens and VIX falls back toward 20."
+    },
+    {
+     "name": "base",
+     "prob": 42,
+     "text": "A choppy range as the market digests the Anthropic reversal and the 9 Dec hike, finishing within -3.5% to +3.5%.",
+     "invalidation": "A decisive break in either direction on AI news or a Fed surprise."
+    },
+    {
+     "name": "bull",
+     "prob": 30,
+     "text": "The November washout reverses, and falling yields plus stable AI earnings narratives lift the Nasdaq-100 by more than 3.5%.",
+     "invalidation": "New allegations or probes hit more AI names, or yields reverse higher."
+    }
+   ],
+   "history_probs": {
+    "bear": 18.1,
+    "base": 56.1,
+    "bull": 25.8,
+    "n": 962
+   },
+   "probs_normalized": {
+    "bear": 28.0,
+    "base": 42.0,
+    "bull": 30.0
+   }
+  },
+  "next_month": {
+   "lower_pct": -5.5,
+   "upper_pct": 6.5,
+   "confidence": "low",
+   "confidence_reason": "A 21-session horizon spans the 9 Dec FOMC and the 4 Dec jobs report, and the regime history is wide. I keep the probabilities near history with a small bearish tilt for the hawkish Fed and credit widening.",
+   "scenarios": [
+    {
+     "name": "bear",
+     "prob": 25,
+     "text": "A hawkish 9 Dec outcome (including a 50 bps surprise) and persistent AI doubts extend the drawdown; the Nasdaq-100 is down more than 5.5%.",
+     "invalidation": "Yields stay below recent highs, credit spreads tighten, and AI-trade sentiment steadies."
+    },
+    {
+     "name": "base",
+     "prob": 43,
+     "text": "High volatility but no trend: the hike is absorbed and the index ends within -5.5% to +6.5%.",
+     "invalidation": "A regime change in credit or oil, or a Fed shift toward a faster pace of tightening."
+    },
+    {
+     "name": "bull",
+     "prob": 32,
+     "text": "After a record IPO and a very weak November, positioning resets and the AI complex recovers; the Nasdaq-100 gains more than 6.5%.",
+     "invalidation": "Nvidia and AMD scrutiny escalates or hike expectations move toward 50 bps."
+    }
+   ],
+   "history_probs": {
+    "bear": 16.7,
+    "base": 51.6,
+    "bull": 31.8,
+    "n": 960
+   },
+   "probs_normalized": {
+    "bear": 25.0,
+    "base": 43.0,
+    "bull": 32.0
+   }
+  }
+ },
+ "record_comment": "With 4 resolved next-day forecasts, my Brier is 0.637 against 0.667 for equal odds and 0.707 for history, a small edge on a tiny sample, with the top pick right 2 of 4. Two of the four days breached my cut points (-2.67% and -2.21%), so I am widening the next-day cuts to -1.5/+1.5.",
+ "watch_list": [
+  "VIX near 30 and COR1M at 30.22: do they fall back or keep rising?",
+  "Semiconductors (AMD, Nvidia) and Anthropic day two",
+  "UoM inflation expectations at 16:00 CET against the previous 4.3%",
+  "HY OAS (widening four observations in a row) and the 10-year yield, which closed at 5.04%"
+ ],
+ "memory_update": {
+  "running_thesis": "The Nasdaq-100 closed 19 Nov at 26517.05 (-2.21%) after a sell-the-news reversal on the Anthropic IPO debut (Cboe). All three indices are down more than 3% in November. VIX 28.44, VXN 36.48, COR1M 30.22 (+30.03%): the selling broadened beyond tech. The 9 Dec hike is effectively priced (Polymarket 25 bps 92.5%, 50+ bps 3.8%), yet yields fell on the day (10-year 5.04%). AMD fell 7.7% on short-seller allegations it denies; Nvidia probe and succession overhangs persist. HY OAS 3.47 as of 18 Nov. Oil data stale to 17 Nov.",
+  "open_questions": [
+   "Is Friday the final leg of the November washout or does the AI unwind continue?",
+   "Does COR1M above 30 signal contagion beyond tech?",
+   "Do AMD export and circular-financing allegations spread to other chipmakers?",
+   "Do 50+ bps hike odds rise again before 9 Dec?"
+  ],
+  "themes": {
+   "AI trade test (Anthropic IPO, Nvidia, AMD)": "active; Anthropic debut reversed into a broad selloff, AMD allegations new",
+   "Fed hikes and rising yields": "continuing but echo; 9 Dec hike priced, yields fell on 19 Nov",
+   "Volatility and implied correlation": "escalating; VIX 28.44, VXN 36.48, COR1M 30.22",
+   "Credit": "HY OAS 3.47, wider four observations in a row to 18 Nov",
+   "Nvidia leadership, earnings and scrutiny": "continuing; probes and succession open, overshadowed by wider AI selloff",
+   "Oil and Iran": "fading; official data stale to 17 Nov, shipping-risk headlines unverified",
+   "Healthcare and Dow weakness": "continuing; healthcare lost 2% or more on 19 Nov per Cboe"
+  }
+ },
+ "id": "2026-11-20-manual",
+ "slot": "manual",
+ "slot_label": "Manual run",
+ "made_utc": "2026-11-20T14:00:12.333170+00:00",
+ "ref_date": "2026-11-19",
+ "model": "claude-sonnet-5-5",
+ "usage": {
+  "input_tokens": 32635,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "output_tokens": 8642
+ },
+ "number_flags": [],
+ "posts_used": [
+  {
+   "title": "Anthropic Hits the Market, but Wall Street Hits the Brakes",
+   "url": "https://www.cboe.com/insights/posts/anthropic-hits-the-market-but-wall-street-hits-the-brakes/",
+   "date": "2026-11-19",
+   "text_source": "full_article",
+   "older": false,
+   "tag": "newest Daily Take"
+  },
+  {
+   "title": "Nasdaq Breaks Losing Streak as Dow and S&P Slide Again",
+   "url": "https://www.cboe.com/insights/posts/nasdaq-breaks-losing-streak-as-dow-and-s-p-slide-again/",
+   "date": "2026-11-18",
+   "text_source": "full_article",
+   "older": false,
+   "tag": "previous Daily Take"
+  },
+  {
+   "title": "Week of 11/16/2026: Retail Turns Bearish on NVDA Ahead of Earnings",
+   "url": "https://www.cboe.com/insights/posts/week-of-11-16-2026-retail-turns-bearish-on-nvda-ahead-of-earnings/",
+   "date": "2026-11-16",
+   "text_source": "full_article",
+   "older": false,
+   "tag": "newest Macro Volatility Digest"
+  },
+  {
+   "title": "Week of 11/9/2026: No Contagion (Yet): Equity Vol Spikes, Macro Vol Fades",
+   "url": "https://www.cboe.com/insights/posts/week-of-11-9-2026-no-contagion-yet-equity-vol-spikes-macro-vol-fades/",
+   "date": "2026-11-09",
+   "text_source": "full_article",
+   "older": false,
+   "tag": "previous Macro Volatility Digest"
+  },
+  {
+   "title": "Purpose Investments Adds Anthropic and Micron to Yield Shares ETF Suite on Cboe Canada",
+   "url": "https://www.cboe.com/insights/posts/purpose-investments-adds-anthropic-and-micron-to-yield-shares-etf-suite-on-cboe-canada/",
+   "date": "2026-11-20",
+   "text_source": "full_article",
+   "older": false,
+   "tag": "new"
+  },
+  {
+   "title": "Nvidia\u2019s Earnings and Guidance Soothe Investor Worries",
+   "url": "https://www.cboe.com/insights/posts/nvidias-earnings-and-guidance-soothe-investor-worries/",
+   "date": "2026-11-17",
+   "text_source": "full_article",
+   "older": true,
+   "tag": "older"
+  }
+ ]
+}
