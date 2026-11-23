@@ -1,0 +1,259 @@
+{
+ "headline": "VIX near 36 after Friday's AI rout; Nasdaq-100 near bear-market territory per Cboe",
+ "what_happened": {
+  "summary": "The Cboe Daily Take 'Market Selloff Deepens as Investors Seek Shelter' (20 Nov) says Friday did not look like dip-buying. The S&P 500 and Dow closed in correction territory, the S&P 500 broke below 7,000, and the Nasdaq Composite fell 5.3%. Cboe says the Nasdaq 100 was dangerously close to a bear market (a 20% or larger decline). Cboe volatility surged: VIX 35.89 (+26.20%), its highest since April 2025 per Cboe, VXN 45.25 and COR1M 36.05. Treasury yields fell sharply as money sought shelter. Unverified headlines this morning describe a futures bounce. The inputs have no live prices, so this brief does not say where NQ trades.",
+  "market_action": "FRED's Nasdaq-100 close only runs to 19 Nov (26517.05, -2.21%), so Friday's index close is not in the numbers. Cboe says the Nasdaq Composite fell 5.3% and the Nasdaq 100 was close to bear-market territory. Cboe volatility on 20 Nov: VIX 35.89 (+26.20%), VXN 45.25 (+24.04%), VVIX 138.03 (+8.60%), VIX9D 40.72 (+39.17%), COR1M 36.05 (+19.29%), SKEW 138.84 (-1.43%). Engine read: the near-term VIX9D, VIX and VVIX jump together with COR1M climbing from 11.8 on 13 Nov to 36.05 means the market is pricing a broad, correlated drawdown, not just a tech rotation. SKEW easing while VIX spikes fits a spot-driven vol rise.",
+  "macro": "US Treasury: 2-year 4.63% (-13.0 bp), 10-year 4.92% (-12.0 bp), 30-year 5.31% (-9.0 bp) on 20 Nov. FRED shows the 10-year breakeven at 2.15% and the 10-year real yield at 2.88% (19 Nov). Polymarket has a 25 bps December hike at 92.5%, 50+ bps at 2.4% and no change at 4.9% (prediction-market prices, not CME FedWatch). Latest BLS prints: October CPI +0.35% m/m, core CPI +0.3%, unemployment 4.1%, payrolls +165.0k. FRED shows September core PCE at 3.12% y/y. HY OAS was 3.52 on 19 Nov (+5.0 bp), wider on every observation since 13 Nov. Engine read: yields fell with equities, so this looks like a flight to safety, not a rates-driven selloff.",
+  "geopolitics": "Cboe says conflicts in the Middle East are unresolved and mentions US-Iran tensions. FRED oil data is stale to 17 Nov (Brent 92.94, WTI 89.53). Headlines this morning mix supply-surplus worries with renewed Middle East shipping attacks; both are unverified.",
+  "company_news": "Cboe says Nvidia fell nearly 14% on reports that the SEC is investigating its accounting practices, and that it has lost $1.4 trillion of market cap since the 8 Nov Huang scandal. Cboe says Anthropic lost more than 9% on Friday after its Thursday debut. The Cboe 'Anthropic Options Preview' says ANT options start trading today, Mon 23 Nov. A headline from Barron's says Trump urged Nvidia's board to rehire Huang; this is unverified. A headline also says CrowdStrike will buy Zscaler (unverified)."
+ },
+ "dominant_driver": "single-stock or sector news",
+ "driver_reason": "Cboe ties Friday's leg lower to the Nvidia SEC-probe reports, the Anthropic post-IPO slide and the wider AI selloff. Volatility and positioning are amplifying it (VIX 35.89, VIX9D 40.72, COR1M 36.05), but the trigger was still AI and chip-sector news; rates eased.",
+ "leader": "QQQ",
+ "leader_reason": "Nasdaq-100 minus S&P 500 was -0.19 pct pts on 19 Nov and -0.78 over 5 sessions, and VXN minus VIX is 9.36 pts, so Nasdaq-100 vol still carries a premium. COR1M at 36.05 shows the selling is broadening, but Cboe still places tech and semiconductors at the centre, and the Nasdaq Composite's 5.3% drop on Friday was far larger than the S&P 500 move Cboe describes.",
+ "overlap_with_previous": {
+  "continuing": [
+   "AI and Nvidia unwind (SEC-probe reports on top of succession and earnings questions)",
+   "Volatility escalation: VIX, VXN and COR1M all higher again",
+   "Hawkish Fed backdrop with the 9 Dec hike priced",
+   "Credit softening: HY OAS wider every observation since 13 Nov"
+  ],
+  "new": [
+   "VIX 35.89, highest since April 2025 per Cboe; S&P 500 and Dow in correction, Nasdaq 100 near bear territory",
+   "Sharp yield drop on 20 Nov (10-year 4.92%, -12.0 bp), a flight to safety",
+   "SEC-probe reports on Nvidia (Nvidia down nearly 14%)",
+   "ANT options start trading today, Mon 23 Nov"
+  ],
+  "fading": [
+   "Rates-shock framing: yields are falling, and 50+ bps hike odds are down to 2.4%",
+   "Oil as a driver: official data is stale and headlines are mixed"
+  ],
+  "echo_check": "The AI-unwind theme has run for two weeks, but Friday brought new evidence: the SEC-probe reports, the VIX and VXN spikes and COR1M at 36.05. The 'oversold bounce' narrative in this morning's headlines is repeated across many outlets without independent evidence and is not a signal on its own."
+ },
+ "scheduled_events": [
+  {
+   "when_vienna": "Mon 23 Nov 15:45",
+   "event": "Flash Manufacturing PMI (forecast 54.5, previous 56.0) and Flash Services PMI (forecast 55.6, previous 57.9)",
+   "why_it_matters": "Forecasts are unofficial consensus. A reading near consensus would be a soft step down, so it is a modest macro input while the market trades on AI and volatility. Times are CET.",
+   "source": "consensus (unofficial)"
+  },
+  {
+   "when_vienna": "Mon 23 Nov 15:30",
+   "event": "Listed options on Anthropic (ANT) begin trading (exact first-trade time not given; 15:30 CET is the regular 09:30 New York open)",
+   "why_it_matters": "A new, heavily watched AI-sentiment product. Cboe says the first weeklies come on Wed 25 Nov, and Thu 26 Nov is a market holiday.",
+   "source": "Cboe post"
+  },
+  {
+   "when_vienna": "Tue 24 Nov 16:00",
+   "event": "CB Consumer Confidence (forecast 92.1, previous 91.7)",
+   "why_it_matters": "Unofficial consensus. Tests whether the equity drawdown is feeding into sentiment. Usually a secondary mover.",
+   "source": "consensus (unofficial)"
+  },
+  {
+   "when_vienna": "Wed 25 Nov 14:30",
+   "event": "Just beyond the two-session window: GDP, Personal Income and Outlays (core PCE m/m consensus 0.3%, previous 0.3%), claims (consensus 201K), New Residential Construction",
+   "why_it_matters": "The official calendar lists these; the consensus figures are unofficial. They land before the Thu 26 Nov holiday and the shortened Fri 27 Nov session, and PCE feeds the 9 Dec hike debate.",
+   "source": "FRED release calendar"
+  }
+ ],
+ "outlook": {
+  "next_day": {
+   "lower_pct": -2.0,
+   "upper_pct": 2.0,
+   "confidence": "low",
+   "confidence_reason": "VIX is above 35, a regime where historical one-day Nasdaq-100 moves are wide (p10 -3.73, p90 4.53). Headlines hint at a bounce, but they are unverified and there are no live prices.",
+   "scenarios": [
+    {
+     "name": "bear",
+     "prob": 27,
+     "text": "The bounce fails and Friday's AI and chip selling resumes, with Nvidia SEC-probe headlines and more vol-driven de-risking.",
+     "invalidation": "Chips and Nvidia stabilise, VIX9D and VXN retreat, and COR1M stops rising."
+    },
+    {
+     "name": "base",
+     "prob": 40,
+     "text": "A choppy, two-way session inside the cut points: an oversold bounce is partly sold, with the PMIs and the ANT options debut as side stories.",
+     "invalidation": "A one-way move beyond either cut point."
+    },
+    {
+     "name": "bull",
+     "prob": 33,
+     "text": "A sharp relief rally from extreme volatility, helped by lower yields. Engine read: high-vol regimes historically produce large up days too.",
+     "invalidation": "The rally fades into the close and VIX stays near its Friday level."
+    }
+   ],
+   "history_probs": {
+    "bear": 22.8,
+    "base": 51.3,
+    "bull": 26.0,
+    "n": 312
+   },
+   "probs_normalized": {
+    "bear": 27.0,
+    "base": 40.0,
+    "bull": 33.0
+   }
+  },
+  "next_week": {
+   "lower_pct": -4.0,
+   "upper_pct": 4.5,
+   "confidence": "low",
+   "confidence_reason": "The VIX-above-35 regime has wide five-session quantiles (p10 -6.25, p90 8.2). The week has a Thu 26 Nov holiday and a shortened Fri 27 Nov session.",
+   "scenarios": [
+    {
+     "name": "bear",
+     "prob": 28,
+     "text": "The correction extends toward or into bear territory as the AI unwind spreads, credit keeps widening and COR1M stays elevated.",
+     "invalidation": "VIX falls decisively below its Friday level and HY OAS stops widening."
+    },
+    {
+     "name": "base",
+     "prob": 39,
+     "text": "A volatile range with rebound attempts and failures; the 25 Nov macro cluster and holiday liquidity drive the swings.",
+     "invalidation": "A trend week that finishes beyond either cut point."
+    },
+    {
+     "name": "bull",
+     "prob": 33,
+     "text": "A washout-and-rebound pattern: falling yields and oversold conditions support a multi-day recovery. Cboe cautions that a rebound would not necessarily end the correction.",
+     "invalidation": "New Nvidia or AI negatives, or a rise in 50+ bps hike odds, reverse the bounce."
+    }
+   ],
+   "history_probs": {
+    "bear": 20.8,
+    "base": 51.9,
+    "bull": 27.2,
+    "n": 312
+   },
+   "probs_normalized": {
+    "bear": 28.0,
+    "base": 39.0,
+    "bull": 33.0
+   }
+  },
+  "next_month": {
+   "lower_pct": -5.0,
+   "upper_pct": 8.0,
+   "confidence": "low",
+   "confidence_reason": "The historical high-VIX regime shows a positive median (4.66) but a fat left tail (p10 -10.01). I leaned slightly below the regime's bullish skew because of the 9 Dec hike, the open Nvidia probes and Cboe's warning that this may be a broader correction.",
+   "scenarios": [
+    {
+     "name": "bear",
+     "prob": 25,
+     "text": "A bear market develops: the AI unwind continues, the hike lands in a fragile market and credit stress builds.",
+     "invalidation": "Credit spreads reverse and VIX settles well below 30."
+    },
+    {
+     "name": "base",
+     "prob": 38,
+     "text": "A choppy recovery or basing phase, with the Fed hike absorbed.",
+     "invalidation": "A breakout or breakdown beyond the cut points before the 9 Dec FOMC."
+    },
+    {
+     "name": "bull",
+     "prob": 37,
+     "text": "A V-shaped recovery from extreme volatility, as in many past high-VIX episodes, helped by falling yields.",
+     "invalidation": "Hike odds move toward 50+ bps, or the Nvidia SEC probe widens to other chipmakers."
+    }
+   ],
+   "history_probs": {
+    "bear": 16.3,
+    "base": 44.9,
+    "bull": 38.8,
+    "n": 312
+   },
+   "probs_normalized": {
+    "bear": 25.0,
+    "base": 38.0,
+    "bull": 37.0
+   }
+  }
+ },
+ "record_comment": "Next-day Brier is 0.637 against 0.667 for equal odds and 0.707 for history, with the top pick right 2 of 4, so there is a small edge on a tiny sample. The two bear days (-2.67%, -2.21%) fell outside my cut points, so I have widened them for the current VIX regime.",
+ "watch_list": [
+  "Whether Nvidia and chips hold or lose any bounce, plus new SEC-probe or succession headlines",
+  "VIX and VXN versus Friday's 35.89 and 45.25, and COR1M versus 36.05",
+  "ANT options debut and the 15:45 CET flash PMIs",
+  "10-year yield after the 12 bp drop and Polymarket 50+ bps hike odds (2.4%)"
+ ],
+ "memory_update": {
+  "running_thesis": "Friday 20 Nov (Cboe) was the deepest leg yet: S&P 500 and Dow in correction, the Nasdaq Composite down 5.3%, and the Nasdaq 100 near bear territory. Nvidia fell nearly 14% on SEC accounting-probe reports and Anthropic fell more than 9%. VIX 35.89, VXN 45.25, COR1M 36.05, VVIX 138.03: contagion is broad. Yields fell sharply (10-year 4.92%) as a flight to safety, while a 9 Dec hike is priced (Polymarket 25 bps 92.5%). HY OAS 3.52 as of 19 Nov. Unverified headlines point to a Monday bounce. ANT options start 23 Nov. Oil data stale to 17 Nov.",
+  "open_questions": [
+   "Does a Monday bounce hold, or is this a bear-market leg?",
+   "Does the Nvidia SEC probe spread to other chipmakers (AMD allegations are open)?",
+   "Do credit spreads keep widening after four straight wider prints to 19 Nov?",
+   "Do 50+ bps hike odds rise again before 9 Dec, or does the equity damage soften the Fed?"
+  ],
+  "themes": {
+   "AI trade unwind (Nvidia, Anthropic, AMD)": "escalating; Nvidia SEC-probe reports, ANT -9% on Friday; Nvidia succession headlines unverified",
+   "Volatility and implied correlation": "extreme; VIX 35.89, VXN 45.25, COR1M 36.05, highest VIX since April 2025",
+   "Fed hikes and yields": "9 Dec hike priced; yields fell sharply on 20 Nov (flight to safety)",
+   "Credit": "HY OAS 3.52 as of 19 Nov, wider every observation since 13 Nov",
+   "Oil and Iran": "fading; official data stale to 17 Nov, shipping headlines unverified",
+   "Broad index correction": "new; S&P 500 and Dow in correction, Nasdaq 100 near bear territory per Cboe"
+  }
+ },
+ "id": "2026-11-23-daily",
+ "slot": "daily",
+ "slot_label": "Daily (08:30 New York)",
+ "made_utc": "2026-11-23T13:32:48.923053+00:00",
+ "ref_date": "2026-11-20",
+ "model": "claude-sonnet-5-5",
+ "usage": {
+  "input_tokens": 31894,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "output_tokens": 7935
+ },
+ "number_flags": [],
+ "posts_used": [
+  {
+   "title": "Market Selloff Deepens as Investors Seek Shelter",
+   "url": "https://www.cboe.com/insights/posts/market-selloff-deepens-as-investors-seek-shelter",
+   "date": "2026-11-20",
+   "text_source": "full_article",
+   "older": false,
+   "tag": "newest Daily Take"
+  },
+  {
+   "title": "Anthropic Hits the Market, but Wall Street Hits the Brakes",
+   "url": "https://www.cboe.com/insights/posts/anthropic-hits-the-market-but-wall-street-hits-the-brakes/",
+   "date": "2026-11-19",
+   "text_source": "full_article",
+   "older": false,
+   "tag": "previous Daily Take"
+  },
+  {
+   "title": "Week of 11/16/2026: Retail Turns Bearish on NVDA Ahead of Earnings",
+   "url": "https://www.cboe.com/insights/posts/week-of-11-16-2026-retail-turns-bearish-on-nvda-ahead-of-earnings/",
+   "date": "2026-11-16",
+   "text_source": "full_article",
+   "older": false,
+   "tag": "newest Macro Volatility Digest"
+  },
+  {
+   "title": "Week of 11/9/2026: No Contagion (Yet): Equity Vol Spikes, Macro Vol Fades",
+   "url": "https://www.cboe.com/insights/posts/week-of-11-9-2026-no-contagion-yet-equity-vol-spikes-macro-vol-fades/",
+   "date": "2026-11-09",
+   "text_source": "full_article",
+   "older": false,
+   "tag": "previous Macro Volatility Digest"
+  },
+  {
+   "title": "Anthropic Options Preview",
+   "url": "https://www.cboe.com/insights/posts/anthropic-options-preview",
+   "date": "2026-11-20",
+   "text_source": "full_article",
+   "older": false,
+   "tag": "new"
+  },
+  {
+   "title": "Purpose Investments Adds Anthropic and Micron to Yield Shares ETF Suite on Cboe Canada",
+   "url": "https://www.cboe.com/insights/posts/purpose-investments-adds-anthropic-and-micron-to-yield-shares-etf-suite-on-cboe-canada/",
+   "date": "2026-11-20",
+   "text_source": "full_article",
+   "older": true,
+   "tag": "older"
+  }
+ ]
+}
