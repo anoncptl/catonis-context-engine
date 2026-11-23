@@ -1,11 +1,11 @@
 {
- "utc": "2026-11-23T13:32:48.923053+00:00",
- "slot": "daily",
+ "utc": "2026-11-23T13:59:45.982252+00:00",
+ "slot": "manual",
  "status": {
   "cboe": {
    "name": "Cboe Insights",
    "ok": true,
-   "detail": "RSS 25 items; 3/3 pages; 2 new posts; newest Daily Take: Market Selloff Deepens as Investors Seek Shelter; newest Digest: Week of 11/16/2026: Retail Turns Bearish on NVDA Ahead of Ea",
+   "detail": "RSS 25 items; 3/3 pages; 0 new posts; newest Daily Take: Market Selloff Deepens as Investors Seek Shelter; newest Digest: Week of 11/16/2026: Retail Turns Bearish on NVDA Ahead of Ea",
    "latest": {
     "todaysmarkettake": [
      "market-selloff-deepens-as-investors-seek-shelter",
@@ -45,7 +45,7 @@
   "edgar": {
    "name": "SEC EDGAR 8-K filings",
    "ok": true,
-   "detail": "0 8-Ks in 4 days from 10 companies"
+   "detail": "1 8-Ks in 4 days from 10 companies"
   },
   "odds": {
    "name": "Fed odds (Kalshi, Polymarket)",
@@ -54,8 +54,8 @@
   },
   "gdelt": {
    "name": "GDELT global news",
-   "ok": false,
-   "detail": "HTTP Error 429: Too Many Requests"
+   "ok": true,
+   "detail": "15 articles"
   },
   "headlines": {
    "name": "Google News headlines",
@@ -80,7 +80,7 @@
   "ai": {
    "name": "Claude brief",
    "ok": true,
-   "detail": "brief 2026-11-23-daily written"
+   "detail": "brief 2026-11-23-manual written"
   },
   "discord": {
    "name": "Discord post",
@@ -383,7 +383,7 @@
    "id": "F30",
    "group": "Fed odds",
    "label": "Fed decisions (Sep\u2013Dec): Hike\u2013Pause\u2013Hike",
-   "value": 94.3,
+   "value": 94.2,
    "unit": "% implied",
    "change": null,
    "as_of": "2026-12-09",
@@ -393,7 +393,7 @@
    "id": "F31",
    "group": "Fed odds",
    "label": "Fed decisions (Sep\u2013Dec): Hike\u2013Pause\u2013Pause",
-   "value": 4.4,
+   "value": 4.7,
    "unit": "% implied",
    "change": null,
    "as_of": "2026-12-09",
@@ -433,7 +433,7 @@
    "id": "F35",
    "group": "Fed odds",
    "label": "Fed Decision in December?: No change",
-   "value": 4.9,
+   "value": 5.1,
    "unit": "% implied",
    "change": null,
    "as_of": "2026-12-10",
@@ -443,7 +443,7 @@
    "id": "F36",
    "group": "Fed odds",
    "label": "Fed Decision in December?: 50+ bps increase",
-   "value": 2.4,
+   "value": 2.0,
    "unit": "% implied",
    "change": null,
    "as_of": "2026-12-10",
@@ -483,7 +483,7 @@
    "id": "F40",
    "group": "Fed odds",
    "label": "How many dissent at the December Fed meeting?: 2",
-   "value": 6.6,
+   "value": 6.8,
    "unit": "% implied",
    "change": null,
    "as_of": "2026-12-10",
@@ -493,7 +493,7 @@
    "id": "F41",
    "group": "Fed odds",
    "label": "How many dissent at the December Fed meeting?: 3",
-   "value": 2.5,
+   "value": 2.2,
    "unit": "% implied",
    "change": null,
    "as_of": "2026-12-10",
@@ -787,7 +787,21 @@
    "previous": "203K"
   }
  ],
- "edgar": [],
+ "edgar": [
+  {
+   "ticker": "NVDA",
+   "form": "8-K",
+   "filed": "2026-11-23",
+   "accepted": "2026-11-23T13:57:54.000Z",
+   "items": [
+    "5.02 officer or director change",
+    "9.01 exhibits"
+   ],
+   "accession": "0001045810-26-000090",
+   "link": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000090/nvda-20261122.htm",
+   "excerpt": "Item 5.02. Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers; Compensatory Arrangements of Certain Officers. On November 22, 2026, the Board of Directors of NVIDIA Corporation reinstated Jen-Hsun Huang as NVIDIA\u2019s President, Chief Executive Officer and member of the Board of Directors, effective immediately. Following the reinstatement of Mr. Huang, Ms. Kress will continue to serve as NVIDIA\u2019s Executive Vice President and Chief Financial Officer. A copy of the press release announcing the above is attached as Exhibit 99.1 to this Current Report on Form 8-K. Item 9.01. Financial Statements and Exhibits. (d) Exhibits Exhibit Description 99.1 Press Release, dated November 23, 2026 104 The cover page of this Current Report on Form 8-K, formatted in inline XBRL (included as Exhibit 101) SIGNATURE Pursuant to the requirements of the Securities E"
+  }
+ ],
  "fed": [
   {
    "time_vienna": "Fri 20 Nov 22:15",
@@ -868,11 +882,11 @@
    "markets": [
     {
      "outcome": "Hike\u2013Pause\u2013Hike",
-     "prob_pct": 94.3
+     "prob_pct": 94.2
     },
     {
      "outcome": "Hike\u2013Pause\u2013Pause",
-     "prob_pct": 4.4
+     "prob_pct": 4.7
     },
     {
      "outcome": "Other",
@@ -903,11 +917,11 @@
     },
     {
      "outcome": "No change",
-     "prob_pct": 4.9
+     "prob_pct": 5.1
     },
     {
      "outcome": "50+ bps increase",
-     "prob_pct": 2.4
+     "prob_pct": 2.0
     },
     {
      "outcome": "25 bps decrease",
@@ -934,11 +948,11 @@
     },
     {
      "outcome": "2",
-     "prob_pct": 6.6
+     "prob_pct": 6.8
     },
     {
      "outcome": "3",
-     "prob_pct": 2.5
+     "prob_pct": 2.2
     },
     {
      "outcome": "4+",
@@ -948,6 +962,34 @@
   }
  ],
  "headlines": [
+  {
+   "time_vienna": "Mon 23 Nov 14:56",
+   "query": "Nasdaq futures",
+   "headline": "Stock futures rise, erasing some losses after tech rout",
+   "publisher": "CBS News",
+   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBEZ2IzdVdRZFN3QXJ4djZjWVZBcEtKWURLaGhwaG4xNzUyV3dXMXJtdktYUlNMaHo2eWtEdHNIeUhXLVpZaEV1dVRvd1pPaGpNelY4aERWQ1NZblk5cVdzOHpZbVFhRk9IcUlMamI5MnNLZw?oc=5"
+  },
+  {
+   "time_vienna": "Mon 23 Nov 14:33",
+   "query": "Nasdaq futures",
+   "headline": "US Stock Futures Bounce After AI-Driven Correction: Markets Wrap",
+   "publisher": "Bloomberg.com",
+   "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNMFVRM2J2cTZ6eU02Qzk1TF83UmhsSEN3SlpHYjJuc2lDeXBVM0h6WkN2bEJCUlk5RnZNOFMta05FOXFqeTZQQWZnbFl2RG1WTWVNSXYwVWhZRFZxRkx6SDlhTWtUWk92UVBJa2FGWVk3ak9rOUVJYjZ6RDBqcUZCOEpiWmFVWGxvVmM1Y2prdDk2N19EZG0xWjU3aFV5QkJ6MjF4eExGSkd3TWxaWGRBVzhB?oc=5"
+  },
+  {
+   "time_vienna": "Mon 23 Nov 14:32",
+   "query": "Treasury yields",
+   "headline": "U.S. Treasury Yields Rise, European Bond Yields Edge Lower",
+   "publisher": "WSJ",
+   "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOZ01XVnNSdmRPYmYxOWNxejJQZ3Zsa3Ywa21rWWNDSi0ydnk5N0RjZ1BNQS1BRnNuSlZDcXpkUkZ4QkQ0V25rLUQ1MjRMa2hsRWlOQy1HOVRadlBZcG5TT3NIZ0duRDJvb0JGVHc4ZFE4dlVQSDBQcDhuMTFsdkRuRGQ4djl3bDE4c3lpMjEzU0dZWHo1dlNRTWo5LThIMHZtVk9iVjhoWGR1azJKUEE?oc=5"
+  },
+  {
+   "time_vienna": "Mon 23 Nov 14:15",
+   "query": "oil prices",
+   "headline": "Oil prices dip as ample supply balances Persian Gulf tensions",
+   "publisher": "Transport Topics",
+   "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5TeUliczV4T1JGTnhYRE9qT0RLZVhRYUE4bnNQYXJPTWUyVmxKQ1BGY0ZYYnlWM0NfM3RFOW1Kal9sV1hQTkozLWZXZEF6SEt0WGZQdzFHbjVvQndpN19QdE0ydGZDLVZvb0E?oc=5"
+  },
   {
    "time_vienna": "Mon 23 Nov 14:12",
    "query": "Nasdaq",
@@ -963,18 +1005,18 @@
    "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9oWktIbnhqX1l1MHZidXlxaFJtNnhKcnpPVG0wRGNBOEVLdU9IZDB5QlQ2NHhQQWViaEc0UWxzY2l3NzlYQkdsTDJRUHhSWEhfMDlBSjFhVjlJUDdZNkhOWkpR?oc=5"
   },
   {
+   "time_vienna": "Mon 23 Nov 13:58",
+   "query": "oil prices",
+   "headline": "Oil Prices Fall as Traders Weigh Supply Surplus, Gulf Attacks",
+   "publisher": "WSJ",
+   "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPVkRJdUt0LVhZdzVhR0RpSnN6RWh6cDdGQVhOUU9vNENLN0hnSXB1YXJFU01rMzZBaXhuelM3ODlra1hKdnRxcnYweGNRSmFmSEpnMzJSQWxkOXZqZVM3NjBrZ2UwQS1PQS12di1uaHFUQWJRZHE2aHhxMnlLcVJ5Z3owcXd2WTV4NFJQSUM0SWplUVA5bW80ZU9fdDYzV1Z5QnFvcW1kdlhPMW8xc2JRQnVJc19mZw?oc=5"
+  },
+  {
    "time_vienna": "Mon 23 Nov 13:56",
    "query": "S&P 500 futures",
    "headline": "Wall Street Set to Bounce Back After Tech Sell-Off",
    "publisher": "The New York Times",
    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE80Q2R5M2NqcWlubGVXQnlvLXJrWVdzMzFRRk4xb19lc19nVHJNRzZna1lhLW1JV3VQeE5teWpmOHNRUmdqVndweks1YWFOdHZqbnZESjl0NlEydlpiYTRia0hqRzBwUEsycjExbmdBTUh6QQ?oc=5"
-  },
-  {
-   "time_vienna": "Mon 23 Nov 13:49",
-   "query": "Nasdaq futures",
-   "headline": "US Stock Futures Bounce After AI-Driven Correction: Markets Wrap",
-   "publisher": "Bloomberg.com",
-   "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNMFVRM2J2cTZ6eU02Qzk1TF83UmhsSEN3SlpHYjJuc2lDeXBVM0h6WkN2bEJCUlk5RnZNOFMta05FOXFqeTZQQWZnbFl2RG1WTWVNSXYwVWhZRFZxRkx6SDlhTWtUWk92UVBJa2FGWVk3ak9rOUVJYjZ6RDBqcUZCOEpiWmFVWGxvVmM1Y2prdDk2N19EZG0xWjU3aFV5QkJ6MjF4eExGSkd3TWxaWGRBVzhB?oc=5"
   },
   {
    "time_vienna": "Mon 23 Nov 13:46",
@@ -991,18 +1033,18 @@
    "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOaUw4TzZQY0VBQXp4QmEzTERpbnJ2OHR2ZXNXVy04OVpsem9YbEFqZllvYXhvZ2dfR1pCTkRmb1I1Yzh3Z1FiRWd3MEJyOURMRTZQUy1qQ21adXdqbnVaM0xGTVF5d0NIUUJxZUhReWdRb2g3Z1Z5VWZsd2czYUptWA?oc=5"
   },
   {
-   "time_vienna": "Mon 23 Nov 13:30",
-   "query": "S&P 500 futures",
-   "headline": "S&P 500 Futures Climb in Premarket Trading; Kymera Therapeutics, Zscaler Lead",
-   "publisher": "Barron's",
-   "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNMk1kZDhoMzRIWEZqUUtncFY4d0NOaFdEVHBJYldzcEFKUzVHUmxGRzFRNGdQOWVpLTFVTnRHd2ZlSVA1OUhUcjdncnREVG9yZ25lN3RzakswcHBEZExid2pRVElGUWVRdHczcF92STdoZGJNSC1GclFELUwydk0xbllHOTQ1eXdQSE9XNnF1bmNoOFpuMkdMUXo3NjZSWS1TUjV3cUF3UTlxdFlGTV9kS2VWRGFDZTIx?oc=5"
-  },
-  {
    "time_vienna": "Mon 23 Nov 13:27",
    "query": "inflation CPI jobs report",
    "headline": "Why did the Bank of Canada raise interest rates to 2.5 per cent?",
    "publisher": "kalkine.ca",
    "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOU1VDaGtmM1N6SkdoNFIyTWFZbC1HQWRkVko5WGJsTG9SNnVNRG5KM2Etc25EcXk3WlFSXzcxTktQbG9iclJINF9uOVJnbFFWNkcxQkZNM0JMVTAyQU1ZbFg0dksyVXEwMXN6Y2xkS1NOODhfbmFzTHBReGlDVlBrWUd3aE1zTDJrZVFTYmFqSlM3T3N1ZGQyS2VWZ3U?oc=5"
+  },
+  {
+   "time_vienna": "Mon 23 Nov 13:03",
+   "query": "AI stocks Nvidia",
+   "headline": "Morning Call Sheet: Nvidia buying opportunities, AI stocks and Fed rate hike risks",
+   "publisher": "CNBC",
+   "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQOTZ6MnJFa2hRYk5RalJiU2VGbVMwUjk1VDlqS3hfdlFUb3I4MXdMLVdsMVlHUUh1a2hIUG1jU194RDlRUXZlRG5JenhjaGtZd2Y3a1dTTDRvZkc5eHI5UnZVZFNpOWZnUk1YUGZQeGtkRWNfYVFIS2ZXalVfNFBRUUVpN2luWVY1Y2FyTld2SUZGTnVYXzV6ZC1MMVNwVThRaWlfSG1raDk4VGxxRUxsRHVnOFRwbmh0MkxuUmpBcjA?oc=5"
   },
   {
    "time_vienna": "Mon 23 Nov 12:52",
@@ -1026,13 +1068,6 @@
    "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQa1otYkdwei10RG1YQjhIQTI1emxlUFVjZENJczhqbnJybVkyWWVGSGgxMVRySk00RlgwVU1rclMtRUNmRHJHYWR5eE5mZTk5c0s5M0lOQTlzSW1FSVp5RkhKSi1ncmlmQXBTQ3dNTHY4UkdCS2dPVW4xcEJ4b1RoZkRpWFRSZw?oc=5"
   },
   {
-   "time_vienna": "Mon 23 Nov 12:30",
-   "query": "oil prices",
-   "headline": "Oil Prices Slip as Global Supply Surplus Concerns Offset Renewed Middle East Shipping Attacks",
-   "publisher": "EnergyNow.com",
-   "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPVkpwUEllU01ld1U3ZkVOdWZ6VDBBVGZqUExHV21DYVRlRTY3TV9XdTJBRGJqU0xJOUh6anhTXy03dThtSHdaLW52ZkViR3lLNkNxT1dXYi1kV0JQdWdETmMxMEZhR1FkdDRoVWtBMUlwOUVxMXBmb2gwaVhXejBQZ0E2TUMzVHFTYVpjN0NYRHFXdHd4c19MNFlCeTJhLXlYYlUwMFFyZTBNU3hwRTJ6ZjdGNHlYcnJYbHNWRDF3Nlo4QQ?oc=5"
-  },
-  {
    "time_vienna": "Mon 23 Nov 12:27",
    "query": "Nasdaq",
    "headline": "Nasdaq 100 Futures +3.62%; CrowdStrike to Buy Zscaler",
@@ -1045,13 +1080,6 @@
    "headline": "Go-Ahead's 3.9% Pay Offer Rejected, Sussex Bus Drivers Set to Walk Out on 1, 10 and 19 December",
    "publisher": "Metaintro",
    "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxONlI3OWRVQmljdnFtN0hrdWdKR1g0V1g2THFrWm9PNndIZ0QwZDdfVEdVWUg1cFlFLXRVYnVOeW1CTVZrcUtGay1OdDl0enFWOGM5NkJGd2JiZkxOSjRIa3h4ekNYaUxyUkZLUk0xUy1uVl9Qd0FjeHVKc2ZEWWYybEtLR3liYThJTkxBYg?oc=5"
-  },
-  {
-   "time_vienna": "Mon 23 Nov 12:16",
-   "query": "oil prices",
-   "headline": "Oil Prices Retreat as Market Digests Global Surplus Expectations",
-   "publisher": "WSJ",
-   "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQUDJZaXFhY1pnSUd1OEp5V2NtbWc2Z2ZvUW41OU1pOGdBWVRPbllCZWhHMExvNWlsSjR3cmFsNFpjV0d1WkRGTEdUcEZNMUNfZ19lS1oxQTlDanlUMXZxZzV4NVhNd29tZWJ6bUI2a0E2SnhPSmJZRVViNUgtREpsZmVUOWN3TFFoU1BTRURIOUZCOGlkNkc0TU41TlNMeTB6b09XSk9MSE92YXBtOFh4WXd5ajFRR3Nna3YxdmxPdEg?oc=5"
   },
   {
    "time_vienna": "Mon 23 Nov 12:16",
@@ -1108,24 +1136,99 @@
    "headline": "Treasury yields jump as stock futures rebound, investors await New York Fed President Williams speech",
    "publisher": "CNBC",
    "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9QemJ4Zi1KUVFXdk1NTDJLQWtnQmpPSnBiZTY3ZFV3SmRwZmFFay1kLTZoNk1MclNIZW5SVzh4MzlfRHBZTWR5N003aU9udHVCczNUd3R5SWxmMnIzb3QyS0R6akhuUzFJMlkyT2ZUd9IBdEFVX3lxTE1EVlVKZHJ6WUhjRGtoM2RrSjMtT0ZaanpZeThYZXNkdHRyY2FtNFc3SGJiREt5Rm5fc29DWWtMZ0FKVzNES09RMHBOVjVMY0Y4R0xHdW5ybW9fVW9CenRxWGtwYnRnVUZJQlNJR1RpUk9lbzNU?oc=5"
-  },
-  {
-   "time_vienna": "Mon 23 Nov 11:02",
-   "query": "S&P 500 futures",
-   "headline": "US futures climb and world shares are mixed as big tech stocks fall in Asia",
-   "publisher": "WTOP News",
-   "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPNXA0RVA5OWl2X200LXB3UDEyOG54Ml8wMlk3aU5ZRzNDaUZBNk5sNE4yaFpCaWhTMTZGSUxkc1pZR1FGcXU5ZzBNNC10ZF90RFphb1JKQ21FMXlQbElyMVZweTlVeXhRVlVqNWMyY05mQXRxVGFYM05QVjZWX1B2MlNQUTByM1g0MHA4QkhWbGVxQ2hSSTIxRWdmbllRVDRDQVE?oc=5"
-  },
-  {
-   "time_vienna": "Mon 23 Nov 10:50",
-   "query": "Nasdaq",
-   "headline": "Stock Futures Rally as Dust Settles After AI-Driven Selloff",
-   "publisher": "WSJ",
-   "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPbmRrWGlNNEhKN1FYMEt2NmxkREM3N2toWEt1QW9NOW5ULUt5MHpuRmdjMnI2MnpzbnFIdVdTcFhXMEJDZkNFenAxSWM5aWdaYVZyLVFwTjhFODJ0dUNIWGdmdkZ2ZFhBSnE4YjJZYXFDSWRZc3NTcHJSb0FvcEduX3Y4M1JINDZRaDlKMEZLbkJjLXRMMGM0Skt6V2FXZXlTZFV3bE93?oc=5"
   }
  ],
- "gdelt": null,
- "warnings": [
-  "GDELT global news unavailable: HTTP Error 429: Too Many Requests"
- ]
+ "gdelt": [
+  {
+   "time_vienna": "Mon 23 Nov 04:30",
+   "headline": "How Kim Jong Un gets away with building nukes and ghosting Trump",
+   "publisher": "livemint.com",
+   "link": "https://www.livemint.com/global/how-kim-jong-un-gets-away-with-building-nukes-and-ghosting-trump-11795397191350.html"
+  },
+  {
+   "time_vienna": "Mon 23 Nov 04:30",
+   "headline": "US President Trump - North Korean leader Kim summit still possible despite APEC setback , but major hurdles persist : analysts",
+   "publisher": "asianews.network",
+   "link": "https://asianews.network/us-president-trump-north-korean-leader-kim-summit-still-possible-despite-apec-setback-but-major-hurdles-persist-analysts/"
+  },
+  {
+   "time_vienna": "Mon 23 Nov 04:30",
+   "headline": "Stock market outlook today , 23 Nov : Sensex , Nifty prediction - DJIA , S & P , NASDAQ , GIFT Nifty , Kospi , Nikkei , Taiwan cues",
+   "publisher": "livemint.com",
+   "link": "https://www.livemint.com/market/stock-market-news/stock-market-outlook-today-23-nov-sensex-nifty-prediction-djia-s-p-nasdaq-gift-nifty-kospi-nikkei-taiwan-cues-11795394068928.html"
+  },
+  {
+   "time_vienna": "Mon 23 Nov 04:30",
+   "headline": "Fugitive criminals need a new hideout since the UAE started extraditing them",
+   "publisher": "livemint.com",
+   "link": "https://www.livemint.com/global/fugitive-criminals-need-a-new-hideout-since-the-uae-started-extraditing-them-11795396744758.html"
+  },
+  {
+   "time_vienna": "Mon 23 Nov 04:30",
+   "headline": "Perfetti Van Melle to close 2026 at \u20b94 , 000 crore revenue ; tough year ahead , says MD",
+   "publisher": "livemint.com",
+   "link": "https://www.livemint.com/companies/news/perfetti-van-melle-to-close-2026-with-4-000-crore-revenue-tough-year-ahead-md-fmcg-chocolate-cocoa-confectionery-11795337168596.html"
+  },
+  {
+   "time_vienna": "Mon 23 Nov 04:30",
+   "headline": "Vietnam economic rise creates a growing middle class , but not everyone is better off \u2013 Asia News Network",
+   "publisher": "asianews.network",
+   "link": "https://asianews.network/vietnams-economic-rise-creates-a-growing-middle-class-but-not-everyone-is-better-off/"
+  },
+  {
+   "time_vienna": "Mon 23 Nov 04:30",
+   "headline": "India champions Diamond Trade and fairer rules at UN",
+   "publisher": "newsindiatimes.com",
+   "link": "https://newsindiatimes.com/india-champions-diamond-trade-and-fairer-rules-at-un/"
+  },
+  {
+   "time_vienna": "Mon 23 Nov 04:30",
+   "headline": "It time for monetary policy in India to act and contain inflationary expectations",
+   "publisher": "livemint.com",
+   "link": "https://www.livemint.com/opinion/online-views/its-time-for-monetary-policy-in-india-to-act-and-contain-inflationary-expectations-11795361112974.html"
+  },
+  {
+   "time_vienna": "Mon 23 Nov 04:30",
+   "headline": "US senator - elect El - Sayed opposes funding Pakistan military",
+   "publisher": "ianslive.in",
+   "link": "https://ianslive.in/us-senator-elect-el-sayed-opposes-funding-pakistans-military--20261123074503"
+  },
+  {
+   "time_vienna": "Mon 23 Nov 04:30",
+   "headline": "CAF threatens sanctions over poor treatment of away teams",
+   "publisher": "punchng.com",
+   "link": "https://punchng.com/caf-frowns-at-poor-treatment-of-away-teams-2/"
+  },
+  {
+   "time_vienna": "Mon 23 Nov 04:30",
+   "headline": "Has the AI bubble already burst ? ",
+   "publisher": "livemint.com",
+   "link": "https://www.livemint.com/global/has-the-ai-bubble-already-burst-11795394872180.html"
+  },
+  {
+   "time_vienna": "Mon 23 Nov 04:30",
+   "headline": "Top stocks to watch today : Tata Steel , APL Apollo Tubes , Maruti Suzuki , RVNL , Waaree Energies & 17 others in focus",
+   "publisher": "livemint.com",
+   "link": "https://www.livemint.com/market/stock-market-news/top-stocks-to-watch-today-tata-steel-apl-apollo-tubes-maruti-suzuki-rvnl-waaree-energies-17-others-in-focus-11795399384907.html"
+  },
+  {
+   "time_vienna": "Mon 23 Nov 04:30",
+   "headline": "BT BIG STORY : India growth story faces a twin squeeze from inflation and the rupee",
+   "publisher": "businesstoday.in",
+   "link": "https://www.businesstoday.in/latest/economy/story/bt-big-story-indias-growth-story-faces-a-twin-squeeze-from-inflation-and-the-rupee-568837-2026-11-20"
+  },
+  {
+   "time_vienna": "Mon 23 Nov 04:30",
+   "headline": "Democrats win big , but America troubles are far from over",
+   "publisher": "independentaustralia.net",
+   "link": "https://independentaustralia.net/politics/politics-display/democrats-win-big-but-americas-troubles-are-far-from-over,21846"
+  },
+  {
+   "time_vienna": "Mon 23 Nov 04:30",
+   "headline": "Indian shares set to open higher on foreign inflows as AI selloff persists",
+   "publisher": "livemint.com",
+   "link": "https://www.livemint.com/market/indian-shares-set-to-open-higher-on-foreign-inflows-as-ai-selloff-persists-11795402774674.html"
+  }
+ ],
+ "warnings": []
 }

@@ -1,0 +1,259 @@
+{
+ "headline": "AI rout: VIX 35.89; Huang reinstated at Nvidia per 8-K; bounce is unverified",
+ "what_happened": {
+  "summary": "The Cboe Daily Take 'Market Selloff Deepens as Investors Seek Shelter' (20 Nov) says Friday looked like an escape to protection, not dip-buying. The S&P 500 and Dow closed in correction territory, the Nasdaq Composite fell 5.3%, and the Nasdaq 100 was 'dangerously close' to a bear market. Cboe says Nvidia lost nearly 14% on reports of an SEC probe into its accounting and Anthropic (ANT) lost more than 9%. Over the weekend, an NVDA 8-K (SEC filing, a primary source) says the board reinstated Jen-Hsun Huang as President and CEO effective immediately. Several headlines this morning describe a futures bounce, but they are unverified and the inputs carry no live prices.",
+  "market_action": "Cboe volatility on Fri 20 Nov: VIX 35.89 (+26.20%), VXN 45.25 (+24.04%), VVIX 138.03, VIX9D 40.72 (+39.17%), COR1M 36.05 (+19.29%). SKEW fell to 138.84 (-1.43%). FRED closes only run to 19 Nov: Nasdaq-100 26517.05 (-2.21%), S&P 500 7175.83 (-2.02%). Friday's index closes are not in FRED yet. Cboe puts the Nasdaq Composite's Friday fall at 5.3% and says the S&P 500 broke below 7,000. Headlines describe futures bouncing, so a Monday rebound is possible, but Cboe cautions that a rebound would not necessarily end the correction.",
+  "macro": "Official Treasury yields on 20 Nov fell sharply: 2-year 4.63% (-13.0 bp), 10-year 4.92% (-12.0 bp), 30-year 5.31% (-9.0 bp). Cboe reads this as a flight to Treasurys. Polymarket (prediction market, not FedWatch) prices a 25 bp December hike at 92.5%, a 50+ bp hike at 2.0% and no change at 5.1%. HY OAS was 3.52 on 19 Nov (+5.0 bp), wider on every observation since 3.23 on 13 Nov. Latest BLS prints: October CPI +0.35% m/m, core +0.3%, unemployment 4.1%, payrolls +165.0k. Headlines on yields this morning conflict with each other and are unverified.",
+  "geopolitics": "Cboe's Daily Take lists unresolved Middle East conflicts and a string of technology and power outages as open risks. Oil data are stale: Brent 92.94 and WTI 89.53 as of 17 Nov. Oil headlines this morning mention Gulf tensions and supply surplus; they are unverified.",
+  "company_news": "Primary source: the NVDA 8-K (accepted 23 Nov, 13:57 UTC) reports Huang's reinstatement on 22 Nov, with Ms. Kress remaining CFO. Headlines tie it to a Trump push to rehire Huang and say Nvidia is surging pre-market; these are unverified. Cboe notes that Nvidia has erased $1.4 trillion in market cap since the 8 Nov scandal. The SEC-probe reports on Nvidia are Cboe-relayed media reports, not a confirmed filing in these inputs. AMD denied the short-seller and circular-financing allegations (Cboe, citing Barron's). ANT listed options start trading today per the Cboe options preview."
+ },
+ "dominant_driver": "single-stock or sector news",
+ "driver_reason": "The AI unwind is Nvidia-centred: SEC-probe reports on Friday, then a CEO reversal in the 8-K. ANT and AMD fell in the same selloff, and the move is amplified by volatility (VIX 35.89, COR1M 36.05) and a priced December hike.",
+ "leader": "QQQ",
+ "leader_reason": "Nasdaq-100 minus S&P 500 was -0.19 pct pts on 19 Nov and -0.78 over five sessions, so tech has lagged, and VXN minus VIX is 9.36 pts, so Nasdaq-100 vol still carries a premium. COR1M at 36.05 shows the selling has spread beyond tech, but the AI complex is still the source of the stress (leadership facts are lagged to 19-20 Nov).",
+ "overlap_with_previous": {
+  "continuing": [
+   "AI trade unwind (Nvidia, Anthropic, AMD)",
+   "9 Dec Fed hike priced (Polymarket 25 bps 92.5%)",
+   "Credit spreads widening to 19 Nov",
+   "Broad index correction and extreme volatility"
+  ],
+  "new": [
+   "NVDA 8-K: Huang reinstated as CEO (primary source)",
+   "Unverified headlines of a Monday futures bounce",
+   "ANT listed options begin trading Mon 23 Nov (Cboe)"
+  ],
+  "fading": [
+   "Oil (data stale to 17 Nov)",
+   "Healthcare and Dow weakness as a separate theme (now part of the broad correction)"
+  ],
+  "echo_check": "The AI-unwind and hike-pricing themes largely repeat earlier briefs. The new evidence is the Huang reinstatement 8-K and Friday's Cboe volatility readings. The Fed theme has no new official evidence since the minutes and is partly an echo."
+ },
+ "scheduled_events": [
+  {
+   "when_vienna": "Mon 23 Nov 15:45",
+   "event": "Flash Manufacturing PMI (consensus forecast 54.5, previous 56.0) and Flash Services PMI (forecast 55.6, previous 57.9), both unofficial",
+   "why_it_matters": "Engine read: a weak print would feed growth worries on top of the equity selloff, while a firm print keeps the hawkish-Fed pricing intact.",
+   "source": "consensus (unofficial)"
+  },
+  {
+   "when_vienna": "Mon 23 Nov (time not given in the inputs)",
+   "event": "ANT listed options begin trading",
+   "why_it_matters": "Options trading in the AI name that fell more than 9% on Friday may add to sentiment and hedging flows around the AI complex.",
+   "source": "Cboe post"
+  },
+  {
+   "when_vienna": "Tue 24 Nov 16:00",
+   "event": "CB Consumer Confidence (consensus forecast 92.1, previous 91.7, unofficial)",
+   "why_it_matters": "Engine read: a read on household sentiment after a broad equity drawdown.",
+   "source": "consensus (unofficial)"
+  },
+  {
+   "when_vienna": "Wed 25 Nov 14:30",
+   "event": "Just beyond the two sessions: GDP, Personal Income and Outlays, claims and housing starts (consensus: core PCE m/m 0.3% vs previous 0.3%; prelim GDP q/q 3.5% vs 3.4%; claims 201K vs 203K, all unofficial)",
+   "why_it_matters": "Core PCE and growth data come before the 9 Dec decision. Cboe says Thursday 26 Nov is a market holiday and Friday 27 Nov is a shortened session.",
+   "source": "FRED release calendar"
+  }
+ ],
+ "outlook": {
+  "next_day": {
+   "lower_pct": -2.0,
+   "upper_pct": 2.5,
+   "confidence": "low",
+   "confidence_reason": "VIX is above 35, and the same-regime history shows a very wide distribution (p25 -1.8, p75 2.22). The bounce signals are only unverified headlines, and the last two graded bear days were missed.",
+   "scenarios": [
+    {
+     "name": "bear",
+     "prob": 25,
+     "text": "The bounce fades and the AI unwind resumes. Volatility stays bid and Nvidia's CEO change is not enough to stabilise the group.",
+     "invalidation": "Tech and semiconductors hold gains through the US session while VXN falls from 45.25."
+    },
+    {
+     "name": "base",
+     "prob": 40,
+     "text": "A choppy, wide-range session. A partial rebound after Friday's selloff is met by hedging flows, with no clear resolution.",
+     "invalidation": "A one-way move in either direction led by Nvidia and the chip names."
+    },
+    {
+     "name": "bull",
+     "prob": 35,
+     "text": "A relief rebound as Huang's reinstatement (8-K) is read as reducing the leadership overhang, and oversold conditions (as Cboe notes some commentators suggest) draw buyers.",
+     "invalidation": "The rebound fails, with Nvidia reversing lower or the SEC-probe story widening to other chipmakers."
+    }
+   ],
+   "history_probs": {
+    "bear": 22.8,
+    "base": 54.8,
+    "bull": 22.4,
+    "n": 312
+   },
+   "probs_normalized": {
+    "bear": 25.0,
+    "base": 40.0,
+    "bull": 35.0
+   }
+  },
+  "next_week": {
+   "lower_pct": -4.5,
+   "upper_pct": 5.0,
+   "confidence": "low",
+   "confidence_reason": "The same-regime base rate is wide (p25 -3.19, p75 5.04), and the week is holiday-shortened with a major data cluster on Wednesday.",
+   "scenarios": [
+    {
+     "name": "bear",
+     "prob": 25,
+     "text": "The correction extends: credit keeps widening, the SEC probe spreads or hike risk rises, and the Nasdaq 100 slips into bear territory.",
+     "invalidation": "HY OAS stops widening and VIX falls back well below Friday's 35.89."
+    },
+    {
+     "name": "base",
+     "prob": 42,
+     "text": "A volatile rebound-and-retest range as Cboe's 'reset' framing plays out, with no decisive trend into the holiday.",
+     "invalidation": "Core PCE or GDP on Wed 25 Nov shifts December hike odds sharply."
+    },
+    {
+     "name": "bull",
+     "prob": 33,
+     "text": "Post-washout relief: history in this volatility regime has a positive median, and the CEO reversal lowers the Nvidia overhang.",
+     "invalidation": "New AI or chip scrutiny headlines, or 50+ bp hike odds rising from 2.0%."
+    }
+   ],
+   "history_probs": {
+    "bear": 19.9,
+    "base": 54.8,
+    "bull": 25.3,
+    "n": 312
+   },
+   "probs_normalized": {
+    "bear": 25.0,
+    "base": 42.0,
+    "bull": 33.0
+   }
+  },
+  "next_month": {
+   "lower_pct": -6.0,
+   "upper_pct": 9.0,
+   "confidence": "low",
+   "confidence_reason": "The same-regime history is wide (p10 -10.01, p90 15.88) with a positive median, but a hike on 9 Dec and widening credit argue for a slightly lower tilt than history.",
+   "scenarios": [
+    {
+     "name": "bear",
+     "prob": 23,
+     "text": "A bear market takes hold as the Fed hikes into an equity drawdown and credit stress deepens.",
+     "invalidation": "Credit spreads narrow and the Nasdaq 100 stabilises as volatility normalises."
+    },
+    {
+     "name": "base",
+     "prob": 40,
+     "text": "A choppy recovery with repeated retests while the AI trade is repriced.",
+     "invalidation": "A decisive break by either the AI trade or the Fed path, such as a 50+ bp hike or a pause."
+    },
+    {
+     "name": "bull",
+     "prob": 37,
+     "text": "Mean reversion from an extreme volatility regime, as the same-regime history suggests, once the 9 Dec hike is absorbed.",
+     "invalidation": "The 9 Dec hike comes with hawkish guidance that lifts yields again alongside equity weakness."
+    }
+   ],
+   "history_probs": {
+    "bear": 14.4,
+    "base": 52.2,
+    "bull": 33.3,
+    "n": 312
+   },
+   "probs_normalized": {
+    "bear": 23.0,
+    "base": 40.0,
+    "bull": 37.0
+   }
+  }
+ },
+ "record_comment": "Across 4 graded next_day forecasts my Brier is 0.637, versus 0.667 for equal odds and 0.707 for history, with the top pick right 2/4. Both misses were large down days (-2.67%, -2.21%) that fell beyond my cuts, so I am widening the ranges in this high-volatility regime.",
+ "watch_list": [
+  "Whether the Nvidia bounce holds after Huang's reinstatement, and whether SEC-probe news spreads to AMD or other chipmakers",
+  "VIX and VXN versus Friday's 35.89 and 45.25, and COR1M versus 36.05",
+  "Treasury yields (headlines say they rose; official 10-year was 4.92% on Fri) and December hike odds",
+  "First ANT options trading and HY OAS beyond 3.52"
+ ],
+ "memory_update": {
+  "running_thesis": "Fri 20 Nov (Cboe): S&P 500 and Dow in correction, Nasdaq Composite -5.3%, Nasdaq 100 near bear territory. Nvidia fell nearly 14% on SEC accounting-probe reports and ANT fell more than 9%. VIX 35.89, VXN 45.25, COR1M 36.05, VVIX 138.03. Yields fell (10-year 4.92%) on flight to safety while Polymarket prices a 25 bp hike on 9 Dec at 92.5%. NVDA 8-K: Huang reinstated as CEO on 22 Nov. Headlines point to a Monday bounce (unverified); Cboe warns a rebound may be only a reset. HY OAS 3.52 on 19 Nov. ANT options start 23 Nov. Oil data stale to 17 Nov.",
+  "open_questions": [
+   "Does the Monday bounce hold, or is this a bear-market leg?",
+   "Does the Huang reinstatement calm the AI complex, or does the SEC probe spread (AMD allegations open)?",
+   "Do credit spreads keep widening after five straight wider prints to 19 Nov?",
+   "Do 50+ bp hike odds rise before 9 Dec, or does the equity damage soften the Fed?"
+  ],
+  "themes": {
+   "AI trade unwind (Nvidia, Anthropic, AMD)": "escalating on Fri 20 Nov; the Huang reinstatement 8-K is new evidence, bounce headlines unverified",
+   "Nvidia leadership and scrutiny": "Huang reinstated per 8-K; SEC-probe reports and succession questions in flux",
+   "Fed hikes and yields": "9 Dec hike priced (Polymarket 25 bps 92.5%); yields fell sharply on 20 Nov; echo without new official evidence",
+   "Broad index correction and volatility": "VIX 35.89, VXN 45.25, COR1M 36.05; contagion broad",
+   "Credit": "HY OAS 3.52 as of 19 Nov, wider every observation since 13 Nov",
+   "Oil and Iran": "fading; official data stale to 17 Nov, Gulf headlines unverified",
+   "ANT options": "listing 23 Nov; added AI-sentiment gauge"
+  }
+ },
+ "id": "2026-11-23-manual",
+ "slot": "manual",
+ "slot_label": "Manual run",
+ "made_utc": "2026-11-23T13:59:45.982252+00:00",
+ "ref_date": "2026-11-20",
+ "model": "claude-sonnet-5-5",
+ "usage": {
+  "input_tokens": 33819,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "output_tokens": 8267
+ },
+ "number_flags": [],
+ "posts_used": [
+  {
+   "title": "Market Selloff Deepens as Investors Seek Shelter",
+   "url": "https://www.cboe.com/insights/posts/market-selloff-deepens-as-investors-seek-shelter",
+   "date": "2026-11-20",
+   "text_source": "full_article",
+   "older": false,
+   "tag": "newest Daily Take"
+  },
+  {
+   "title": "Anthropic Hits the Market, but Wall Street Hits the Brakes",
+   "url": "https://www.cboe.com/insights/posts/anthropic-hits-the-market-but-wall-street-hits-the-brakes/",
+   "date": "2026-11-19",
+   "text_source": "full_article",
+   "older": false,
+   "tag": "previous Daily Take"
+  },
+  {
+   "title": "Week of 11/16/2026: Retail Turns Bearish on NVDA Ahead of Earnings",
+   "url": "https://www.cboe.com/insights/posts/week-of-11-16-2026-retail-turns-bearish-on-nvda-ahead-of-earnings/",
+   "date": "2026-11-16",
+   "text_source": "full_article",
+   "older": false,
+   "tag": "newest Macro Volatility Digest"
+  },
+  {
+   "title": "Week of 11/9/2026: No Contagion (Yet): Equity Vol Spikes, Macro Vol Fades",
+   "url": "https://www.cboe.com/insights/posts/week-of-11-9-2026-no-contagion-yet-equity-vol-spikes-macro-vol-fades/",
+   "date": "2026-11-09",
+   "text_source": "full_article",
+   "older": false,
+   "tag": "previous Macro Volatility Digest"
+  },
+  {
+   "title": "Purpose Investments Adds Anthropic and Micron to Yield Shares ETF Suite on Cboe Canada",
+   "url": "https://www.cboe.com/insights/posts/purpose-investments-adds-anthropic-and-micron-to-yield-shares-etf-suite-on-cboe-canada/",
+   "date": "2026-11-20",
+   "text_source": "full_article",
+   "older": true,
+   "tag": "older"
+  },
+  {
+   "title": "Anthropic Options Preview",
+   "url": "https://www.cboe.com/insights/posts/anthropic-options-preview",
+   "date": "2026-11-20",
+   "text_source": "full_article",
+   "older": true,
+   "tag": "older"
+  }
+ ]
+}
