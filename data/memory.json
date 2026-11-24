@@ -1,10 +1,10 @@
 {
- "running_thesis": "Fri 20 Nov (Cboe): S&P 500 and Dow in correction, Nasdaq Composite -5.3%, Nasdaq 100 near bear territory. Nvidia fell nearly 14% on SEC accounting-probe reports and ANT fell more than 9%. VIX 35.89, VXN 45.25, COR1M 36.05, VVIX 138.03. Yields fell (10-year 4.92%) on flight to safety while Polymarket prices a 25 bp hike on 9 Dec at 92.5%. NVDA 8-K: Huang reinstated as CEO on 22 Nov. Headlines point to a Monday bounce (unverified); Cboe warns a rebound may be only a reset. HY OAS 3.52 on 19 Nov. ANT options start 23 Nov. Oil data stale to 17 Nov.",
+ "running_thesis": "Cboe (23 Nov): Huang's return (NVDA 8-K, 22 Nov) lifted Nvidia about 31.5%, Nasdaq 100 +6.7%, S&P 500 +4.7% to 7,237; VIX 26.62, VXN 36.31, COR1M 25.68. Yields flat (10y 4.92%). Hike on 9 Dec priced (Polymarket 25 bp 93.5%). Headlines (unverified) show a premarket fade on 24 Nov. HY OAS 3.76 on 20 Nov. The Digest sees AI-specific rotation, not macro de-risking. Cboe warns a rebound may be only a reset. Oil data stale to 17 Nov.",
  "open_questions": [
-  "Does the Monday bounce hold, or is this a bear-market leg?",
-  "Does the Huang reinstatement calm the AI complex, or does the SEC probe spread (AMD allegations open)?",
-  "Do credit spreads keep widening after five straight wider prints to 19 Nov?",
-  "Do 50+ bp hike odds rise before 9 Dec, or does the equity damage soften the Fed?"
+  "Does the Nvidia-led rebound hold or fade after the 6.7% day?",
+  "Do the SEC-probe and succession questions resurface?",
+  "Do credit spreads tighten after the rally?",
+  "Do core PCE and GDP on 25 Nov change the 9 Dec hike odds?"
  ],
  "themes": {
   "Fed hikes and rising yields": "continuing but echo; 9 Dec hike priced, yields fell on 19 Nov",
@@ -15,22 +15,24 @@
   "AI trade test (NVDA earnings, Anthropic IPO)": "new, headline-only so far",
   "NVDA leadership change and earnings": "strengthening, price and options evidence on 16 Nov",
   "AI trade test (Nvidia earnings, Anthropic IPO)": "active; Anthropic IPO is headline-only",
-  "Volatility and implied correlation": "extreme; VIX 35.89, VXN 45.25, COR1M 36.05, highest VIX since April 2025",
+  "Volatility and implied correlation": "easing from extremes; VIX 26.62, VXN 36.31, COR1M 25.68",
   "Nvidia leadership change and earnings": "strengthening; price, options and retail-positioning evidence; earnings after the close Tue 17 Nov",
   "Tech volatility and implied correlation": "elevated; VXN 33.12, COR1M 23.24 rising",
   "Nvidia earnings and leadership change": "new evidence: results and guidance beat; succession questions remain",
   "AI trade test (Anthropic IPO)": "active; debut Thursday",
   "Oil": "fading; official data stale to 17 Nov, shipping-risk headlines unverified",
-  "Credit": "HY OAS 3.52 as of 19 Nov, wider every observation since 13 Nov",
+  "Credit": "HY OAS 3.76 on 20 Nov, stale; wider in every print since 13 Nov",
   "Nvidia leadership, earnings and scrutiny": "continuing; probes and succession open, overshadowed by wider AI selloff",
   "Healthcare and Dow weakness": "continuing; healthcare lost 2% or more on 19 Nov per Cboe",
   "AI trade test (Anthropic IPO, Nvidia, AMD)": "active; Anthropic debut reversed into a broad selloff, AMD allegations new",
   "Oil and Iran": "fading; official data stale to 17 Nov, Gulf headlines unverified",
   "AI trade unwind (Nvidia, Anthropic, AMD)": "escalating on Fri 20 Nov; the Huang reinstatement 8-K is new evidence, bounce headlines unverified",
-  "Fed hikes and yields": "9 Dec hike priced (Polymarket 25 bps 92.5%); yields fell sharply on 20 Nov; echo without new official evidence",
-  "Broad index correction": "new; S&P 500 and Dow in correction, Nasdaq 100 near bear territory per Cboe",
+  "Fed hikes and yields": "9 Dec hike priced; echo without new official evidence; yields flat on 23 Nov",
+  "Broad index correction": "S&P 500 and Dow back out of correction per Cboe; Nasdaq Composite still about 13% below peak",
   "Nvidia leadership and scrutiny": "Huang reinstated per 8-K; SEC-probe reports and succession questions in flux",
   "Broad index correction and volatility": "VIX 35.89, VXN 45.25, COR1M 36.05; contagion broad",
-  "ANT options": "listing 23 Nov; added AI-sentiment gauge"
+  "ANT options": "listed 23 Nov; weeklies expected 25 Nov",
+  "Nvidia leadership and the AI trade": "active; Huang reinstated per 8-K, Nvidia +31.5% on 23 Nov per Cboe, premarket fade headlines unverified",
+  "Oil and Gulf risks": "headline-only; official data stale to 17 Nov"
  }
 }

@@ -1,0 +1,1541 @@
+{
+ "generated_utc": "2026-11-24T13:31:48.087801+00:00",
+ "warnings": [
+  "GDELT global news unavailable: HTTP Error 429: Too Many Requests"
+ ],
+ "status": {
+  "cboe": {
+   "name": "Cboe Insights",
+   "ok": true,
+   "detail": "RSS 25 items; 3/3 pages; 3 new posts; newest Daily Take: The Market Taketh and the Market Giveth Back; newest Digest: Week of 11/23/2026: VIX\u00ae Jumps to 1-Year High, but No Panic ",
+   "latest": {
+    "todaysmarkettake": [
+     "the-market-taketh-and-the-market-giveth-back",
+     "market-selloff-deepens-as-investors-seek-shelter"
+    ],
+    "macro_volatility_digest": [
+     "week-of-11-23-2026-vix-jumps-to-1-year-high-but-no-panic-as-ai-trade-unwinds",
+     "week-of-11-16-2026-retail-turns-bearish-on-nvda-ahead-of-earnings"
+    ]
+   }
+  },
+  "fred": {
+   "name": "FRED",
+   "ok": true,
+   "detail": "12/12 daily series, 2 monthly"
+  },
+  "treasury": {
+   "name": "US Treasury yield curve",
+   "ok": true,
+   "detail": "latest 2026-11-23"
+  },
+  "bls": {
+   "name": "BLS inflation and jobs",
+   "ok": true,
+   "detail": "6 series, latest month 2026-10"
+  },
+  "calendar": {
+   "name": "Official release calendars",
+   "ok": true,
+   "detail": "8 events next 14 days (BLS ok, FRED releases ok, FOMC ok)"
+  },
+  "consensus": {
+   "name": "Consensus calendar (unofficial)",
+   "ok": true,
+   "detail": "6 USD events with forecasts"
+  },
+  "edgar": {
+   "name": "SEC EDGAR 8-K filings",
+   "ok": true,
+   "detail": "2 8-Ks in 4 days from 10 companies"
+  },
+  "odds": {
+   "name": "Fed odds (Kalshi, Polymarket)",
+   "ok": true,
+   "detail": "Polymarket, 3 events"
+  },
+  "gdelt": {
+   "name": "GDELT global news",
+   "ok": false,
+   "detail": "HTTP Error 429: Too Many Requests"
+  },
+  "headlines": {
+   "name": "Google News headlines",
+   "ok": true,
+   "detail": "8/8 searches, 25 headlines since the Mon 23 Nov close"
+  },
+  "fed": {
+   "name": "Federal Reserve releases",
+   "ok": true,
+   "detail": "9 items in 7 days"
+  },
+  "cboe_idx": {
+   "name": "Cboe index history",
+   "ok": true,
+   "detail": "VIX, VXN, VVIX, SKEW, VIX9D, COR1M"
+  },
+  "history": {
+   "name": "Price history for grading and base rates",
+   "ok": true,
+   "detail": "6763 Nasdaq-100 closes since 2000-01-03"
+  }
+ },
+ "fred": {
+  "NASDAQ100": {
+   "description": "Nasdaq-100 index close",
+   "unit": "index",
+   "observations": [
+    {
+     "date": "2026-11-06",
+     "value": 26989.99
+    },
+    {
+     "date": "2026-11-09",
+     "value": 27907.63,
+     "chg_pct": 3.4
+    },
+    {
+     "date": "2026-11-10",
+     "value": 27740.8,
+     "chg_pct": -0.6
+    },
+    {
+     "date": "2026-11-11",
+     "value": 28374.25,
+     "chg_pct": 2.28
+    },
+    {
+     "date": "2026-11-12",
+     "value": 28289.19,
+     "chg_pct": -0.3
+    },
+    {
+     "date": "2026-11-13",
+     "value": 27943.74,
+     "chg_pct": -1.22
+    },
+    {
+     "date": "2026-11-16",
+     "value": 27197.15,
+     "chg_pct": -2.67
+    },
+    {
+     "date": "2026-11-17",
+     "value": 27001.78,
+     "chg_pct": -0.72
+    },
+    {
+     "date": "2026-11-18",
+     "value": 27116.26,
+     "chg_pct": 0.42
+    },
+    {
+     "date": "2026-11-19",
+     "value": 26517.05,
+     "chg_pct": -2.21
+    }
+   ]
+  },
+  "SP500": {
+   "description": "S&P 500 index close",
+   "unit": "index",
+   "observations": [
+    {
+     "date": "2026-11-09",
+     "value": 7549.94
+    },
+    {
+     "date": "2026-11-10",
+     "value": 7520.93,
+     "chg_pct": -0.38
+    },
+    {
+     "date": "2026-11-11",
+     "value": 7619.38,
+     "chg_pct": 1.31
+    },
+    {
+     "date": "2026-11-12",
+     "value": 7592.4,
+     "chg_pct": -0.35
+    },
+    {
+     "date": "2026-11-13",
+     "value": 7561.67,
+     "chg_pct": -0.4
+    },
+    {
+     "date": "2026-11-16",
+     "value": 7416.59,
+     "chg_pct": -1.92
+    },
+    {
+     "date": "2026-11-17",
+     "value": 7340.53,
+     "chg_pct": -1.03
+    },
+    {
+     "date": "2026-11-18",
+     "value": 7323.63,
+     "chg_pct": -0.23
+    },
+    {
+     "date": "2026-11-19",
+     "value": 7175.83,
+     "chg_pct": -2.02
+    },
+    {
+     "date": "2026-11-20",
+     "value": 6910.39,
+     "chg_pct": -3.7
+    }
+   ]
+  },
+  "VIXCLS": {
+   "description": "VIX close",
+   "unit": "index",
+   "observations": [
+    {
+     "date": "2026-11-09",
+     "value": 19.92
+    },
+    {
+     "date": "2026-11-10",
+     "value": 19.46,
+     "chg_pct": -2.31
+    },
+    {
+     "date": "2026-11-11",
+     "value": 17.49,
+     "chg_pct": -10.12
+    },
+    {
+     "date": "2026-11-12",
+     "value": 18.7,
+     "chg_pct": 6.92
+    },
+    {
+     "date": "2026-11-13",
+     "value": 19.3,
+     "chg_pct": 3.21
+    },
+    {
+     "date": "2026-11-16",
+     "value": 22.91,
+     "chg_pct": 18.7
+    },
+    {
+     "date": "2026-11-17",
+     "value": 25.46,
+     "chg_pct": 11.13
+    },
+    {
+     "date": "2026-11-18",
+     "value": 24.56,
+     "chg_pct": -3.53
+    },
+    {
+     "date": "2026-11-19",
+     "value": 28.44,
+     "chg_pct": 15.8
+    },
+    {
+     "date": "2026-11-20",
+     "value": 35.89,
+     "chg_pct": 26.2
+    }
+   ]
+  },
+  "VXNCLS": {
+   "description": "VXN (Nasdaq-100 volatility) close",
+   "unit": "index",
+   "observations": [
+    {
+     "date": "2026-11-09",
+     "value": 28.97
+    },
+    {
+     "date": "2026-11-10",
+     "value": 28.57,
+     "chg_pct": -1.38
+    },
+    {
+     "date": "2026-11-11",
+     "value": 26.74,
+     "chg_pct": -6.41
+    },
+    {
+     "date": "2026-11-12",
+     "value": 28.55,
+     "chg_pct": 6.77
+    },
+    {
+     "date": "2026-11-13",
+     "value": 29.38,
+     "chg_pct": 2.91
+    },
+    {
+     "date": "2026-11-16",
+     "value": 32.9,
+     "chg_pct": 11.98
+    },
+    {
+     "date": "2026-11-17",
+     "value": 34.44,
+     "chg_pct": 4.68
+    },
+    {
+     "date": "2026-11-18",
+     "value": 33.12,
+     "chg_pct": -3.83
+    },
+    {
+     "date": "2026-11-19",
+     "value": 36.48,
+     "chg_pct": 10.14
+    },
+    {
+     "date": "2026-11-20",
+     "value": 45.25,
+     "chg_pct": 24.04
+    }
+   ]
+  },
+  "DGS10": {
+   "description": "10-year Treasury yield",
+   "unit": "%",
+   "observations": [
+    {
+     "date": "2026-11-06",
+     "value": 4.86
+    },
+    {
+     "date": "2026-11-09",
+     "value": 4.88,
+     "chg_bp": 2.0
+    },
+    {
+     "date": "2026-11-10",
+     "value": 4.98,
+     "chg_bp": 10.0
+    },
+    {
+     "date": "2026-11-12",
+     "value": 5.1,
+     "chg_bp": 12.0
+    },
+    {
+     "date": "2026-11-13",
+     "value": 5.15,
+     "chg_bp": 5.0
+    },
+    {
+     "date": "2026-11-16",
+     "value": 5.12,
+     "chg_bp": -3.0
+    },
+    {
+     "date": "2026-11-17",
+     "value": 5.1,
+     "chg_bp": -2.0
+    },
+    {
+     "date": "2026-11-18",
+     "value": 5.07,
+     "chg_bp": -3.0
+    },
+    {
+     "date": "2026-11-19",
+     "value": 5.04,
+     "chg_bp": -3.0
+    },
+    {
+     "date": "2026-11-20",
+     "value": 4.92,
+     "chg_bp": -12.0
+    }
+   ]
+  },
+  "DGS2": {
+   "description": "2-year Treasury yield",
+   "unit": "%",
+   "observations": [
+    {
+     "date": "2026-11-06",
+     "value": 4.51
+    },
+    {
+     "date": "2026-11-09",
+     "value": 4.56,
+     "chg_bp": 5.0
+    },
+    {
+     "date": "2026-11-10",
+     "value": 4.73,
+     "chg_bp": 17.0
+    },
+    {
+     "date": "2026-11-12",
+     "value": 4.86,
+     "chg_bp": 13.0
+    },
+    {
+     "date": "2026-11-13",
+     "value": 4.88,
+     "chg_bp": 2.0
+    },
+    {
+     "date": "2026-11-16",
+     "value": 4.83,
+     "chg_bp": -5.0
+    },
+    {
+     "date": "2026-11-17",
+     "value": 4.8,
+     "chg_bp": -3.0
+    },
+    {
+     "date": "2026-11-18",
+     "value": 4.8,
+     "chg_bp": 0.0
+    },
+    {
+     "date": "2026-11-19",
+     "value": 4.76,
+     "chg_bp": -4.0
+    },
+    {
+     "date": "2026-11-20",
+     "value": 4.63,
+     "chg_bp": -13.0
+    }
+   ]
+  },
+  "T10Y2Y": {
+   "description": "10y minus 2y spread",
+   "unit": "pct pts",
+   "observations": [
+    {
+     "date": "2026-11-09",
+     "value": 0.32
+    },
+    {
+     "date": "2026-11-10",
+     "value": 0.25,
+     "chg_bp": -7.0
+    },
+    {
+     "date": "2026-11-12",
+     "value": 0.24,
+     "chg_bp": -1.0
+    },
+    {
+     "date": "2026-11-13",
+     "value": 0.27,
+     "chg_bp": 3.0
+    },
+    {
+     "date": "2026-11-16",
+     "value": 0.29,
+     "chg_bp": 2.0
+    },
+    {
+     "date": "2026-11-17",
+     "value": 0.3,
+     "chg_bp": 1.0
+    },
+    {
+     "date": "2026-11-18",
+     "value": 0.27,
+     "chg_bp": -3.0
+    },
+    {
+     "date": "2026-11-19",
+     "value": 0.28,
+     "chg_bp": 1.0
+    },
+    {
+     "date": "2026-11-20",
+     "value": 0.29,
+     "chg_bp": 1.0
+    },
+    {
+     "date": "2026-11-23",
+     "value": 0.29,
+     "chg_bp": 0.0
+    }
+   ]
+  },
+  "DFII10": {
+   "description": "10-year real yield (TIPS)",
+   "unit": "%",
+   "observations": [
+    {
+     "date": "2026-11-06",
+     "value": 2.63
+    },
+    {
+     "date": "2026-11-09",
+     "value": 2.66,
+     "chg_bp": 3.0
+    },
+    {
+     "date": "2026-11-10",
+     "value": 2.78,
+     "chg_bp": 12.0
+    },
+    {
+     "date": "2026-11-12",
+     "value": 2.86,
+     "chg_bp": 8.0
+    },
+    {
+     "date": "2026-11-13",
+     "value": 2.91,
+     "chg_bp": 5.0
+    },
+    {
+     "date": "2026-11-16",
+     "value": 2.92,
+     "chg_bp": 1.0
+    },
+    {
+     "date": "2026-11-17",
+     "value": 2.89,
+     "chg_bp": -3.0
+    },
+    {
+     "date": "2026-11-18",
+     "value": 2.88,
+     "chg_bp": -1.0
+    },
+    {
+     "date": "2026-11-19",
+     "value": 2.88,
+     "chg_bp": 0.0
+    },
+    {
+     "date": "2026-11-20",
+     "value": 2.77,
+     "chg_bp": -11.0
+    }
+   ]
+  },
+  "T10YIE": {
+   "description": "10-year breakeven inflation",
+   "unit": "%",
+   "observations": [
+    {
+     "date": "2026-11-09",
+     "value": 2.22
+    },
+    {
+     "date": "2026-11-10",
+     "value": 2.2,
+     "chg_bp": -2.0
+    },
+    {
+     "date": "2026-11-12",
+     "value": 2.24,
+     "chg_bp": 4.0
+    },
+    {
+     "date": "2026-11-13",
+     "value": 2.24,
+     "chg_bp": 0.0
+    },
+    {
+     "date": "2026-11-16",
+     "value": 2.2,
+     "chg_bp": -4.0
+    },
+    {
+     "date": "2026-11-17",
+     "value": 2.21,
+     "chg_bp": 1.0
+    },
+    {
+     "date": "2026-11-18",
+     "value": 2.19,
+     "chg_bp": -2.0
+    },
+    {
+     "date": "2026-11-19",
+     "value": 2.16,
+     "chg_bp": -3.0
+    },
+    {
+     "date": "2026-11-20",
+     "value": 2.15,
+     "chg_bp": -1.0
+    },
+    {
+     "date": "2026-11-23",
+     "value": 2.13,
+     "chg_bp": -2.0
+    }
+   ]
+  },
+  "BAMLH0A0HYM2": {
+   "description": "High-yield credit spread (OAS)",
+   "unit": "pct pts",
+   "observations": [
+    {
+     "date": "2026-11-09",
+     "value": 3.34
+    },
+    {
+     "date": "2026-11-10",
+     "value": 3.3,
+     "chg_bp": -4.0
+    },
+    {
+     "date": "2026-11-11",
+     "value": 3.3,
+     "chg_bp": 0.0
+    },
+    {
+     "date": "2026-11-12",
+     "value": 3.2,
+     "chg_bp": -10.0
+    },
+    {
+     "date": "2026-11-13",
+     "value": 3.23,
+     "chg_bp": 3.0
+    },
+    {
+     "date": "2026-11-16",
+     "value": 3.34,
+     "chg_bp": 11.0
+    },
+    {
+     "date": "2026-11-17",
+     "value": 3.43,
+     "chg_bp": 9.0
+    },
+    {
+     "date": "2026-11-18",
+     "value": 3.47,
+     "chg_bp": 4.0
+    },
+    {
+     "date": "2026-11-19",
+     "value": 3.52,
+     "chg_bp": 5.0
+    },
+    {
+     "date": "2026-11-20",
+     "value": 3.76,
+     "chg_bp": 24.0
+    }
+   ]
+  },
+  "DCOILWTICO": {
+   "description": "WTI crude oil",
+   "unit": "$/bbl",
+   "observations": [
+    {
+     "date": "2026-11-04",
+     "value": 91.73
+    },
+    {
+     "date": "2026-11-05",
+     "value": 94.05,
+     "chg_pct": 2.53
+    },
+    {
+     "date": "2026-11-06",
+     "value": 94.37,
+     "chg_pct": 0.34
+    },
+    {
+     "date": "2026-11-09",
+     "value": 90.4,
+     "chg_pct": -4.21
+    },
+    {
+     "date": "2026-11-10",
+     "value": 89.62,
+     "chg_pct": -0.86
+    },
+    {
+     "date": "2026-11-11",
+     "value": 89.62,
+     "chg_pct": 0.0
+    },
+    {
+     "date": "2026-11-12",
+     "value": 92.3,
+     "chg_pct": 2.99
+    },
+    {
+     "date": "2026-11-13",
+     "value": 91.96,
+     "chg_pct": -0.37
+    },
+    {
+     "date": "2026-11-16",
+     "value": 89.24,
+     "chg_pct": -2.96
+    },
+    {
+     "date": "2026-11-17",
+     "value": 89.53,
+     "chg_pct": 0.32
+    }
+   ]
+  },
+  "DCOILBRENTEU": {
+   "description": "Brent crude oil",
+   "unit": "$/bbl",
+   "observations": [
+    {
+     "date": "2026-11-04",
+     "value": 91.84
+    },
+    {
+     "date": "2026-11-05",
+     "value": 97.96,
+     "chg_pct": 6.66
+    },
+    {
+     "date": "2026-11-06",
+     "value": 97.83,
+     "chg_pct": -0.13
+    },
+    {
+     "date": "2026-11-09",
+     "value": 91.03,
+     "chg_pct": -6.95
+    },
+    {
+     "date": "2026-11-10",
+     "value": 90.16,
+     "chg_pct": -0.96
+    },
+    {
+     "date": "2026-11-11",
+     "value": 92.14,
+     "chg_pct": 2.2
+    },
+    {
+     "date": "2026-11-12",
+     "value": 95.42,
+     "chg_pct": 3.56
+    },
+    {
+     "date": "2026-11-13",
+     "value": 95.17,
+     "chg_pct": -0.26
+    },
+    {
+     "date": "2026-11-16",
+     "value": 92.9,
+     "chg_pct": -2.39
+    },
+    {
+     "date": "2026-11-17",
+     "value": 92.94,
+     "chg_pct": 0.04
+    }
+   ]
+  }
+ },
+ "fred_monthly": {
+  "PCEPI": {
+   "description": "PCE price index",
+   "label": "PCE inflation",
+   "month": "2026-09",
+   "mom_pct": 0.49,
+   "yoy_pct": 3.65
+  },
+  "PCEPILFE": {
+   "description": "Core PCE price index (ex food and energy)",
+   "label": "Core PCE inflation",
+   "month": "2026-09",
+   "mom_pct": 0.32,
+   "yoy_pct": 3.12
+  }
+ },
+ "treasury": [
+  {
+   "date": "2026-11-16",
+   "3 Mo": 4.34,
+   "2 Yr": 4.83,
+   "5 Yr": 4.93,
+   "10 Yr": 5.12,
+   "30 Yr": 5.46
+  },
+  {
+   "date": "2026-11-17",
+   "3 Mo": 4.33,
+   "3 Mo chg_bp": -1.0,
+   "2 Yr": 4.8,
+   "2 Yr chg_bp": -3.0,
+   "5 Yr": 4.9,
+   "5 Yr chg_bp": -3.0,
+   "10 Yr": 5.1,
+   "10 Yr chg_bp": -2.0,
+   "30 Yr": 5.46,
+   "30 Yr chg_bp": 0.0
+  },
+  {
+   "date": "2026-11-18",
+   "3 Mo": 4.34,
+   "3 Mo chg_bp": 1.0,
+   "2 Yr": 4.8,
+   "2 Yr chg_bp": 0.0,
+   "5 Yr": 4.89,
+   "5 Yr chg_bp": -1.0,
+   "10 Yr": 5.07,
+   "10 Yr chg_bp": -3.0,
+   "30 Yr": 5.41,
+   "30 Yr chg_bp": -5.0
+  },
+  {
+   "date": "2026-11-19",
+   "3 Mo": 4.34,
+   "3 Mo chg_bp": 0.0,
+   "2 Yr": 4.76,
+   "2 Yr chg_bp": -4.0,
+   "5 Yr": 4.86,
+   "5 Yr chg_bp": -3.0,
+   "10 Yr": 5.04,
+   "10 Yr chg_bp": -3.0,
+   "30 Yr": 5.4,
+   "30 Yr chg_bp": -1.0
+  },
+  {
+   "date": "2026-11-20",
+   "3 Mo": 4.32,
+   "3 Mo chg_bp": -2.0,
+   "2 Yr": 4.63,
+   "2 Yr chg_bp": -13.0,
+   "5 Yr": 4.71,
+   "5 Yr chg_bp": -15.0,
+   "10 Yr": 4.92,
+   "10 Yr chg_bp": -12.0,
+   "30 Yr": 5.31,
+   "30 Yr chg_bp": -9.0
+  },
+  {
+   "date": "2026-11-23",
+   "3 Mo": 4.37,
+   "3 Mo chg_bp": 5.0,
+   "2 Yr": 4.63,
+   "2 Yr chg_bp": 0.0,
+   "5 Yr": 4.74,
+   "5 Yr chg_bp": 3.0,
+   "10 Yr": 4.92,
+   "10 Yr chg_bp": 0.0,
+   "30 Yr": 5.29,
+   "30 Yr chg_bp": -2.0
+  }
+ ],
+ "bls": {
+  "CUSR0000SA0": {
+   "description": "CPI, all items (seasonally adjusted)",
+   "month": "2026-10",
+   "value": 337.476,
+   "mom_pct": 0.35,
+   "yoy_pct": null,
+   "prev_mom_pct": 0.65
+  },
+  "CUSR0000SA0L1E": {
+   "description": "Core CPI, ex food and energy (SA)",
+   "month": "2026-10",
+   "value": 339.9,
+   "mom_pct": 0.3,
+   "yoy_pct": null,
+   "prev_mom_pct": 0.33
+  },
+  "WPSFD4": {
+   "description": "PPI final demand (SA)",
+   "month": "2026-10",
+   "value": 160.254,
+   "mom_pct": 0.35,
+   "yoy_pct": 6.52,
+   "prev_mom_pct": 1.41
+  },
+  "WPSFD49116": {
+   "description": "PPI final demand ex food, energy, trade (SA)",
+   "month": "2026-10",
+   "value": 144.911,
+   "mom_pct": 0.49,
+   "yoy_pct": 4.86,
+   "prev_mom_pct": 0.47
+  },
+  "LNS14000000": {
+   "description": "Unemployment rate",
+   "month": "2026-10",
+   "value": 4.1,
+   "previous": 4.2
+  },
+  "CES0000000001": {
+   "description": "Nonfarm payrolls, thousands",
+   "month": "2026-10",
+   "value": 159293.0,
+   "change": 165.0
+  }
+ },
+ "calendar": [
+  {
+   "when_vienna": "Wed 25 Nov 14:30",
+   "when_new_york": "Wed 25 Nov 08:30",
+   "event": "Gross Domestic Product",
+   "source": "FRED release calendar",
+   "time_note": "usual release time"
+  },
+  {
+   "when_vienna": "Wed 25 Nov 14:30",
+   "when_new_york": "Wed 25 Nov 08:30",
+   "event": "New Residential Construction",
+   "source": "FRED release calendar",
+   "time_note": "usual release time"
+  },
+  {
+   "when_vienna": "Wed 25 Nov 14:30",
+   "when_new_york": "Wed 25 Nov 08:30",
+   "event": "Personal Income and Outlays",
+   "source": "FRED release calendar",
+   "time_note": "usual release time"
+  },
+  {
+   "when_vienna": "Wed 25 Nov 14:30",
+   "when_new_york": "Wed 25 Nov 08:30",
+   "event": "Unemployment Insurance Weekly Claims Report",
+   "source": "FRED release calendar",
+   "time_note": "usual release time"
+  },
+  {
+   "when_vienna": "Tue 01 Dec 16:00",
+   "when_new_york": "Tue 01 Dec 10:00",
+   "event": "Job Openings and Labor Turnover Survey",
+   "source": "BLS release schedule",
+   "time_note": ""
+  },
+  {
+   "when_vienna": "Thu 03 Dec 14:30",
+   "when_new_york": "Thu 03 Dec 08:30",
+   "event": "Unemployment Insurance Weekly Claims Report",
+   "source": "FRED release calendar",
+   "time_note": "usual release time"
+  },
+  {
+   "when_vienna": "Fri 04 Dec 14:30",
+   "when_new_york": "Fri 04 Dec 08:30",
+   "event": "Employment Situation",
+   "source": "BLS release schedule",
+   "time_note": ""
+  },
+  {
+   "when_vienna": "Tue 08 Dec 14:30",
+   "when_new_york": "Tue 08 Dec 08:30",
+   "event": "Productivity and Costs",
+   "source": "BLS release schedule",
+   "time_note": ""
+  }
+ ],
+ "consensus": [
+  {
+   "when_vienna": "Mon 23 Nov 15:45",
+   "event": "Flash Manufacturing PMI",
+   "forecast": "54.5",
+   "previous": "56.0"
+  },
+  {
+   "when_vienna": "Mon 23 Nov 15:45",
+   "event": "Flash Services PMI",
+   "forecast": "55.6",
+   "previous": "57.9"
+  },
+  {
+   "when_vienna": "Tue 24 Nov 16:00",
+   "event": "CB Consumer Confidence",
+   "forecast": "92.4",
+   "previous": "91.7"
+  },
+  {
+   "when_vienna": "Wed 25 Nov 14:30",
+   "event": "Core PCE Price Index m/m",
+   "forecast": "0.3%",
+   "previous": "0.3%"
+  },
+  {
+   "when_vienna": "Wed 25 Nov 14:30",
+   "event": "Prelim GDP q/q",
+   "forecast": "3.5%",
+   "previous": "3.4%"
+  },
+  {
+   "when_vienna": "Wed 25 Nov 14:30",
+   "event": "Prelim GDP Price Index q/q",
+   "forecast": "2.3%",
+   "previous": "2.3%"
+  }
+ ],
+ "edgar": [
+  {
+   "ticker": "META",
+   "form": "8-K",
+   "filed": "2026-11-23",
+   "accepted": "2026-11-23T21:54:12.000Z",
+   "items": [
+    "8.01 other events"
+   ],
+   "accession": "0001628280-26-075541",
+   "link": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026075541/meta-20261118.htm",
+   "excerpt": "Item 8.01 Other Events. In connection with recent lawsuits filed by various shareholders in the Court of Chancery in Delaware, which have been consolidated under the action captioned In Re Meta Platforms, Inc. Class C Reclassification Litigation, Consol. C.A. No. 2026-1413-KSJM (the \u201cShareholder Litigation\u201d), asserting claims challenging the recapitalization of Meta Platforms, Inc. (the \u201cCompany\u201d) with a trial scheduled to begin April 19, 2027, the Company has agreed that it will not issue any shares of Class C common stock, whether through a dividend or otherwise, during the pendency of the pre-trial and trial proceedings in the Court of Chancery. In furtherance of this, Mark Zuckerberg, the Company\u2019s founder, Chairman, and Chief Executive Officer, granted a waiver to the Company of the requirement in the Founder Alignment Agreement, dated October 20, 2026, between the Company and Mr. Z"
+  },
+  {
+   "ticker": "NVDA",
+   "form": "8-K",
+   "filed": "2026-11-23",
+   "accepted": "2026-11-23T13:57:54.000Z",
+   "items": [
+    "5.02 officer or director change",
+    "9.01 exhibits"
+   ],
+   "accession": "0001045810-26-000090",
+   "link": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000090/nvda-20261122.htm",
+   "excerpt": "Item 5.02. Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers; Compensatory Arrangements of Certain Officers. On November 22, 2026, the Board of Directors of NVIDIA Corporation reinstated Jen-Hsun Huang as NVIDIA\u2019s President, Chief Executive Officer and member of the Board of Directors, effective immediately. Following the reinstatement of Mr. Huang, Ms. Kress will continue to serve as NVIDIA\u2019s Executive Vice President and Chief Financial Officer. A copy of the press release announcing the above is attached as Exhibit 99.1 to this Current Report on Form 8-K. Item 9.01. Financial Statements and Exhibits. (d) Exhibits Exhibit Description 99.1 Press Release, dated November 23, 2026 104 The cover page of this Current Report on Form 8-K, formatted in inline XBRL (included as Exhibit 101) SIGNATURE Pursuant to the requirements of the Securities E"
+  }
+ ],
+ "odds": [
+  {
+   "venue": "Polymarket",
+   "event": "Fed decisions (Sep\u2013Dec)",
+   "close": "2026-12-09",
+   "markets": [
+    {
+     "outcome": "Hike\u2013Pause\u2013Hike",
+     "prob_pct": 95.5
+    },
+    {
+     "outcome": "Hike\u2013Pause\u2013Pause",
+     "prob_pct": 3.2
+    },
+    {
+     "outcome": "Other",
+     "prob_pct": 0.8
+    },
+    {
+     "outcome": "Hike\u2013Hike\u2013Hike",
+     "prob_pct": 0.0
+    },
+    {
+     "outcome": "Hike\u2013Hike\u2013Pause",
+     "prob_pct": 0.0
+    },
+    {
+     "outcome": "Pause\u2013Pause\u2013Hike",
+     "prob_pct": 0.0
+    }
+   ]
+  },
+  {
+   "venue": "Polymarket",
+   "event": "Fed Decision in December?",
+   "close": "2026-12-10",
+   "markets": [
+    {
+     "outcome": "25 bps increase",
+     "prob_pct": 93.5
+    },
+    {
+     "outcome": "No change",
+     "prob_pct": 3.6
+    },
+    {
+     "outcome": "50+ bps increase",
+     "prob_pct": 3.3
+    },
+    {
+     "outcome": "25 bps decrease",
+     "prob_pct": 0.2
+    },
+    {
+     "outcome": "50+ bps decrease",
+     "prob_pct": 0.1
+    }
+   ]
+  },
+  {
+   "venue": "Polymarket",
+   "event": "How many dissent at the December Fed meeting?",
+   "close": "2026-12-10",
+   "markets": [
+    {
+     "outcome": "0",
+     "prob_pct": 72.5
+    },
+    {
+     "outcome": "1",
+     "prob_pct": 16.1
+    },
+    {
+     "outcome": "3",
+     "prob_pct": 7.3
+    },
+    {
+     "outcome": "2",
+     "prob_pct": 5.8
+    },
+    {
+     "outcome": "4+",
+     "prob_pct": 0.9
+    }
+   ]
+  }
+ ],
+ "gdelt": null,
+ "headlines": [
+  {
+   "time_vienna": "Tue 24 Nov 14:15",
+   "query": "Nasdaq",
+   "headline": "Nasdaq futures drop as AI stocks cool after Nvidia-fueled rally",
+   "publisher": "Kitco",
+   "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPVmR3S0E4eC04el94LUNRcGJxUXo3MGppQ2Jxa19oQVIxVl9XNDJULV9BQ1R3cmZPZ1ZyckJXNmR0b3pwbW5NV0pLR0IwMTRabVJxQjN5QWlNRzVoQzU2T0RUYjNHWnpfS2VYSzJYeDhYNFQ2dVFMY3BRZHdrcEhQWE4tbHlRbHFxdVhVamRSelJIWnhDbklpcHJzUUY1UXN1a2s5Z0luUEREN1JfNlV3bA?oc=5"
+  },
+  {
+   "time_vienna": "Tue 24 Nov 14:10",
+   "query": "oil prices",
+   "headline": "Gasoline Prices Are Slower To Fall Than Rise",
+   "publisher": "Forbes",
+   "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNRHhkamhkbU9OcWdWZXhEQ2VWRkkxMExzdWJaRzZQb1BhWkQzMm8ybjVXaGRJT0JLU1l5MW9aZ1dUTkx2MzE1XzBTWERTWGlhM0J0dEpBa3JGRW9tTjB5SjZ1VkpJTzZpOTlvaXgwMDRqSEY5VWFhVDJxcEhrLXhPVklNNUZsUDlTN1NPbFM1VEdTY3I4MlRCNUhwSXU5TWc?oc=5"
+  },
+  {
+   "time_vienna": "Tue 24 Nov 14:05",
+   "query": "Nasdaq",
+   "headline": "Nasdaq Futures Slide 1.7%; Nvidia Reverses",
+   "publisher": "Moomoo",
+   "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPdHBiRTAxYjVxV2NSX05kUU5MS0o2d1g5dWpWUjNxVXdWS2otN3h5dXJkSjF0MzdGVDRubi1qd1hSejgwN2pNUDIxckZNLWhGTWY2VnllSXJyWUpZV2RWdHZGaGVJVVctY0ltck45U21zbC1UWHlaUVM1bEJJcmVISWUyWEU2dDFuX1ZYdkw0aFZRUWVkUHNVTUNB?oc=5"
+  },
+  {
+   "time_vienna": "Tue 24 Nov 14:00",
+   "query": "oil prices",
+   "headline": "Current price of oil as of Nov. 24, 2026",
+   "publisher": "Fortune",
+   "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1ncUM2OUctaFFjU2NqYmpUN1A5TGFsZnFHR3MtTWFqUWdRZzFnYU9mdTY3b3JCOFJjcnpzMUExblM5OFV0eGhSS0k5TVNiUDIwVGFWb3dOTG9xNG9PQlFmNU9B?oc=5"
+  },
+  {
+   "time_vienna": "Tue 24 Nov 13:42",
+   "query": "Treasury yields",
+   "headline": "U.S. Treasury Yields, European Bond Yields Fall as Oil Prices Remain Under Pressure -- Update",
+   "publisher": "marketscreener.com",
+   "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOQW15TmNianJoUXZtOXlmWk1mY3AxaDJWQVhzS3pVb2ZBOE5Yb2RQQWNyT2hTcFRyNV81RHdXcVdfSzBvS1h5U0lCLTNoNERzR2VHd2RySHdyUFFqSHB3aHB3YVlXWDdyRDFOY3RveC1FdktuV0hnUGNsNVQxNElGOG05ampTZEE4YVR3X1NuN2Y1NmVLVS1lTklsTUdoa2FSRnhXZkpYZ3dBUzYzMEs3YlBaLTRITnExelRUUmRwbzZ3eTl5N0tkWEZxSG5qcHdCLVBHUGNPWnc?oc=5"
+  },
+  {
+   "time_vienna": "Tue 24 Nov 13:38",
+   "query": "oil prices",
+   "headline": "Oil Prices Rebound as Shipping Risks Persist",
+   "publisher": "WSJ",
+   "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQMkpRNmtac0F4dkZ2QTRqVEhSc2piS0Vpd1JNaHVScnZZYmRfdzBEbWZXOUFjb0dhR29XZURYZnRUcTVkQW41Y3pOT1plS0ZDOU5NTm1Qel9OUWRMNU53Y2ZoUjBWU045YUczZFRfZGswa0UtY2hVMVJMS2g0b29qUmw3YjN4VHF0aGVTYjVZdl94WjcwdXkxZ3diaVNXSWZwcE9tM2V3b3JLcTRTU0o0aw?oc=5"
+  },
+  {
+   "time_vienna": "Tue 24 Nov 13:33",
+   "query": "AI stocks Nvidia",
+   "headline": "Nvidia Rally Can\u2019t Hide the Market\u2019s AI Problems",
+   "publisher": "Barron's",
+   "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNdTVXeDMzNFJyRzhZbktqU1lHaTBRZHV2RzdRQTZISDRZbDRuNkE5UFAyVWVDZE5ZeEVaNnhnZm1LdzR1aFNQbWNuMTBsbE8yWmQtT2MwRGZzN0JsTFMxekdrVFJuY0xNUm5YYlhTd1FsMElwUUJCYW1oakE2MUI5ZQ?oc=5"
+  },
+  {
+   "time_vienna": "Tue 24 Nov 13:30",
+   "query": "S&P 500 futures",
+   "headline": "S&P 500 Futures Drop in Premarket Trading; Intercorp Finl Svcs, Dick's Sporting Goods Lead",
+   "publisher": "Barron's",
+   "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPV2FVel9uWmxDcExMdVNFNXVPNnUyY05relE5RXZkN2NubjB4N09rSnZBT2ltRXhxX2lEdWNxVkdSd1dQSkZXWk1Mc0VVemowSE13MXpxUU85Zk5zeWNPOWpiU0RLQkdhTloxLTdoeVVMME5xREprTXRkRzdoRGhNdy14QTM2b1lUcHgwLWZ6WExjeUU1VEdqTHlxOVlEeEd4NVJBaC1rR0pNMVFDVlo2Uk5KQWFjaUNibU4ybTJLTzBtWFpkR0ZiTGJR?oc=5"
+  },
+  {
+   "time_vienna": "Tue 24 Nov 13:24",
+   "query": "Nasdaq futures",
+   "headline": "Nasdaq futures turn lower after Nvidia rally as Jensen Huang returns",
+   "publisher": "CNBC",
+   "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQVVlJa3ZsbUNKSGgzY2pJU0o2cFYyaElmQ1VWbTJTU3BhYjR3cm1kQTNfelhidGRISElYRDVMb3dQWUdTVlhGenRKMkxVc1ZUaExWV2ZRYXdIYzV2VGx2ZkM0TTRzZDdPUm5pV0JZSjc0MndLZ054TERUWFY5ZjFsZWw5YmpQQjRuaGVVTnBydXc2RHEtZTlVVEZIXzZWYTRUQktmbEJ3V2QxUmVaYW05eA?oc=5"
+  },
+  {
+   "time_vienna": "Tue 24 Nov 13:22",
+   "query": "Nasdaq futures",
+   "headline": "U.S. futures, European markets fade following Nvidia rally",
+   "publisher": "The Washington Post",
+   "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOQjY3aEN6ZjEzSDFOLWFwc28wMkpxSTJEQWE2c0FnY1I1TG1HMVB3ZF9QQW9nTEJoUzhEU21KWnR0Zkk2cm5Da3NSMmpjOTZNeVZBdE9STmVwb251eWg5LTVfYTBEYWVjY2RnUmxaRGpIUjM2XzZEaGswQ1h1WjhtdGhmdkI4NE1BNUMxZTBMLUVmZHlZS2dyMTl2Tms3ZXVrUHp5QUVSWm5sXzg?oc=5"
+  },
+  {
+   "time_vienna": "Tue 24 Nov 13:05",
+   "query": "AI stocks Nvidia",
+   "headline": "Stocks Slide as Tech Stocks Partly Reverse Nvidia-Sparked Rally",
+   "publisher": "The New York Times",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5YNzAwNUxMLVhwWjVNV0FCN3VrS0ZaMy1DS1Q3Q1dzOVVPM19LRXNhN3djeWpQMlg4dUR1enNmaHNQV1duekxwZ1lSLVpTT3lMN281cE80VHlja0NuSG1SXzdDdU1SbWEzRWhuQmR1NzM5d0FvaE9qazJVUFJTT2M?oc=5"
+  },
+  {
+   "time_vienna": "Tue 24 Nov 12:50",
+   "query": "Nasdaq",
+   "headline": "Nasdaq 100 Forecast: NDX falls ahead of Nvidia\u2019s earnings & Anthropic\u2019s debut this week",
+   "publisher": "StoneX",
+   "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNM0dWb0gzbllYanhUZC1zS1Z3VGx6ZnFoWmxrdFpFb0ZOVmxiNUNsdFkwTTQ5R0VEeXNZT1pyM0lCNVBGZlJ2SzN0RTA4QXdhdEdDNEp1YTlXLXNuZmt2V2dvQm4zc1VGUmw5SHZIREJWM2NfS0xkVVFlcDlrM2JwOFE2Tjd3cTMxQ0dwRUtseE1nVVdPY3FDa0FoM1lvQUY4cVB3TU9IMlg1cERLbS1YU1JHVkktcjB4RnRBaXIxU1h4bm81blg5Y0dxVHpUTE5HQWc?oc=5"
+  },
+  {
+   "time_vienna": "Tue 24 Nov 12:35",
+   "query": "Nasdaq futures",
+   "headline": "Nasdaq Futures Plunge as Nvidia-Fueled Rally Fades",
+   "publisher": "Barchart.com",
+   "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQNWE2cE9KZkxXcDVOdUVXLXlzRi1MMUl1TFpaTy1GR1d6NUJqcmlOWFljcUdndDEtanU5NUNHZFhjT2swM05sQ00wTi1EVHd0aEtvOEdhZXhGeFQ4bURIcFU0aUdyVHJDSzY5TzctRTF5OXJ2aTg4VVJqZWxXZHk5c1VmWXBlbDRaX1FiMVhLbTB5M2pRLWxXRGxn?oc=5"
+  },
+  {
+   "time_vienna": "Tue 24 Nov 12:27",
+   "query": "oil prices",
+   "headline": "Oil Prices Extend Losses to Three-Month Lows as WTI Drops Below $80 and Global Supply Concerns Mount",
+   "publisher": "EnergyNow.com",
+   "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPVkhnVWllbDJ5UnpFS09rTEtJV1N0U1FSWFYzSWwwYlIzSmhhTnBubWh5UVJncHI5RFpkMFo0aFRXUjdEX09RQ0Nkb2pucDRZSGh1T2xLaXdJc1Z2M013a1BFQmp1WjFGTGhvWV9SZHhMMG9NUlVHaF81Q0hCNkZqMzRIRXNLc3JndFByTktLRklDQkRvM3M3WnA5TG5EZUlScGxONVprem5fVnN4ZTB5MWlYVlVsUGtQU0U3Y21JLVBDTnQtTFJxem9n?oc=5"
+  },
+  {
+   "time_vienna": "Tue 24 Nov 12:23",
+   "query": "AI stocks Nvidia",
+   "headline": "Nvidia Shares Fall 5% in Premarket Trading as Goldman Sachs Highlights Lingering Uncertainty Following Huang\u2019s Return",
+   "publisher": "Yahoo Finance",
+   "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNS1VvaWRmaUhFTFNsUGo1WHpEbEFtWERmX0xCcElOdkZya3dUWkRGSklmTlBJRllyQVQwcFpKR3lrcFhuUVBfS01JbHh5ZlZId3ljRkdNQkFmb0JnTWp5cXpoM3ZWM3NtVkdfekRyem04Rm80WmxNTVlxSzMxc3FsQ1I4cEE2THNXb25TZ1V6Y1M2NjdEakt4c0liNA?oc=5"
+  },
+  {
+   "time_vienna": "Tue 24 Nov 12:20",
+   "query": "oil prices",
+   "headline": "How High Are Gas Prices Where You Live?",
+   "publisher": "The New York Times",
+   "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxONFFyMEw4dDc1S2JPR0dWakJ3ZHVweTNnX29SUl9KbUEtTnI1ZjVyME96MFRxdkZEY3pNNl85SDkyVklUdm5nTTBKTUdodmdKaDhXNENnX2V2MUlDZ3Jpcks3RTVRTWV6cHo3SjZfU1hKU0szdzhFRXZ2a0R5LUlCaHBUR0RyNl9tRzcwUlk1WWlwYzZKMXFVanA0aENpNFd1a3cw?oc=5"
+  },
+  {
+   "time_vienna": "Tue 24 Nov 12:10",
+   "query": "Nasdaq futures",
+   "headline": "These Technical Measures Warned of Stock Market Whiplash",
+   "publisher": "WSJ",
+   "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOVnM2YjNnajctZnkydzdDaGZtUkpDVXBpdkZDYkhnMkpkNnpsR09jU2xiaUhNTDhRSWx3cnZXYWE5V0tGUldYMkZQUjYtUElJSnJpbWN2dGtzR016TTA3cjJqLWdUV1kxUGRuQWVGMHpqdW1HVFpfdzBQZ2FtTllBUDIxRDRxTTdYa0JKb1FFaDFqb2R4V19KSHJtTHlpMEYza3c?oc=5"
+  },
+  {
+   "time_vienna": "Tue 24 Nov 12:08",
+   "query": "AI stocks Nvidia",
+   "headline": "The AI trade is hard to escape \u2014 even for investors who are deliberately trying to avoid it",
+   "publisher": "DW.com",
+   "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPZlVSajdGeFlPOVhGUFJTNDZWOWlpMnhqWFY3SU9nZ1ZfbnJQeTlvd0UyRFFVQmNWc2psR19lblRnYXpRQXdIVmZCRjN3NmdVQVZHc1V5Qk1rQ3Z1dzZxRWFZWWFfWUZGMWdCdWJSRmpTYzVMeUtPb3hqRXlFa1ZSWktiekw3OUVSTkFIVNIBjAFBVV95cUxPZlVSajdGeFlPOVhGUFJTNDZWOWlpMnhqWFY3SU9nZ1ZfbnJQeTlvd0UyRFFVQmNWc2psR19lblRnYXpRQXdIVmZCRjN3NmdVQVZHc1V5Qk1rQ3Z1dzZxRWFZWWFfWUZGMWdCdWJSRmpTYzVMeUtPb3hqRXlFa1ZSWktiekw3OUVSTkFIVA?oc=5"
+  },
+  {
+   "time_vienna": "Tue 24 Nov 12:04",
+   "query": "Nasdaq futures",
+   "headline": "Wall St futures dip as chip stocks cool after Nvidia-fueled rally",
+   "publisher": "Reuters",
+   "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQSTdTSVk1YVg0WC1SRVJKVW1XYTZJbjRhRVctYkNzZHZRcW5TaVE3MVdSd2JfYUNaV3otX1FzR1lxYkwyWWZtbS1ONDdiem9UVUI0ckV6c2tiOEt0TGViNlUxZFdSeDV0aVJ4cjZkSkE5Nk9veE1UTmxad0xxaXhScndGMV9IdWVrNUpOQnY0Y0hXVmpZVFgwbTFQMDZiX0NqdExaejlYMzJnbjg?oc=5"
+  },
+  {
+   "time_vienna": "Tue 24 Nov 12:03",
+   "query": "Fed interest rates",
+   "headline": "Gold rebound loses steam as Fed interest rate hike bets weigh",
+   "publisher": "FXStreet",
+   "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQMWtSZWRxbG91ZllDcldaMVdtNDRVT3pTbkdZNzM5RkFjUEExb1l1ZTMwaHRIZWF6VkhZSXNodVNWNE1aR2o0NnlmLXFid2ZDMFJ5OURMeXg2dU03d0FYWkVEVWFGOHF0U1F4RXpydEI4bmdjY0ZtYWNFc0R2WjlVTjJwTVFtOHNLYVFncXdGc1Z6TFJPWWNiN29rWVRTQzJmRm90X3Bhdw?oc=5"
+  },
+  {
+   "time_vienna": "Tue 24 Nov 11:22",
+   "query": "Fed interest rates",
+   "headline": "Gold Retreats to US$3,625.88 as Investors Assess US Inflation and Interest Rate Outlook",
+   "publisher": "Yahoo Finance UK",
+   "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5xbzZLVXkxVEVPTjFhTlNEcHhjZzJrNUlpSV9UR1hNT0lEeTZ0MFFYc2NaMU5SMkluN2RyTzEtbm1PWHhGUFVsSGpPRXVCcnNGdEVnbDA1XzhuNTZ5QW1IeG8xQ094NmhHcVNlWXJfUzRObi12bDdZRFZnWQ?oc=5"
+  },
+  {
+   "time_vienna": "Tue 24 Nov 11:18",
+   "query": "S&P 500 futures",
+   "headline": "Stock Market Today: Dow, S&P 500 Futures Fall After Scott Bessent Unveils Fresh Iran Sanctions, Hormuz Wa",
+   "publisher": "Benzinga",
+   "link": "https://news.google.com/rss/articles/CBMilgJBVV95cUxQeTI2NXZONWZrdFg0M2tMeVNDMzZXM05MS0FMVUZKWERhUkVqalBUVklCN19hYzVGMXMtOUlibWpJajRwa2FNYkhhekN2XzY0YnhjMk05NmpfN2dSOXp2RE1qQnA0VGI4eWttcWVqT3kwMGlYMTRuVnkxcmlEaG5HRDhrUFU1RDlsdDl4TTlhX3dHVUN4dkhzUzZHWEZhbXp2bFl4ZVNZdERld2tzR1pISzE2WGZUYTNMNGk5QzFOc1J1SmJZRVFoRmpuUFBzYlREODRKemg0eDNtTURkSzBLc09fXzdQY2VHeEJhaUlQYm8zLWNKQzVnbmIxaFpjUlVsdVA2WXFkN0VvRHhmXy1iWkdVdVQ2dw?oc=5"
+  },
+  {
+   "time_vienna": "Tue 24 Nov 11:16",
+   "query": "Treasury yields",
+   "headline": "Weekly market commentary",
+   "publisher": "BlackRock",
+   "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQLWJDTjBBalYwVHVpc0VxV1BwRE1xeUt1RWlLQ1VJdnJQRXNnb3p6MnFNbjRBV0s0TnlldW4wSVIycFRQeVNISWJ3VV9wMWdjX1ZndE1Tc24tNzc0anNYWjl0SVBsRDhSa0dVTWlyVVYxX0w5b2JhTFB0Tm9Vb2FwYVZubTU1SVJlcy0zMEpXOEM4ZlhiSU1QazdVQVlldw?oc=5"
+  },
+  {
+   "time_vienna": "Tue 24 Nov 11:14",
+   "query": "Nasdaq futures",
+   "headline": "US Stock Futures Mixed After Nvidia-Led Rally as Investors Assess Federal Reserve Rate Outlook: Dow Jones, S&P, Nasdaq, Wall Street",
+   "publisher": "Yahoo Finance",
+   "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPZmxsdEozZENOM2hTX3RTckJROVlKS29VYXBxXy1FUVdOSWMybklvLWxuMWhBa2pHWHVnVk1KdXd1N2VLQWpJLXRGTzJzZGlSTFZhbFA4cmtxM3A5NmdtR2FQQ3hDQ1NDXy1IWXdBbzdrTXktdEVGQjVvV1hRM09NX3I4MTlYRTZTMi1OT1k5Nll6RlFjN2ZPWWhR?oc=5"
+  },
+  {
+   "time_vienna": "Tue 24 Nov 11:13",
+   "query": "Nasdaq",
+   "headline": "Nasdaq Futures Fall as Questions Linger Over AI Trade",
+   "publisher": "WSJ",
+   "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOeEpzR3NLc2czaVQ0bUV4SzB6NTk3MjJtbWFoWXJVcjZxcDFNS1NYc1VSYkhDMTRXTUpHVktRQUQxb0c1VkVuTlBQOWF6TzA4N2pxZzdlSy1BczA3azhsX0N1dk9Td0R0d210ZVBfOGh3cXB1SkE1Yi1ZTnpKM0pFcnduQzlaV18wMGhlMUNfVW5OaVdPWGp6dDRLa2JMQQ?oc=5"
+  }
+ ],
+ "fed": [
+  {
+   "time_vienna": "Fri 20 Nov 22:15",
+   "title": "Federal Reserve announces College Fed Challenge winners",
+   "category": "Other Announcements",
+   "summary": "Federal Reserve announces College Fed Challenge winners",
+   "link": "https://www.federalreserve.gov/newsevents/pressreleases/other20261120b.htm"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 18:15",
+   "title": "Cook, The U.S. Economy in Global Context",
+   "category": "Speech",
+   "summary": "Speech At the XXIX Annual Conference of the Central Bank of Chile, Santiago, Chile",
+   "link": "https://www.federalreserve.gov/newsevents/speech/cook20261120a.htm"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 16:00",
+   "title": "Federal Reserve Board releases results from survey of senior financial officers at banks about their strategies and practices for managing reserve balances",
+   "category": "Other Announcements",
+   "summary": "Federal Reserve Board releases results from survey of senior financial officers at banks about their strategies and practices for managing reserve balances",
+   "link": "https://www.federalreserve.gov/newsevents/pressreleases/other20261120a.htm"
+  },
+  {
+   "time_vienna": "Fri 20 Nov 14:25",
+   "title": "Waller, Opening Remarks",
+   "category": "Speech",
+   "summary": "Speech At the 2026 College Fed Challenge Finals, Board of Governors of the Federal Reserve System, Washington, D.C.",
+   "link": "https://www.federalreserve.gov/newsevents/speech/waller20261120a.htm"
+  },
+  {
+   "time_vienna": "Thu 19 Nov 17:00",
+   "title": "Federal Reserve Board issues enforcement action with former employee of First Security Bancorp",
+   "category": "Enforcement Actions",
+   "summary": "Federal Reserve Board issues enforcement action with former employee of First Security Bancorp",
+   "link": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261119a.htm"
+  },
+  {
+   "time_vienna": "Thu 19 Nov 15:25",
+   "title": "Jefferson, Monetary Policy amid Frequent and Complex Shocks",
+   "category": "Speech",
+   "summary": "Speech At the International Monetary Fund and Central Bank of Brazil Conference \u201cA Quarter Century of Inflation Targeting in Latin America: Progress, Challenges, and the Road Ahead,\u201d Bras&iacute;lia, Brazil",
+   "link": "https://www.federalreserve.gov/newsevents/speech/jefferson20261119a.htm"
+  },
+  {
+   "time_vienna": "Wed 18 Nov 20:00",
+   "title": "Minutes of the Federal Open Market Committee, October 27-28, 2026",
+   "category": "Monetary Policy",
+   "summary": "Minutes of the Federal Open Market Committee, October 27-28, 2026",
+   "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261118a.htm"
+  },
+  {
+   "time_vienna": "Wed 18 Nov 19:35",
+   "title": "Barr, Investing in America\u2019s Underserved Communities",
+   "category": "Speech",
+   "summary": "Speech At Making Missing Markets: Catalyzing Capital and Igniting Innovation, Federal Reserve Bank of New York, New York, New York",
+   "link": "https://www.federalreserve.gov/newsevents/speech/barr20261118a.htm"
+  },
+  {
+   "time_vienna": "Tue 17 Nov 15:10",
+   "title": "Waller, Considerations at the Intersection of Payments and Tokenized Markets",
+   "category": "Speech",
+   "summary": "Speech At \u201cNavigating the Future of Banking and Payments,\u201d The Clearing House Annual Conference 2026, New York, New York",
+   "link": "https://www.federalreserve.gov/newsevents/speech/waller20261117a.htm"
+  }
+ ],
+ "cboe_idx": {
+  "VIX": {
+   "description": "VIX",
+   "observations": [
+    {
+     "date": "2026-11-16",
+     "value": 22.91
+    },
+    {
+     "date": "2026-11-17",
+     "value": 25.46,
+     "chg_pct": 11.13
+    },
+    {
+     "date": "2026-11-18",
+     "value": 24.56,
+     "chg_pct": -3.53
+    },
+    {
+     "date": "2026-11-19",
+     "value": 28.44,
+     "chg_pct": 15.8
+    },
+    {
+     "date": "2026-11-20",
+     "value": 35.89,
+     "chg_pct": 26.2
+    },
+    {
+     "date": "2026-11-23",
+     "value": 26.62,
+     "chg_pct": -25.83
+    }
+   ]
+  },
+  "VXN": {
+   "description": "VXN (Nasdaq-100 vol)",
+   "observations": [
+    {
+     "date": "2026-11-16",
+     "value": 32.9
+    },
+    {
+     "date": "2026-11-17",
+     "value": 34.44,
+     "chg_pct": 4.68
+    },
+    {
+     "date": "2026-11-18",
+     "value": 33.12,
+     "chg_pct": -3.83
+    },
+    {
+     "date": "2026-11-19",
+     "value": 36.48,
+     "chg_pct": 10.14
+    },
+    {
+     "date": "2026-11-20",
+     "value": 45.25,
+     "chg_pct": 24.04
+    },
+    {
+     "date": "2026-11-23",
+     "value": 36.31,
+     "chg_pct": -19.76
+    }
+   ]
+  },
+  "VVIX": {
+   "description": "VVIX (vol of VIX)",
+   "observations": [
+    {
+     "date": "2026-11-16",
+     "value": 114.23
+    },
+    {
+     "date": "2026-11-17",
+     "value": 121.28,
+     "chg_pct": 6.17
+    },
+    {
+     "date": "2026-11-18",
+     "value": 118.37,
+     "chg_pct": -2.4
+    },
+    {
+     "date": "2026-11-19",
+     "value": 127.1,
+     "chg_pct": 7.38
+    },
+    {
+     "date": "2026-11-20",
+     "value": 138.03,
+     "chg_pct": 8.6
+    },
+    {
+     "date": "2026-11-23",
+     "value": 117.36,
+     "chg_pct": -14.98
+    }
+   ]
+  },
+  "SKEW": {
+   "description": "SKEW",
+   "observations": [
+    {
+     "date": "2026-11-16",
+     "value": 146.33
+    },
+    {
+     "date": "2026-11-17",
+     "value": 145.11,
+     "chg_pct": -0.83
+    },
+    {
+     "date": "2026-11-18",
+     "value": 142.84,
+     "chg_pct": -1.56
+    },
+    {
+     "date": "2026-11-19",
+     "value": 140.86,
+     "chg_pct": -1.39
+    },
+    {
+     "date": "2026-11-20",
+     "value": 138.84,
+     "chg_pct": -1.43
+    },
+    {
+     "date": "2026-11-23",
+     "value": 140.37,
+     "chg_pct": 1.1
+    }
+   ]
+  },
+  "VIX9D": {
+   "description": "VIX9D (9-day vol)",
+   "observations": [
+    {
+     "date": "2026-11-16",
+     "value": 23.15
+    },
+    {
+     "date": "2026-11-17",
+     "value": 26.7,
+     "chg_pct": 15.33
+    },
+    {
+     "date": "2026-11-18",
+     "value": 23.95,
+     "chg_pct": -10.3
+    },
+    {
+     "date": "2026-11-19",
+     "value": 29.26,
+     "chg_pct": 22.17
+    },
+    {
+     "date": "2026-11-20",
+     "value": 40.72,
+     "chg_pct": 39.17
+    },
+    {
+     "date": "2026-11-23",
+     "value": 27.76,
+     "chg_pct": -31.83
+    }
+   ]
+  },
+  "COR1M": {
+   "description": "COR1M (1-month implied correlation)",
+   "observations": [
+    {
+     "date": "2026-11-16",
+     "value": 16.42
+    },
+    {
+     "date": "2026-11-17",
+     "value": 20.13,
+     "chg_pct": 22.59
+    },
+    {
+     "date": "2026-11-18",
+     "value": 23.24,
+     "chg_pct": 15.45
+    },
+    {
+     "date": "2026-11-19",
+     "value": 30.22,
+     "chg_pct": 30.03
+    },
+    {
+     "date": "2026-11-20",
+     "value": 36.05,
+     "chg_pct": 19.29
+    },
+    {
+     "date": "2026-11-23",
+     "value": 25.68,
+     "chg_pct": -28.77
+    }
+   ]
+  }
+ }
+}
