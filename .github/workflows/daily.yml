@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "manual = always run now; scheduled = daily run (skipped if it already ran today)"
+        description: "manual = always run now; scheduled = daily run (skipped if it already ran today); publish = only republish the website from saved data"
         required: false
         default: "manual"
 
@@ -46,7 +46,10 @@ jobs:
           CONTACT_EMAIL: ${{ secrets.CONTACT_EMAIL }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.mode }}" != "scheduled" ]; then
+          if [ "${{ inputs.mode }}" = "publish" ]; then
+            python context_engine.py --site
+            echo "ran=true" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.mode }}" != "scheduled" ]; then
             python context_engine.py
           else
             python context_engine.py --scheduled
@@ -74,4 +77,18 @@ jobs:
           path: site
       - id: deploy
         if: steps.engine.outputs.ran == 'true'
+        continue-on-error: true
         uses: actions/deploy-pages@v4
+      - name: Retry publishing if GitHub had a hiccup
+        if: steps.engine.outputs.ran == 'true' && steps.deploy.outcome == 'failure'
+        run: sleep 45
+      - if: steps.engine.outputs.ran == 'true' && steps.deploy.outcome == 'failure'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+          name: github-pages-retry
+      - id: deploy_retry
+        if: steps.engine.outputs.ran == 'true' && steps.deploy.outcome == 'failure'
+        uses: actions/deploy-pages@v4
+        with:
+          artifact_name: github-pages-retry
