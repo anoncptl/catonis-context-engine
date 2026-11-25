@@ -75,20 +75,19 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: site
+      # GitHub's artifact list can lag behind the upload, so publishing is retried twice with waits.
       - id: deploy
         if: steps.engine.outputs.ran == 'true'
         continue-on-error: true
         uses: actions/deploy-pages@v4
-      - name: Retry publishing if GitHub had a hiccup
-        if: steps.engine.outputs.ran == 'true' && steps.deploy.outcome == 'failure'
-        run: sleep 45
       - if: steps.engine.outputs.ran == 'true' && steps.deploy.outcome == 'failure'
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: site
-          name: github-pages-retry
-      - id: deploy_retry
+        run: sleep 60
+      - id: deploy2
         if: steps.engine.outputs.ran == 'true' && steps.deploy.outcome == 'failure'
+        continue-on-error: true
         uses: actions/deploy-pages@v4
-        with:
-          artifact_name: github-pages-retry
+      - if: steps.engine.outputs.ran == 'true' && steps.deploy.outcome == 'failure' && steps.deploy2.outcome == 'failure'
+        run: sleep 180
+      - id: deploy3
+        if: steps.engine.outputs.ran == 'true' && steps.deploy.outcome == 'failure' && steps.deploy2.outcome == 'failure'
+        uses: actions/deploy-pages@v4
