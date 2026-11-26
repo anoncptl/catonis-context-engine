@@ -58,8 +58,8 @@ SLOTS = {
 
 
 # ---------- secret scrubbing ----------
-SECRET_ENV = ("ANTHROPIC_API_KEY", "FRED_API_KEY", "BLS_API_KEY", "CONTACT_EMAIL", "DISCORD_WEBHOOK_URL")
-SECRET_PATTERNS = [re.compile(r"https://(?:\w+\.)?discord(?:app)?\.com/api/webhooks/\S+"), re.compile(r"sk-ant-[A-Za-z0-9_\-]{8,}"), re.compile(r"(api_key|registrationkey|x-api-key)=[^&\s\"']+", re.I)]
+SECRET_ENV = ("ANTHROPIC_API_KEY", "FRED_API_KEY", "BLS_API_KEY", "CONTACT_EMAIL", "DISCORD_WEBHOOK_URL", "ALPHAVANTAGE_API_KEY")
+SECRET_PATTERNS = [re.compile(r"https://(?:\w+\.)?discord(?:app)?\.com/api/webhooks/\S+"), re.compile(r"sk-ant-[A-Za-z0-9_\-]{8,}"), re.compile(r"(api_key|apikey|registrationkey|x-api-key)=[^&\s\"']+", re.I)]
 
 
 def scrub(text):
@@ -343,7 +343,7 @@ SCHEMA = """{
  "leader": "QQQ | SPX | unclear",
  "leader_reason": "1 to 2 sentences citing the leadership facts",
  "overlap_with_previous": {"continuing": ["..."], "new": ["..."], "fading": ["..."], "echo_check": "..."},
- "scheduled_events": [{"when_vienna": "Tue 18 Nov 14:30", "event": "...", "why_it_matters": "...", "source": "BLS | FRED release calendar | FOMC calendar | consensus (unofficial) | Cboe post"}],
+ "scheduled_events": [{"when_vienna": "Tue 18 Nov 14:30", "event": "...", "why_it_matters": "...", "source": "BLS | FRED release calendar | FOMC calendar | earnings calendar | consensus (unofficial) | Cboe post"}],
  "outlook": {
    "next_day":   {"lower_pct": -0.8, "upper_pct": 0.8, "confidence": "low|medium|high", "confidence_reason": "...",
                   "scenarios": [{"name": "bear", "prob": 30, "text": "...", "invalidation": "..."}, {"name": "base", "prob": 45, "text": "...", "invalidation": "..."}, {"name": "bull", "prob": 25, "text": "...", "invalidation": "..."}]},
@@ -541,7 +541,7 @@ def run(now, slot, slot_date, force):
     RUNS_FILE.write_text(json.dumps(runs, indent=1))
     save_json(DATA / "latest_status.json", {"utc": now.isoformat(), "slot": slot, "status": s["status"],
                                                           "facts": fact_list, "checks": checks, "rates": rates,
-                                                          "calendar": s.get("calendar"), "consensus": s.get("consensus"),
+                                                          "calendar": s.get("calendar"), "consensus": s.get("consensus"), "earnings": s.get("earnings"),
                                                           "edgar": s.get("edgar"), "fed": s.get("fed"), "odds": s.get("odds"),
                                                           "headlines": s.get("headlines"), "gdelt": s.get("gdelt"),
                                                           "warnings": s.get("warnings")})

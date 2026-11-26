@@ -45,6 +45,7 @@ jobs:
           BLS_API_KEY: ${{ secrets.BLS_API_KEY }}
           CONTACT_EMAIL: ${{ secrets.CONTACT_EMAIL }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          ALPHAVANTAGE_API_KEY: ${{ secrets.ALPHAVANTAGE_API_KEY }}
         run: |
           if [ "${{ inputs.mode }}" = "publish" ]; then
             python context_engine.py --site

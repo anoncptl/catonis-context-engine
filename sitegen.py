@@ -164,6 +164,11 @@ def render_status(st):
         out.append('<section class="panel"><h2>Official calendar · next 14 days</h2><div class="scroll"><table><tr><th>CET</th><th>New York</th><th>Event</th><th>Source</th></tr>%s</table></div></section>' % "".join(
             '<tr><td class="n">%s</td><td class="n muted">%s</td><td>%s</td><td class="small muted">%s%s</td></tr>' % (
                 e(c["when_vienna"]), e(c["when_new_york"]), e(c["event"]), e(c["source"]), " · " + e(c["time_note"]) if c.get("time_note") else "") for c in cal))
+    ern = st.get("earnings") or []
+    if ern:
+        out.append('<section class="panel"><h2>Earnings · largest Nasdaq-100 names, next 45 days</h2><div class="scroll"><table><tr><th>Date</th><th>Company</th><th>When</th><th>EPS estimate</th></tr>%s</table></div></section>' % "".join(
+            '<tr><td class="n">%s</td><td><b class="mono">%s</b> <span class="muted small">%s</span></td><td class="small muted">%s</td><td class="n">%s</td></tr>' % (
+                e(x["day"]), e(x["ticker"]), e(x["name"]), e(x["timing"] or "time not given"), e(x["estimate_eps"] if x["estimate_eps"] is not None else "–")) for x in ern))
     cons = st.get("consensus") or []
     if cons:
         out.append('<details><summary>Consensus forecasts · unofficial</summary><div class="scroll"><table><tr><th>CET</th><th>Event</th><th>Forecast</th><th>Previous</th></tr>%s</table></div></details>' % "".join(

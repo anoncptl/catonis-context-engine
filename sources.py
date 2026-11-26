@@ -434,6 +434,43 @@ def consensus_calendar():
 
 
 # =====================================================================
+# Earnings dates: Alpha Vantage earnings calendar (free key, one request per run)
+# =====================================================================
+EARNINGS_URL = "https://www.alphavantage.co/query?function=EARNINGS_CALENDAR&horizon=3month&apikey=%s"
+EARNINGS_TICKERS = ["NVDA", "MSFT", "AAPL", "AMZN", "META", "GOOGL", "AVGO", "TSLA", "COST", "NFLX",
+                    "AMD", "PLTR", "ADBE", "CSCO", "QCOM", "INTC", "MU", "AMAT", "PEP", "TXN"]
+EARNINGS_DAYS = 45
+
+
+def earnings(now):
+    key = os.environ.get("ALPHAVANTAGE_API_KEY", "").strip()
+    if not key:
+        raise RuntimeError("needs ALPHAVANTAGE_API_KEY")
+    text = _get(EARNINGS_URL % key)
+    if text.lstrip().startswith("{"):  # Alpha Vantage answers errors and rate limits as JSON
+        msg = json.loads(text)
+        raise RuntimeError(str(msg.get("Information") or msg.get("Note") or msg.get("Error Message") or msg)[:120])
+    today = now.astimezone(NEW_YORK).date()
+    out = []
+    for r in csv.DictReader(io.StringIO(text)):
+        sym = (r.get("symbol") or "").upper()
+        if sym not in EARNINGS_TICKERS:
+            continue
+        try:
+            d = date.fromisoformat(r.get("reportDate", ""))
+        except ValueError:
+            continue
+        if not (today <= d <= today + timedelta(days=EARNINGS_DAYS)):
+            continue
+        when = (r.get("timeOfTheDay") or "").strip().lower()
+        out.append({"date": d.isoformat(), "day": d.strftime("%a %d %b"), "ticker": sym, "name": r.get("name", ""),
+                    "timing": {"pre-market": "before the open", "post-market": "after the close"}.get(when, ""),
+                    "estimate_eps": _num(r.get("estimate"))})
+    out.sort(key=lambda x: (x["date"], EARNINGS_TICKERS.index(x["ticker"])))
+    return out
+
+
+# =====================================================================
 # SEC EDGAR: 8-K filings of the largest Nasdaq-100 companies
 # =====================================================================
 EDGAR_COMPANIES = {
@@ -771,6 +808,7 @@ def cboe_indices():
 SOURCE_NAMES = {
     "fred": "FRED", "treasury": "US Treasury yield curve", "bls": "BLS inflation and jobs",
     "calendar": "Official release calendars", "consensus": "Consensus calendar (unofficial)",
+    "earnings": "Earnings dates (Alpha Vantage)",
     "edgar": "SEC EDGAR 8-K filings", "odds": "Fed odds (Kalshi, Polymarket)", "gdelt": "GDELT global news",
     "headlines": "Google News headlines", "fed": "Federal Reserve releases", "cboe_idx": "Cboe index history",
 }
@@ -816,6 +854,9 @@ def gather(now=None):
         status("calendar", False, str(e)[:120])
 
     run("consensus", consensus_calendar, lambda v: "%d USD events with forecasts" % len(v))
+    run("earnings", lambda: earnings(now), lambda v: "%d reports from the 20 largest Nasdaq names in %d days" % (len(v), EARNINGS_DAYS))
+    if out.get("earnings") == []:
+        out["status"]["earnings"]["ok"] = True  # an empty window is a valid answer
 
     try:
         out["edgar"], errs = edgar(now)
@@ -851,7 +892,7 @@ def gather(now=None):
     return out
 
 
-PROMPT_KEYS = ("fred", "fred_monthly", "treasury", "bls", "cboe_idx", "calendar", "consensus",
+PROMPT_KEYS = ("fred", "fred_monthly", "treasury", "bls", "cboe_idx", "calendar", "consensus", "earnings",
                "edgar", "odds", "fed", "headlines", "gdelt")
 
 
@@ -865,7 +906,8 @@ def to_prompt(structured):
     slim["warnings"] = structured.get("warnings", [])
     note = ("Notes: FRED daily series lag about one business day. treasury is the official same-day curve. "
             "bls and fred_monthly are official prints with month-over-month changes computed in code. "
-            "calendar is official (BLS, FRED release dates, FOMC); consensus is an unofficial calendar, "
+            "calendar is official (BLS, FRED release dates, FOMC); earnings lists report dates of the largest Nasdaq names "
+            "(Alpha Vantage), include any in the next two sessions as scheduled events; consensus is an unofficial calendar, "
             "use it only for forecast/previous and say so. edgar items are SEC filings (primary sources). "
             "odds are prediction-market prices, not CME FedWatch. fed items are official. headlines and gdelt "
             "are unverified titles: label them as headlines, never state them as fact.")
