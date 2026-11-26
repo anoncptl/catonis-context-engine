@@ -1,0 +1,260 @@
+"""
+Hyperminimal brief page: one quiet column, black page, white type, numbers in mono.
+Used for the main page (latest brief) and for each brief in the archive.
+"""
+import html
+from datetime import datetime
+from zoneinfo import ZoneInfo
+
+CET = ZoneInfo("Europe/Vienna")
+
+
+def e(x):
+    return html.escape("" if x is None else str(x))
+
+
+CSS = """
+:root{--bg:#000;--fg:#f2f2f0;--mid:#9a9a96;--dim:#5e5e5b;--line:#1e1e1d;--down:#e8a3a0;--up:#a9d8b8;--base:#3a3a38;
+--sans:"Inter",-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;color-scheme:dark}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.6 var(--sans)}
+a{color:inherit;text-decoration-color:var(--dim);text-underline-offset:3px}
+main{max-width:680px;margin:0 auto;padding-block:44px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:44px}
+.top{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+.top nav{display:flex;gap:14px}.top nav a{text-decoration:none}.top nav a:hover{color:var(--fg)}
+h1{font-size:26px;line-height:1.25;font-weight:600;letter-spacing:-.015em;margin:10px 0 0;text-wrap:balance}
+h2{font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin:0 0 12px}
+p{margin:0}p+p{margin-top:10px}.lead{font-size:16.5px}.mid{color:var(--mid)}
+section{min-width:0}
+.nums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px 16px}
+.nums b{display:block;font:500 20px/1.2 var(--mono);font-variant-numeric:tabular-nums}
+.nums span{display:block;font-size:12px;color:var(--mid);margin-top:3px}
+.nums i{font-style:normal;font:400 12px var(--mono)}
+.down{color:var(--down)}.up{color:var(--up)}
+.driver{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.driver strong{display:block;font-size:18px;font-weight:600;margin-bottom:6px}
+dl{display:grid;grid-template-columns:110px 1fr;gap:10px 18px;margin:0}dt{color:var(--dim);font-size:13px;padding-top:1px}dd{margin:0;min-width:0}
+.chartbox{overflow-x:auto}.chartbox svg{display:block;width:100%;min-width:520px;height:auto}
+.ch .ln{fill:none;stroke:var(--fg);stroke-width:1.5;stroke-linejoin:round}.ch .ref{stroke:var(--line);stroke-width:1}
+.ch .dash{stroke:var(--dim);stroke-width:1;stroke-dasharray:2 3}.ch .pt{fill:var(--mid)}.ch .now{fill:var(--fg);stroke:var(--bg);stroke-width:2}
+.ch .zu{fill:var(--up);opacity:.8}.ch .zn{fill:var(--base)}.ch .zb{fill:var(--down);opacity:.8}
+.ch .lab{fill:var(--dim);font:400 10.5px var(--mono)}.ch .pu{fill:var(--up);font:500 11px var(--mono)}.ch .pn{fill:var(--mid);font:500 11px var(--mono)}.ch .pb{fill:var(--down);font:500 11px var(--mono)}
+.note{font-size:12.5px;color:var(--dim);margin-top:14px}
+.hz{border-top:1px solid var(--line)}.hz:last-of-type{border-bottom:1px solid var(--line)}
+.hz summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:104px 1fr;grid-template-areas:"hl strip" ". hist" ". cuts";column-gap:18px;padding:18px 0 14px}
+.hz summary::-webkit-details-marker{display:none}.hz summary:focus-visible{outline:1px solid var(--mid);outline-offset:4px}
+.hl{grid-area:hl;font-size:14px;font-weight:500;align-self:center}.hl::after{content:"+";color:var(--dim);font:400 13px var(--mono);margin-left:8px}.hz[open] .hl::after{content:"\\2212"}
+.strip,.hist{display:flex;gap:2px}.strip{grid-area:strip;height:22px}
+.strip i{font:500 11px/22px var(--mono);font-style:normal;color:#000;text-align:center;min-width:0;overflow:hidden;font-variant-numeric:tabular-nums}
+.hist{grid-area:hist;height:2px;margin-top:5px;opacity:.55}
+.b{--c:var(--down)}.n{--c:var(--base)}.u{--c:var(--up)}
+.strip i,.hist i{background:var(--c)}.strip i.n{color:var(--fg)}
+.cuts{grid-area:cuts;position:relative;height:16px;margin-top:4px}
+.cuts em{position:absolute;transform:translateX(-50%);font:400 11px var(--mono);font-style:normal;color:var(--dim);white-space:nowrap}
+.if{list-style:none;margin:0;padding:0 0 18px 122px;display:grid;gap:12px}
+.if li{border-left:2px solid var(--c);padding-left:12px}.if p{font-size:14px}.if small{display:block;font-size:12.5px;color:var(--dim);margin-top:2px}
+.cal{display:grid;gap:8px}.cal div{display:grid;grid-template-columns:130px 1fr;gap:18px}
+.cal time{font:400 13px var(--mono);color:var(--mid);font-variant-numeric:tabular-nums}
+ul{margin:0;padding-left:18px;display:grid;gap:4px}
+footer{font-size:12px;color:var(--dim);border-top:1px solid var(--line);padding-top:16px;display:grid;gap:6px}
+@media(max-width:560px){.nums{grid-template-columns:repeat(2,minmax(0,1fr))}.driver{grid-template-columns:1fr}
+dl,.cal div{grid-template-columns:1fr;gap:2px}dd{margin-bottom:10px}h1{font-size:22px}
+.hz summary{grid-template-columns:1fr;grid-template-areas:"hl" "strip" "hist" "cuts";row-gap:8px}.hist{margin-top:0}.if{padding-left:0}}
+"""
+
+H_NAME = {"next_day": "Next session", "next_week": "Next week", "next_month": "Next month"}
+
+
+def page(title, body, prefix=""):
+    return ('<!doctype html><html lang="en"><head><meta charset="utf-8">'
+            '<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex">'
+            '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">'
+            '<title>%s</title><style>%s</style></head><body><main>%s</main></body></html>') % (e(title), CSS, body)
+
+
+def _fmt(v, dec=2):
+    if isinstance(v, (int, float)):
+        if abs(v) >= 1000:
+            return "{:,.1f}".format(v) if dec else "{:,.0f}".format(v)
+        return ("%." + str(dec) + "f") % v
+    return e(v)
+
+
+def _fact(facts, source=None, label_has=None):
+    for f in facts or []:
+        if source and f["source"] != source:
+            continue
+        if label_has and label_has.lower() not in f["label"].lower():
+            continue
+        return f
+    return None
+
+
+def key_numbers(facts):
+    """Eight numbers that matter before the open, chosen in a fixed order from what the run has."""
+    out = []
+
+    def add(f, label, dec=2, pct=False, invert=False):
+        if not f:
+            return
+        ch = f.get("change") or ""
+        cls = ""
+        if ch.startswith("+"):
+            cls = "down" if invert else "up"
+        elif ch.startswith("-") or ch.startswith("−"):
+            cls = "up" if invert else "down"
+        val = _fmt(f["value"], dec) + ("%" if pct else "")
+        out.append((val, label, ch.replace("-", "−"), cls))
+    add(_fact(facts, "FRED NASDAQ100"), "Nasdaq-100", 1)
+    add(_fact(facts, "Cboe VIX") or _fact(facts, "FRED VIXCLS"), "VIX", 2, invert=True)
+    add(_fact(facts, "Cboe VXN") or _fact(facts, "FRED VXNCLS"), "VXN", 2, invert=True)
+    add(_fact(facts, "US Treasury", "10-year") or _fact(facts, "FRED DGS10"), "10-year", 2, pct=True, invert=True)
+    odds = [f for f in (facts or []) if f["group"] == "Fed odds" and "decision" in f["label"].lower()]
+    if odds:
+        top = max(odds, key=lambda f: f["value"] if isinstance(f["value"], (int, float)) else 0)
+        out.append((_fmt(top["value"], 1) + "%", "Fed: " + top["label"].split(":", 1)[-1].strip()[:22], "", ""))
+    add(_fact(facts, "FRED PCEPILFE", "y/y"), "Core PCE y/y", 2, pct=True)
+    add(_fact(facts, "Cboe COR1M"), "COR1M", 2)
+    add(_fact(facts, "computed from FRED", "last 5 sessions"), "NDX vs SPX, 5 days", 2)
+    return out[:8]
+
+
+def chart(closes, outlook, ref_note):
+    """Last closes as a line, plus next session's bear/base/bull band in index points from the last close."""
+    if not closes or len(closes) < 5:
+        return ""
+    o = (outlook or {}).get("next_day") or {}
+    p = o.get("probs_normalized") or {}
+    last = closes[-1][1]
+    lo_pct, up_pct = o.get("lower_pct"), o.get("upper_pct")
+    has_band = isinstance(lo_pct, (int, float)) and isinstance(up_pct, (int, float))
+    lo = last * (1 + lo_pct / 100) if has_band else last
+    up = last * (1 + up_pct / 100) if has_band else last
+    W, H, L, R, T, B = 680, 230, 8, 120, 14, 26
+    n = len(closes)
+    slot = (W - L - R) / n
+    vals = [v for _, v in closes] + [lo, up]
+    pad = (max(vals) - min(vals)) * 0.08 or 1
+    ymin, ymax = min(vals) - pad, max(vals) + pad
+    X = lambda i: L + i * slot
+    Y = lambda v: T + (ymax - v) / (ymax - ymin) * (H - T - B)
+    path = "M" + " L".join("%.1f %.1f" % (X(i), Y(v)) for i, (_, v) in enumerate(closes))
+    hi = max(range(n), key=lambda i: closes[i][1])
+    lw = min(range(n), key=lambda i: closes[i][1])
+    xl, xn, bw, ext = X(n - 1), X(n), 14, 26
+    d0 = datetime.fromisoformat(closes[0][0]).strftime("%-d %b")
+    d1 = datetime.fromisoformat(closes[-1][0]).strftime("%-d %b")
+    parts = ['<svg viewBox="0 0 %d %d" role="img" aria-label="Nasdaq-100 closes %s to %s%s">' % (
+        W, H, d0, d1, ", next session bear below %s, bull above %s" % (_fmt(lo, 0), _fmt(up, 0)) if has_band else ""),
+        '<line x1="%d" x2="%d" y1="%.1f" y2="%.1f" class="ref"/>' % (L, W - R + 30, Y(last), Y(last)),
+        '<path d="%s" class="ln"/>' % path,
+        '<circle cx="%.1f" cy="%.1f" r="2" class="pt"/><text x="%.1f" y="%.1f" class="lab" text-anchor="middle">%s</text>' % (X(hi), Y(closes[hi][1]), X(hi), Y(closes[hi][1]) - 7, _fmt(closes[hi][1], 0)),
+        '<circle cx="%.1f" cy="%.1f" r="2" class="pt"/><text x="%.1f" y="%.1f" class="lab" text-anchor="middle">%s</text>' % (X(lw), Y(closes[lw][1]), X(lw), Y(closes[lw][1]) + 15, _fmt(closes[lw][1], 0))]
+    if has_band:
+        yu, yl = Y(up), Y(lo)
+        parts += ['<line x1="%.1f" x2="%.1f" y1="%.1f" y2="%.1f" class="dash"/>' % (xl, xn - bw / 2, Y(last), Y(last)),
+                  '<rect x="%.1f" y="%.1f" width="%d" height="%d" class="zu"/>' % (xn - bw / 2, yu - ext, bw, ext),
+                  '<rect x="%.1f" y="%.1f" width="%d" height="%.1f" class="zn"/>' % (xn - bw / 2, yu, bw, max(1, yl - yu)),
+                  '<rect x="%.1f" y="%.1f" width="%d" height="%d" class="zb"/>' % (xn - bw / 2, yl, bw, ext),
+                  '<text x="%.1f" y="%.1f" class="pu">%s%%</text>' % (xn + bw / 2 + 8, yu - ext / 2 + 4, _fmt(p.get("bull"), 0)),
+                  '<text x="%.1f" y="%.1f" class="pn">%s%%</text>' % (xn + bw / 2 + 8, (yu + yl) / 2 + 4, _fmt(p.get("base"), 0)),
+                  '<text x="%.1f" y="%.1f" class="pb">%s%%</text>' % (xn + bw / 2 + 8, yl + ext / 2 + 4, _fmt(p.get("bear"), 0)),
+                  '<text x="%.1f" y="%.1f" class="lab">%s</text>' % (xn + bw / 2 + 44, yu + 4, _fmt(up, 0)),
+                  '<text x="%.1f" y="%.1f" class="lab">%s</text>' % (xn + bw / 2 + 44, yl + 4, _fmt(lo, 0))]
+    parts += ['<circle cx="%.1f" cy="%.1f" r="3.5" class="now"/>' % (xl, Y(last)),
+              '<text x="%d" y="%d" class="lab">%s</text>' % (L, H - 6, d0),
+              '<text x="%.1f" y="%d" class="lab" text-anchor="end">%s</text>' % (xl - 4, H - 6, d1),
+              '<text x="%.1f" y="%d" class="lab" text-anchor="middle">next</text>' % (xn, H - 6) if has_band else "", "</svg>"]
+    note = ("White line: daily closes. The bar on the right is the next session measured from the %s close: red below %s, grey between, "
+            "green above %s, with the engine's odds beside each part.%s" % (d1, _fmt(lo, 0), _fmt(up, 0), ref_note)) if has_band else "White line: daily closes."
+    return ('<section class="ch"><h2>Nasdaq-100 · last %d sessions%s</h2><div class="chartbox">%s</div><p class="note">%s</p></section>'
+            % (n, " and the next session's range" if has_band else "", "".join(parts), note))
+
+
+def _inv(t):
+    t = (t or "").strip().rstrip(".")
+    for pre in ("Invalid if ", "invalid if ", "Invalidated if ", "If "):
+        if t.startswith(pre):
+            t = t[len(pre):]
+    return (t[:1].lower() + t[1:] if t[:2] != t[:2].upper() else t) + "."
+
+
+def outlook_html(b):
+    out = []
+    order = [("next_day", True), ("next_week", False), ("next_month", False)]
+    for h, open_ in order:
+        o = (b.get("outlook") or {}).get(h)
+        if not o or not isinstance(o.get("lower_pct"), (int, float)):
+            continue
+        p = o.get("probs_normalized") or {s.get("name"): s.get("prob") for s in o.get("scenarios", [])}
+        hp = o.get("history_probs") or {}
+        sc = {s.get("name"): s for s in o.get("scenarios", [])}
+        pb, pn, pu = (float(p.get(k) or 0) for k in ("bear", "base", "bull"))
+        strip = "".join('<i class="%s" style="flex:%s">%s</i>' % (c, v, _fmt(v, 0) if v >= 8 else "") for c, v in (("b", pb), ("n", pn), ("u", pu)))
+        hist = ""
+        if hp:
+            hist = '<span class="hist" aria-label="History %s%%, %s%%, %s%%">%s</span>' % (
+                _fmt(hp.get("bear"), 0), _fmt(hp.get("base"), 0), _fmt(hp.get("bull"), 0),
+                "".join('<i class="%s" style="flex:%s"></i>' % (c, hp.get(k) or 0) for c, k in (("b", "bear"), ("n", "base"), ("u", "bull"))))
+        tot = pb + pn + pu or 1
+        cuts = '<span class="cuts"><em style="left:%.0f%%">%+.1f%%</em><em style="left:%.0f%%">%+.1f%%</em></span>' % (
+            pb / tot * 100, o["lower_pct"], (pb + pn) / tot * 100, o["upper_pct"])
+        items = "".join('<li class="%s"><p>%s</p><small>Off if %s</small></li>' % (
+            c, e((sc.get(k) or {}).get("text")), e(_inv((sc.get(k) or {}).get("invalidation"))))
+            for c, k in (("b", "bear"), ("n", "base"), ("u", "bull")) if sc.get(k))
+        out.append('<details class="hz"%s><summary><span class="hl">%s</span><span class="strip" aria-label="Bear %s%%, base %s%%, bull %s%%">%s</span>%s%s</summary><ol class="if">%s</ol></details>' % (
+            " open" if open_ else "", H_NAME[h], _fmt(pb, 0), _fmt(pn, 0), _fmt(pu, 0), strip, hist, cuts, items))
+    if not out:
+        return ""
+    return ('<section class="outlook"><h2>Outlook · Nasdaq-100 from the %s close</h2>%s<p class="note">Thick line: the engine\'s odds for bear, base and bull. '
+            'Thin line: how often each happened historically with VIX in the same range. Tap a horizon for the conditions.</p></section>' % (e(b.get("ref_date")), "".join(out)))
+
+
+def coming_up(b, st):
+    rows = [(x.get("when_vienna", ""), x.get("event", "")) for x in (b.get("scheduled_events") or [])][:5]
+    for x in (st or {}).get("earnings") or []:
+        if len(rows) >= 7:
+            break
+        rows.append((x["day"], "%s earnings%s" % (x["ticker"], ", " + x["timing"] if x.get("timing") else "")))
+    if not rows:
+        return ""
+    return '<section><h2>Coming up · CET</h2><div class="cal">%s</div></section>' % "".join(
+        '<div><time>%s</time><span>%s</span></div>' % (e(w), e(ev)) for w, ev in rows)
+
+
+def render(b, st=None, prefix=""):
+    w = b.get("what_happened") or {}
+    made = datetime.fromisoformat(b["made_utc"]).astimezone(CET)
+    nav = "".join('<a href="%s%s">%s</a>' % (prefix, href, lab) for href, lab in (("record.html", "Record"), ("archive.html", "Archive"), ("sources.html", "Sources")))
+    parts = ['<div><div class="top"><span>%s</span><nav>%s</nav></div><h1>%s</h1></div>' % (made.strftime("%A %d %B %Y"), nav, e(b.get("headline")))]
+    summ = (w.get("summary") or "").strip()
+    first, _, rest = summ.partition(". ")
+    parts.append('<section><h2>What happened</h2><p class="lead">%s</p>%s</section>' % (
+        e(first + ("." if rest else "")), '<p class="mid">%s</p>' % e(rest) if rest else ""))
+    if st:
+        nums = key_numbers(st.get("facts"))
+        if nums:
+            parts.append('<section class="nums" aria-label="Key numbers">%s</section>' % "".join(
+                '<div><b>%s</b><span>%s%s</span></div>' % (e(v), e(lab), ' <i class="%s">%s</i>' % (cls, e(ch)) if ch else "") for v, lab, ch, cls in nums))
+    parts.append('<section class="driver"><div><h2>Dominant driver</h2><strong>%s</strong><p class="mid">%s</p></div>'
+                 '<div><h2>Leader</h2><strong>%s</strong><p class="mid">%s</p></div></section>' % (
+                     e((b.get("dominant_driver") or "").capitalize()), e(b.get("driver_reason")), e(b.get("leader")), e(b.get("leader_reason"))))
+    rows = [(lab, w.get(k)) for k, lab in (("market_action", "Market"), ("macro", "Rates and macro"), ("geopolitics", "Geopolitics"), ("company_news", "Companies")) if w.get(k)]
+    unc = b.get("unconfirmed") or []
+    if unc:
+        rows.append(("Unconfirmed", "; ".join(unc)))
+    parts.append('<section><h2>Detail</h2><dl>%s</dl></section>' % "".join('<dt>%s</dt><dd>%s</dd>' % (e(a), e(c)) for a, c in rows))
+    if st and st.get("ndx_recent"):
+        ref = b.get("ref_date")
+        last_d = st["ndx_recent"][-1][0]
+        note = "" if not ref or ref == last_d else " The data's latest close is %s; the scenarios are measured from the %s close." % (last_d, ref)
+        parts.append(chart(st["ndx_recent"], b.get("outlook"), note))
+    parts.append(outlook_html(b))
+    parts.append(coming_up(b, st))
+    wl = b.get("watch_list") or []
+    if wl:
+        parts.append('<section><h2>Watch</h2><ul>%s</ul></section>' % "".join("<li>%s</li>" % e(x) for x in wl[:4]))
+    srcs = "Cboe market commentary and index data, US Treasury, FRED, BLS, SEC filings, Federal Reserve, Polymarket, Alpha Vantage"
+    parts.append('<footer><span>%s · reference close %s.</span><span>Sources: %s. Headlines are unconfirmed. Conditional context, not advice.</span></footer>' % (
+        e(b.get("slot_label")), e(b.get("ref_date")), srcs))
+    return "".join(p for p in parts if p)

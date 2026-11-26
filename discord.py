@@ -80,10 +80,12 @@ def text_sections(brief):
     w = brief.get("what_happened") or {}
     title = "# Context Engine · %s" % day
     happened = "## What happened\n**%s**\n%s" % ((brief.get("headline") or "").strip(), (w.get("summary") or "").strip())
-    driver = "## Dominant driver\n**%s**\n%s" % ((brief.get("dominant_driver") or "").strip(), (brief.get("driver_reason") or "").strip())
+    driver = "## Dominant driver\n**%s**\n%s" % ((brief.get("dominant_driver") or "").strip().capitalize(), (brief.get("driver_reason") or "").strip())
     detail = "## Detail\n" + "\n".join("**%s:** %s" % (lab, (w.get(k) or "").strip())
                                        for k, lab in (("market_action", "Market"), ("macro", "Macro"),
                                                       ("geopolitics", "Geopolitics"), ("company_news", "Company news")) if w.get(k))
+    if brief.get("unconfirmed"):
+        detail += "\n**Unconfirmed:** " + "; ".join(brief["unconfirmed"])
     return [title, happened, driver, detail]
 
 

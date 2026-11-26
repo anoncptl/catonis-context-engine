@@ -333,11 +333,20 @@ Hard rules:
 6. List the scheduled events for the next two US sessions in Central European time (CET, or CEST in summer; write it as the when_vienna value, e.g. 'Tue 18 Nov 14:30') from the official calendar. Use consensus figures only from the consensus block and label them unofficial.
 7. Flag narrative echo: say if a theme repeats without new evidence.
 8. You have no live prices. FRED lags a day. Do not claim where NQ trades now.
+
+Writing rules (a trader reads this 30 minutes before the open):
+- Short, plain sentences. One fact per sentence. Lead with the fact, not the source.
+- Credit a source at most once per field, and only when it matters ("Cboe's Daily Take" once is fine). Never start sentences with "Cboe says", "per Cboe", "according to".
+- Never use em dashes or en dashes. Use periods, commas or colons.
+- No "not X but Y" contrasts, no one-line dramatic closers, no filler (notably, crucially, key, pivotal, landscape, underscores, highlights, robust, delve).
+- No stacked hedges. Say "may" once if needed.
+- Put every unverified headline item into the "unconfirmed" list as one short line each, instead of repeating "unconfirmed" across fields.
 Output ONLY one JSON object matching the schema. No prose outside the JSON."""
 
 SCHEMA = """{
  "headline": "one line, max 90 characters",
- "what_happened": {"summary": "3 to 5 sentences", "market_action": "...", "macro": "...", "geopolitics": "... or 'not covered by the sources'", "company_news": "..."},
+ "what_happened": {"summary": "2 to 4 short sentences", "market_action": "1 to 2 sentences", "macro": "1 to 2 sentences", "geopolitics": "1 to 2 sentences or 'not covered by the sources'", "company_news": "1 to 2 sentences"},
+ "unconfirmed": ["max 3 short lines: headline-only items, not verified by a primary source"],
  "dominant_driver": "macro data | Fed and rates | single-stock or sector news | geopolitics and oil | volatility and positioning | earnings | unclear",
  "driver_reason": "2 sentences",
  "leader": "QQQ | SPX | unclear",
@@ -541,6 +550,7 @@ def run(now, slot, slot_date, force):
     RUNS_FILE.write_text(json.dumps(runs, indent=1))
     save_json(DATA / "latest_status.json", {"utc": now.isoformat(), "slot": slot, "status": s["status"],
                                                           "facts": fact_list, "checks": checks, "rates": rates,
+                                                          "ndx_recent": [[d, ndx_hist[d]] for d in sorted(ndx_hist)[-30:]] if ndx_hist else [],
                                                           "calendar": s.get("calendar"), "consensus": s.get("consensus"), "earnings": s.get("earnings"),
                                                           "edgar": s.get("edgar"), "fed": s.get("fed"), "odds": s.get("odds"),
                                                           "headlines": s.get("headlines"), "gdelt": s.get("gdelt"),
@@ -549,6 +559,17 @@ def run(now, slot, slot_date, force):
     print("5/6 Building the website…")
     sitegen.build(DATA, SITE_DIR)
     print("6/6 Done. Open site/index.html")
+
+
+def undash(x):
+    """Replace em and en dashes in Claude's text with plain punctuation."""
+    if isinstance(x, str):
+        return re.sub(r"\s*[\u2014\u2013]\s*", ", ", x).replace(" -- ", ", ")
+    if isinstance(x, list):
+        return [undash(v) for v in x]
+    if isinstance(x, dict):
+        return {k: undash(v) for k, v in x.items()}
+    return x
 
 
 def make_brief(now, slot, today_v, new_posts, s, ledger, fact_list, rates, vix_now, ndx_hist, vix_hist):
@@ -580,6 +601,7 @@ def make_brief(now, slot, today_v, new_posts, s, ledger, fact_list, rates, vix_n
             except Exception as e:
                 print("    ! repair call failed: %s" % e, file=sys.stderr)
 
+        brief = undash(brief)
         bid = "%s-%s" % (today_v, slot)
         brief.update({"id": bid, "slot": slot, "slot_label": SLOTS.get(slot, {}).get("label", "Manual run"),
                       "made_utc": now.isoformat(), "ref_date": ctx["ref_date"], "model": MODEL, "usage": usage,

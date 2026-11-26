@@ -66,7 +66,7 @@ def fmt_time(iso):
 
 def page(title, body, active, prefix=""):
     nav = "".join('<a class="%s" href="%s%s">%s</a>' % ("on" if k == active else "", prefix, href, lab)
-                  for k, href, lab in (("latest", "index.html", "Latest"), ("record", "record.html", "Record"), ("archive", "archive.html", "Archive")))
+                  for k, href, lab in (("latest", "index.html", "Latest"), ("record", "record.html", "Record"), ("archive", "archive.html", "Archive"), ("sources", "sources.html", "Sources")))
     return ("<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
             "<meta name=\"robots\" content=\"noindex\"><title>%s</title><style>%s</style></head><body><div class=\"wrap\">"
             "<header><div><div class=\"brand\">Context Engine</div><h1>%s</h1></div><nav>%s</nav></header>%s"
@@ -259,10 +259,11 @@ def build(data_dir, site_dir):
     latest = briefs[-1] if briefs else None
     import os, re as _re
     def _scrub(h):
-        for n in ("ANTHROPIC_API_KEY", "FRED_API_KEY", "BLS_API_KEY", "CONTACT_EMAIL"):
+        for n in ("ANTHROPIC_API_KEY", "FRED_API_KEY", "BLS_API_KEY", "CONTACT_EMAIL", "DISCORD_WEBHOOK_URL", "ALPHAVANTAGE_API_KEY"):
             v = os.environ.get(n, "").strip()
             if len(v) >= 6:
                 h = h.replace(html.escape(v), "[removed]").replace(v, "[removed]")
+        h = _re.sub(r"https://(?:\w+\.)?discord(?:app)?\.com/api/webhooks/\S+", "[removed]", h)
         return _re.sub(r"sk-ant-[A-Za-z0-9_\-]{8,}", "[key removed]", h)
     _orig_write = Path.write_text
     def _w(self, data, *a, **k):
@@ -276,19 +277,13 @@ def build(data_dir, site_dir):
 
 
 def _build_pages(site_dir, briefs, st, ledger, status_html, n_ok, n_all, latest):
+    import minimal
     if latest:
-        top = render_brief(latest)
-        title = "%s · %s" % (datetime.fromisoformat(latest["made_utc"]).astimezone(VIENNA).strftime("%A %d %B %Y"), latest.get("slot_label", ""))
+        title = "Context Engine · " + datetime.fromisoformat(latest["made_utc"]).astimezone(VIENNA).strftime("%A %d %B %Y")
+        (site_dir / "index.html").write_text(minimal.page(title, minimal.render(latest, st)))
     else:
-        top = '<section class="panel"><h2>No brief yet</h2><p>The first brief appears after the first run with an Anthropic API key. Data and source health below are live.</p></section>'
-        title = "Waiting for the first brief"
-    banner = ""
-    if st and latest and st.get("utc", "") > latest.get("made_utc", ""):
-        banner = ('<div class="meta"><span class="chip">Data refreshed <b>%s</b> · no new brief because nothing new arrived since the last one</span>'
-                  '<span class="chip%s"><a href="#health">%d/%d sources working</a></span></div>' % (fmt_time(st["utc"]), " bad" if n_ok < n_all else "", n_ok, n_all))
-    elif st:
-        banner = '<div class="meta"><span class="chip%s"><a href="#health">%d/%d sources working</a></span></div>' % (" bad" if n_ok < n_all else "", n_ok, n_all)
-    (site_dir / "index.html").write_text(page(title, banner + top + status_html, "latest"))
+        (site_dir / "index.html").write_text(minimal.page("Context Engine", "<h1>No brief yet</h1>"))
+    (site_dir / "sources.html").write_text(page("Sources and data", status_html or "<p>No data yet.</p>", "latest"))
     (site_dir / "record.html").write_text(page("Forecast record", render_record(ledger), "record"))
     rows = "".join('<tr><td class="n"><a href="b/%s.html">%s</a></td><td>%s</td><td>%s</td><td class="small muted">%s · %s</td></tr>' % (
         e(b["id"]), e(b["id"]), e(b.get("slot_label")), e(b.get("headline")), e(b.get("dominant_driver")), e(b.get("leader")))
@@ -296,7 +291,7 @@ def _build_pages(site_dir, briefs, st, ledger, status_html, n_ok, n_all, latest)
     (site_dir / "archive.html").write_text(page("Archive", '<section class="panel"><h2>Every brief</h2><div class="scroll"><table><tr><th>Brief</th><th>Run</th><th>Headline</th><th>Driver · leader</th></tr>%s</table></div></section>' % (
         rows or '<tr><td colspan="4" class="muted">none yet</td></tr>'), "archive"))
     for b in briefs:
-        t = "%s · %s" % (datetime.fromisoformat(b["made_utc"]).astimezone(VIENNA).strftime("%A %d %B %Y"), b.get("slot_label", ""))
-        (site_dir / "b" / ("%s.html" % b["id"])).write_text(page(t, render_brief(b, "../"), "archive", "../"))
+        t = "Context Engine · " + datetime.fromisoformat(b["made_utc"]).astimezone(VIENNA).strftime("%A %d %B %Y")
+        (site_dir / "b" / ("%s.html" % b["id"])).write_text(minimal.page(t, minimal.render(b, None, "../")))
     (site_dir / ".nojekyll").write_text("")
     return len(briefs)
