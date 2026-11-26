@@ -12,6 +12,7 @@ if e.lstrip().startswith("{"):
 else:
     rows = list(csv.DictReader(io.StringIO(e)))
     print("EARNINGS: ok, %d rows; columns %s; sample %s" % (len(rows), list(rows[0].keys()) if rows else [], [r["symbol"] + " " + r["reportDate"] for r in rows if r["symbol"] in ("NVDA", "AVGO", "COST", "ADBE")][:4]))
+import time; time.sleep(3)
 j = json.loads(get("function=TIME_SERIES_INTRADAY&symbol=QQQ&interval=15min&extended_hours=true&outputsize=full"))
 meta = j.get("Meta Data")
 if not meta:
