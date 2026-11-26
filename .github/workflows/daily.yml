@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "manual = always run now; scheduled = daily run (skipped if it already ran today); publish = only republish the website from saved data"
+        description: "manual = always run now; scheduled = daily run (skipped if it already ran today); publish = only republish the website from saved data; check = test the Alpha Vantage key only"
         required: false
         default: "manual"
 
@@ -47,7 +47,10 @@ jobs:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           ALPHAVANTAGE_API_KEY: ${{ secrets.ALPHAVANTAGE_API_KEY }}
         run: |
-          if [ "${{ inputs.mode }}" = "publish" ]; then
+          if [ "${{ inputs.mode }}" = "check" ]; then
+            python av_probe.py
+            exit 0
+          elif [ "${{ inputs.mode }}" = "publish" ]; then
             python context_engine.py --site
             echo "ran=true" >> "$GITHUB_OUTPUT"
           elif [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.mode }}" != "scheduled" ]; then
