@@ -259,7 +259,7 @@ def build(data_dir, site_dir):
     latest = briefs[-1] if briefs else None
     import os, re as _re
     def _scrub(h):
-        for n in ("ANTHROPIC_API_KEY", "FRED_API_KEY", "BLS_API_KEY", "CONTACT_EMAIL", "DISCORD_WEBHOOK_URL", "ALPHAVANTAGE_API_KEY"):
+        for n in ("ANTHROPIC_API_KEY", "FRED_API_KEY", "BLS_API_KEY", "CONTACT_EMAIL", "DISCORD_WEBHOOK_URL", "ALPHAVANTAGE_API_KEY", "EIA_API_KEY"):
             v = os.environ.get(n, "").strip()
             if len(v) >= 6:
                 h = h.replace(html.escape(v), "[removed]").replace(v, "[removed]")

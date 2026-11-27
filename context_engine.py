@@ -58,7 +58,7 @@ SLOTS = {
 
 
 # ---------- secret scrubbing ----------
-SECRET_ENV = ("ANTHROPIC_API_KEY", "FRED_API_KEY", "BLS_API_KEY", "CONTACT_EMAIL", "DISCORD_WEBHOOK_URL", "ALPHAVANTAGE_API_KEY")
+SECRET_ENV = ("ANTHROPIC_API_KEY", "FRED_API_KEY", "BLS_API_KEY", "CONTACT_EMAIL", "DISCORD_WEBHOOK_URL", "ALPHAVANTAGE_API_KEY", "EIA_API_KEY")
 SECRET_PATTERNS = [re.compile(r"https://(?:\w+\.)?discord(?:app)?\.com/api/webhooks/\S+"), re.compile(r"sk-ant-[A-Za-z0-9_\-]{8,}"), re.compile(r"(api_key|apikey|registrationkey|x-api-key)=[^&\s\"']+", re.I)]
 
 

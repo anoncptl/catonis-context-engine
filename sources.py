@@ -434,6 +434,35 @@ def consensus_calendar():
 
 
 # =====================================================================
+# EIA weekly petroleum and gas storage (official, free key)
+# =====================================================================
+EIA_URL = "https://api.eia.gov/v2/seriesid/%s?api_key=%s"
+EIA_SERIES = [("PET.WCESTUS1.W", "Crude stocks ex SPR", "thousand barrels"),
+              ("PET.WGTSTUS1.W", "Gasoline stocks", "thousand barrels"),
+              ("PET.WDISTUS1.W", "Distillate stocks", "thousand barrels"),
+              ("PET.WPULEUS3.W", "Refinery utilization", "%"),
+              ("PET.WCSSTUS1.W", "SPR stocks", "thousand barrels"),
+              ("NG.NW2_EPG0_SWO_R48_BCF.W", "Natural gas storage", "bcf")]
+
+
+def eia():
+    key = os.environ.get("EIA_API_KEY", "").strip()
+    if not key:
+        raise RuntimeError("needs EIA_API_KEY")
+    out = []
+    for sid, label, unit in EIA_SERIES:
+        try:
+            rows = json.loads(_get(EIA_URL % (sid, key)))["response"]["data"]
+            rows = sorted(rows, key=lambda r: r["period"], reverse=True)[:2]
+            v0, v1 = float(rows[0]["value"]), float(rows[1]["value"])
+            out.append({"series": label, "week": rows[0]["period"], "value": v0, "unit": unit,
+                        "change": round(v0 - v1, 2)})
+        except Exception:
+            continue
+    return out
+
+
+# =====================================================================
 # Earnings dates: Alpha Vantage earnings calendar (free key, one request per run)
 # =====================================================================
 EARNINGS_URL = "https://www.alphavantage.co/query?function=EARNINGS_CALENDAR&horizon=3month&apikey=%s"
@@ -809,6 +838,7 @@ SOURCE_NAMES = {
     "fred": "FRED", "treasury": "US Treasury yield curve", "bls": "BLS inflation and jobs",
     "calendar": "Official release calendars", "consensus": "Consensus calendar (unofficial)",
     "earnings": "Earnings dates (Alpha Vantage)",
+    "eia": "EIA weekly oil and gas inventories",
     "edgar": "SEC EDGAR 8-K filings", "odds": "Fed odds (Kalshi, Polymarket)", "gdelt": "GDELT global news",
     "headlines": "Google News headlines", "fed": "Federal Reserve releases", "cboe_idx": "Cboe index history",
 }
@@ -855,6 +885,7 @@ def gather(now=None):
 
     run("consensus", consensus_calendar, lambda v: "%d USD events with forecasts" % len(v))
     run("earnings", lambda: earnings(now), lambda v: "%d reports from the 20 largest Nasdaq names in %d days" % (len(v), EARNINGS_DAYS))
+    run("eia", eia, lambda v: "%d series, week of %s" % (len(v), max(x["week"] for x in v)))
     if out.get("earnings") == []:
         out["status"]["earnings"]["ok"] = True  # an empty window is a valid answer
 
@@ -892,7 +923,7 @@ def gather(now=None):
     return out
 
 
-PROMPT_KEYS = ("fred", "fred_monthly", "treasury", "bls", "cboe_idx", "calendar", "consensus", "earnings",
+PROMPT_KEYS = ("fred", "fred_monthly", "treasury", "bls", "cboe_idx", "calendar", "consensus", "earnings", "eia",
                "edgar", "odds", "fed", "headlines", "gdelt")
 
 
@@ -908,7 +939,7 @@ def to_prompt(structured):
             "bls and fred_monthly are official prints with month-over-month changes computed in code. "
             "calendar is official (BLS, FRED release dates, FOMC); earnings lists report dates of the largest Nasdaq names "
             "(Alpha Vantage), include any in the next two sessions as scheduled events; consensus is an unofficial calendar, "
-            "use it only for forecast/previous and say so. edgar items are SEC filings (primary sources). "
+            "use it only for forecast/previous and say so. eia is the official weekly EIA inventory report (released Wednesdays 16:30 CET, gas Thursdays 16:30 CET); change is week over week, computed in code; there is no consensus, so never call a change a surprise. edgar items are SEC filings (primary sources). "
             "odds are prediction-market prices, not CME FedWatch. fed items are official. headlines and gdelt "
             "are unverified titles: label them as headlines, never state them as fact.")
     return note + "\n" + json.dumps(slim, indent=1, default=str)
