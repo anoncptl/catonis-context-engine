@@ -1,6 +1,6 @@
 {
- "utc": "2026-11-27T13:32:05.878846+00:00",
- "slot": "daily",
+ "utc": "2026-11-27T18:29:14.995447+00:00",
+ "slot": "manual",
  "status": {
   "cboe": {
    "name": "Cboe Insights",
@@ -47,6 +47,11 @@
    "ok": true,
    "detail": "4 reports from the 20 largest Nasdaq names in 45 days"
   },
+  "eia": {
+   "name": "EIA weekly oil and gas inventories",
+   "ok": true,
+   "detail": "6 series, week of 2026-11-20"
+  },
   "edgar": {
    "name": "SEC EDGAR 8-K filings",
    "ok": true,
@@ -70,7 +75,7 @@
   "fed": {
    "name": "Federal Reserve releases",
    "ok": true,
-   "detail": "7 items in 7 days"
+   "detail": "5 items in 7 days"
   },
   "cboe_idx": {
    "name": "Cboe index history",
@@ -85,7 +90,7 @@
   "ai": {
    "name": "Claude brief",
    "ok": true,
-   "detail": "brief 2026-11-27-daily written"
+   "detail": "brief 2026-11-27-manual written"
   },
   "discord": {
    "name": "Discord post",
@@ -138,10 +143,10 @@
    "id": "F5",
    "group": "Markets",
    "label": "S&P 500 index close",
-   "value": 7201.09,
+   "value": 7182.78,
    "unit": "index",
-   "change": "-0.50%",
-   "as_of": "2026-11-24",
+   "change": "-0.25%",
+   "as_of": "2026-11-25",
    "source": "FRED SP500"
   },
   {
@@ -178,10 +183,10 @@
    "id": "F9",
    "group": "Credit",
    "label": "High-yield credit spread (OAS)",
-   "value": 3.72,
+   "value": 3.77,
    "unit": "pct pts",
-   "change": "+9.0 bp",
-   "as_of": "2026-11-24",
+   "change": "+0.0 bp",
+   "as_of": "2026-11-26",
    "source": "FRED BAMLH0A0HYM2"
   },
   {
@@ -398,7 +403,7 @@
    "id": "F31",
    "group": "Fed odds",
    "label": "Fed decisions (Sep\u2013Dec): Hike\u2013Pause\u2013Pause",
-   "value": 2.8,
+   "value": 2.9,
    "unit": "% implied",
    "change": null,
    "as_of": "2026-12-09",
@@ -438,7 +443,7 @@
    "id": "F35",
    "group": "Fed odds",
    "label": "Fed Decision in December?: No change",
-   "value": 3.5,
+   "value": 3.9,
    "unit": "% implied",
    "change": null,
    "as_of": "2026-12-10",
@@ -448,7 +453,7 @@
    "id": "F36",
    "group": "Fed odds",
    "label": "Fed Decision in December?: 50+ bps increase",
-   "value": 2.1,
+   "value": 1.8,
    "unit": "% implied",
    "change": null,
    "as_of": "2026-12-10",
@@ -468,7 +473,7 @@
    "id": "F38",
    "group": "Fed odds",
    "label": "How many dissent at the December Fed meeting?: 0",
-   "value": 71.5,
+   "value": 70.5,
    "unit": "% implied",
    "change": null,
    "as_of": "2026-12-10",
@@ -478,7 +483,7 @@
    "id": "F39",
    "group": "Fed odds",
    "label": "How many dissent at the December Fed meeting?: 1",
-   "value": 12.8,
+   "value": 13.0,
    "unit": "% implied",
    "change": null,
    "as_of": "2026-12-10",
@@ -488,7 +493,7 @@
    "id": "F40",
    "group": "Fed odds",
    "label": "How many dissent at the December Fed meeting?: 2",
-   "value": 10.7,
+   "value": 9.0,
    "unit": "% implied",
    "change": null,
    "as_of": "2026-12-10",
@@ -497,8 +502,8 @@
   {
    "id": "F41",
    "group": "Fed odds",
-   "label": "How many dissent at the December Fed meeting?: 4+",
-   "value": 1.0,
+   "label": "How many dissent at the December Fed meeting?: 3",
+   "value": 1.7,
    "unit": "% implied",
    "change": null,
    "as_of": "2026-12-10",
@@ -508,20 +513,20 @@
    "id": "F42",
    "group": "Leadership",
    "label": "Nasdaq-100 minus S&P 500, last session",
-   "value": -1.49,
+   "value": -0.38,
    "unit": "pct pts",
    "change": null,
-   "as_of": "2026-11-24",
+   "as_of": "2026-11-25",
    "source": "computed from FRED"
   },
   {
    "id": "F43",
    "group": "Leadership",
    "label": "Nasdaq-100 minus S&P 500, last 5 sessions",
-   "value": -1.02,
+   "value": -2.02,
    "unit": "pct pts",
    "change": null,
-   "as_of": "2026-11-24",
+   "as_of": "2026-11-25",
    "source": "computed from FRED"
   }
  ],
@@ -576,22 +581,6 @@
   },
   {
    "what": "VIX close",
-   "date": "2026-11-20",
-   "a": "35.89 (Cboe)",
-   "b": "35.89 (FRED)",
-   "agree": true,
-   "note": "0.00 apart"
-  },
-  {
-   "what": "VIX close",
-   "date": "2026-11-23",
-   "a": "26.62 (Cboe)",
-   "b": "26.62 (FRED)",
-   "agree": true,
-   "note": "0.00 apart"
-  },
-  {
-   "what": "VIX close",
    "date": "2026-11-24",
    "a": "26.36 (Cboe)",
    "b": "26.36 (FRED)",
@@ -599,10 +588,18 @@
    "note": "0.00 apart"
   },
   {
-   "what": "VXN close",
-   "date": "2026-11-20",
-   "a": "45.25 (Cboe)",
-   "b": "45.25 (FRED)",
+   "what": "VIX close",
+   "date": "2026-11-25",
+   "a": "28.29 (Cboe)",
+   "b": "28.29 (FRED)",
+   "agree": true,
+   "note": "0.00 apart"
+  },
+  {
+   "what": "VIX close",
+   "date": "2026-11-26",
+   "a": "26.80 (Cboe)",
+   "b": "26.80 (FRED)",
    "agree": true,
    "note": "0.00 apart"
   },
@@ -619,6 +616,14 @@
    "date": "2026-11-24",
    "a": "36.42 (Cboe)",
    "b": "36.42 (FRED)",
+   "agree": true,
+   "note": "0.00 apart"
+  },
+  {
+   "what": "VXN close",
+   "date": "2026-11-25",
+   "a": "38.53 (Cboe)",
+   "b": "38.53 (FRED)",
    "agree": true,
    "note": "0.00 apart"
   }
@@ -1014,20 +1019,6 @@
    "category": "Other Announcements",
    "summary": "Federal Reserve announces College Fed Challenge winners",
    "link": "https://www.federalreserve.gov/newsevents/pressreleases/other20261120b.htm"
-  },
-  {
-   "time_vienna": "Fri 20 Nov 18:15",
-   "title": "Cook, The U.S. Economy in Global Context",
-   "category": "Speech",
-   "summary": "Speech At the XXIX Annual Conference of the Central Bank of Chile, Santiago, Chile",
-   "link": "https://www.federalreserve.gov/newsevents/speech/cook20261120a.htm"
-  },
-  {
-   "time_vienna": "Fri 20 Nov 16:00",
-   "title": "Federal Reserve Board releases results from survey of senior financial officers at banks about their strategies and practices for managing reserve balances",
-   "category": "Other Announcements",
-   "summary": "Federal Reserve Board releases results from survey of senior financial officers at banks about their strategies and practices for managing reserve balances",
-   "link": "https://www.federalreserve.gov/newsevents/pressreleases/other20261120a.htm"
   }
  ],
  "odds": [
@@ -1042,7 +1033,7 @@
     },
     {
      "outcome": "Hike\u2013Pause\u2013Pause",
-     "prob_pct": 2.8
+     "prob_pct": 2.9
     },
     {
      "outcome": "Other",
@@ -1073,11 +1064,11 @@
     },
     {
      "outcome": "No change",
-     "prob_pct": 3.5
+     "prob_pct": 3.9
     },
     {
      "outcome": "50+ bps increase",
-     "prob_pct": 2.1
+     "prob_pct": 1.8
     },
     {
      "outcome": "25 bps decrease",
@@ -1096,202 +1087,202 @@
    "markets": [
     {
      "outcome": "0",
-     "prob_pct": 71.5
+     "prob_pct": 70.5
     },
     {
      "outcome": "1",
-     "prob_pct": 12.8
+     "prob_pct": 13.0
     },
     {
      "outcome": "2",
-     "prob_pct": 10.7
+     "prob_pct": 9.0
+    },
+    {
+     "outcome": "3",
+     "prob_pct": 1.7
     },
     {
      "outcome": "4+",
      "prob_pct": 1.0
-    },
-    {
-     "outcome": "3",
-     "prob_pct": 0.9
     }
    ]
   }
  ],
  "headlines": [
   {
-   "time_vienna": "Fri 27 Nov 14:03",
+   "time_vienna": "Fri 27 Nov 18:40",
    "query": "Nasdaq",
-   "headline": "GoPro (NASDAQ:GPRO) Jumps as Buyers Pile Into Low-Priced Speculative Stocks",
-   "publisher": "kalkine.com",
-   "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNOVlyLUxvZEFkZGlVa1BqN1luWWpBSms4a25td1JIMXpXY3FyZTlKOEhFQWJ4N3RHR0w4aFZ3aUtxMEVqbTBPeU5USlFVdVZYV0lZLTh0cnNaM0FKbll2ck11S3A2UDdDOFFQSUMxcnNGRTd3LTJaOC1heTdmT0FtMkRnOHA5dkg1TjFVNi1PNnlwdHBoNTlQd2JmcWczLWxldGZmVnhaVUZHdw?oc=5"
+   "headline": "S&P 500 and Nasdaq Head for Their Worst November Since 2008",
+   "publisher": "Coinpaper",
+   "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNSDFqV0dESHFnZFBsY19BM252WkttS3Q3Z2pIWnpKeFpjclFMRnZ3ZFhOTDBOZUd4SW5oeDBteUdYWUJiN2Q0ZGNqS01KZXR4aHBKcUNxU3EyX1hFLXZLRXVDdW5OSWE4U2MyUUx0N3JKUnU1NDVLalk2emJBT29HTFYtYVRxYlZfaEk4bnFpankxUVNlZmc?oc=5"
   },
   {
-   "time_vienna": "Fri 27 Nov 13:55",
+   "time_vienna": "Fri 27 Nov 18:28",
    "query": "Nasdaq",
-   "headline": "Dow Jones Futures Rise; Look For This Bullish Market Signal On Black Friday",
-   "publisher": "Investor's Business Daily",
-   "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxObC1aVl9wd1oxYktYZFRnZjVBMHFrS0ZPMVV3UzdacGU1SHh2clYzeTZXYTROc2ItcjhMVUFFZDlMUGkxUXg1TnNKcDRvdUZPVmo2OUduaTc4dHFqVE9BalVvRmJVWndMMWtvbHAtREJQQ294cDc3cFcxdF96OF9pY2dKWDBnLWN2M1AyeUtKLVhHUEp0Q20tSVJPM25ITXY4dFlfakdfMjE5RUJiMGRaZ3llUWZrRVlMZm5NVFcwWmhWdjFhX2YtckNpTTdsV0Nld3Vz?oc=5"
+   "headline": "Nasdaq 100 forecast: Stocks rebound, but have markets found a floor?",
+   "publisher": "FOREX.com",
+   "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOY0RVUDUwMW5jeXZER3BRZnRlWVRIdWM5MEdWMTZIREgyNkVBanBPVkh6X0d0OG5pcTZmakFRVTRWX3Axb0R4dGdXUzQ2dmY2eEx1LUdGUmNDaWkxNzZVNG9MTWk0Z3lSMlpzVnZwdzVrN3FkcWdZY2N4V0hXUkxleXoyYU5Qd0dhT3dwZkN6Vjc3akFfa2NvZkZrRWNGZDZfd0ZMV0EtWlhOaFVsVzZpVDBB0gG-AUFVX3lxTE9FLTFFb1hEY1ktTUVYcW1HR21RQmxIMWFwVUlKSk1BYnRRck5TaEZxaHkyQkFFT2VCMWRnNHlReUhsb2l4VXQ1TnZBQTZLSjN1UTR4T3d6RGdCRmZQWF85bEdJWFlHX2xjMzQ4bWRUMWRfZzJ5RjFfYlgyUFR1cG1IYWpiNmtNX3V0dFRWZEJwa1huOTY5Y051XzRSeWtDMlFKX1JEOVAtaHRkNXBEbWt4VUlUOXFRSDFUdEJNQnc?oc=5"
   },
   {
-   "time_vienna": "Fri 27 Nov 13:53",
-   "query": "Fed interest rates",
-   "headline": "Fed likely to raise rates by 25 bps in December amid inflation concerns",
-   "publisher": "KuCoin",
-   "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNY3FSYXo4aFJQeHZSd1EzeVA1ZnVpUWNLY3RibXIwb1d1RUl1Q1lBTEsyY0pTcHpGbkl0c2piX3lSbnBFaWF4aWhhSGoxSEsxSEsyVlFjb0NZQ0NMZ1RRV1RPTG5ZUjNDX2dUeVpPRlpZbGZsQXVvNkpDZzdPeEwzZ1hFNV9ITkFJbkxUS09zdXlQb3VWQ29zRGZoWkM2aDdTOGpZMXhVRQ?oc=5"
-  },
-  {
-   "time_vienna": "Fri 27 Nov 13:50",
-   "query": "oil prices",
-   "headline": "Oil Prices Mixed Ahead of OPEC+ Meeting as Middle East Supply Risks Persist",
-   "publisher": "WSJ",
-   "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPTlk0cWFXc1dCWFZnYlZPbnBBNGtndk1USE5BM3dhd1RYNzNZdkJiYlNxWmtsLVoxa3FSR0FmNkdKaEVsaVZjYnYwaHl3QjVUbnpLcFpfUDRyenNXMjVFOVNEY083SG9rSTBLeHd4ZENhb1hBc0gtS3kyYzRQUU8xM1duaG51WHZjRFhRcXh5Y1FrdEk3WTIyMXFhdGw3ZzliWjc3RkJDVGZYT252YXRZRTd2Y3RXY2wwbWVVNEREWQ?oc=5"
-  },
-  {
-   "time_vienna": "Fri 27 Nov 13:31",
-   "query": "Nasdaq",
-   "headline": "Is Oracle Stock Underperforming the Nasdaq?",
-   "publisher": "Barchart.com",
-   "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOc2pCeGkxbWgxSERlVXJNRFpGdlZfeHZOai1UZmEzbDA1M0lVQXhGbnVqYkJLb2pWLUVMTDlHR0dfZVp1MEFtQVNobXdiWHIzUDZ1eTZqYU5qWDVlOGN6QUdlOUU5ZXNaZDhrODRFaTlhampUYjFxYjljLUM2Q1JVUjk0VlZvT0p3eXlwTmp3cw?oc=5"
-  },
-  {
-   "time_vienna": "Fri 27 Nov 13:31",
-   "query": "inflation CPI jobs report",
-   "headline": "The Week Ahead: eurozone CPI, US jobs report, Salesforce earnings",
-   "publisher": "CMC Markets",
-   "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPU3QxeUZsQnMtbjFiMklncVNxbC1iRXU1MVlVcTZOOVUzTVJRU3FXcTBfYnc5a1lRMHNROGlvV1doM1BNX2RIUTlBcm5zSXFTbDlTVXhYUnV3WE5OZTZ2bHNWRUw1RnNkRHBBYnR4Um9SZGNmWmJRY3FnSnBjWWl2OFFDM3BJR0VDUDF2aFhoWm0wWi1lTFZSZ19rN18yT2o5ZGVpWC1xSUhoc1dGNldnQlplWQ?oc=5"
-  },
-  {
-   "time_vienna": "Fri 27 Nov 13:30",
-   "query": "S&P 500 futures",
-   "headline": "S&P 500 Futures Rise in Premarket Trading; Credicorp, XP Lead",
-   "publisher": "Barron's",
-   "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQTGNwR2NQeHlfT2JuV290S2s1NUFTR3RvbkI0MnR6Z1o1V2x2TG42ZVViaFNLQjRKZ0FPTVhwbk9qN0s1elFVT2FzZW40RXJGaVQ5M3lYejJhek1uejFiVW1ZMzBsTE1zTmt1YW45QzhYdWdqeE90Z3ota3pGczJqYVlpbU1fc3NTdUdpc3ZsVWh2WnBTWW9YTW5ldE9Mb1NMNkNr?oc=5"
-  },
-  {
-   "time_vienna": "Fri 27 Nov 13:30",
-   "query": "oil prices",
-   "headline": "Stockpiling Will Support Oil Prices in 2027, Energy Aspects Says",
-   "publisher": "Crude Oil Prices Today | OilPrice.com",
-   "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQRDM5MUpycUo5dEdkS3RYZ09KMGRVbGJ2YzRQOW1BMHF3OUUxR0h1eTRKODA0ZmJ1Y2xfcUk3MTJkZDVGSE00WGI3WW45MkNrWkYzRVBTd0RqYlVfTFdKQmtZOXZaekttczRseGJmMlUxdTZuNTRfY3lkYkwtc1ROcld3eFEtRnJSMEIxMlR6X1ByeDJPdWFUdXd6cG1vajgwTDBJN1dPN3h0VDFTaTVvd19xQkhGcnFqd2lR0gHAAUFVX3lxTE5fa1g1NUxDRGxMNDM5QlVOWFJnd0I4WmlsSjJlVjFmTGxfU3ZBLUh5ay1uZG15UHNlQ1BDMWtQOFR5LXA4eEtubDM0ekNrTHVOSl9Td2hmVnRIc0Fwa2J4Y3JJQjZoS1JQMzJNN1gzOC1nenZQbTBJZWFrSUJDR2RHLVk2ZmdEWldVQm9ueTdHWVdaaG5vMThvbmxhOXBLQlhFejh5djAtQkVkQ2g3bU1PaGlNVlVIZWtLNS1sOTZtcg?oc=5"
-  },
-  {
-   "time_vienna": "Fri 27 Nov 13:29",
-   "query": "S&P 500 futures",
-   "headline": "S&P 500, Nasdaq and Dow set for winning week despite AI turbulence",
-   "publisher": "Quartz",
-   "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1jejNFc19mUmdIUHE5bjVycnNVRjViem1Td2lBb294eXBPaC1HbWZmSWprNzhRRlAtTk9qbmlKM3p1TlhBZDNQUWg1Q2pDbWtrdmdmQUt6ZE11U01OM3NaeE9vSUxVeVZSVzdYVFpFUUg3YjA?oc=5"
-  },
-  {
-   "time_vienna": "Fri 27 Nov 13:29",
-   "query": "Nasdaq",
-   "headline": "Is the stock market open today? NYSE trading hours for Black Friday",
-   "publisher": "Cincinnati Enquirer",
-   "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQc0hfbGpkdDI2NDhEZ0NHLXkyRUpWUFZCLVdzZFQxcHpCRFRpMDk1dk1URVFkN3N1cVdUa0plTGFCdzFpWVQzNU5VUnp1M21BWk1xZGQxU1N0UjA4N1UwblZ1bjFrLUZIZ01QbkxfM0VVajhsY0FnXzF4SjJoalFZamZpaWJZNWVfaXBjNE9UUTM0TFJNOFYyRW12QjNxTnd2alR4QTc2UElvYUIzY3RKQVVFYi1BNVB0MTE5NlloYWI2RnRWVFpyTW1Qaw?oc=5"
-  },
-  {
-   "time_vienna": "Fri 27 Nov 13:20",
-   "query": "oil prices",
-   "headline": "Ethanol Margins Face Pressure as Oil Prices Fall Nearly 20%",
-   "publisher": "AgroLatam",
-   "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNaVJOaE5Rel9yODNpZnFiMEY5TGgtb3d2aUltazRRMVNZV2pQZFo4WnVwRE5IZkpFcFNpX2ppUFhoa3hqcjdCeS04b0MyeU1aSmt2VXhOWDNYSGNBazFXVXpqd2lvWGl3ZFc0QUVhZWNDd1ZSbWRvZURqQ01Ja3hpd3FMN3E0aWpwcXI0OVg2ck1ScmwyMFFTazZ3?oc=5"
-  },
-  {
-   "time_vienna": "Fri 27 Nov 13:02",
-   "query": "S&P 500 futures",
-   "headline": "Stock Futures Rip on Thanksgiving Night as S&P 500 Futures Top 7,300",
-   "publisher": "24/7 Wall St.",
-   "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQSzhlanF3R2dnNW9HeUh2cU5TWTlkWEtXMURLZmRJNXVZSG96WXM1enlhUmtyUlpQV3NsRlRyOVRTdXBIdUNncXpNNEJuLXZ2VC10SC1LLXpmZHpOd3VZUWQyQ2pTRlNLVTZjeDhzRXpFMzRzd3pzZVc2Qno4aDZvX1p4OUNlSzBTcWR4d3ZEVlhoNkk2TWJSVVBGbkhvSUduaHNnZkRQa1pOeU12S09N?oc=5"
-  },
-  {
-   "time_vienna": "Fri 27 Nov 13:00",
+   "time_vienna": "Fri 27 Nov 18:20",
    "query": "AI stocks Nvidia",
-   "headline": "The Tech Download: Will Jensen Huang\u2019s return be the spark the shaky AI market needs?",
-   "publisher": "CNBC",
-   "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1qZGZvNW5WNzZZYWpZRXlKOHpBWWVsYks4QlFnQnlCclZlYkFaUUNaOWY2RmJkc3N2ZDVWNXZ1bjhyOS1vLVlzd29mVFNvRng4aGJTNE12QXNJdHN4U2VJMlNMdlVDYmpTS3FPUFlWZUxSNW9tYVRyRTN3UVZpZ9IBgwFBVV95cUxQQjdINWZib09wZ1lKb185OUpRX2JRYzZucmtBdFVPMGQ5QklxNUsza01hUTgxSGNLcUVSZTVyRXVUZ0F1QTNRX1FQOURJUk5SbE1TT3RaRzEzS0RDcXVJMG0xclBOZUJoeG1ySndOeVVpUno4bktpQ2JMRl9mQ0t1NFlRdw?oc=5"
+   "headline": "AI stocks make a comeback after week of wild swings",
+   "publisher": "The Times",
+   "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNMnBaWHY2Q3FxblE5eDhIX3FxQmVXN2lOYzdvZlkwUkcwbEFVdTJLb011Z0Q2cjIzMWh5Y0tvaG5SX2F3Y2tGQ3RUUzU1VUlOVVlNRUhvQUtUVE8tVmYzTGpmVk9BRVVDS0FfV3lHSGZVcE96cm14TlJOUDBHV21YZU1oQkRaMnhnZFU5M1d2MEhFVHNjbzQzZDJyRFR1YjhWQnc?oc=5"
   },
   {
-   "time_vienna": "Fri 27 Nov 13:00",
+   "time_vienna": "Fri 27 Nov 18:09",
    "query": "Treasury yields",
-   "headline": "US Treasury yields decline despite rising PCE inflation and strong GDP growth",
-   "publisher": "Equiti Global",
-   "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOWGxaRlRJU09GWHpHNXZuZzNEUHNKNFVxZFNmZFpCLWxjQXYyLTlTbWliV1dnbnk2UGZhQXZoMl9NQWNDazl0VGQ3eGc0d3BFV01hUEpBOXg0cFVWNkV2MDRzLV9qSHBfS0tlbklGdE5rQ2Y3NjVqdF8tSS1LUnJaWG1vbEtPb0F6aldKcXdJMHZUU3VJQzU0d2lMdFYzdnVIcWVuNGM4OGxWMU8tUEhuVjNfcnZBOS1JTDZXQ0JkaXZRU0RF?oc=5"
+   "headline": "U.S. Dollar Gains Ground Amid Rising Treasury Yields: Analysis For EUR/USD, GBP/USD, USD/CAD, USD/JPY",
+   "publisher": "FXEmpire",
+   "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQNkFkUGhqUTRReFFqcE1hd1dsdTd1cVltSlJhd2tmT29VSzRxTGR0cGs2YXFRRDZudUtnSGFFamQzSjE4bmZ1R2ktbXJIQl93aEtpTzVQd1NfRzRyUS16UFBZSFdCNDFENnNORFdwR3ljS2o5SGl3NTEyemdMbDNOU09UdkdTd3hCUnQ2Wl9rNmIzNTFRbnVPRFNxTFlIdC1JeFJ3czF1NlFhMmJnV1VNakVfX0lDQWVzNmVNcm9pMFNKUTF5aXVVckJ4TnJLU0FHSjgxZjk4bjlVekpiSmxPOQ?oc=5"
   },
   {
-   "time_vienna": "Fri 27 Nov 12:20",
+   "time_vienna": "Fri 27 Nov 18:08",
+   "query": "Nasdaq",
+   "headline": "Anthropic Shares Jump After Volatile First Week Since IPO",
+   "publisher": "Bloomberg.com",
+   "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNSGVqenZQM2JzRHFPVmVDWElvMUlUTXdHVFVlT2VOYWc3ZU5KM0czVlBfUGhNNWU0ekFjYU13YWdRS243RE10VEVHYW9DRzdmUmF4MndvQ2dnUmVxY1ZJZER0WnpZay12cUJqTE0tRUlGSlluYkgwem1wTG51d1FrdHF5SWtqa2F3MkNOaFN1Z0RrejFJOXdSLTFGZnJWTDk0emw4dlN0bVlRalJ0elIxdzAxUm9Idw?oc=5"
+  },
+  {
+   "time_vienna": "Fri 27 Nov 18:06",
+   "query": "Fed interest rates",
+   "headline": "A Fed Rate Hike Next Month Is Almost Certain: Analysts Share Their Views on 2027",
+   "publisher": "Cryptonews.net",
+   "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBBcWJrdlJaaHlKQlBTZHZocnR6TlNzQmp0eXg0Yy1VT190aFdKNkNxR3FfOFk5bFh5emp5cDNYVTVlZnliY1BqajNhaFV2ZS1HTVBYanhSeWs?oc=5"
+  },
+  {
+   "time_vienna": "Fri 27 Nov 18:03",
    "query": "Treasury yields",
    "headline": "Treasuries Retreat as Gains in Equities Sap Demand for Havens",
    "publisher": "Bloomberg.com",
    "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQQ0taN3E4cG1RcDA0QnJMVnZWY3k0cExiNHlSRDJ5YVRZNlN1UlpLczR1Y0xtaFpyZnZwT2NLQlFqQjV0WGNVZ2V2a2ZBWnB1XzRoZm1oQmJ0cEFsRFIwdzdRd1dUdjdRVDlYb1pIaXZ1RmlVNF9DRHJ6OXd5VjNWLS1tRHZ1V19rQWVZWGZ0SDhHQnU3VnhkSDZMcm5mUE5teXktQUU4cHhWX0pTQ2gzdzF3?oc=5"
   },
   {
-   "time_vienna": "Fri 27 Nov 12:19",
-   "query": "S&P 500 futures",
-   "headline": "S&P 500 futures jump nearly 2% as AI jitters cool",
-   "publisher": "Crypto Briefing",
-   "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBJX0psMzI5VDA3YVl1VjRtaXJaN1FySnhnXzBXNFZuazlwQ1oxcEp5OXkwVzdmMDZxQkNoRXpRYU96bmgzNmRjQXlLWHhRbkhnN1JtOWdHeWV6NTl4OG80MFh0aGhpcVdyb1QzT3FzVVJvdFppdGc?oc=5"
-  },
-  {
-   "time_vienna": "Fri 27 Nov 12:09",
+   "time_vienna": "Fri 27 Nov 17:37",
    "query": "Nasdaq",
-   "headline": "Nasdaq 100 Forecast: NDX rises after Nvidia earnings calm AI worries",
+   "headline": "$50M revenue target in sight as Jacksonville's Duos Technologies rings Nasdaq bell",
+   "publisher": "The Business Journals",
+   "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOYWR2Sy1nUFduaUU0OWhXdkpEa0pWNEIwNXhIdkd2d2ZnLVFwMWstNmdvZmNQWG9nWUtZa0c4aFVfUGFDTDMzQl85TUVIT2hoUXdQazJqUG42ZEhfaE95RHBlOEd0V3lrNWYxVWxDWXZjWkVDc1dONFdTY1BIUWNyQzNaVnRSR0dCSkNvUHRVSk1pWGJhVERR?oc=5"
+  },
+  {
+   "time_vienna": "Fri 27 Nov 17:30",
+   "query": "oil prices",
+   "headline": "Oil Surge Pushes Indonesia to Mull First Subsidized Fuel Price Hike in Years",
+   "publisher": "Crude Oil Prices Today | OilPrice.com",
+   "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNNkV0b0JCYkgwOWxTV1FfY1BoQmtzYmJaUkxtOHh1ZjcyN1d6ejFWWVNib1hqZDdPUWxrWS1taW9WR0czV1B0X2J6amhjb1UtX280R2RGUzFodE8yMHg2RjZNNWpaX2V4SHRvNS01ZnZtM3lFd2RvVGJXU09mXzBkWWNTQUdHcGtFd2otWUdHUk5lZVlrVURVUzBMNzhaOTFsUmwxRURTMWhxQ3lLN1F2ZEozd0hVZllUaU9nb2Qzb29hQnM2ejNQcXFraTLSAdIBQVVfeXFMTUh6bDJwQmo0TUgwYjJGblVVXzY2SkdtNXZpRE5hanF1M281ZEdEYnVFV280OW02TjViUFVmX0hscnJLNkFac3lhdXh3dkZCa18yb1lQcWhpckl2TlhRLXFWY1hpUHNQbmtCU2Z1M2JfSi1MRnB6TVN6ZmN4enBsZEFhVy1nNVhad2NGcXY5UjZfZGVUYXdDZEpHX0NrSEZDdmhwcURpbWpaOGZKTnVMc2dhWEQzelVQSWg5amtCTno5LWZ2bXFvdDZwNlZ2MUI3ckJR?oc=5"
+  },
+  {
+   "time_vienna": "Fri 27 Nov 16:55",
+   "query": "Nasdaq",
+   "headline": "Nasdaq 100 Forecast: Anthropic IPO fails to calm AI worries",
    "publisher": "StoneX",
-   "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPUzZpRHJyekZ3QjdOa0pGd0VJb1U5RlZ1U3lMZEVQaWdFSm96TzhnRXVwN3Jpb3dPajY5YUdESW5Vdmh5cEJWNHhWWUlQOGRmX2pCNXl2ZWpxekxVR2VoQkNpUjVyX0VNS1hKc04ya1FGR2lmTmpXdkNYNHpreEx2T093WnZ5dXZzT2JfaUkzSzdVNElzSmFlUFdEenJwcGZSRDdtam12WmQ3YkVjam9jaG5McWNvZw?oc=5"
+   "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNWU8ybzlxdUlpQzh6R1hNU0hOTDF6SllWeHhHWW1FZFI3Vkx4UXpMRjZfZjVrOFNVcUdZbEM2cmQxX1BaZVJmal9waTFFV2JZcHlYUXIteUhyQmdwVUJGRGJyQ3RZN2xxa210SUhUUGV2b2dOR1pCX0ZEcG1obXdGbFZzVkNWSV9pLWNCajF4V0FVUjZNek93dEczRWxpRUFNNFp1dmN0WlEydw?oc=5"
   },
   {
-   "time_vienna": "Fri 27 Nov 11:50",
-   "query": "Nasdaq futures",
-   "headline": "U.S. stock market today: Nasdaq futures lead gains ahead of shortened Black Friday session",
-   "publisher": "Traders Union",
-   "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPeDItMXZXLTlCVS02ODJxQVdDal9IQzNNM0lTZzhJaFBQR0ZLbzZlbjZIS3FnbHRHczBGNlBQM3ZOVTNSVXhRVXltb3dVeFZTOHJhUTl3VEZYWElITHBfXzkxUGJZOXVocTR5ekRyUWFSTXdaaE1NMEJseXN6Y0JOSHNqV1ZueThnb1poakZmZmJFQ25rNDZtWlhGWQ?oc=5"
+   "time_vienna": "Fri 27 Nov 16:27",
+   "query": "AI stocks Nvidia",
+   "headline": "Stock Market Surges As Jensen Huang Returns As Nvidia CEO; Abercrombie Leads Retail Winners: Weekly Review",
+   "publisher": "Investor's Business Daily",
+   "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOR1paM09sdFN0alJpel9EbFF1RDBKY0VKRGJtWWlnMTNob3g4VjVYMHJLNHN3Z0J6QkVFWmdBaktfTnFEMFprZElJRHpTamtwbmUxYzIxTzNMNkh3c1pQQXBTbE9CT0otSldXNG9DMXhLX2tIUnJiY3JmV2JjRUZJTVlFNlJqaVgwc25BWEtLZ2hsUE9TMFBTc2t0bUxGSTBpT2loT0N1Z2l1MXhJb3FBVzg2YmV3NjBWLXlsN2taZUJralFRNEFnZUpxQ0JWMVB2cXc?oc=5"
   },
   {
-   "time_vienna": "Fri 27 Nov 11:43",
-   "query": "Nasdaq futures",
-   "headline": "Stock Market Today: Dow, S&P 500, Nasdaq 100 Futures Rise as Wall Street Returns to Wrap Up Holiday-Short",
-   "publisher": "Benzinga",
-   "link": "https://news.google.com/rss/articles/CBMimgJBVV95cUxOVl92T3dva1RSSV9rc0JZWXA0ODh2Z2xUZXpnRkNpenpQN1F5UGQ2Y3J5MlZxNUY5Nk84c2l6YXN0NzctYWFxNUdfaHBQaHFSZnBYSWhiWTVEN3pmSm9Ud21LOFA4dEIwRUVzeVg3cF9YdDJiUjNlYW9CajVjOG12aTkyNnRRX0g0RUZTWHBxYzlHcTMyVjZPUmgtM3VGMXVScUVsVVJiZ0RyVlZITTUwclREX3BJckZMZFZ5aVZMV2ltaV8tWjZzcjB6cUlrR25FcEU1bktfUmExUmFfREdGM1A0MG1YYVJOMVgwS2NvMENJcG9IUnlxWEp5Tzhwb1VGVFRKaGVOY3Z0Qi1jRzNhZENudk1FcFJ1SkE?oc=5"
+   "time_vienna": "Fri 27 Nov 16:22",
+   "query": "AI stocks Nvidia",
+   "headline": "NVIDIA Corporation (NVDA) stock price, news, quote and history",
+   "publisher": "Yahoo Finance UK",
+   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE81OEFKQTktenlhclpBTlVtWEJqNVpKOVNWNlRaNlRDRnR0dHRielpfZXdtR0pXcUcyNDN1WTlzOWVrWXZTNVhTbEVIOUxEaklxVWc?oc=5"
   },
   {
-   "time_vienna": "Fri 27 Nov 11:39",
-   "query": "Nasdaq futures",
-   "headline": "Green Friday: US futures and global stocks jump in a post-Thanksgiving rally",
-   "publisher": "markets.businessinsider.com",
-   "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOMWVRWkZLRmFSOU5aZllYak43WDVRTjRzRVF6ZFMtVndkQ3RqOUN4NzA4M1BiNzhZNG5ZSWhvVXNOMmg3MjVNWE1TOTFXaDhWMnRxcXNKTHYwTHNCVEVVOVFyQkJwczlaN2xjd1BXZTlwUnBteVQ0clpxSGhOU05xc2FESXNoazhPZm1HVHBzcGQwQU9xSjFDWk1uQ0VlQ3NHMnVmeWktcmZfMkJWQjU2eWh4Wm1DNnFBVjRuaA?oc=5"
-  },
-  {
-   "time_vienna": "Fri 27 Nov 11:37",
+   "time_vienna": "Fri 27 Nov 16:21",
    "query": "Treasury yields",
-   "headline": "U.S. Treasury Yields Rise in Shortened Post-Thanksgiving Trade",
-   "publisher": "WSJ",
-   "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOTW1zSXpjNUxaVHZQNEZGUnVUWHAzRmlkRzBrd01SbllIUmVUQUVHZFZ5WHlRcmxmd0tWODJwTGRvSGZXRWtIQXd4MEx0LVY5Qi1PazkyX0YyeGZ2TXhlaTNRLVpvUk1rTlB0Qk93bktRRi1UU0R6dU1XOWdjam5MTFByT0h2UG4wMkJTSFhpa0VsRlJlMkVoZUZZcFBfVFUwdzdiSk1LTkM5MC10?oc=5"
+   "headline": "Treasury Yields Tick Up As AI Trades Keep Markets On Edge",
+   "publisher": "Finimize",
+   "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNNVJYVzRrXzJwWmZ3WG5wVDU3dVFPYXM4VGNsSUxuQ1lHekU0VjN6bFNDelJNdU9Ea09HaE05YkotaEZucW4tU2l2ZmFRWW5sa2czZ3FSODQzR0FpZ0taRzMzS1Y4U1RGVk4tY1djZklUT25nM2dhZ05MYTVtNHBMZW8tV25keHo1bms0WGlHMA?oc=5"
   },
   {
-   "time_vienna": "Fri 27 Nov 11:29",
+   "time_vienna": "Fri 27 Nov 16:17",
+   "query": "oil prices",
+   "headline": "Crude Oil Jan 27 (CL=F) Stock Price, News, Quote & History",
+   "publisher": "Yahoo! Finance Canada",
+   "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9vb0xIM2NQRFk0TmhHMF9LYWZjb2ZDWFpMSE56RzRaMW5nVUhEZFJvMjVLdWExU25wQ1E5V0NpY2FwS2JkaTktb1hhUHJKVV9uVjBQSA?oc=5"
+  },
+  {
+   "time_vienna": "Fri 27 Nov 16:08",
    "query": "Nasdaq futures",
-   "headline": "U.S. Stock Futures Surge As Nvidia, Anthropic And Other AI Shares Rally In Premarket Trading",
-   "publisher": "Forbes",
-   "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPNXhhekVTYTY0MENIaVV0S2xLOWZpWE1MZFFDanR2VmZMSXN3Q0hnTzB4U1lsOC1KSFlWZDhVS2lIUlFfRG9yYnk1UTRMOXU2dTQzQzVuejJ3aVp5RDhTVm9hbDc4RV9UMlpWaWVBeWU2bXJkeTFwTFhfNmFVTXF3ai03Y25WbU5weTh3RDA3dmJkdmlvWk9iVk9ER0RxSHZjMXNyZC1JeXlTYlRXMVk0NGgyVmhaeDlRQWRZN0ZPdUZjdGFNYzhUOUpNd3lfQzhDb3FrcA?oc=5"
+   "headline": "Nasdaq Futures Rally as Traders Pile Into Battered AI Stocks",
+   "publisher": "Advisor Perspectives",
+   "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNamNIZDVMbVBzSy1XNDBHb3dxb3ZDaF93NEt4NlZmLWZIWGhWZGxSejh4dVA1cHVUMVNuNVRBeExMX3hndWNUdTZuNnhRVWlDaWZGejdXcEZrNkloTTJialZ4ZnExcFh2bWNHRVBEbGhEdnJyR1pYVk5TS3FDbHZLQURVRHBONmhydG5ZR2g1dHljVEVELXE4NGFwX3RfNFhJLVVuci1MbFc0X2hS?oc=5"
   },
   {
-   "time_vienna": "Fri 27 Nov 11:26",
-   "query": "inflation CPI jobs report",
-   "headline": "Why markets sometimes ignore economic data",
-   "publisher": "investingLive",
-   "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQRkVSTUdnVk1SV00zbUNFR3VpMXU4T0hHZXNQTHpoZ1BKUWZxUjc5WFlfclJMcnJPNHMwLWdVR2EwZDZEanZCaGtacURUc1MzWF9hc0tFVmR0R3VReTRDM3I0UUtKS2tHdXZHakhHTDRKOFZxVGNJbEE5WkFiam1ZVkFhNk9DQQ?oc=5"
+   "time_vienna": "Fri 27 Nov 16:04",
+   "query": "oil prices",
+   "headline": "Oil Prices Fall as Traders Weigh Supply Surplus, Gulf Attacks",
+   "publisher": "WSJ",
+   "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPVkRJdUt0LVhZdzVhR0RpSnN6RWh6cDdGQVhOUU9vNENLN0hnSXB1YXJFU01rMzZBaXhuelM3ODlra1hKdnRxcnYweGNRSmFmSEpnMzJSQWxkOXZqZVM3NjBrZ2UwQS1PQS12di1uaHFUQWJRZHE2aHhxMnlLcVJ5Z3owcXd2WTV4NFJQSUM0SWplUVA5bW80ZU9fdDYzV1Z5QnFvcW1kdlhPMW8xc2JRQnVJc19mZw?oc=5"
   },
   {
-   "time_vienna": "Fri 27 Nov 11:22",
+   "time_vienna": "Fri 27 Nov 15:56",
    "query": "AI stocks Nvidia",
    "headline": "Sandisk, Bloom, Marvell, AMD, Nvidia, HP, and More Stocks That Explain Today\u2019s Market",
    "publisher": "Barron's",
    "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE14UUVNa2RYOGJ2eHdTeDh6WnpuZFJrU2ViWTVwak00dUxXU1R2RlI1YW9INk12TTBwbnNhS1pWMl9Kc0UxaWFoVU1mY3lLRjd0UWpEanExVHVOM2pWc01qMExaRWM?oc=5"
   },
   {
-   "time_vienna": "Fri 27 Nov 11:07",
+   "time_vienna": "Fri 27 Nov 15:55",
+   "query": "AI stocks Nvidia",
+   "headline": "Nvidia Stock: 5 Reasons The AI Trade Has Only Begun (NASDAQ:NVDA)",
+   "publisher": "Seeking Alpha",
+   "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNN2o0b2xkdHNBUUlES1pQNVBVQ281SjNoQzlqcmRrVHRZY0xnX3poUnVaZWpiVWRpc2UtOUFuR0FfNEhoOU9wdDRRVVhBUGF1bG5jX1pfbUFMSXpaTDNLZ1hKakxlM2JvRGhXV1UyOGpjemdJQlRZZnUxb01ORVQ2eFpEandobGxJV1BLQl8zUGxzVi0wTGc?oc=5"
+  },
+  {
+   "time_vienna": "Fri 27 Nov 15:27",
    "query": "oil prices",
-   "headline": "Iran accused of deadly drone attack in Kuwait that sparks EU call to step up pressure on Tehran",
-   "publisher": "CBS News",
-   "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE05bmJOWEtxU1hnYmlGcXV2cHM2SzlfUnBhVUk3QklXMzFEd3Eyd1BhRmhORDBNM21BZmhfMnZObENxQTB4QWFDWnJwX0xhdnFUQmVkT1FSYnlBWUNsc0dtc1hVZTk5eDBMbEJDV2hNcl9qN2tEX2Q0RUl6N3pFdw?oc=5"
+   "headline": "Why do changes in world oil prices strongly affect Alberta\u2019s economy?",
+   "publisher": "Britannica",
+   "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOWXlWZks5MlRuQVVCdk5KaFA2cmpFVTloSDlFOThfSUZTLW1VelVGbUxVV1hZUS1ZTThfT19LSFFxSUt4N0Z5NnFJNldrSmRhRHRHMTYxRTRlek1SeTVwLURPRW5FbnVtaDJ2b2hUSldOQ0pTcnBDUktxRXVYTzVVMjNLdVlWTERCdVR4VlJObTNLTEtrZ0ZreDBXeU0wYkktdnc?oc=5"
+  },
+  {
+   "time_vienna": "Fri 27 Nov 15:16",
+   "query": "oil prices",
+   "headline": "Oil prices are again rising \u2013 here\u2019s why",
+   "publisher": "CNN",
+   "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5pWERQc1hkMjdnNVdlT2laUE80aXpVRV9GV3o5ZE9lb0lKbng3WFRTUGp0X3c2eG1hSmVkSkFSUUcwWEx3REFpUmdweERDY0ZITkR5cmFaS094dHB6SjFsLU5DbDUzM2JEVmFjX2habw?oc=5"
+  },
+  {
+   "time_vienna": "Fri 27 Nov 15:14",
+   "query": "Nasdaq futures",
+   "headline": "Dow, Nasdaq Futures Up Over 600 Points as Tech Surges",
+   "publisher": "Schaeffer's Investment Research",
+   "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPcnBGTHo2ZWZtSTRqLWtsMEg1THczTVhkOElGNFlaUTlrcVR1bjBmcUdNRnpZRWZGWkUzMTNLUWUxUzI2cXNvbm92ZFJtRnJTVDVXdF80UmNhbWF4emUwMnhBRmVPZWJoMHowcUswWTVwa1VqeUhtbVNBNWdmQ2dkWjc2M3k4SXVzU0tldjFUSlQxMW1CSXB0VXBUdi1HeDRuTjV6V0ktWXNZTUp1R21RVmR2TQ?oc=5"
+  },
+  {
+   "time_vienna": "Fri 27 Nov 14:57",
+   "query": "inflation CPI jobs report",
+   "headline": "GBP/USD, EUR/USD Forecast: Two trades to watch",
+   "publisher": "FOREX.com",
+   "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQNUF1R0twVWdYS0REeHBZSU1jTEV3MjM3dUVIcElseVYtVFE5U2t3TzRUZmZ4WU4ySTFvbkZoZ0p5ZWxHdmVETkZBZlNtelpSWEJBeXZDTkdPek1oUkJEWW5fNWxXd19uV0hFR3ptS2N4U2lYYU0xLTdsVVFqVkVCaGgyRXRZbklRSG5zQV84eVo0Z1FsNEk5eEVYN2s?oc=5"
+  },
+  {
+   "time_vienna": "Fri 27 Nov 14:56",
+   "query": "AI stocks Nvidia",
+   "headline": "Walmart is crushing SpaceX. Only one is a bargain",
+   "publisher": "CNBC",
+   "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE4zSFdVam9JSGRvaFBidTJFemtDZ1dTcmVfS2R2dzBPVzNjQ21SNjFUdDExTEhRWVdieDhYRWsyLV9aRGhrblc5RlR2eUN4R1M2dmhwXzlWb1oyQmVsRFZVcEs3RjVqM2dfcUhjUEpScU1jQzdLalFGa1hCMUs?oc=5"
+  },
+  {
+   "time_vienna": "Fri 27 Nov 14:52",
+   "query": "Nasdaq futures",
+   "headline": "Stock Futures Jump as AI Trade Set for Rebound",
+   "publisher": "WSJ",
+   "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNS0hzcmlIem9tcHVGU25zUE1LcVowbGZnWjA4NXgzVkt3Z1hUSDdYR0tUazluNXpjQlA0V3dPX1ZabGdBZ0xRTTBRbE5SUHd2TS1rQW8yTk55U3RCeloxdk1HeXdNMnBVeG5pV2xBTFZOTm9zcEFEdUNuVjNCOENYU29sYkRjc1psS3FFeGlIbEZIbmtQ?oc=5"
+  },
+  {
+   "time_vienna": "Fri 27 Nov 14:29",
+   "query": "oil prices",
+   "headline": "Oil Prices Settle More Than 1% Higher, Log Strongest Month Since March",
+   "publisher": "EnergyNow.com",
+   "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPa1hxYUNYOVNkdlVySWM0cDd2VnBIOFY5MU56eWRhTzZvSjNBNDFjYzhzSnB2TS03V01tTUtRMU9pZURsaVdUR3BGa0VIS3VwMTA3QVR6ZWdEOGtyT1BNRUxqUXNyRnBsU2J1Mk10bjZtazlFelZCek8zSy1obXN5VzBGQlU3bnhzWHU2QU1xdGM?oc=5"
   }
  ],
  "gdelt": null,

@@ -718,8 +718,8 @@
  },
  {
   "id": "2026-11-26|next_day",
-  "brief": "2026-11-27-daily",
-  "made_utc": "2026-11-27T13:32:05.878846+00:00",
+  "brief": "2026-11-27-manual",
+  "made_utc": "2026-11-27T18:29:14.995447+00:00",
   "horizon": "next_day",
   "sessions": 1,
   "metric": "Nasdaq-100 % change",
@@ -741,8 +741,8 @@
  },
  {
   "id": "2026-11-26|next_week",
-  "brief": "2026-11-27-daily",
-  "made_utc": "2026-11-27T13:32:05.878846+00:00",
+  "brief": "2026-11-27-manual",
+  "made_utc": "2026-11-27T18:29:14.995447+00:00",
   "horizon": "next_week",
   "sessions": 5,
   "metric": "Nasdaq-100 % change",
@@ -750,8 +750,8 @@
   "lower_pct": -4.0,
   "upper_pct": 4.5,
   "probs": {
-   "bear": 27.0,
-   "base": 42.0,
+   "bear": 28.0,
+   "base": 41.0,
    "bull": 31.0
   },
   "history_probs": {
@@ -764,8 +764,8 @@
  },
  {
   "id": "2026-11-26|next_month",
-  "brief": "2026-11-27-daily",
-  "made_utc": "2026-11-27T13:32:05.878846+00:00",
+  "brief": "2026-11-27-manual",
+  "made_utc": "2026-11-27T18:29:14.995447+00:00",
   "horizon": "next_month",
   "sessions": 21,
   "metric": "Nasdaq-100 % change",

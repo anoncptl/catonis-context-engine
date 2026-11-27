@@ -1,9 +1,9 @@
 {
  "done": {
-  "manual": "2026-11-23",
+  "manual": "2026-11-27",
   "daily": "2026-11-27"
  },
- "last_fingerprint": "4ebfc3c21d30a078",
+ "last_fingerprint": "dc042b363b59ba7e",
  "log": [
   {
    "utc": "2026-11-15T14:50:50.096252+00:00",
@@ -109,6 +109,13 @@
    "ai_call": true,
    "sources_ok": 15,
    "sources_total": 16
+  },
+  {
+   "utc": "2026-11-27T18:29:14.995447+00:00",
+   "slot": "manual",
+   "ai_call": true,
+   "sources_ok": 16,
+   "sources_total": 17
   }
  ]
 }

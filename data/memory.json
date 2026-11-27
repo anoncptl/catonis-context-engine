@@ -1,10 +1,10 @@
 {
- "running_thesis": "Nvidia leads the AI trade swings. On 25 Nov the Nasdaq-100 touched bear territory intraday and closed at 26046.9 (-0.64%) as dip buyers stepped in. S&P put Nvidia debt on CreditWatch negative and Moody's cut the outlook. Core PCE 3.26% y/y per FRED. The 10-year yield is 4.85%. VXN 38.53, VIX 28.29, COR1M 25.45. A December hike is priced (Polymarket 94.5%), January odds 59% per CME per Cboe. US was closed on 26 Nov and 27 Nov is a thin half-day. Premarket headlines (unverified) show futures rising. Jobs data on 1 and 4 Dec lead into the 9 Dec FOMC.",
+ "running_thesis": "Nvidia and the AI trade drive the Nasdaq-100. On 25 Nov it touched bear territory intraday and closed at 26046.9 (-0.64%) as dip buyers stepped in. S&P put Nvidia debt on CreditWatch negative and Moody's cut the outlook. Core PCE is 3.26% y/y, the 10-year 4.85%. VXN 38.53, VIX 28.29, COR1M 25.45 on 25 Nov. A December hike is priced at 94.5% (Polymarket), January 59% on CME. US was closed on 26 Nov and 27 Nov is a thin half-day. Rebound headlines are unverified. JOLTS 1 Dec, jobs 4 Dec, FOMC 9 Dec.",
  "open_questions": [
-  "Do dip buyers hold in Friday's thin session and on Monday?",
+  "Do dip buyers hold through the thin half-day and on Monday?",
   "Do Nvidia credit and governance issues escalate before the early-December hearings?",
   "Is the tariff concern confirmed with detail?",
-  "Do JOLTS and jobs data (1 and 4 Dec) move the 9 Dec hike path?"
+  "Do JOLTS and jobs data move the 9 Dec hike path?"
  ],
  "themes": {
   "Fed hikes and rising yields": "continuing but echo; 9 Dec hike priced, yields fell on 19 Nov",
@@ -15,31 +15,31 @@
   "AI trade test (NVDA earnings, Anthropic IPO)": "new, headline-only so far",
   "NVDA leadership change and earnings": "strengthening, price and options evidence on 16 Nov",
   "AI trade test (Nvidia earnings, Anthropic IPO)": "active; Anthropic IPO is headline-only",
-  "Volatility and implied correlation": "elevated; VXN 38.53, COR1M 25.45, VIX 28.29 on 25 Nov",
+  "Volatility and implied correlation": "Elevated; VXN 38.53, VIX 28.29, COR1M 25.45 on 25 Nov",
   "Nvidia leadership change and earnings": "strengthening; price, options and retail-positioning evidence; earnings after the close Tue 17 Nov",
   "Tech volatility and implied correlation": "elevated; VXN 33.12, COR1M 23.24 rising",
   "Nvidia earnings and leadership change": "new evidence: results and guidance beat; succession questions remain",
   "AI trade test (Anthropic IPO)": "active; debut Thursday",
   "Oil": "fading; official data stale to 17 Nov, shipping-risk headlines unverified",
-  "Credit": "HY OAS 3.72 on 24 Nov, stale, wider from 3.63",
+  "Credit": "HY OAS 3.77 on 26 Nov, wider than 3.63 on 23 Nov",
   "Nvidia leadership, earnings and scrutiny": "continuing; probes and succession open, overshadowed by wider AI selloff",
   "Healthcare and Dow weakness": "continuing; healthcare lost 2% or more on 19 Nov per Cboe",
   "AI trade test (Anthropic IPO, Nvidia, AMD)": "active; Anthropic debut reversed into a broad selloff, AMD allegations new",
   "Oil and Iran": "fading; official data stale to 17 Nov, Gulf headlines unverified",
   "AI trade unwind (Nvidia, Anthropic, AMD)": "active; rebound faded on 24 Nov, dip buying on 25 Nov, premarket rebound headlines unverified",
-  "Fed hikes and yields": "echo; Dec hike priced, January odds 59% per CME per Cboe, 10-year 4.85%",
+  "Fed hikes and yields": "Echo; Dec hike 94.5% Polymarket, January 59% on CME, 10-year 4.85%",
   "Broad index correction": "S&P 500 and Dow back out of correction per Cboe; Nasdaq Composite still about 13% below peak",
   "Nvidia leadership and scrutiny": "Huang reinstated per 8-K; SEC-probe reports and succession questions in flux",
   "Broad index correction and volatility": "VIX 35.89, VXN 45.25, COR1M 36.05; contagion broad",
   "ANT options": "listed 23 Nov; weeklies expected 25 Nov",
   "Nvidia leadership and the AI trade": "active; Huang reinstated per 8-K, Nvidia +31.5% on 23 Nov per Cboe, premarket fade headlines unverified",
-  "Oil and Gulf risks": "headline-only; official data stale to 24 Nov",
+  "Oil and Gulf risks": "Headline-only; official data stale to 24 Nov",
   "AI trade and Nvidia leadership/scrutiny": "active; rebound faded on 24 Nov, probes, hearings and succession open",
-  "Anthropic IPO and options": "below IPO price on 24 Nov, +1.08% on 25 Nov; weeklies expected",
-  "Rotation into defensives": "continuing; Dow +0.33% on 25 Nov per Cboe",
-  "Tariff headlines": "Cboe cites renewed concerns; no detail, unverified",
-  "AI trade unwind and Nvidia scrutiny": "active; S&P CreditWatch negative, Moody's outlook cut, probes and hearings open",
+  "Anthropic IPO and options": "Closed +1.08% on 25 Nov after falling below IPO price on 24 Nov",
+  "Rotation into defensives": "Continuing; Dow +0.33% on 25 Nov",
+  "Tariff headlines": "No detail, unverified",
+  "AI trade unwind and Nvidia scrutiny": "Active; S&P CreditWatch negative, Moody's outlook cut, probes and hearings open, rebound headlines unverified",
   "Nvidia leadership, scrutiny and credit": "active; Huang reinstated per 8-K, S&P CreditWatch negative, Moody's outlook cut, probes and hearings open",
-  "Holiday thin trading": "new; Friday 27 Nov half-day, Cboe warns of exaggerated moves"
+  "Holiday thin trading": "Friday 27 Nov half-day; exaggerated moves possible, may reverse Monday"
  }
 }
