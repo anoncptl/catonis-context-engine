@@ -84,6 +84,8 @@ def text_sections(brief):
     detail = "## Detail\n" + "\n".join("**%s:** %s" % (lab, (w.get(k) or "").strip())
                                        for k, lab in (("market_action", "Market"), ("macro", "Macro"),
                                                       ("geopolitics", "Geopolitics"), ("company_news", "Company news")) if w.get(k))
+    if brief.get("fan_reason"):
+        detail += "\n**Outlook:** " + brief["fan_reason"].strip()
     if brief.get("unconfirmed"):
         detail += "\n**Unconfirmed:** " + "; ".join(brief["unconfirmed"])
     return [title, happened, driver, detail]
