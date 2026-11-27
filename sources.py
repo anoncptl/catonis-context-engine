@@ -562,7 +562,7 @@ TD_URL = "https://www.treasurydirect.gov/TA_WS/securities/%s"
 def auctions(now):
     """Treasury note and bond auctions from TreasuryDirect: results of the last 10 days (with the previous same-term result) and the next 7 days."""
     def day(x):
-        return (x.get("auctionDate") or "")[:10]
+        return (x.get("auctionDate") or x.get("competitiveAuctionCloseDate") or x.get("closingTimeCompetitive") or "")[:10]
     past = []
     for t in ("Note", "Bond"):
         try:
