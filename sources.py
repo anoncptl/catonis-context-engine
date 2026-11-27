@@ -19,7 +19,7 @@ Sources (all free):
   fed         Federal Reserve press releases and speeches (official).
   cboe_idx    Cboe index history files: VIX, VXN, VVIX, SKEW, VIX9D, COR1M where published.
 """
-import csv, io, json, math, os, re, time, urllib.error, urllib.request
+import csv, io, json, math, os, re, time, urllib.error, urllib.parse, urllib.request
 import xml.etree.ElementTree as ET
 from email.utils import parsedate_to_datetime
 from datetime import date, datetime, timedelta, timezone
@@ -463,6 +463,139 @@ def eia():
 
 
 # =====================================================================
+# Extra sources: Alpha Vantage news sentiment, Kalshi, CFTC positioning,
+# Treasury auctions, Atlanta Fed GDPNow
+# =====================================================================
+AV_NEWS_URL = "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&topics=technology&sort=LATEST&limit=200&apikey=%s"
+
+
+def av_news(now):
+    """Latest tech news with Alpha Vantage's per-ticker sentiment, filtered to the 20 largest Nasdaq names."""
+    key = os.environ.get("ALPHAVANTAGE_API_KEY", "").strip()
+    if not key:
+        raise RuntimeError("needs ALPHAVANTAGE_API_KEY")
+    time.sleep(1.5)  # free key allows about one request per second; earnings ran just before
+    j = json.loads(_get(AV_NEWS_URL % key))
+    if "feed" not in j:
+        raise RuntimeError("Alpha Vantage: " + (j.get("Information") or j.get("Note") or j.get("Error Message") or "no feed")[:150])
+    want = set(EARNINGS_TICKERS)
+    out = []
+    for a in j["feed"]:
+        ts = [t for t in a.get("ticker_sentiment") or [] if t.get("ticker") in want and (_num(t.get("relevance_score")) or 0) >= 0.3]
+        if not ts:
+            continue
+        tp = a.get("time_published", "")
+        out.append({"time_utc": "%s-%s-%s %s:%s" % (tp[:4], tp[4:6], tp[6:8], tp[9:11], tp[11:13]) if len(tp) >= 13 else tp,
+                    "title": a.get("title", "")[:200], "source": a.get("source", ""),
+                    "tickers": {t["ticker"]: round(_num(t.get("ticker_sentiment_score")) or 0, 2) for t in ts},
+                    "overall": a.get("overall_sentiment_label", "")})
+        if len(out) >= 25:
+            break
+    return out
+
+
+KALSHI_URL = "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=%s&status=open&limit=200"
+KALSHI_SERIES = [("KXFED", "Fed funds upper bound after next meeting"), ("KXCPIYOY", "CPI year over year"),
+                 ("KXPAYROLLS", "Nonfarm payrolls"), ("KXRECSSNBER", "US recession")]
+
+
+def kalshi():
+    """Prices (implied %) of the nearest open Kalshi event in each series."""
+    out = []
+    for series, label in KALSHI_SERIES:
+        try:
+            ms = json.loads(_get(KALSHI_URL % series, headers={"Accept": "application/json"})).get("markets") or []
+        except Exception:
+            continue
+        if not ms:
+            continue
+        first = min(m.get("close_time", "9") for m in ms)
+        ev = [m for m in ms if m.get("close_time") == first]
+        rows = []
+        for m in ev:
+            px = m.get("last_price") or m.get("yes_bid") or 0
+            if isinstance(px, str):
+                px = _num(px) or 0
+            if px and px > 1 and px <= 100:
+                rows.append({"outcome": (m.get("yes_sub_title") or m.get("subtitle") or m.get("title") or "")[:80], "yes_pct": px})
+            elif px and px <= 1:
+                rows.append({"outcome": (m.get("yes_sub_title") or m.get("subtitle") or m.get("title") or "")[:80], "yes_pct": round(px * 100, 1)})
+        rows.sort(key=lambda r: -r["yes_pct"])
+        if rows:
+            out.append({"series": label, "event": ev[0].get("event_ticker", ""), "closes": first[:10], "outcomes": rows[:6]})
+    return out
+
+
+COT_URL = ("https://publicreporting.cftc.gov/resource/gpe5-46if.json?$where=" +
+           urllib.parse.quote("upper(market_and_exchange_names) like '%NASDAQ%'") +
+           "&$order=report_date_as_yyyy_mm_dd%20DESC&$limit=12")
+
+
+def cot():
+    """CFTC Traders in Financial Futures: net positions in Nasdaq-100 futures, latest week and change."""
+    rows = json.loads(_get(COT_URL, headers={"Accept": "application/json"}))
+    if not rows:
+        raise RuntimeError("no Nasdaq rows")
+    names = {}
+    for r in rows:
+        names.setdefault(r.get("market_and_exchange_names", ""), []).append(r)
+    name = max(names, key=lambda n: ("MINI" in n.upper() or "CONSOLIDATED" in n.upper(), len(names[n])))
+    rs = sorted(names[name], key=lambda r: r.get("report_date_as_yyyy_mm_dd", ""), reverse=True)[:2]
+
+    def f(r, part):
+        for k, v in r.items():
+            if k.startswith(part) and "spread" not in k and "pct" not in k and "chg" not in k and "trader" not in k:
+                return _num(v) or 0
+        return 0
+    out = {"market": name, "week": rs[0].get("report_date_as_yyyy_mm_dd", "")[:10], "open_interest": f(rs[0], "open_interest_all"), "groups": {}}
+    for grp, pre in (("Leveraged funds", "lev_money_positions"), ("Asset managers", "asset_mgr_positions"), ("Dealers", "dealer_positions")):
+        net = f(rs[0], pre + "_long") - f(rs[0], pre + "_short")
+        prev = f(rs[1], pre + "_long") - f(rs[1], pre + "_short") if len(rs) > 1 else None
+        out["groups"][grp] = {"net_contracts": net, "change": None if prev is None else net - prev}
+    return out
+
+
+AUCTION_URL = ("https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/auctions_query"
+               "?filter=auction_date:gte:%s&sort=-auction_date&page[size]=60"
+               "&fields=security_term,security_type,auction_date,high_yield,bid_to_cover_ratio,offering_amt,indirect_bidder_accepted,primary_dealer_accepted,total_accepted")
+
+
+def auctions(now):
+    """Treasury note and bond auctions: results of the last 10 days (with the previous same-term result) and the next 7 days."""
+    start = (now - timedelta(days=120)).strftime("%Y-%m-%d")
+    data = json.loads(_get(AUCTION_URL % start)).get("data") or []
+    data = [d for d in data if d.get("security_type") in ("Note", "Bond")]
+    today = now.strftime("%Y-%m-%d")
+    recent_cut = (now - timedelta(days=10)).strftime("%Y-%m-%d")
+    soon = (now + timedelta(days=7)).strftime("%Y-%m-%d")
+    out = {"results": [], "upcoming": []}
+    for d in data:
+        day = d.get("auction_date", "")
+        if day > today and day <= soon:
+            out["upcoming"].append({"date": day, "term": d.get("security_term"), "size_usd": d.get("offering_amt")})
+        elif recent_cut <= day <= today and _num(d.get("high_yield")) is not None:
+            prev = next((x for x in data if x.get("security_term") == d.get("security_term") and x.get("auction_date", "") < day
+                         and _num(x.get("high_yield")) is not None), None)
+            ta = _num(d.get("total_accepted")) or 0
+            out["results"].append({"date": day, "term": d.get("security_term"), "high_yield": _num(d.get("high_yield")),
+                                   "bid_to_cover": _num(d.get("bid_to_cover_ratio")),
+                                   "indirect_share_pct": round(100 * (_num(d.get("indirect_bidder_accepted")) or 0) / ta, 1) if ta else None,
+                                   "dealer_share_pct": round(100 * (_num(d.get("primary_dealer_accepted")) or 0) / ta, 1) if ta else None,
+                                   "previous_same_term": {"date": prev.get("auction_date"), "bid_to_cover": _num(prev.get("bid_to_cover_ratio")),
+                                                          "high_yield": _num(prev.get("high_yield"))} if prev else None})
+    out["upcoming"].sort(key=lambda x: x["date"])
+    return out
+
+
+def gdpnow(now):
+    rows = fred_series("GDPNOW", (now - timedelta(days=200)).strftime("%Y-%m-%d"))
+    if not rows:
+        raise RuntimeError("no GDPNow values")
+    return {"date": rows[-1][0], "value_pct": rows[-1][1], "previous": rows[-2][1] if len(rows) > 1 else None,
+            "previous_date": rows[-2][0] if len(rows) > 1 else None}
+
+
+# =====================================================================
 # Earnings dates: Alpha Vantage earnings calendar (free key, one request per run)
 # =====================================================================
 EARNINGS_URL = "https://www.alphavantage.co/query?function=EARNINGS_CALENDAR&horizon=3month&apikey=%s"
@@ -839,6 +972,11 @@ SOURCE_NAMES = {
     "calendar": "Official release calendars", "consensus": "Consensus calendar (unofficial)",
     "earnings": "Earnings dates (Alpha Vantage)",
     "eia": "EIA weekly oil and gas inventories",
+    "av_news": "Tech news with sentiment (Alpha Vantage)",
+    "kalshi": "Kalshi prediction markets",
+    "cot": "CFTC positioning in Nasdaq-100 futures",
+    "auctions": "Treasury note and bond auctions",
+    "gdpnow": "Atlanta Fed GDPNow",
     "edgar": "SEC EDGAR 8-K filings", "odds": "Fed odds (Kalshi, Polymarket)", "gdelt": "GDELT global news",
     "headlines": "Google News headlines", "fed": "Federal Reserve releases", "cboe_idx": "Cboe index history",
 }
@@ -885,6 +1023,13 @@ def gather(now=None):
 
     run("consensus", consensus_calendar, lambda v: "%d USD events with forecasts" % len(v))
     run("earnings", lambda: earnings(now), lambda v: "%d reports from the 20 largest Nasdaq names in %d days" % (len(v), EARNINGS_DAYS))
+    run("av_news", lambda: av_news(now), lambda v: "%d articles on the largest Nasdaq names" % len(v))
+    run("kalshi", kalshi, lambda v: "%d series" % len(v))
+    run("cot", cot, lambda v: "week of %s" % v["week"])
+    run("auctions", lambda: auctions(now), lambda v: "%d results, %d upcoming" % (len(v["results"]), len(v["upcoming"])))
+    if out.get("auctions") and not out["auctions"]["results"] and not out["auctions"]["upcoming"]:
+        out["status"]["auctions"]["ok"] = True
+    run("gdpnow", lambda: gdpnow(now), lambda v: "%s%% as of %s" % (v["value_pct"], v["date"]))
     run("eia", eia, lambda v: "%d series, week of %s" % (len(v), max(x["week"] for x in v)))
     if out.get("earnings") == []:
         out["status"]["earnings"]["ok"] = True  # an empty window is a valid answer
@@ -923,7 +1068,7 @@ def gather(now=None):
     return out
 
 
-PROMPT_KEYS = ("fred", "fred_monthly", "treasury", "bls", "cboe_idx", "calendar", "consensus", "earnings", "eia",
+PROMPT_KEYS = ("fred", "fred_monthly", "treasury", "bls", "cboe_idx", "calendar", "consensus", "earnings", "eia", "av_news", "kalshi", "cot", "auctions", "gdpnow",
                "edgar", "odds", "fed", "headlines", "gdelt")
 
 
@@ -939,7 +1084,7 @@ def to_prompt(structured):
             "bls and fred_monthly are official prints with month-over-month changes computed in code. "
             "calendar is official (BLS, FRED release dates, FOMC); earnings lists report dates of the largest Nasdaq names "
             "(Alpha Vantage), include any in the next two sessions as scheduled events; consensus is an unofficial calendar, "
-            "use it only for forecast/previous and say so. eia is the official weekly EIA inventory report (released Wednesdays 16:30 CET, gas Thursdays 16:30 CET); change is week over week, computed in code; there is no consensus, so never call a change a surprise. edgar items are SEC filings (primary sources). "
+            "use it only for forecast/previous and say so. eia is the official weekly EIA inventory report (released Wednesdays 16:30 CET, gas Thursdays 16:30 CET); change is week over week, computed in code; there is no consensus, so never call a change a surprise. av_news is tech news with Alpha Vantage's machine sentiment score per ticker (-1 to 1); treat it like headlines (unverified) and use the scores only as a rough mood gauge. kalshi is a regulated prediction market: compare its Fed odds with Polymarket and say when they disagree. cot is weekly CFTC positioning in Nasdaq-100 futures (as of the Tuesday of the report week): use it for crowding context, not timing. auctions are official Treasury results: compare bid_to_cover with the previous same-term auction and say what the yield move could mean for tech; upcoming auctions in the next two sessions belong in scheduled_events (results come out at 19:00 CET). gdpnow is the Atlanta Fed's model estimate of current-quarter real GDP growth, not an official print. edgar items are SEC filings (primary sources). "
             "odds are prediction-market prices, not CME FedWatch. fed items are official. headlines and gdelt "
             "are unverified titles: label them as headlines, never state them as fact.")
     return note + "\n" + json.dumps(slim, indent=1, default=str)

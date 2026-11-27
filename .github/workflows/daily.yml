@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "manual = always run now; scheduled = daily run (skipped if it already ran today); publish = only republish the website from saved data; check = test the Alpha Vantage key only"
+        description: "manual = always run now; scheduled = daily run (skipped if it already ran today); publish = only republish the website from saved data; check = test the newer data sources only (no brief, no Discord)"
         required: false
         default: "manual"
 
