@@ -38,6 +38,7 @@ dl{display:grid;grid-template-columns:110px 1fr;gap:10px 18px;margin:0}dt{color:
 .ch .ln{fill:none;stroke:var(--fg);stroke-width:1.5;stroke-linejoin:round}.ch .ref{stroke:var(--line);stroke-width:1}
 .ch .dash{stroke:var(--dim);stroke-width:1;stroke-dasharray:2 3}.ch .pt{fill:var(--mid)}.ch .now{fill:var(--fg);stroke:var(--bg);stroke-width:2}
 .ch .zu{fill:var(--up);opacity:.8}.ch .zn{fill:var(--base)}.ch .zb{fill:var(--down);opacity:.8}
+.ch .fb{fill:var(--down);opacity:.16}.ch .fu{fill:var(--up);opacity:.16}.ch .fn{fill:var(--base);opacity:.55}.ch .edge{fill:none;stroke:var(--dim);stroke-width:1;stroke-dasharray:3 4}.ch .tick{stroke:var(--line);stroke-width:1}.ch .lb{fill:none;stroke:var(--down);stroke-width:1.4;opacity:.45;filter:blur(.6px)}.ch .lu{fill:none;stroke:var(--up);stroke-width:1.4;opacity:.45;filter:blur(.6px)}.why{font-size:14.5px;margin-top:14px}.ch .cu{fill:var(--up)}.ch .cb{fill:var(--down)}
 .ch .lab{fill:var(--dim);font:400 10.5px var(--mono)}.ch .pu{fill:var(--up);font:500 11px var(--mono)}.ch .pn{fill:var(--mid);font:500 11px var(--mono)}.ch .pb{fill:var(--down);font:500 11px var(--mono)}
 .note{font-size:12.5px;color:var(--dim);margin-top:14px}
 .hz{border-top:1px solid var(--line)}.hz:last-of-type{border-bottom:1px solid var(--line)}
@@ -187,6 +188,74 @@ def _inv(t):
     return (t[:1].lower() + t[1:] if t[:2] != t[:2].upper() else t) + "."
 
 
+def fan(closes, outlook, rates, ref_date, run_day="", why=""):
+    """Outlook fan: last 10 closes, then the engine's bear/base/bull zones at 1, 5 and 21 sessions, in index points.
+    Faint dashed edge: historical 10th to 90th percentile move in the same VIX range."""
+    hz = [("next_day", 1, "Next session"), ("next_week", 5, "1 week"), ("next_month", 21, "1 month")]
+    out = (outlook or {})
+    hz = [(h, k, lab) for h, k, lab in hz if isinstance((out.get(h) or {}).get("lower_pct"), (int, float))]
+    if not closes or len(closes) < 3 or not hz:
+        return ""
+    hist = closes[-10:]
+    last = hist[-1][1]
+    rh = ((rates or {}).get("horizons") or {})
+    q = {h: (rh.get(h) or {}).get("same_regime") or {} for h, _, _ in hz}
+    W, H, L, R, T, B = 680, 300, 8, 96, 18, 28
+    xh = 150  # width of the history stub
+    x0 = L + xh
+    wf = W - R - x0
+    X = lambda k: x0 + wf * (k / 21) ** 0.5
+    pts = []
+    for h, k, _ in hz:
+        o = out[h]
+        pts.append((k, o["lower_pct"], o["upper_pct"], q[h].get("p10", o["lower_pct"]), q[h].get("p90", o["upper_pct"])))
+    lv = [v for _, v in hist] + [last * (1 + min(a, c) / 100) for _, a, b, c, d in pts] + [last * (1 + max(b, d) / 100) for _, a, b, c, d in pts]
+    pad = (max(lv) - min(lv)) * 0.06
+    ymin, ymax = min(lv) - pad, max(lv) + pad
+    Y = lambda pct: T + (ymax - last * (1 + pct / 100)) / (ymax - ymin) * (H - T - B)
+    Yv = lambda v: T + (ymax - v) / (ymax - ymin) * (H - T - B)
+    poly = lambda top, bot: " ".join("%.1f,%.1f" % (X(k), Y(v)) for k, v in top) + " " + " ".join("%.1f,%.1f" % (X(k), Y(v)) for k, v in reversed(bot))
+    lower = [(0, 0)] + [(k, a) for k, a, b, c, d in pts]
+    upper = [(0, 0)] + [(k, b) for k, a, b, c, d in pts]
+    p10 = [(0, 0)] + [(k, min(c, a)) for k, a, b, c, d in pts]
+    p90 = [(0, 0)] + [(k, max(d, b)) for k, a, b, c, d in pts]
+    sh = (xh - 10) / max(1, len(hist) - 1)
+    hp = "M" + " L".join("%.1f %.1f" % (L + i * sh, Yv(v)) for i, (_, v) in enumerate(hist))
+    g = ['<svg viewBox="0 0 %d %d" role="img" aria-label="Outlook fan for the Nasdaq-100 from the %s close">' % (W, H, e(ref_date)),
+         '<line x1="%d" x2="%d" y1="%.1f" y2="%.1f" class="ref"/>' % (L, W - R, Yv(last), Yv(last)),
+         '<polygon points="%s" class="fb"/>' % poly(lower, p10),
+         '<polygon points="%s" class="fu"/>' % poly(p90, upper),
+         '<polygon points="%s" class="fn"/>' % poly(upper, lower),
+         '<polyline points="%s" class="lb"/>' % " ".join("%.1f,%.1f" % (X(k), Y(v)) for k, v in lower),
+         '<polyline points="%s" class="lu"/>' % " ".join("%.1f,%.1f" % (X(k), Y(v)) for k, v in upper),
+         '<polyline points="%s" class="edge"/>' % " ".join("%.1f,%.1f" % (X(k), Y(v)) for k, v in p10),
+         '<polyline points="%s" class="edge"/>' % " ".join("%.1f,%.1f" % (X(k), Y(v)) for k, v in p90),
+         '<path d="%s" class="ln"/>' % hp]
+    for (h, k, lab), (_, a, b, c, d) in zip(hz, pts):
+        x = X(k)
+        pr = out[h].get("probs_normalized") or {}
+        g.append('<line x1="%.1f" x2="%.1f" y1="%d" y2="%d" class="tick"/>' % (x, x, T, H - B))
+        g.append('<text x="%.1f" y="%d" class="lab" text-anchor="middle">%s</text>' % (x, H - 8, lab))
+        g.append('<text x="%.1f" y="%.1f" class="pu" text-anchor="%s">%s%%</text>' % (x - (8 if k == 21 else 0), Y(b) - 6, "end" if k == 21 else "middle", _fmt(pr.get("bull"), 0)))
+        g.append('<text x="%.1f" y="%.1f" class="pb" text-anchor="%s">%s%%</text>' % (x - (8 if k == 21 else 0), Y(a) + 14, "end" if k == 21 else "middle", _fmt(pr.get("bear"), 0)))
+        g.append('<circle cx="%.1f" cy="%.1f" r="2.5" class="cu"/><circle cx="%.1f" cy="%.1f" r="2.5" class="cb"/>' % (x, Y(b), x, Y(a)))
+    k, a, b, c, d = pts[-1]
+    xr = X(k) + 10
+    g += ['<text x="%.1f" y="%.1f" class="lab">%s</text>' % (xr, Y(b) + 4, _fmt(last * (1 + b / 100), 0)),
+          '<text x="%.1f" y="%.1f" class="lab">%s</text>' % (xr, Y(a) + 4, _fmt(last * (1 + a / 100), 0)),
+          '<text x="%.1f" y="%.1f" class="pn">%s%%</text>' % (xr, (Y(a) + Y(b)) / 2 + 4, _fmt((out[hz[-1][0]].get("probs_normalized") or {}).get("base"), 0)),
+          '<circle cx="%.1f" cy="%.1f" r="3.5" class="now"/>' % (x0, Yv(last)),
+          '<text x="%.1f" y="%.1f" class="lab" text-anchor="middle">%s</text>' % (x0, Yv(last) + 18, _fmt(last, 0)),
+          '<text x="%.1f" y="%.1f" class="lab" text-anchor="middle">%s close</text>' % (x0, Yv(last) + 31, datetime.fromisoformat(hist[-1][0]).strftime("%-d %b")),
+          '<text x="%d" y="%d" class="lab">%s</text>' % (L, H - 8, datetime.fromisoformat(hist[0][0]).strftime("%-d %b")),
+          "</svg>"]
+    first = out[hz[0][0]]
+    note = ("Grey: the engine's base case. Red and green: bear and bull, with their odds. Dashed edge: how far the Nasdaq-100 moved 8 times out of 10 "
+            "over the same horizon when VIX was in the same range. Measured from the %s close of %s. Same percentages apply to QQQ and NQ. "
+            "Next session: bear below %s, bull above %s." % (e(ref_date), _fmt(last, 0), _fmt(last * (1 + first["lower_pct"] / 100), 0), _fmt(last * (1 + first["upper_pct"] / 100), 0)))
+    return '<section class="ch"><h2>Outlook fan · Nasdaq-100%s</h2><div class="chartbox">%s</div>%s<p class="note">%s</p></section>' % (" · " + e(run_day) + " run" if run_day else "", "".join(g), '<p class="why">%s</p>' % e(why) if why else "", note)
+
+
 def outlook_html(b):
     out = []
     order = [("next_day", True), ("next_week", False), ("next_month", False)]
@@ -256,7 +325,7 @@ def render(b, st=None, prefix=""):
         ref = b.get("ref_date")
         last_d = st["ndx_recent"][-1][0]
         note = "" if not ref or ref == last_d else " The data's latest close is %s; the scenarios are measured from the %s close." % (last_d, ref)
-        parts.append(chart(st["ndx_recent"], b.get("outlook"), note))
+        parts.append(fan(st["ndx_recent"], b.get("outlook"), st.get("rates"), ref, made.strftime("%-d %b"), b.get("fan_reason") or ((b.get("outlook") or {}).get("next_week") or {}).get("confidence_reason", "")))
     parts.append(outlook_html(b))
     parts.append(coming_up(b, st))
     wl = b.get("watch_list") or []

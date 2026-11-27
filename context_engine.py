@@ -332,6 +332,7 @@ Hard rules:
 5. Name the dominant driver (one of: macro data, Fed and rates, single-stock or sector news, geopolitics and oil, volatility and positioning, earnings, unclear) and the leader (QQQ, SPX or unclear) with a reason that cites the leadership facts (Nasdaq-100 minus S&P 500, VXN minus VIX, COR1M if present).
 6. List the scheduled events for the next two US sessions in Central European time (CET, or CEST in summer; write it as the when_vienna value, e.g. 'Tue 18 Nov 14:30') from the official calendar. Use consensus figures only from the consensus block and label them unofficial.
 7. Flag narrative echo: say if a theme repeats without new evidence.
+8a. Volatility: always read VIX and VXN together in driver_reason, confidence_reason and fan_reason. VIX is the broad-market risk gauge and SPX carries far more volume than NDX, so it often sets the tone for QQQ and NQ; VXN shows Nasdaq-specific stress. Say what each one's level and change implies, and what the VXN minus VIX gap says about whether tech or the whole market carries the stress. Use only the values in FACTS.
 8. You have no live prices. FRED lags a day. Do not claim where NQ trades now.
 
 Writing rules (a trader reads this 30 minutes before the open):
@@ -359,6 +360,7 @@ SCHEMA = """{
    "next_week":  {"lower_pct": 0, "upper_pct": 0, "confidence": "...", "confidence_reason": "...", "scenarios": ["... same shape ..."]},
    "next_month": {"lower_pct": 0, "upper_pct": 0, "confidence": "...", "confidence_reason": "...", "scenarios": ["... same shape ..."]}
  },
+ "fan_reason": "1 to 2 short sentences in plain words, citing VIX and VXN: why the odds lean the way they do across next session, week and month (what pushes toward bear, what toward bull). Shown under the outlook chart.",
  "record_comment": "one or two sentences on what the graded record says about your calibration, or 'no graded forecasts yet'",
  "watch_list": ["max 4 short items to watch in the next session"],
  "memory_update": {"running_thesis": "max 120 words", "open_questions": ["..."], "themes": {"theme": "one-line status"}}
