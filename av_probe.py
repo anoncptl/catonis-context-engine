@@ -23,7 +23,7 @@ def show(name, fn):
 
 import subprocess; subprocess.run(["python","dbg_probe.py"])
 
-show("kalshi", sources.kalshi)
+show("kalshi_macro", sources.kalshi_macro)
 show("cot", sources.cot)
 show("auctions", lambda: sources.auctions(now))
 show("gdpnow", lambda: sources.gdpnow(now))

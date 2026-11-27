@@ -494,17 +494,17 @@ def av_news(now):
     return out
 
 
-KALSHI_URL = "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=%s&status=open&limit=200"
-KALSHI_SERIES = [("KXFED", "Fed funds upper bound after next meeting"), ("KXECONSTATCPI", "CPI month over month"),
+KMACRO_URL = "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=%s&status=open&limit=200"
+KMACRO_SERIES = [("KXECONSTATCPI", "CPI month over month"),
                  ("KXECONSTATCPICORE", "Core CPI month over month"), ("KXPCEHEAD", "Headline PCE inflation"), ("KXPAYROLLS", "Nonfarm payrolls")]
 
 
-def kalshi():
+def kalshi_macro():
     """Prices (implied %) of the nearest open Kalshi event in each series."""
     out = []
-    for series, label in KALSHI_SERIES:
+    for series, label in KMACRO_SERIES:
         try:
-            j = json.loads(_get(KALSHI_URL % series, headers={"Accept": "application/json"}))
+            j = json.loads(_get(KMACRO_URL % series, headers={"Accept": "application/json"}))
             ms = j.get("markets") or [m for ev in j.get("events") or [] for m in ev.get("markets") or []]
         except Exception:
             continue
@@ -556,35 +556,45 @@ def cot():
     return out
 
 
-AUCTION_URL = ("https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/auctions_query"
-               "?filter=auction_date:gte:%s&sort=-auction_date&page[size]=60"
-               "&fields=security_term,security_type,auction_date,high_yield,bid_to_cover_ratio,offering_amt,indirect_bidder_accepted,primary_dealer_accepted,total_accepted")
+TD_URL = "https://www.treasurydirect.gov/TA_WS/securities/%s"
 
 
 def auctions(now):
-    """Treasury note and bond auctions: results of the last 10 days (with the previous same-term result) and the next 7 days."""
-    start = (now - timedelta(days=120)).strftime("%Y-%m-%d")
-    data = json.loads(_get(AUCTION_URL % start)).get("data") or []
-    data = [d for d in data if d.get("security_type") in ("Note", "Bond")]
+    """Treasury note and bond auctions from TreasuryDirect: results of the last 10 days (with the previous same-term result) and the next 7 days."""
+    def day(x):
+        return (x.get("auctionDate") or "")[:10]
+    past = []
+    for t in ("Note", "Bond"):
+        try:
+            past += json.loads(_get(TD_URL % ("auctioned?format=json&type=%s&days=120" % t)))
+        except Exception:
+            continue
+    past = [x for x in past if _num(x.get("highYield")) is not None]
+    past.sort(key=day, reverse=True)
     today = now.strftime("%Y-%m-%d")
-    recent_cut = (now - timedelta(days=10)).strftime("%Y-%m-%d")
+    cut = (now - timedelta(days=10)).strftime("%Y-%m-%d")
     soon = (now + timedelta(days=7)).strftime("%Y-%m-%d")
     out = {"results": [], "upcoming": []}
-    for d in data:
-        day = d.get("auction_date", "")
-        if day > today and day <= soon:
-            out["upcoming"].append({"date": day, "term": d.get("security_term"), "size_usd": d.get("offering_amt")})
-        elif recent_cut <= day <= today and _num(d.get("high_yield")) is not None:
-            prev = next((x for x in data if x.get("security_term") == d.get("security_term") and x.get("auction_date", "") < day
-                         and _num(x.get("high_yield")) is not None), None)
-            ta = _num(d.get("total_accepted")) or 0
-            out["results"].append({"date": day, "term": d.get("security_term"), "high_yield": _num(d.get("high_yield")),
-                                   "bid_to_cover": _num(d.get("bid_to_cover_ratio")),
-                                   "indirect_share_pct": round(100 * (_num(d.get("indirect_bidder_accepted")) or 0) / ta, 1) if ta else None,
-                                   "dealer_share_pct": round(100 * (_num(d.get("primary_dealer_accepted")) or 0) / ta, 1) if ta else None,
-                                   "previous_same_term": {"date": prev.get("auction_date"), "bid_to_cover": _num(prev.get("bid_to_cover_ratio")),
-                                                          "high_yield": _num(prev.get("high_yield"))} if prev else None})
-    out["upcoming"].sort(key=lambda x: x["date"])
+    for x in past:
+        d = day(x)
+        if not d or d < cut or d > today:
+            continue
+        prev = next((y for y in past if y.get("securityTerm") == x.get("securityTerm") and day(y) < d), None)
+        ta = _num(x.get("totalAccepted")) or 0
+        out["results"].append({"date": d, "term": x.get("securityTerm"), "high_yield": _num(x.get("highYield")),
+                               "bid_to_cover": _num(x.get("bidToCoverRatio")),
+                               "indirect_share_pct": round(100 * (_num(x.get("indirectBidderAccepted")) or 0) / ta, 1) if ta else None,
+                               "previous_same_term": {"date": day(prev), "bid_to_cover": _num(prev.get("bidToCoverRatio")),
+                                                      "high_yield": _num(prev.get("highYield"))} if prev else None})
+    try:
+        up = json.loads(_get(TD_URL % "upcoming?format=json"))
+    except Exception:
+        up = []
+    for x in up:
+        d = day(x)
+        if x.get("type") in ("Note", "Bond") and today < d <= soon:
+            out["upcoming"].append({"date": d, "term": x.get("securityTerm"), "size_usd": _num(x.get("offeringAmount"))})
+    out["upcoming"].sort(key=lambda r: r["date"])
     return out
 
 
@@ -708,6 +718,11 @@ def kalshi():
                 bid, ask = m.get("yes_bid"), m.get("yes_ask")
                 if bid and ask:
                     p = (bid + ask) / 2
+                ld, bd, ad = _num(m.get("last_price_dollars")), _num(m.get("yes_bid_dollars")), _num(m.get("yes_ask_dollars"))
+                if bd and ad:
+                    p = (bd + ad) / 2 * 100
+                elif ld is not None and p is None:
+                    p = ld * 100
                 if p is None:
                     continue
                 mk.append({"outcome": m.get("yes_sub_title") or m.get("subtitle") or m.get("title", ""),
@@ -974,7 +989,7 @@ SOURCE_NAMES = {
     "calendar": "Official release calendars", "consensus": "Consensus calendar (unofficial)",
     "earnings": "Earnings dates (Alpha Vantage)",
     "eia": "EIA weekly oil and gas inventories",
-    "kalshi": "Kalshi prediction markets",
+    "kalshi_macro": "Kalshi CPI, PCE and payrolls markets",
     "cot": "CFTC positioning in Nasdaq-100 futures",
     "auctions": "Treasury note and bond auctions",
     "gdpnow": "Atlanta Fed GDPNow",
@@ -1024,7 +1039,7 @@ def gather(now=None):
 
     run("consensus", consensus_calendar, lambda v: "%d USD events with forecasts" % len(v))
     run("earnings", lambda: earnings(now), lambda v: "%d reports from the 20 largest Nasdaq names in %d days" % (len(v), EARNINGS_DAYS))
-    run("kalshi", kalshi, lambda v: "%d series" % len(v))
+    run("kalshi_macro", kalshi_macro, lambda v: "%d series" % len(v))
     run("cot", cot, lambda v: "week of %s" % v["week"])
     run("auctions", lambda: auctions(now), lambda v: "%d results, %d upcoming" % (len(v["results"]), len(v["upcoming"])))
     if out.get("auctions") and not out["auctions"]["results"] and not out["auctions"]["upcoming"]:
@@ -1068,7 +1083,7 @@ def gather(now=None):
     return out
 
 
-PROMPT_KEYS = ("fred", "fred_monthly", "treasury", "bls", "cboe_idx", "calendar", "consensus", "earnings", "eia", "kalshi", "cot", "auctions", "gdpnow",
+PROMPT_KEYS = ("fred", "fred_monthly", "treasury", "bls", "cboe_idx", "calendar", "consensus", "earnings", "eia", "kalshi_macro", "cot", "auctions", "gdpnow",
                "edgar", "odds", "fed", "headlines", "gdelt")
 
 
@@ -1084,7 +1099,7 @@ def to_prompt(structured):
             "bls and fred_monthly are official prints with month-over-month changes computed in code. "
             "calendar is official (BLS, FRED release dates, FOMC); earnings lists report dates of the largest Nasdaq names "
             "(Alpha Vantage), include any in the next two sessions as scheduled events; consensus is an unofficial calendar, "
-            "use it only for forecast/previous and say so. eia is the official weekly EIA inventory report (released Wednesdays 16:30 CET, gas Thursdays 16:30 CET); change is week over week, computed in code; there is no consensus, so never call a change a surprise. kalshi is a regulated prediction market: compare its Fed odds with Polymarket and say when they disagree. cot is weekly CFTC positioning in Nasdaq-100 futures (as of the Tuesday of the report week): use it for crowding context, not timing. auctions are official Treasury results: compare bid_to_cover with the previous same-term auction and say what the yield move could mean for tech; upcoming auctions in the next two sessions belong in scheduled_events (results come out at 19:00 CET). gdpnow is the Atlanta Fed's model estimate of current-quarter real GDP growth, not an official print. edgar items are SEC filings (primary sources). "
+            "use it only for forecast/previous and say so. eia is the official weekly EIA inventory report (released Wednesdays 16:30 CET, gas Thursdays 16:30 CET); change is week over week, computed in code; there is no consensus, so never call a change a surprise. kalshi_macro holds regulated prediction-market odds on upcoming CPI, PCE and payroll prints (market-implied, not forecasts by economists). In odds, compare Kalshi's Fed odds with Polymarket and say when they disagree. cot is weekly CFTC positioning in Nasdaq-100 futures (as of the Tuesday of the report week): use it for crowding context, not timing. auctions are official Treasury results: compare bid_to_cover with the previous same-term auction and say what the yield move could mean for tech; upcoming auctions in the next two sessions belong in scheduled_events (results come out at 19:00 CET). gdpnow is the Atlanta Fed's model estimate of current-quarter real GDP growth, not an official print. edgar items are SEC filings (primary sources). "
             "odds are prediction-market prices, not CME FedWatch. fed items are official. headlines and gdelt "
             "are unverified titles: label them as headlines, never state them as fact.")
     return note + "\n" + json.dumps(slim, indent=1, default=str)
