@@ -19,7 +19,7 @@ CSS = """
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.6 var(--sans)}
 a{color:inherit;text-decoration-color:var(--dim);text-underline-offset:3px}
-main{max-width:680px;margin:0 auto;padding-block:44px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:44px}
+main{max-width:680px;margin:0 auto;padding-block:44px 110px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:44px}
 .top{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
 .top nav{display:flex;gap:14px}.top nav a{text-decoration:none}.top nav a:hover{color:var(--fg)}
 h1{font-size:26px;line-height:1.25;font-weight:600;letter-spacing:-.015em;margin:10px 0 0;text-wrap:balance}
@@ -67,6 +67,8 @@ LIQUID_CSS = 'html.liquid{--glass:rgba(255,255,255,.055);--glass-hi:rgba(255,255
 
 THEMES_CSS = 'html.terminal{--bg:#050403;--fg:#ffb547;--mid:#c98a2e;--dim:#7a5a24;--line:#2a1f0e;--down:#ff5b4a;--up:#7dff9a;--base:#3a2c14;--sans:"IBM Plex Mono",ui-monospace,monospace}\nhtml.terminal body{background:var(--bg);text-shadow:0 0 6px rgba(255,181,71,.25)}\nhtml.terminal body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:5;background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 1px,transparent 1px 3px)}\nhtml.terminal h1{font-weight:500;text-transform:uppercase;letter-spacing:.02em;font-size:22px}\nhtml.terminal h1::before{content:"> ";color:var(--dim)}\nhtml.terminal main>section{border-top:1px dashed var(--line);padding-top:18px}\nhtml.terminal .strip i{color:#050403}\nhtml.terminal .ch .ln{stroke:var(--fg)}\nhtml.terminal .tgl,html.paper .tgl{border-color:currentColor;background:transparent;color:var(--fg)}\nhtml.paper{--bg:#f3eee4;--fg:#16140f;--mid:#4a463d;--dim:#8a8476;--line:#d9d1c1;--down:#b3372b;--up:#2f7a4a;--base:#d3cab8;color-scheme:light}\nhtml.paper body{background:var(--bg)}\nhtml.paper h1{font-family:"Newsreader",Georgia,serif;font-weight:500;font-size:34px;letter-spacing:-.01em}\nhtml.paper .lead{font-family:"Newsreader",Georgia,serif;font-size:19px;line-height:1.5}\nhtml.paper .driver strong{font-family:"Newsreader",Georgia,serif;font-size:21px;font-weight:500}\nhtml.paper main>section{border-top:1px solid var(--fg);padding-top:14px}\nhtml.paper .strip i{color:#fff}html.paper .strip i.n{color:var(--fg)}\nhtml.paper .ch .now{stroke:var(--bg)}\n'
 
+PICKER_CSS = '.picker{position:fixed;left:50%;bottom:max(16px,env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:10;display:flex;gap:4px;padding:5px;border-radius:999px;background:rgba(20,20,20,.75);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.15);font:500 12px "IBM Plex Mono",ui-monospace,monospace;box-shadow:0 8px 30px rgba(0,0,0,.35)}.picker button{border:0;background:none;color:#ddd;padding:7px 12px;border-radius:999px;cursor:pointer;font:inherit;text-shadow:none}.picker button:hover{color:#fff}.picker button[aria-pressed=true]{background:#f2f2f0;color:#000}.picker button:focus-visible{outline:1px solid #fff;outline-offset:2px}'
+
 H_NAME = {"next_day": "Next session", "next_week": "Next week", "next_month": "Next month"}
 
 
@@ -77,11 +79,13 @@ def page(title, body, prefix=""):
             '<title>%s</title><style>%s%s</style>'
             '<script>try{var t=localStorage.getItem("ce-theme");if(t&&t!=="minimal")document.documentElement.classList.add(t)}catch(e){}</script>'
             '</head><body><div class="aura" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="grain" aria-hidden="true"></div><main>%s</main>'
-            '<script>(function(){var r=document.documentElement,b=document.querySelector(".tgl"),T=["minimal","liquid","terminal","paper"],N={minimal:"Minimal",liquid:"Liquid",terminal:"Terminal",paper:"Paper"};'
-            'function cur(){for(var i=1;i<T.length;i++)if(r.classList.contains(T[i]))return T[i];return "minimal"}function lab(){if(b){b.textContent="Theme: "+N[cur()];b.title="Switch theme"}}lab();'
-            'if(b)b.onclick=function(){var n=T[(T.indexOf(cur())+1)%%T.length];r.classList.remove("liquid","terminal","paper");if(n!=="minimal")r.classList.add(n);try{localStorage.setItem("ce-theme",n)}catch(e){}lab()};'
+            '<div class="picker" role="group" aria-label="Theme"><button data-t="minimal">Minimal</button><button data-t="liquid">Liquid</button><button data-t="terminal">Terminal</button><button data-t="paper">Paper</button></div>'
+            '<script>(function(){var r=document.documentElement,bs=document.querySelectorAll(".picker button");'
+            'function cur(){var c=["liquid","terminal","paper"];for(var i=0;i<c.length;i++)if(r.classList.contains(c[i]))return c[i];return "minimal"}'
+            'function mark(){var c=cur();bs.forEach(function(b){b.setAttribute("aria-pressed",b.dataset.t===c)})}mark();'
+            'bs.forEach(function(b){b.onclick=function(){r.classList.remove("liquid","terminal","paper");if(b.dataset.t!=="minimal")r.classList.add(b.dataset.t);try{localStorage.setItem("ce-theme",b.dataset.t)}catch(e){}mark()}});'
             'document.querySelectorAll("main>section").forEach(function(el){el.addEventListener("pointermove",function(ev){var q=el.getBoundingClientRect();el.style.setProperty("--mx",ev.clientX-q.left+"px");el.style.setProperty("--my",ev.clientY-q.top+"px")})})})()</script>'
-            '</body></html>') % (e(title), CSS, LIQUID_CSS + THEMES_CSS, body)
+            '</body></html>') % (e(title), CSS, LIQUID_CSS + THEMES_CSS + PICKER_CSS, body)
 
 
 def _fmt(v, dec=2):
@@ -305,7 +309,7 @@ def coming_up(b, st):
 def render(b, st=None, prefix=""):
     w = b.get("what_happened") or {}
     made = datetime.fromisoformat(b["made_utc"]).astimezone(CET)
-    nav = "".join('<a href="%s%s">%s</a>' % (prefix, href, lab) for href, lab in (("record.html", "Record"), ("archive.html", "Archive"), ("sources.html", "Sources"))) + '<button class="tgl" type="button">Liquid</button>'
+    nav = "".join('<a href="%s%s">%s</a>' % (prefix, href, lab) for href, lab in (("record.html", "Record"), ("archive.html", "Archive"), ("sources.html", "Sources")))
     parts = ['<div><div class="top"><span>%s</span><nav>%s</nav></div><h1>%s</h1></div>' % (made.strftime("%A %d %B %Y"), nav, e(b.get("headline")))]
     summ = (w.get("summary") or "").strip()
     first, _, rest = summ.partition(". ")
