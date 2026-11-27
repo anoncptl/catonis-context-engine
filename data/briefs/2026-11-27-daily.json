@@ -1,0 +1,257 @@
+{
+ "headline": "Thin Black Friday half-day after a volatile Nvidia-led week; futures headlines point up",
+ "what_happened": {
+  "summary": "The Cboe Daily Take (25 Nov) says stocks opened in a deep Nvidia-led selloff and dip buyers pulled them off the lows. The Nasdaq-100 briefly touched bear-market territory intraday. Cboe names hotter inflation data, renewed tariff concerns and Nvidia credit-rating actions as pressures. US markets were closed on Thursday for the holiday. Cboe warns that today's half-day session will be thin and can exaggerate moves.",
+  "market_action": "FRED shows the Nasdaq-100 closed at 26046.9 (-0.64%) on 25 Nov. Cboe says the S&P 500 fell as much as 3.21% intraday and closed 0.35% lower, and the Dow closed up 0.33%. The VIX table lists 26.8 (-5.27%) dated 26 Nov, a day US equities were closed, so treat it with care. VXN was 38.53, VVIX 115.38 and COR1M 25.45 on 25 Nov.",
+  "macro": "Core PCE rose 3.3% y/y per Cboe (FRED: 3.26% y/y, 0.29% m/m), up from 3.1% in September. The 10-year yield fell to 4.85% (-6.0 bp) on 25 Nov per Treasury. Polymarket prices a 25 bp December hike at 94.5%, and Cboe cites CME FedWatch at 59% for another 25 bp hike in January, down from 70% a week earlier.",
+  "geopolitics": "Not covered by the sources. Oil data is stale to 24 Nov: Brent 91.8, WTI 82.24.",
+  "company_news": "S&P Global Ratings put Nvidia's senior unsecured debt on CreditWatch negative, citing management and governance, board independence and key-man risk. Cboe says Moody's cut Nvidia's outlook from positive to stable last week. Nvidia closed 3.9% lower and Anthropic closed 1.08% higher after falling nearly 10% intraday. Cboe lists early-December House hearings among open Nvidia issues."
+ },
+ "unconfirmed": [
+  "Headlines say US stock futures are rising on Black Friday, with Nasdaq futures leading and S&P 500 futures topping 7,300.",
+  "Headlines say Nvidia and Anthropic are rallying in premarket after earlier AI selloff.",
+  "Headlines on Treasuries conflict: one says yields rise, another says Treasuries retreat as equities gain. Another headline reports an Iran-linked drone attack in Kuwait."
+ ],
+ "dominant_driver": "single-stock or sector news",
+ "driver_reason": "Nvidia drove both the selloff and the dip-buying on 25 Nov, and the credit-rating actions keep governance risk open. Hot core PCE and a priced December hike add pressure, but the day's swings tracked Nvidia and AI names.",
+ "leader": "QQQ",
+ "leader_reason": "The Nasdaq-100 trailed the S&P 500 by 1.49 pct pts on 24 Nov and by 1.02 pct pts over 5 sessions. VXN at 38.53 sits well above VIX at 28.29 on 25 Nov, and COR1M at 25.45 is elevated. Tech and the AI complex are setting the tone.",
+ "overlap_with_previous": {
+  "continuing": [
+   "Nvidia scrutiny: CreditWatch, Moody's outlook cut, probes and hearings open",
+   "Fed hike path: December hike priced, January odds lower",
+   "Elevated tech volatility: VXN 38.53, COR1M 25.45"
+  ],
+  "new": [
+   "Thanksgiving closure and a thin half-day session today",
+   "Premarket headlines (unverified) describe a broad futures rise"
+  ],
+  "fading": [
+   "Oil as a driver: official data stale to 24 Nov and headline-only"
+  ],
+  "echo_check": "The Nvidia and AI-trade story and the hike pricing repeat from earlier briefs. The new evidence is the S&P CreditWatch and hot core PCE from 25 Nov, and the Polymarket December hike odds moved from 93.5% to 94.5%. The tariff concern is still without detail."
+ },
+ "scheduled_events": [
+  {
+   "when_vienna": "Tue 01 Dec 16:00",
+   "event": "Job Openings and Labor Turnover Survey (JOLTS)",
+   "why_it_matters": "First labor read before the jobs report. The official calendar lists no release or earnings for Fri 27 Nov or Mon 30 Nov.",
+   "source": "BLS"
+  },
+  {
+   "when_vienna": "Fri 04 Dec 14:30",
+   "event": "Employment Situation",
+   "why_it_matters": "Last payrolls print before the 9 Dec FOMC. The prior print shows 165.0k payrolls and 4.1% unemployment.",
+   "source": "BLS"
+  },
+  {
+   "when_vienna": "Wed 09 Dec 20:00",
+   "event": "FOMC decision (with projections)",
+   "why_it_matters": "A 25 bp hike is priced at 94.5% on Polymarket.",
+   "source": "FOMC calendar"
+  }
+ ],
+ "outlook": {
+  "next_day": {
+   "lower_pct": -1.5,
+   "upper_pct": 1.5,
+   "confidence": "low",
+   "confidence_reason": "Thin half-day volume can exaggerate moves, and this week's daily moves were large. Premarket headlines are unverified.",
+   "scenarios": [
+    {
+     "name": "bear",
+     "prob": 26,
+     "text": "Nvidia and AI names fade again on thin liquidity, with tariff worries and the hot PCE still in view.",
+     "invalidation": "Dip buyers hold the early range and Nvidia stabilizes."
+    },
+    {
+     "name": "base",
+     "prob": 46,
+     "text": "A narrow half-day session with a modest bounce or fade inside the range.",
+     "invalidation": "A new Nvidia governance or credit headline confirmed by a filing or rating agency."
+    },
+    {
+     "name": "bull",
+     "prob": 28,
+     "text": "The AI rebound extends on thin volume and VXN eases.",
+     "invalidation": "The bounce fades after the first hour as senior traders leave."
+    }
+   ],
+   "history_probs": {
+    "bear": 24.3,
+    "base": 50.9,
+    "bull": 24.7,
+    "n": 966
+   },
+   "probs_normalized": {
+    "bear": 26.0,
+    "base": 46.0,
+    "bull": 28.0
+   }
+  },
+  "next_week": {
+   "lower_pct": -4.0,
+   "upper_pct": 4.5,
+   "confidence": "low",
+   "confidence_reason": "VIX regime history is wide and the AI trade has swung by several percent in single sessions.",
+   "scenarios": [
+    {
+     "name": "bear",
+     "prob": 27,
+     "text": "Nvidia scrutiny escalates and yields or hike pricing pressure tech again.",
+     "invalidation": "VXN falls back toward the low 30s and Nvidia holds recent lows."
+    },
+    {
+     "name": "base",
+     "prob": 42,
+     "text": "Choppy range as dip buyers and AI doubts offset, with labor data (1 and 4 Dec) shaping the hike path.",
+     "invalidation": "A close beyond either cut point."
+    },
+    {
+     "name": "bull",
+     "prob": 31,
+     "text": "Relief extends as hike odds ease and Nvidia stabilizes ahead of the hearings.",
+     "invalidation": "Hot labor data pushes January hike odds back up."
+    }
+   ],
+   "history_probs": {
+    "bear": 15.6,
+    "base": 65.0,
+    "bull": 19.4,
+    "n": 963
+   },
+   "probs_normalized": {
+    "bear": 27.0,
+    "base": 42.0,
+    "bull": 31.0
+   }
+  },
+  "next_month": {
+   "lower_pct": -6.0,
+   "upper_pct": 8.0,
+   "confidence": "low",
+   "confidence_reason": "The 9 Dec FOMC hike, early-December hearings and the AI trade unwind leave a wide range of outcomes.",
+   "scenarios": [
+    {
+     "name": "bear",
+     "prob": 23,
+     "text": "Hikes, Nvidia credit and governance issues and AI spending doubts deepen the correction.",
+     "invalidation": "The Nasdaq-100 recovers its mid-November levels."
+    },
+    {
+     "name": "base",
+     "prob": 42,
+     "text": "Volatile sideways to modestly higher as the hike is absorbed.",
+     "invalidation": "A hawkish FOMC surprise or an Nvidia rating downgrade."
+    },
+    {
+     "name": "bull",
+     "prob": 35,
+     "text": "Volatility fades after the FOMC and the AI trade rebuilds, in line with the same-regime median gain of 3.14%.",
+     "invalidation": "VIX and VXN rise again and credit spreads widen beyond the 3.72 pct pts seen on 24 Nov."
+    }
+   ],
+   "history_probs": {
+    "bear": 14.7,
+    "base": 62.4,
+    "bull": 22.9,
+    "n": 960
+   },
+   "probs_normalized": {
+    "bear": 23.0,
+    "base": 42.0,
+    "bull": 35.0
+   }
+  }
+ },
+ "record_comment": "Next-day Brier is 0.619 against 0.638 for history and 0.667 for equal odds, with the top pick right 4 of 8. Next-week Brier is 0.621, top pick right 2 of 4. The +6.86% day on 20 Nov was a miss for bear and base probabilities, so the cut points stay wide in this volatility regime.",
+ "watch_list": [
+  "Whether dip buyers hold after the first hour of the half-day session",
+  "Nvidia and Anthropic follow-through versus the premarket headlines",
+  "VXN versus VIX and COR1M for continued AI-specific stress",
+  "Detail on the tariff concern and Nvidia hearing dates"
+ ],
+ "memory_update": {
+  "running_thesis": "Nvidia leads the AI trade swings. On 25 Nov the Nasdaq-100 touched bear territory intraday and closed at 26046.9 (-0.64%) as dip buyers stepped in. S&P put Nvidia debt on CreditWatch negative and Moody's cut the outlook. Core PCE 3.26% y/y per FRED. The 10-year yield is 4.85%. VXN 38.53, VIX 28.29, COR1M 25.45. A December hike is priced (Polymarket 94.5%), January odds 59% per CME per Cboe. US was closed on 26 Nov and 27 Nov is a thin half-day. Premarket headlines (unverified) show futures rising. Jobs data on 1 and 4 Dec lead into the 9 Dec FOMC.",
+  "open_questions": [
+   "Do dip buyers hold in Friday's thin session and on Monday?",
+   "Do Nvidia credit and governance issues escalate before the early-December hearings?",
+   "Is the tariff concern confirmed with detail?",
+   "Do JOLTS and jobs data (1 and 4 Dec) move the 9 Dec hike path?"
+  ],
+  "themes": {
+   "Nvidia leadership, scrutiny and credit": "active; Huang reinstated per 8-K, S&P CreditWatch negative, Moody's outlook cut, probes and hearings open",
+   "AI trade unwind (Nvidia, Anthropic, AMD)": "active; rebound faded on 24 Nov, dip buying on 25 Nov, premarket rebound headlines unverified",
+   "Fed hikes and yields": "echo; Dec hike priced, January odds 59% per CME per Cboe, 10-year 4.85%",
+   "Volatility and implied correlation": "elevated; VXN 38.53, COR1M 25.45, VIX 28.29 on 25 Nov",
+   "Rotation into defensives": "continuing; Dow +0.33% on 25 Nov per Cboe",
+   "Tariff headlines": "Cboe cites renewed concerns; no detail, unverified",
+   "Oil and Gulf risks": "headline-only; official data stale to 24 Nov",
+   "Credit": "HY OAS 3.72 on 24 Nov, stale, wider from 3.63",
+   "Holiday thin trading": "new; Friday 27 Nov half-day, Cboe warns of exaggerated moves"
+  }
+ },
+ "id": "2026-11-27-daily",
+ "slot": "daily",
+ "slot_label": "Daily (08:30 New York)",
+ "made_utc": "2026-11-27T13:32:05.878846+00:00",
+ "ref_date": "2026-11-26",
+ "model": "claude-sonnet-5-5",
+ "usage": {
+  "input_tokens": 34885,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "output_tokens": 6355
+ },
+ "number_flags": [],
+ "posts_used": [
+  {
+   "title": "Call It Wall Street\u2019s Turkey of a Trading Day",
+   "url": "https://www.cboe.com/insights/posts/call-it-wall-streets-turkey-of-a-trading-day/",
+   "date": "2026-11-25",
+   "text_source": "full_article",
+   "older": false,
+   "tag": "newest Daily Take"
+  },
+  {
+   "title": "Monday\u2019s Euphoria Ends with Tuesday\u2019s Hangover",
+   "url": "https://www.cboe.com/insights/posts/mondays-euphoria-ends-with-tuesdays-hangover/",
+   "date": "2026-11-24",
+   "text_source": "full_article",
+   "older": false,
+   "tag": "previous Daily Take"
+  },
+  {
+   "title": "Week of 11/23/2026: VIX\u00ae Jumps to 1-Year High, but No Panic as AI Trade Unwinds",
+   "url": "https://www.cboe.com/insights/posts/week-of-11-23-2026-vix-jumps-to-1-year-high-but-no-panic-as-ai-trade-unwinds/",
+   "date": "2026-11-23",
+   "text_source": "full_article",
+   "older": false,
+   "tag": "newest Macro Volatility Digest"
+  },
+  {
+   "title": "Week of 11/16/2026: Retail Turns Bearish on NVDA Ahead of Earnings",
+   "url": "https://www.cboe.com/insights/posts/week-of-11-16-2026-retail-turns-bearish-on-nvda-ahead-of-earnings/",
+   "date": "2026-11-16",
+   "text_source": "full_article",
+   "older": false,
+   "tag": "previous Macro Volatility Digest"
+  },
+  {
+   "title": "Liquidity, Success Rates and Mark-Outs: An Evolving Picture in European Periodic Auctions",
+   "url": "https://www.cboe.com/insights/posts/liquidity-success-rates-and-mark-outs-an-evolving-picture-in-european-periodic-auctions/",
+   "date": "2026-11-24",
+   "text_source": "full_article",
+   "older": true,
+   "tag": "older"
+  },
+  {
+   "title": "The Market Taketh and the Market Giveth Back",
+   "url": "https://www.cboe.com/insights/posts/the-market-taketh-and-the-market-giveth-back/",
+   "date": "2026-11-23",
+   "text_source": "full_article",
+   "older": true,
+   "tag": "older"
+  }
+ ]
+}
