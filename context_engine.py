@@ -336,7 +336,7 @@ Hard rules:
 
 Writing rules (a trader reads this 30 minutes before the open):
 - Short, plain sentences. One fact per sentence. Lead with the fact, not the source.
-- Credit a source at most once per field, and only when it matters ("Cboe's Daily Take" once is fine). Never start sentences with "Cboe says", "per Cboe", "according to".
+- Do not attribute facts in the text. Never write "Cboe says", "Cboe names", "Cboe warns", "per Cboe", "FRED shows", "according to". State the fact. Sources are credited once at the bottom of the page. Only exception: name a primary source (SEC filing, Fed, BLS) when the attribution itself is the news.
 - Never use em dashes or en dashes. Use periods, commas or colons.
 - No "not X but Y" contrasts, no one-line dramatic closers, no filler (notably, crucially, key, pivotal, landscape, underscores, highlights, robust, delve).
 - No stacked hedges. Say "may" once if needed.
@@ -376,7 +376,7 @@ def build_prompt(ctx):
         "\n## BASE RATES (Nasdaq-100 %% change over N sessions since %s; quantiles p10..p90)\n" % (ctx["rates"] or {}).get("since", "n/a")
         + (json.dumps(ctx["rates"], indent=1) if ctx["rates"] else "unavailable this run: choose cut points from the facts and say confidence is low"),
         "\n## STRUCTURED DATA\n" + sources.to_prompt(ctx["structured"]),
-        "\n## CBOE POSTS (first: Cboe's newest Daily Take, written after the US close, and newest weekly Macro Volatility Digest; then other new posts; [older] = already used before). Base what_happened mainly on the newest Daily Take and Digest and name them."]
+        "\n## CBOE POSTS (first: Cboe's newest Daily Take, written after the US close, and newest weekly Macro Volatility Digest; then other new posts; [older] = already used before). Base what_happened mainly on the newest Daily Take and Digest. Do not name Cboe or the post titles in the text: the page credits sources once at the bottom. Write the facts directly."]
     for p in ctx["posts"]:
         parts.append("\n### [%s] [%s] %s | published %s | %s\n%s" % (p.get("_tag", ""), p.get("category"), p.get("title"),
                                                      (p.get("published") or "date unknown")[:10], p.get("text_source"), (p.get("text") or "")[:MAX_CHARS_PER_POST]))
@@ -564,7 +564,11 @@ def run(now, slot, slot_date, force):
 def undash(x):
     """Replace em and en dashes in Claude's text with plain punctuation."""
     if isinstance(x, str):
-        return re.sub(r"\s*[\u2014\u2013]\s*", ", ", x).replace(" -- ", ", ")
+        x = re.sub(r"\s*[\u2014\u2013]\s*", ", ", x).replace(" -- ", ", ")
+        x = re.sub(r"(?i)^(per|according to) (cboe|fred)[^,]*,\s*", "", x)
+        x = re.sub(r"(?i)[,;]? (per|according to) (cboe|fred)\b[^,.;]*", "", x)
+        x = re.sub(r"(?i)\b(cboe|fred) (says|shows|notes|reports|writes) (that )?", "", x)
+        return re.sub(r"(^|[.!?] )([a-z])", lambda m: m.group(1) + m.group(2).upper(), x)
     if isinstance(x, list):
         return [undash(v) for v in x]
     if isinstance(x, dict):
