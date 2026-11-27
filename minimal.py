@@ -338,7 +338,7 @@ def render(b, st=None, prefix=""):
     wl = b.get("watch_list") or []
     if wl:
         parts.append('<section><h2>Watch</h2><ul>%s</ul></section>' % "".join("<li>%s</li>" % e(x) for x in wl[:4]))
-    srcs = "Cboe market commentary and index data, US Treasury, FRED, BLS, SEC filings, Federal Reserve, Polymarket, Alpha Vantage"
+    srcs = "Cboe market commentary and index data, US Treasury and TreasuryDirect, FRED, BLS, EIA, CFTC, Atlanta Fed, SEC filings, Federal Reserve, Kalshi, Polymarket, Alpha Vantage"
     parts.append('<footer><span>%s · reference close %s.</span><span>Sources: %s. Headlines are unconfirmed. Conditional context, not advice.</span></footer>' % (
         e(b.get("slot_label")), e(b.get("ref_date")), srcs))
     return "".join(p for p in parts if p)

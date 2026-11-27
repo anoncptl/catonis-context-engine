@@ -21,7 +21,6 @@ def show(name, fn):
             assert s not in txt
 
 
-import subprocess; subprocess.run(["python","dbg_probe.py"])
 
 show("kalshi_macro", sources.kalshi_macro)
 show("cot", sources.cot)
