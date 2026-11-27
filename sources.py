@@ -495,8 +495,8 @@ def av_news(now):
 
 
 KALSHI_URL = "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=%s&status=open&limit=200"
-KALSHI_SERIES = [("KXFED", "Fed funds upper bound after next meeting"), ("KXCPIYOY", "CPI year over year"),
-                 ("KXPAYROLLS", "Nonfarm payrolls"), ("KXRECSSNBER", "US recession")]
+KALSHI_SERIES = [("KXFED", "Fed funds upper bound after next meeting"), ("KXECONSTATCPI", "CPI month over month"),
+                 ("KXECONSTATCPICORE", "Core CPI month over month"), ("KXPCEHEAD", "Headline PCE inflation"), ("KXPAYROLLS", "Nonfarm payrolls")]
 
 
 def kalshi():
@@ -504,7 +504,8 @@ def kalshi():
     out = []
     for series, label in KALSHI_SERIES:
         try:
-            ms = json.loads(_get(KALSHI_URL % series, headers={"Accept": "application/json"})).get("markets") or []
+            j = json.loads(_get(KALSHI_URL % series, headers={"Accept": "application/json"}))
+            ms = j.get("markets") or [m for ev in j.get("events") or [] for m in ev.get("markets") or []]
         except Exception:
             continue
         if not ms:
@@ -513,7 +514,7 @@ def kalshi():
         ev = [m for m in ms if m.get("close_time") == first]
         rows = []
         for m in ev:
-            px = m.get("last_price") or m.get("yes_bid") or 0
+            px = _num(m.get("last_price_dollars")) or _num(m.get("yes_bid_dollars")) or m.get("last_price") or m.get("yes_bid") or 0
             if isinstance(px, str):
                 px = _num(px) or 0
             if px and px > 1 and px <= 100:
@@ -539,7 +540,7 @@ def cot():
     names = {}
     for r in rows:
         names.setdefault(r.get("market_and_exchange_names", ""), []).append(r)
-    name = max(names, key=lambda n: ("MINI" in n.upper() or "CONSOLIDATED" in n.upper(), len(names[n])))
+    name = next((n for n in names if "CONSOLIDATED" in n.upper()), None) or max(names, key=lambda n: len(names[n]))
     rs = sorted(names[name], key=lambda r: r.get("report_date_as_yyyy_mm_dd", ""), reverse=True)[:2]
 
     def f(r, part):
@@ -588,11 +589,12 @@ def auctions(now):
 
 
 def gdpnow(now):
+    """FRED dates GDPNow by quarter start; the latest row is the running estimate for the current quarter."""
     rows = fred_series("GDPNOW", (now - timedelta(days=200)).strftime("%Y-%m-%d"))
     if not rows:
         raise RuntimeError("no GDPNow values")
-    return {"date": rows[-1][0], "value_pct": rows[-1][1], "previous": rows[-2][1] if len(rows) > 1 else None,
-            "previous_date": rows[-2][0] if len(rows) > 1 else None}
+    return {"quarter_starting": rows[-1][0], "estimate_pct": round(rows[-1][1], 2),
+            "previous_quarter_final_estimate_pct": round(rows[-2][1], 2) if len(rows) > 1 else None}
 
 
 # =====================================================================
@@ -972,7 +974,6 @@ SOURCE_NAMES = {
     "calendar": "Official release calendars", "consensus": "Consensus calendar (unofficial)",
     "earnings": "Earnings dates (Alpha Vantage)",
     "eia": "EIA weekly oil and gas inventories",
-    "av_news": "Tech news with sentiment (Alpha Vantage)",
     "kalshi": "Kalshi prediction markets",
     "cot": "CFTC positioning in Nasdaq-100 futures",
     "auctions": "Treasury note and bond auctions",
@@ -1023,13 +1024,12 @@ def gather(now=None):
 
     run("consensus", consensus_calendar, lambda v: "%d USD events with forecasts" % len(v))
     run("earnings", lambda: earnings(now), lambda v: "%d reports from the 20 largest Nasdaq names in %d days" % (len(v), EARNINGS_DAYS))
-    run("av_news", lambda: av_news(now), lambda v: "%d articles on the largest Nasdaq names" % len(v))
     run("kalshi", kalshi, lambda v: "%d series" % len(v))
     run("cot", cot, lambda v: "week of %s" % v["week"])
     run("auctions", lambda: auctions(now), lambda v: "%d results, %d upcoming" % (len(v["results"]), len(v["upcoming"])))
     if out.get("auctions") and not out["auctions"]["results"] and not out["auctions"]["upcoming"]:
         out["status"]["auctions"]["ok"] = True
-    run("gdpnow", lambda: gdpnow(now), lambda v: "%s%% as of %s" % (v["value_pct"], v["date"]))
+    run("gdpnow", lambda: gdpnow(now), lambda v: "%s%% for the quarter starting %s" % (v["estimate_pct"], v["quarter_starting"]))
     run("eia", eia, lambda v: "%d series, week of %s" % (len(v), max(x["week"] for x in v)))
     if out.get("earnings") == []:
         out["status"]["earnings"]["ok"] = True  # an empty window is a valid answer
@@ -1068,7 +1068,7 @@ def gather(now=None):
     return out
 
 
-PROMPT_KEYS = ("fred", "fred_monthly", "treasury", "bls", "cboe_idx", "calendar", "consensus", "earnings", "eia", "av_news", "kalshi", "cot", "auctions", "gdpnow",
+PROMPT_KEYS = ("fred", "fred_monthly", "treasury", "bls", "cboe_idx", "calendar", "consensus", "earnings", "eia", "kalshi", "cot", "auctions", "gdpnow",
                "edgar", "odds", "fed", "headlines", "gdelt")
 
 
@@ -1084,7 +1084,7 @@ def to_prompt(structured):
             "bls and fred_monthly are official prints with month-over-month changes computed in code. "
             "calendar is official (BLS, FRED release dates, FOMC); earnings lists report dates of the largest Nasdaq names "
             "(Alpha Vantage), include any in the next two sessions as scheduled events; consensus is an unofficial calendar, "
-            "use it only for forecast/previous and say so. eia is the official weekly EIA inventory report (released Wednesdays 16:30 CET, gas Thursdays 16:30 CET); change is week over week, computed in code; there is no consensus, so never call a change a surprise. av_news is tech news with Alpha Vantage's machine sentiment score per ticker (-1 to 1); treat it like headlines (unverified) and use the scores only as a rough mood gauge. kalshi is a regulated prediction market: compare its Fed odds with Polymarket and say when they disagree. cot is weekly CFTC positioning in Nasdaq-100 futures (as of the Tuesday of the report week): use it for crowding context, not timing. auctions are official Treasury results: compare bid_to_cover with the previous same-term auction and say what the yield move could mean for tech; upcoming auctions in the next two sessions belong in scheduled_events (results come out at 19:00 CET). gdpnow is the Atlanta Fed's model estimate of current-quarter real GDP growth, not an official print. edgar items are SEC filings (primary sources). "
+            "use it only for forecast/previous and say so. eia is the official weekly EIA inventory report (released Wednesdays 16:30 CET, gas Thursdays 16:30 CET); change is week over week, computed in code; there is no consensus, so never call a change a surprise. kalshi is a regulated prediction market: compare its Fed odds with Polymarket and say when they disagree. cot is weekly CFTC positioning in Nasdaq-100 futures (as of the Tuesday of the report week): use it for crowding context, not timing. auctions are official Treasury results: compare bid_to_cover with the previous same-term auction and say what the yield move could mean for tech; upcoming auctions in the next two sessions belong in scheduled_events (results come out at 19:00 CET). gdpnow is the Atlanta Fed's model estimate of current-quarter real GDP growth, not an official print. edgar items are SEC filings (primary sources). "
             "odds are prediction-market prices, not CME FedWatch. fed items are official. headlines and gdelt "
             "are unverified titles: label them as headlines, never state them as fact.")
     return note + "\n" + json.dumps(slim, indent=1, default=str)
