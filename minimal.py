@@ -62,6 +62,8 @@ dl,.cal div{grid-template-columns:1fr;gap:2px}dd{margin-bottom:10px}h1{font-size
 .hz summary{grid-template-columns:1fr;grid-template-areas:"hl" "strip" "hist" "cuts";row-gap:8px}.hist{margin-top:0}.if{padding-left:0}}
 """
 
+LIQUID_CSS = 'html.liquid{--glass:rgba(255,255,255,.055);--glass-hi:rgba(255,255,255,.16);--line:rgba(255,255,255,.09)}html.liquid body{background:#000;min-height:100vh;overflow-x:hidden}html.liquid .aura{position:fixed;inset:-20vmax;z-index:0;pointer-events:none;filter:blur(60px);opacity:.55}html.liquid .aura i{position:absolute;border-radius:50%;mix-blend-mode:screen;will-change:transform}html.liquid .aura i:nth-child(1){width:55vmax;height:55vmax;left:5%;top:0;background:radial-gradient(circle,#d8dce2 0,rgba(140,146,156,.5) 30%,transparent 62%);animation:f1 26s ease-in-out infinite alternate}html.liquid .aura i:nth-child(2){width:50vmax;height:50vmax;right:0;top:20%;background:radial-gradient(circle,#9aa0a8 0,rgba(90,94,102,.45) 35%,transparent 60%);animation:f2 31s ease-in-out infinite alternate}html.liquid .aura i:nth-child(3){width:45vmax;height:45vmax;left:25%;bottom:0;background:radial-gradient(circle,#c4c8ce 0,rgba(110,114,122,.4) 35%,transparent 60%);animation:f3 23s ease-in-out infinite alternate}html.liquid .aura i:nth-child(4){width:35vmax;height:35vmax;right:20%;bottom:15%;background:conic-gradient(from 0deg,#f4f5f7,#6d7178,#e2e4e8,#4a4d52,#f4f5f7);opacity:.35;animation:f1 37s ease-in-out infinite alternate-reverse}@keyframes f1{to{transform:translate(18vmax,22vmax) scale(1.15)}}@keyframes f2{to{transform:translate(-22vmax,14vmax) scale(.9)}}@keyframes f3{to{transform:translate(12vmax,-20vmax) scale(1.2)}}html.liquid .grain{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse at 50% 30%,rgba(0,0,0,.35),rgba(0,0,0,.8) 75%)}html.liquid main>section{background-image:linear-gradient(115deg,transparent 35%,rgba(235,238,242,.07) 48%,transparent 60%);background-size:250% 100%;animation:sheen 9s ease-in-out infinite}@keyframes sheen{0%{background-position:120% 0}55%,100%{background-position:-60% 0}}@media (prefers-reduced-motion:reduce){html.liquid main>section{animation:none}}html.liquid main{position:relative;z-index:1;gap:18px}html.liquid main>section,html.liquid main>footer{position:relative;background:var(--glass);border:1px solid rgba(255,255,255,.1);border-radius:26px;padding:24px 26px;\n backdrop-filter:blur(28px) saturate(170%);-webkit-backdrop-filter:blur(28px) saturate(170%);\n box-shadow:inset 0 1px 0 var(--glass-hi),inset 0 -1px 0 rgba(255,255,255,.03),0 20px 50px -20px rgba(0,0,0,.6);overflow:hidden;\n transition:transform .5s cubic-bezier(.2,.8,.2,1),background .4s}html.liquid main>section::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;\n background:radial-gradient(600px circle at var(--mx,50%) var(--my,-20%),rgba(255,255,255,.10),transparent 40%)}html.liquid main>section:hover{background:rgba(255,255,255,.075)}html.liquid main h1{font-size:34px;letter-spacing:-.03em;background:linear-gradient(180deg,#fff 30%,rgba(255,255,255,.62));-webkit-background-clip:text;background-clip:text;color:transparent}html.liquid main>footer{border-radius:20px;font-size:12px}html.liquid .nums>div{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:12px 14px}html.liquid .strip{border-radius:999px;overflow:hidden}html.liquid .strip i{backdrop-filter:blur(6px)}html.liquid .hz{border-color:rgba(255,255,255,.08)!important}html.liquid .chartbox svg{filter:drop-shadow(0 0 8px rgba(255,255,255,.25))}@media (max-width:560px){html.liquid main>section,html.liquid main>footer{padding:18px;border-radius:22px}html.liquid main h1{font-size:26px}}@media (prefers-reduced-motion:reduce){html.liquid .aura i{animation:none}}html:not(.liquid) .aura,html:not(.liquid) .grain{display:none}.tgl{background:none;border:0;padding:0;color:inherit;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer}.tgl:hover{color:var(--fg)}'
+
 H_NAME = {"next_day": "Next session", "next_week": "Next week", "next_month": "Next month"}
 
 
@@ -69,7 +71,13 @@ def page(title, body, prefix=""):
     return ('<!doctype html><html lang="en"><head><meta charset="utf-8">'
             '<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex">'
             '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">'
-            '<title>%s</title><style>%s</style></head><body><main>%s</main></body></html>') % (e(title), CSS, body)
+            '<title>%s</title><style>%s%s</style>'
+            '<script>try{if(localStorage.getItem("ce-theme")==="liquid")document.documentElement.classList.add("liquid")}catch(e){}</script>'
+            '</head><body><div class="aura" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="grain" aria-hidden="true"></div><main>%s</main>'
+            '<script>(function(){var r=document.documentElement,b=document.querySelector(".tgl");function lab(){if(b)b.textContent=r.classList.contains("liquid")?"Minimal":"Liquid"}lab();'
+            'if(b)b.onclick=function(){r.classList.toggle("liquid");try{localStorage.setItem("ce-theme",r.classList.contains("liquid")?"liquid":"minimal")}catch(e){}lab()};'
+            'document.querySelectorAll("main>section").forEach(function(el){el.addEventListener("pointermove",function(ev){var q=el.getBoundingClientRect();el.style.setProperty("--mx",ev.clientX-q.left+"px");el.style.setProperty("--my",ev.clientY-q.top+"px")})})})()</script>'
+            '</body></html>') % (e(title), CSS, LIQUID_CSS, body)
 
 
 def _fmt(v, dec=2):
@@ -225,7 +233,7 @@ def coming_up(b, st):
 def render(b, st=None, prefix=""):
     w = b.get("what_happened") or {}
     made = datetime.fromisoformat(b["made_utc"]).astimezone(CET)
-    nav = "".join('<a href="%s%s">%s</a>' % (prefix, href, lab) for href, lab in (("record.html", "Record"), ("archive.html", "Archive"), ("sources.html", "Sources")))
+    nav = "".join('<a href="%s%s">%s</a>' % (prefix, href, lab) for href, lab in (("record.html", "Record"), ("archive.html", "Archive"), ("sources.html", "Sources"))) + '<button class="tgl" type="button">Liquid</button>'
     parts = ['<div><div class="top"><span>%s</span><nav>%s</nav></div><h1>%s</h1></div>' % (made.strftime("%A %d %B %Y"), nav, e(b.get("headline")))]
     summ = (w.get("summary") or "").strip()
     first, _, rest = summ.partition(". ")
